@@ -56,13 +56,13 @@ def read_prompt(fname, idx):
     
 
 def run_codex(api_key, des_prompt):
-    openai.api_key = os.getenv(api_key)
+    openai.api_key = api_key
     #des_prompt="#Write a python code for minimum deletes needed to make a string palindrome."
     #des_prompt+="Make the code executable, formatted and optimized\n\n"
     response = openai.Completion.create (engine="code-davinci-002",
                     prompt=des_prompt,
                     temperature=0.3,
-                    max_tokens=256,
+                    max_tokens=512,
                     top_p=1,
                     frequency_penalty=0.7,
                     presence_penalty=0
@@ -72,9 +72,11 @@ def run_codex(api_key, des_prompt):
 
 if __name__ == '__main__':
     api_key = read_config()
+    #print(api_key)
     test_prompt = read_prompt('dp_probs1.csv', 0)
     #print(test_prompt)
     basic_prompt = test_prompt[0]
     cot_prompt = test_prompt[0] + test_prompt[1]
-    #codex_out = run_codex(api_key, basic_prompt)
+    codex_out = run_codex(api_key, basic_prompt)
+    print(codex_out)
     
