@@ -1,0 +1,24 @@
+Input,COT
+"# Q: Write a python program to calculate the specified entry in the fibonacci sequence using a dynamic programming approach. 
+# The input to the program will be an integer n which represents the number of the fibonacci sequence to calculate and return.
+# The output of the program will be the nth number in the fibonacci sequence.
+# A: ","# A: The fibonacci sequence is defined such that each entry in the sequence is equal to the sum of the previous two entries.
+# The basic solution for the fibonacci solution is to add the results obtained from calling the method recursively with n-1 and n-2 as inputs.
+# By using an array structure to store the previous two fibonacci numbers, we can avoid calculating the same values more than once.
+# A dynamic programming solution for the problem might be as follows:"
+"# Q: Write a python program to solve The Longest Common Subsequence (LCS) problem using a dynamic programming approach.
+# The input to the program will be two sequences, the output of the program will be the length of the longest subsequence that appears in both input sequences.","# A: The LCS problem is defined as follows: Given two sequences, find the length of longest subsequence present in both of them.
+# A subsequence is a sequence that appears in the same relative order, but not necessarily contiguous.
+# For example, “abc”, “abg”, “bdf”, “aeg”, ‘”acefg”, .. etc are subsequences of “abcdefg”.
+# The basic solution for the LCS problem is to add the results obtained from calling the method recursively with n-1 and m-1 as inputs.
+# By using an array structure to store the previous two LCS values, we can avoid calculating the same values more than once.
+# A dynamic programming solution in python for the problem might be as follows:"
+"# Q: Write a python program to solve the The Longest Increasing Subsequence (LIS) problem using a dynamic programming approach.
+# The input to the program will be a sequence, the output of the program will be the length of the longest increasing subsequence.","# A: The LIS problem is defined as follows: Given a sequence of integers, find the longest increasing subsequence (LIS).
+# The longest increasing subsequence means to find a subsequence of a given sequence in which the subsequence's elements are in sorted order, lowest to highest, and in which the subsequence is as long as possible.
+# This subsequence is not necessarily contiguous, or unique.
+# For example, consider the following input sequence.
+# The longest increasing subsequence is ""abcde"", which has length 5.
+# The basic solution for the LIS problem is to add the results obtained from calling the method recursively with n-1 as inputs.
+# By using an array structure to store the previous two LIS values, we can avoid calculating the same values more than once.
+# A dynamic programming solution in python for the problem might be as follows:"
