@@ -18,6 +18,16 @@ def write_config():
 
     with open("config.yaml", 'w') as yamlfile:
         data = yaml.dump(api_info, yamlfile)
+        
+def save_output(code_str, file_name):
+    output_dir = "output"
+    if not file_name.endswith('.py'):
+        file_name += '.py'
+    file_path = os.path.join(output_dir, file_name)
+    with open(file_path, "w") as outfile:
+        outfile.write(code_str)
+    
+
 
 # Read the specified prompt file (.csv)
 # Column 0: Base prompt w/ no COT
@@ -57,8 +67,6 @@ def read_prompt(fname, idx):
 
 def run_codex(api_key, des_prompt):
     openai.api_key = api_key
-    #des_prompt="#Write a python code for minimum deletes needed to make a string palindrome."
-    #des_prompt+="Make the code executable, formatted and optimized\n\n"
     response = openai.Completion.create (engine="code-davinci-002",
                     prompt=des_prompt,
                     temperature=0.3,
@@ -70,13 +78,17 @@ def run_codex(api_key, des_prompt):
 
     return response.choices[0].text
 
+# TODO: Parse the codex output and ensure it contains valid python code.
+# this basic approach does not sanitize the codex output, nor does it ensure that the
+# output is properly formatted. 
 if __name__ == '__main__':
     api_key = read_config()
-    #print(api_key)
-    test_prompt = read_prompt('dp_probs1.csv', 0)
-    #print(test_prompt)
+    prompt_name = 'dp_probs1'
+    prompt_num = 0
+    test_prompt = read_prompt(prompt_name, prompt_num)
     basic_prompt = test_prompt[0]
     cot_prompt = test_prompt[0] + test_prompt[1]
-    codex_out = run_codex(api_key, basic_prompt)
-    print(codex_out)
+    codex_out = run_codex(api_key, cot_prompt)
+    full_out = cot_prompt + codex_out
+    save_output(full_out, prompt_name + '_' + str(prompt_num))
     
