@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "quirky_quartet"
+version = "0.0.0"
+description = "Prompting and data augmentation techniques for code generation"
+authors = ["LSaldyt <lucassaldyt@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = ">3.10,<3.11"
+openai = "^0.24.0"
+PyYAML = "^6.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

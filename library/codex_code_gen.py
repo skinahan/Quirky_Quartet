@@ -18,7 +18,7 @@ def write_config():
 
     with open("config.yaml", 'w') as yamlfile:
         data = yaml.dump(api_info, yamlfile)
-        
+
 def save_output(code_str, file_name):
     output_dir = "output"
     if not file_name.endswith('.py'):
@@ -26,7 +26,7 @@ def save_output(code_str, file_name):
     file_path = os.path.join(output_dir, file_name)
     with open(file_path, "w") as outfile:
         outfile.write(code_str)
-    
+
 
 
 # Read the specified prompt file (.csv)
@@ -44,7 +44,7 @@ def read_prompts(fname):
             # Skip over the header line
             if header:
                 header = False
-                continue            
+                continue
             basic_prompt = row[0]
             #print(basic_prompt)
             chain = row[1]
@@ -63,7 +63,7 @@ def read_prompt(fname, idx):
         rows = list(reader)
         idx = idx + 1 # skip header
         return rows[idx]
-    
+
 
 def run_codex(api_key, des_prompt):
     openai.api_key = api_key
@@ -80,7 +80,7 @@ def run_codex(api_key, des_prompt):
 
 # TODO: Parse the codex output and ensure it contains valid python code.
 # this basic approach does not sanitize the codex output, nor does it ensure that the
-# output is properly formatted. 
+# output is properly formatted.
 if __name__ == '__main__':
     api_key = read_config()
     prompt_name = 'dp_probs1'
@@ -91,4 +91,4 @@ if __name__ == '__main__':
     codex_out = run_codex(api_key, cot_prompt)
     full_out = cot_prompt + codex_out
     save_output(full_out, prompt_name + '_' + str(prompt_num))
-    
+
