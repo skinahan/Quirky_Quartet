@@ -31,4 +31,4 @@ RUN poetry install -vvv --no-interaction
 
 # Creating folders, and files for a project:
 COPY . /code
-CMD ls && cd /code && ls && poetry run python main.py evaluation
+CMD cd /code && poetry run python main.py evaluation
