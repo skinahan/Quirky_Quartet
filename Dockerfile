@@ -1,7 +1,14 @@
-FROM python:3.10.8-alpine3.16
+FROM python:3.10.8-slim
 
-RUN apk update
-RUN apk add make automake gcc g++ subversion python3-dev
+RUN apt-get update && \
+    apt-get install -y \
+        build-essential \
+        make \
+        gcc 
+# If we wanted to make our docker container lighter
+# && apt-get remove -y --purge make gcc build-essential \
+# && apt-get autoremove -y \
+# && rm -rf /var/lib/apt/lists/*
 
 ENV PYTHONFAULTHANDLER=1 \
     PYTHONUNBUFFERED=1 \
@@ -19,9 +26,9 @@ WORKDIR /code
 COPY poetry.lock pyproject.toml /code/
 
 # Project initialization:
-RUN poetry update -vvv --no-interaction 
+# RUN poetry update -vvv --no-interaction 
 RUN poetry install -vvv --no-interaction 
 
 # Creating folders, and files for a project:
 COPY . /code
-CMD ls && cd /code && ls && poetry run python main.py hello_world
+CMD ls && cd /code && ls && poetry run python main.py evaluation

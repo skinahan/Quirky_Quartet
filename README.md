@@ -37,6 +37,7 @@ To setup an overlay filesystem (for safely using files within gvisor), edit `/et
     }
 }
 ```
+When doing setup _only_, using the option `"--network=host"` could speed up the docker build, but it would be important to remove afterwards. 
 
 Finally, build the docker container for this project:  
 `docker build -t codex_codegen .`

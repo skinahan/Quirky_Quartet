@@ -1,4 +1,4 @@
 import human_eval
 
 def run():
-    pass
+    print('Evaluating')
