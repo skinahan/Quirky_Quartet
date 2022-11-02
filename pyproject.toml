@@ -7,9 +7,12 @@ license = "MIT"
 
 [tool.poetry.dependencies]
 python = ">3.10,<3.11"
-openai = "^0.24.0"
-PyYAML = "^6.0"
+# openai = "^0.24.0"
+# PyYAML = "^6.0"
 rich = "^12.6.0"
+# fire = "^0.4.0"
+# tqdm = "^4.64.1"
+# numpy = "^1.23.4"
 
 [tool.poetry.dev-dependencies]
 

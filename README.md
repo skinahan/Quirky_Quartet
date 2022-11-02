@@ -11,6 +11,41 @@ Optionally install [poetry](https://python-poetry.org/) for package management.
 Optionally run `poetry update` to initialize and install all dependencies.  
 _Alternatively_, you can use `poetry export -f requirements.txt --output requirements.txt` to install with conda, pip, or venv directly.  
 
+
+### Sandboxing
+
+To setup gvisor, first install [docker](https://docs.docker.com/engine/install/).
+The gvisor install instructions are [here](https://gvisor.dev/docs/user_guide/install/), which has an option using `apt-get`.
+Alternatively, run the gvisor install script: `./setup_gvisor`.
+Then, setup with docker using:
+``` bash
+sudo /usr/local/bin/runsc install
+sudo systemctl reload docker
+docker run --rm --runtime=runsc hello-world
+```
+
+To setup an overlay filesystem (for safely using files within gvisor), edit `/etc/docker/daemon.json` to be:  
+``` json
+{
+    "runtimes": {
+        "runsc": {
+            "path": "/usr/local/bin/runsc"
+            "runtimeArgs": [
+                    "--overlay"
+            ]
+        }
+    }
+}
+```
+
+Finally, build the docker container for this project:  
+`docker build -t codex_codegen .`
+
+Which was based on this [poetry docker setup](https://stackoverflow.com/questions/53835198/integrating-python-poetry-with-docker).  
+
+If the image breaks or needs to be rebuilt, you can use `docker image rmi codex_codegen`
+
+
 ### Usage
 
 The main entrypoint is the `./run` bash script. By default, this runs the _script_ `scripts/main.py`, or if provided with an argument, such as `./run download`, then it runs the corresponding script, e.x. `scripts/download.py`.
