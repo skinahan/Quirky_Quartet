@@ -5,7 +5,7 @@ import openai
 
 
 def read_config():
-    with open("config.yaml", "r") as yamlfile:
+    with open("openai_credentials.yaml", "r") as yamlfile:
         data = yaml.load(yamlfile, Loader=yaml.FullLoader)
         return data[0]['key']
 
@@ -16,7 +16,7 @@ def write_config():
         }
     ]
 
-    with open("config.yaml", 'w') as yamlfile:
+    with open("openai_credentials.yaml", 'w') as yamlfile:
         data = yaml.dump(api_info, yamlfile)
 
 def save_output(code_str, file_name):

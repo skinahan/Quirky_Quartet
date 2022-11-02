@@ -15,5 +15,3 @@ _Alternatively_, you can use `poetry export -f requirements.txt --output require
 
 The main entrypoint is the `./run` bash script. By default, this runs the _script_ `scripts/main.py`, or if provided with an argument, such as `./run download`, then it runs the corresponding script, e.x. `scripts/download.py`.
 
-To test SATNet, first use `./run download` and then `./run`
-
