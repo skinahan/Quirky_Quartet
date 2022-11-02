@@ -49,7 +49,3 @@ Once the image is built successfully, the project can be run with:
 `docker run codex_codegen:latest`  
 Which will execute the command specified by `CMD` in `Dockerfile`, by default `main.py`  
 
-### Usage
-
-The main entrypoint is the `./run` bash script. By default, this runs the _script_ `scripts/main.py`, or if provided with an argument, such as `./run download`, then it runs the corresponding script, e.x. `scripts/download.py`.
-
