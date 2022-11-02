@@ -20,15 +20,16 @@ ENV PYTHONFAULTHANDLER=1 \
 
 # System deps:
 RUN pip install "poetry==$POETRY_VERSION"
+RUN apt-get install git -y
 
 # Copy only requirements to cache them in docker layer
 WORKDIR /code
 COPY poetry.lock pyproject.toml /code/
 
 # Project initialization:
+COPY . /code
+RUN git submodule update --init --recursive
+
 # RUN poetry update -vvv --no-interaction 
 RUN poetry install -vvv --no-interaction 
-
-# Creating folders, and files for a project:
-COPY . /code
 CMD cd /code && poetry run python main.py evaluation
