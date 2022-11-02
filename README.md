@@ -45,6 +45,9 @@ Which was based on this [poetry docker setup](https://stackoverflow.com/question
 
 If the image breaks or needs to be rebuilt, you can use `docker image rmi codex_codegen`
 
+Once the image is built successfully, the project can be run with:  
+`docker run codex_codegen:latest`  
+Which will execute the command specified by `CMD` in `Dockerfile`, by default `main.py`  
 
 ### Usage
 
