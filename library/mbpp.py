@@ -99,7 +99,7 @@ def execute_py_code(code):
 if __name__ == "__main__":
     api_key = read_config()
     data = read_mbpp(sanitized=False)
-    
+
     print("---- Example from train set ----")
     idx = 0
     split = "train"
