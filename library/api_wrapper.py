@@ -28,7 +28,6 @@ def save_output(code_str, file_name):
         outfile.write(code_str)
 
 
-
 # Read the specified prompt file (.csv)
 # Column 0: Base prompt w/ no COT
 # Column 1: COT-enhanced prompt

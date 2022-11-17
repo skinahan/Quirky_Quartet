@@ -8,3 +8,4 @@ openai_credentials.yaml
 plots
 *.csv
 *plots*
+samples.jsonl

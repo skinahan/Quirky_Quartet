@@ -53,24 +53,33 @@ synthetic_grammar = dict(
 
 ''' This synthetic task is arbitrary, and a lot of the operators could be generalized into a grammar '''
 
-def enumerate(depth=3):
-    ''' Generate without pruning? '''
-    depth -= 1
-    generated = [[el] for el in synthetic_grammar.values()] # depth 1
-    for i in range(depth - 1):
-        generated += [created for created in [compose(el + [new_el])
-                      for new_el in synthetic_grammar.values()]
-                      for el in generated]
-    return generated
-
-def compose(elements, connective='then'):
+def compose(a, b, connective='then'):
     ''' [Element] -> Element '''
-    a, b = elements
     return Element(a.description + ' ' + connective + ' ' + b.description,
                    lambda s : a.rule(b.rule(s)))
 
+def generate(depth=3):
+    ''' Generate without pruning? '''
+    generated = list(synthetic_grammar.values()) # depth 1
+    for i in range(depth - 1):
+        new = [compose(el, new_el) for el in generated
+               for new_el in synthetic_grammar.values()
+               if new_el.description not in el.description]
+        generated += new
+    return generated
+
+import string
+test_cases=dict(
+    lorem='''Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum?''',
+    foxdog='''The quick brown fox jumps over a lazy dog!''',
+    zebra='How quickly daft jumping zebras vex!',
+    punctuation=string.punctuation,
+    hexdigits=string.hexdigits,
+    whitespace=string.whitespace
+    )
+
 def main():
-    for el in enumerate(depth=2):
+    for el in generate(depth=2):
         print(el)
 
 if __name__ == '__main__':
