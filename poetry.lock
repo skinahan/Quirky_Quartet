@@ -1,4 +1,12 @@
 [[package]]
+name = "absl-py"
+version = "1.3.0"
+description = "Abseil Python Common Libraries, see https://github.com/abseil/abseil-py."
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[[package]]
 name = "aiohttp"
 version = "3.8.3"
 description = "Async http client/server framework (asyncio)"
@@ -28,6 +36,17 @@ python-versions = ">=3.6"
 
 [package.dependencies]
 frozenlist = ">=1.1.0"
+
+[[package]]
+name = "astunparse"
+version = "1.6.3"
+description = "An AST unparser for Python"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+six = ">=1.6.1,<2.0"
 
 [[package]]
 name = "async-timeout"
@@ -180,7 +199,7 @@ python-versions = ">=3.7"
 
 [[package]]
 name = "fsspec"
-version = "2022.10.0"
+version = "2022.11.0"
 description = "File-system specification"
 category = "main"
 optional = false
@@ -212,6 +231,14 @@ sftp = ["paramiko"]
 smb = ["smbprotocol"]
 ssh = ["paramiko"]
 tqdm = ["tqdm"]
+
+[[package]]
+name = "gast"
+version = "0.5.3"
+description = "Python AST that abstracts the underlying Python version"
+category = "main"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
 [[package]]
 name = "huggingface-hub"
@@ -265,6 +292,21 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*, 
 
 [package.dependencies]
 dill = ">=0.3.5.1"
+
+[[package]]
+name = "networkx"
+version = "2.8.8"
+description = "Python package for creating and manipulating graphs and networks"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.extras]
+default = ["numpy (>=1.19)", "scipy (>=1.8)", "matplotlib (>=3.4)", "pandas (>=1.3)"]
+developer = ["pre-commit (>=2.20)", "mypy (>=0.982)"]
+doc = ["sphinx (>=5.2)", "pydata-sphinx-theme (>=0.11)", "sphinx-gallery (>=0.11)", "numpydoc (>=1.5)", "pillow (>=9.2)", "nb2plots (>=0.6)", "texext (>=0.6.6)"]
+extra = ["lxml (>=4.6)", "pygraphviz (>=1.9)", "pydot (>=1.4.2)", "sympy (>=1.10)"]
+test = ["pytest (>=7.2)", "pytest-cov (>=4.0)", "codecov (>=2.1)"]
 
 [[package]]
 name = "numpy"
@@ -368,6 +410,14 @@ python-versions = ">=3.6"
 plugins = ["importlib-metadata"]
 
 [[package]]
+name = "pygraphviz"
+version = "1.10"
+description = "Python interface to Graphviz"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[[package]]
 name = "pyparsing"
 version = "3.0.9"
 description = "pyparsing module - Classes and methods to define and execute parsing grammars"
@@ -388,6 +438,22 @@ python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,>=2.7"
 
 [package.dependencies]
 six = ">=1.5"
+
+[[package]]
+name = "python-graphs"
+version = "1.2.3"
+description = "A library for generating graph representations of Python programs."
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+absl-py = "*"
+astunparse = "*"
+gast = "*"
+networkx = "*"
+pygraphviz = "*"
+six = "*"
 
 [[package]]
 name = "pytz"
@@ -623,11 +689,13 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "1.1"
 python-versions = ">3.10,<3.11"
-content-hash = "e4669858694589365efc3942e7d54958117e93757dfce7a3f3c45dc9e9e8fa18"
+content-hash = "277bb24ac602d15b55ec3eec004a52638e23da8c09a255849f120b843f4d5be1"
 
 [metadata.files]
+absl-py = []
 aiohttp = []
 aiosignal = []
+astunparse = []
 async-timeout = []
 attrs = []
 certifi = []
@@ -641,10 +709,12 @@ filelock = []
 fire = []
 frozenlist = []
 fsspec = []
+gast = []
 huggingface-hub = []
 idna = []
 multidict = []
 multiprocess = []
+networkx = []
 numpy = []
 openai = []
 openpyxl = []
@@ -653,8 +723,10 @@ pandas = []
 pandas-stubs = []
 pyarrow = []
 pygments = []
+pygraphviz = []
 pyparsing = []
 python-dateutil = []
+python-graphs = []
 pytz = []
 pyyaml = []
 regex = []

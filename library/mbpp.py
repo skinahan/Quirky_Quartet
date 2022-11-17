@@ -75,9 +75,7 @@ def parse_py_from_codex(codex_out):
     return (True, code)
 
 def execute_py_code(code):
-    """
-    Executes given python code by building and compiling an AST
-    """
+    """ Executes given python code by building and compiling an AST """
     try:
         node = ast.parse(code)
     except SyntaxError:
