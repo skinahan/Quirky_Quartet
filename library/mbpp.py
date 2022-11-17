@@ -1,7 +1,7 @@
 # Module to read MBPP dataset and test prompting techniques
 # using codex
 
-from codex_code_gen import *
+from api_wrapper import *
 
 import re, ast
 from datasets import load_dataset

@@ -68,9 +68,9 @@ def run_codex(api_key, des_prompt):
     openai.api_key = api_key
     response = openai.Completion.create (engine="code-davinci-002",
                     prompt=des_prompt,
-                    temperature=0.3,
+                    temperature=0.5,
                     max_tokens=512,
-                    top_p=1,
+                    top_p=0.9,
                     frequency_penalty=0.7,
                     presence_penalty=0
                     )
