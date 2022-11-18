@@ -87,7 +87,7 @@ def run():
                 'behavior', 'accuracy']
                + list(sorted(test_cases.keys())))
 
-    samples = 10
+    samples = 1 # Since the problem is already very slow
     for depth in range(1, 6):
         data_filename = f'data/synthetic_depth_{depth}.csv'
         n_probs = linecount(data_filename)
@@ -105,7 +105,7 @@ def run():
                             problem_id = int(problem_id)
                             prompt = to_prompt(description, extended=extended)
                             print(f'Prompt: {prompt}')
-                            sleep(3) # Needed for rate-limit on Codex
+                            sleep(4) # Needed for rate-limit on Codex
                             codex_out = run_codex(api_key, prompt)
                             total = prompt + codex_out
                             print(total)
