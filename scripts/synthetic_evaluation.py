@@ -79,7 +79,45 @@ def linecount(filename):
     with open(filename, 'r') as infile:
         return sum(1 for line in infile)
 
+# def rate_limited_codex_call(api_key, prompt):
+#     try:
+#         sleep(6)  # Needed for rate-limit on Codex, generous (10/min)
+#         codex_out = run_codex(api_key, prompt)
+#     except openai.RateLimitError:
+#         sleep(69) # To reset things completely
+#         codex_out = run_codex(api_key, prompt)
+
+def batch_evaluate(prompt_batch, metadata, batch_size, n_samples, api_key):
+    ''' Run codex in batch mode '''
+    result = run_codex(api_key, prompt_batch, batch=True) # Will be an ordered list of prompt + response
+    for i, meta in enumerate(metadata):
+        problem_id, description, md5_hash, *labels = meta
+        for k in n_samples:
+            codex_out = result[i * n_samples + k]
+            behavior, accuracy, outputs = evaluate_output(codex_out, test_inputs, labels)
+            print(behavior, accuracy)
+            yield ([problem_id, description, md5_hash, extended, sample,
+                    behavior, accuracy] + outputs)
+
+def batch_generator(csvreader, description, total, n_samples, batch_size):
+    ''' Generator prompt batches and their metadata '''
+    metadata = []
+    batch    = []
+    for row in track(csvreader, description=description, total=total):
+        problem_id, description, md5_hash, *labels = row
+        problem_id = int(problem_id)
+        for extended in [True, False]:
+            prompt = to_prompt(description, extended=extended)
+            print(f'Prompt: {prompt}')
+            samples = [prompt] * n_samples
+            batch.extend(samples)
+            if len(batch) == batch_size:
+                yield batch, metadata
+
 def run():
+    n_samples  = 10 # Since the problem is already very slow
+    batch_size = 20 # The maximum batch size for 500 tokens & 150,000 tokens / minute
+    # Also, batch size needs to be divisible by the number of samples
     test_inputs = [v for k, v in sorted(test_cases.items(), key=lambda t:t[0])]
     api_key = read_config()
 
@@ -87,7 +125,6 @@ def run():
                 'behavior', 'accuracy']
                + list(sorted(test_cases.keys())))
 
-    samples = 1 # Since the problem is already very slow
     for depth in range(1, 6):
         data_filename = f'data/synthetic_depth_{depth}.csv'
         n_probs = linecount(data_filename)
@@ -98,19 +135,7 @@ def run():
                 writer.writerow(headers)
                 headers = next(reader)
                 description = f'Depth {depth} problems'
-                for row in track(reader, description=description, total=n_probs):
-                    for sample in range(samples):
-                        for extended in [True, False]:
-                            problem_id, description, md5_hash, *labels = row
-                            problem_id = int(problem_id)
-                            prompt = to_prompt(description, extended=extended)
-                            print(f'Prompt: {prompt}')
-                            sleep(4) # Needed for rate-limit on Codex
-                            codex_out = run_codex(api_key, prompt)
-                            total = prompt + codex_out
-                            print(total)
-                            behavior, accuracy, outputs = evaluate_output(total, test_inputs, labels)
-                            print(behavior, accuracy)
-                            writer.writerow([problem_id, description, md5_hash, extended, sample,
-                                             behavior, accuracy]
-                                            + outputs)
+                for batch, metadata in batch_generator(reader, description, n_probs, n_samples, batch_size):
+                    for row in batch_evaluate(batch, metadata, batch_size, n_samples, api_key):
+                        writer.writerow(row)
+                    sleep(69) # For good measure
