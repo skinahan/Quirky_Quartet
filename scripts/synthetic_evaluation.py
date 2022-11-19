@@ -7,6 +7,20 @@ from rich.progress import track
 from copy import copy
 from time import sleep
 
+import contextlib
+import signal
+
+@contextlib.contextmanager
+def time_limit(seconds: float):
+    def signal_handler(signum, frame):
+        raise TimeoutException("Timed out!")
+    signal.setitimer(signal.ITIMER_REAL, seconds)
+    signal.signal(signal.SIGALRM, signal_handler)
+    try:
+        yield
+    finally:
+        signal.setitimer(signal.ITIMER_REAL, 0)
+
 def to_prompt(description, extended=False):
     if extended:
         n_components = description.count(' then ') + 1
@@ -62,7 +76,8 @@ def evaluate_output(codex_output, test_inputs, labels):
         print('Test outputs:')
         outputs = []
         for inp, lbl in zip(test_inputs, labels):
-            out = function(inp)
+            with time_limit(5.):
+                out = function(inp)
             print(f'    {out == lbl:5}: {out}')
             print(lbl)
             if out == lbl:
@@ -123,7 +138,7 @@ def run():
                 'behavior', 'accuracy']
                + list(sorted(filtered_test_cases.keys())))
 
-    for depth in range(1, 2):
+    for depth in range(1, 6):
         data_filename = f'data/synthetic_depth_{depth}.csv'
         n_probs = linecount(data_filename)
         with open(data_filename, 'r') as infile:
