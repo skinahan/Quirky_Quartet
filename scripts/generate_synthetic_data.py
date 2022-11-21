@@ -1,11 +1,11 @@
-from library.openai_synthetic_dataset import generate, test_cases
+from library.openai_synthetic_dataset import generate, test_cases, format_source
 import csv
 from pathlib import Path
 from rich import print
 import hashlib
 
 def run():
-    headers = (['id', 'description', 'md5']
+    headers = (['id', 'description', 'code', 'md5']
                + list(sorted(test_cases.keys())))
     test_inputs = [v for k, v in sorted(test_cases.items(), key=lambda t:t[0])]
 
@@ -18,19 +18,20 @@ def run():
             writer = csv.writer(outfile)
             writer.writerow(headers)
             for program in generate(depth=depth):
-                print(program.description)
-                print()
                 outputs = [program.rule(test_input) for test_input in test_inputs]
                 combined = ''
                 for output in outputs:
-                    print(f'    "{output}"')
+                    # print(f'    "{output}"')
                     combined += output
                 h = hashlib.md5(combined.encode('utf-8')).hexdigest()
-                print(h)
-                print()
                 if h not in seen:
+                    print(program.description)
+                    print(h)
                     count += 1
-                    writer.writerow([count, program.description, h] + outputs)
+                    source = format_source(program)
+                    print('Generated code:')
+                    print(source)
+                    writer.writerow([count, program.description, source, h] + outputs)
                     seen.add(h)
                 else:
                     duplicated += 1
