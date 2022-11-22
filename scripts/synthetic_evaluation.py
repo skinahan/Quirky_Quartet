@@ -100,7 +100,8 @@ def batch_evaluate(prompt_batch, metadata, batch_size, n_samples, api_key, test_
     result = run_codex(api_key, prompt_batch, batch=True) # Will be an ordered list of prompt + response
     print(result)
     for i, meta in enumerate(metadata):
-        extended, problem_id, description, md5_hash, *labels = meta
+        extended, problem_id, description, code, md5_hash, *labels = meta
+        print(code)
         for k in range(n_samples):
             codex_out = result[i * n_samples + k]
             behavior, accuracy, outputs = evaluate_output(codex_out, test_inputs, labels)
@@ -113,7 +114,7 @@ def batch_generator(csvreader, description, total, n_samples, batch_size):
     metadata = []
     batch    = []
     for row in track(csvreader, description=description, total=total):
-        problem_id, description, md5_hash, *labels = row
+        problem_id, description, code, md5_hash, *labels = row
         problem_id = int(problem_id)
         for extended in [True, False]:
             metadata.append([extended] + list(row))
@@ -126,11 +127,11 @@ def batch_generator(csvreader, description, total, n_samples, batch_size):
                 batch    = []
 
 def run():
-    n_samples  = 10 # Since the problem is already very slow
+    n_samples  = 1  # Since the problem is already very slow
     batch_size = 20 # The maximum batch size for 500 tokens & 150,000 tokens / minute
     # Also, batch size needs to be divisible by the number of samples
     filtered_test_cases = copy(test_cases)
-    filtered_test_cases.pop('whitespace') # Seems to be unfairly evaluated
+    # filtered_test_cases.pop('whitespace') # Seems to be unfairly evaluated
     test_inputs = [v for k, v in sorted(filtered_test_cases.items(), key=lambda t:t[0])]
     api_key = read_config()
 
