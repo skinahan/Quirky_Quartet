@@ -1,0 +1,247 @@
+#!/usr/bin/env python
+import sys
+from subprocess import call
+
+BATCH_FILE = 'temp_batch'
+
+SHARED = '''#!/bin/bash
+#SBATCH -p {partition}
+#SBATCH -q {qos}
+#SBATCH -t {days}-{hours:0>2}:{minutes:0>2}:00   # time in d-hh:mm:ss
+#SBATCH -o /scratch/{asurite}/experiments/{name}/%j.out # file to save job's STDOUT (%j = JobId)
+#SBATCH -e /scratch/{asurite}/experiments/{name}/%j.err # file to save job's STDERR (%j = JobId)
+#SBATCH --mail-user={asurite}@asu.edu # Mail-to address
+{mail}
+#SBATCH -N 1 
+#SBATCH -c {cores}
+#SBATCH --job-name={job_name}
+'''
+
+
+GPU = SHARED + '''
+#SBATCH --gres=gpu:{gpus} # Request 1 GPU
+#SBATCH -C {gputype}
+# Cuda library and includes handled naturally:
+
+module load cuda/11.2.0
+module load rclone/1.43
+
+export CUDA_VISIBLE_DEVICES=0
+export TF_CPP_MIN_LOG_LEVEL=0
+export INCLUDEPATH=$INCLUDEPATH:$HOME/cuda/include
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/cuda/lib64
+# export XLA_PYTHON_CLIENT_MEM_FRACTION=.7
+# Turn off jax debug for now
+# export XLA_FLAGS=--xla_dump_to=/scratch/lsaldyt/jax_debug/
+
+echo "Running!\n"
+env
+module list
+nvcc --version
+nvidia-smi
+./run {name} {args}
+'''
+
+CPU = SHARED + '''
+#SBATCH --mem={memory}G
+module load rclone/1.43
+./run {name} {args}'''
+
+# Can be NONE, BEGIN, END, FAIL, REQUEUE, ALL
+QUIET = '''#SBATCH --mail-type=FAIL # Send an e-mail only when a job fails '''
+LOUD  = '''#SBATCH --mail-type=ALL  # Send an e-mail when a job starts, stops, or fails '''
+
+possible = dict(gpu=dict(days=0,
+                         hours=4,
+                         minutes=0,
+                         name='default',
+                         qos='normal',
+                         nodes=1,
+                         gpus=1,
+                         gputype='V100',
+                         cores=40,
+                         partition='htcgpu',
+                         asurite='lsaldyt'),
+                agpu=dict(days=0,
+                         hours=4,
+                         minutes=0,
+                         name='default',
+                         qos='normal',
+                         nodes=1,
+                         gpus=1,
+                         gputype='A100',
+                         cores=56,
+                         partition='htcgpu',
+                         asurite='lsaldyt'),
+                publicgpu=dict(days=7,
+                               hours=0,
+                               minutes=0,
+                               name='default',
+                               qos='wildfire',
+                               nodes=1,
+                               gpus=1,
+                               cores=24,
+                               partition='publicgpu',
+                               asurite='lsaldyt'),
+                parallel=dict(days=7,
+                        hours=0,
+                        minutes=0,
+                        qos='normal',
+                        name='default',
+                        nodes=1,
+                        cores=28,
+                        partition='parallel',
+                        memory=9,
+                        asurite='lsaldyt'),
+                parallelbig=dict(days=7,
+                        hours=0,
+                        minutes=0,
+                        qos='normal',
+                        name='default',
+                        nodes=1,
+                        memory=9,
+                        cores=52,
+                        partition='parallel',
+                        asurite='lsaldyt'),
+                epyc=dict(days=7,
+                        hours=0,
+                        minutes=0,
+                        qos='wildfire',
+                        name='default',
+                        nodes=1,
+                        cores=8,
+                        memory=4,
+                        partition='epyc1',
+                        asurite='lsaldyt'),
+                serialbig=dict(days=7,
+                        hours=0,
+                        minutes=0,
+                        qos='normal',
+                        name='default',
+                        nodes=1,
+                        cores=52,
+                        memory=9,
+                        partition='serial',
+                        asurite='lsaldyt'),
+                serial=dict(days=7,
+                        hours=0,
+                        minutes=0,
+                        qos='normal',
+                        name='default',
+                        nodes=1,
+                        cores=28,
+                        memory=9,
+                        partition='serial',
+                        asurite='lsaldyt'),
+                htc=dict(days=0,
+                         hours=4,
+                         minutes=0,
+                         qos='normal',
+                         name='default',
+                         nodes=1,
+                         cores=4,
+                         memory=4,
+                         partition='htc',
+                         asurite='lsaldyt'),
+                minimal=dict(days=7,
+                        hours=0,
+                        minutes=0,
+                        qos='normal',
+                        name='default',
+                        nodes=1,
+                        cores=1,
+                        memory=9,
+                        partition='serial',
+                        asurite='lsaldyt'),
+                debug=dict(days=0, hours=0, minutes=15, qos='wildfire', nodes='1', cores=24, memory=4, partition='debug', asurite='lsaldyt'),
+                medium=dict(days=7,
+                           hours=0, minutes=0,
+                           name='default',
+                           nodes=1,
+                           cores=1,
+                           qos='normal',
+                           asurite='lsaldyt',
+                           partition='fn2',
+                           memory=30),
+                large=dict(days=7,
+                           hours=0,
+                           minutes=0,
+                           name='default',
+                           nodes=1,
+                           cores=1,
+                           qos='normal',
+                           asurite='lsaldyt',
+                           partition='fn3',
+                           memory=200),
+                half=dict(days=7,
+                           hours=0,
+                           minutes=0,
+                           name='default',
+                           qos='normal',
+                           nodes=1,
+                           cores=8,
+                           partition='fn1',
+                           memory=25,
+                           asurite='lsaldyt'),
+                normal=dict(days=7,
+                           hours=0,
+                           minutes=0,
+                           name='default',
+                           qos='normal',
+                           nodes=1,
+                           cores=8,
+                           partition='fn2',
+                           asurite='lsaldyt',
+                           memory=25),
+                n1=dict(days=7,
+                        hours=0,
+                        minutes=0,
+                        name='default',
+                        qos='normal',
+                        nodes=1,
+                        cores=4,
+                        partition='fn1',
+                        asurite='lsaldyt',
+                        memory=25),
+                opportunistgpu=dict(days=7,
+                                 hours=0,
+                                 minutes=0,
+                                 name='default',
+                                 qos='wildfire',
+                                 gpus=1,
+                                 nodes=1,
+                                 cores=32,
+                                 partition='gpu',
+                                 asurite='lsaldyt',
+                                 memory=0,
+                                 gputype='V100'),
+)
+
+
+def create(name='default', ctype='serial', args=None):
+    job_name = name
+    quiet = False
+    if args is None:
+        args = ''
+    else:
+        if len(args) > 0 and args[-1] == '--quiet':
+            quiet = True
+            args = args[:-1]
+        if len(args) > 1 and args[-2] == '--name':
+            job_name = args[-1]
+            args = args[:-2]
+        args = ' '.join(args)
+    final = possible[ctype]
+    final['name'] = name
+    quiet = QUIET if quiet else LOUD
+    final.update(dict(mail=quiet, job_name=job_name))
+    with open(BATCH_FILE, 'w') as outfile:
+        if 'gpu' in ctype:
+            outfile.write(GPU.format(args=args, **final))
+        else:
+            outfile.write(CPU.format(args=args, **final))
+
+ctype = sys.argv[2] if len(sys.argv) >= 3 else 'serial'
+create(name=sys.argv[1], ctype=ctype, args=sys.argv[3:])
+call('mkdir -p /scratch/lsaldyt/experiments/' + sys.argv[1] + '/', shell=True)
+call(['sbatch', BATCH_FILE])
