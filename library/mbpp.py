@@ -45,14 +45,14 @@ def visualize_mbpp_instance(instance):
             print(instance[k])
         print()
 
-def create_codex_query(text, task=""):
+def create_codex_query(text, task="", prompt=""):
     """
     Given question text from MBPP dataset, create query in proper format for codex
     Set task to explicitly ask for python function (default) or cpp code or anything else
     (hopefully ensures properly formatted responses)
     """
     task = task if task != "" else "Write a python function to solve the above question."
-    query = "Question:\n" + text + "\n"
+    query = (prompt + "\n" if prompt != "" else "") + "Question:\n" + text + "\n"
     query = query + "Task:\n" + task + "\n"
     query = query + "Answer:"
     return query
@@ -86,8 +86,8 @@ def execute_py_code(code, verbose=0):
         if verbose > 0:
             print("Unable to parse code")
         return False
-    obj = compile(node, filename="<ast>", mode="exec")
     try:
+        obj = compile(node, filename="<ast>", mode="exec")
         exec(obj)
     except AssertionError:
         if verbose > 0:
@@ -270,8 +270,11 @@ def eval_codex_out(codex_out, tests, verbose=0):
             break
     return (0 if success else 1), code
 
-def eval_codex(instance, api_key, task="", verbose=0):
-    query = create_codex_query(instance["text"], task=task)
+def eval_codex(instance, api_key, task="", prompt="", verbose=0):
+    if prompt == "":
+        query = create_codex_query(instance["text"], task=task)
+    else:
+        query = create_codex_query(instance["text"], task=task, prompt=prompt)
     codex_out = run_codex(api_key, query)
     tests = [parse_test_asserts(ast.parse(t)) for t in instance["test_list"]]
     status, code = eval_codex_out(codex_out, tests, verbose=verbose)
@@ -289,7 +292,32 @@ def batch_eval_0shot(data, split, api_key, task="", max_n=10, k=1, verbose=0):
         out = []
         for j in range(k):
             print("Trial {0}".format(j))
-            res = eval_codex(data[split][i], api_key, task, verbose)
+            res = eval_codex(data[split][i], api_key, task=task, prompt="", verbose=verbose)
+            out.append(res)
+        results.append(out)
+        status.append([True if res[0] == 0 else False for res in out])
+    return results, status
+
+def create_few_shot_prompt(data, nshot=1, task=""):
+    split = "prompt"
+    nshot = min(nshot, data[split].shape[0])
+    prompt = ""
+    for i in range(nshot):
+        query = create_codex_query(data[split][i]["text"], task=task)
+        prompt = prompt + query + "\n" + data[split][i]["code"] + "\n\n"
+    return prompt
+
+def batch_eval_fewshot(data, split, api_key, task="", nshot=1, max_n=10, k=1, verbose=0):
+    prompt = create_few_shot_prompt(data, nshot, task=task)
+    results = []
+    status = []
+    ex = min(max_n, data[split].shape[0])
+    for i in range(ex):
+        print("Example {0}".format(i))
+        out = []
+        for j in range(k):
+            print("Trial {0}".format(j))
+            res = eval_codex(data[split][i], api_key, task=task, prompt=prompt, verbose=verbose)
             out.append(res)
         results.append(out)
         status.append([True if res[0] == 0 else False for res in out])
@@ -303,4 +331,5 @@ if __name__ == "__main__":
     data = read_mbpp(sanitized=False)
     # mbpp_play_demo("train", 0)
     task = "Write a python function to solve the above question. No additional comments and docstrings are needed."
-    results, status = batch_eval_0shot(data, "train", api_key, task, max_n=10, k=5, verbose=0)
+    # results, status = batch_eval_0shot(data, "train", api_key, task, max_n=10, k=5, verbose=0)
+    results, status = batch_eval_fewshot(data, "train", api_key, task, nshot=10, max_n=10, k=5, verbose=0)
