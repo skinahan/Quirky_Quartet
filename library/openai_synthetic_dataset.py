@@ -70,15 +70,19 @@ synthetic_grammar = dict(
         ))
 
 
-synthetic_grammar = {k : Element(e.description, e.rule, inspect.getsource(e.rule).strip())
+synthetic_grammar = {k : Element(e.description, e.rule, inspect.getsource(e.rule).strip().replace('lambda s :', 's = '))
                      for k, e in synthetic_grammar.items()}
 
 ''' This synthetic task is arbitrary, and a lot of the operators could be generalized into a grammar '''
 
+def format_source(element):
+    return f'def process(s):\n    {element.source}'
+
 def compose(a, b, connective='then'):
     ''' [Element] -> Element '''
     return Element(a.description + ' ' + connective + ' ' + b.description,
-                   lambda s : b.rule(a.rule(s)))
+                   lambda s : b.rule(a.rule(s)),
+                   a.source + '\n    ' + b.source)
 
 def generate(depth=3):
     ''' Generate without pruning? '''
@@ -97,7 +101,7 @@ test_cases=dict(
     zebra='How quickly daft jumping zebras vex!',
     punctuation=string.punctuation,
     hexdigits=string.hexdigits,
-    whitespace=string.whitespace
+    # whitespace=string.whitespace
     )
 
 def main():

@@ -2,9 +2,36 @@ import csv
 from library.api_wrapper import *
 from library.openai_synthetic_dataset import test_cases
 import ast
+from rich import print
+from rich.progress import track
+from copy import copy
+from time import sleep
 
-def to_prompt(description):
-    return f'"""Write a python function to {description}"""\ndef'
+import contextlib
+import signal
+
+@contextlib.contextmanager
+def time_limit(seconds: float):
+    def signal_handler(signum, frame):
+        raise TimeoutException("Timed out!")
+    signal.setitimer(signal.ITIMER_REAL, seconds)
+    signal.signal(signal.SIGALRM, signal_handler)
+    try:
+        yield
+    finally:
+        signal.setitimer(signal.ITIMER_REAL, 0)
+
+def to_prompt(description, extended=False):
+    if extended:
+        n_components = description.count(' then ') + 1
+        components = description.split(' then ')
+        component_list = ''
+        for c, component in enumerate(components):
+            component_list += f'{c+1}. {component}\n'
+
+        return f'"""Write a python function with {n_components} components. These components should be composed step by step:\n{component_list}"""\ndef'
+    else:
+        return f'"""Write a python function to {description}"""\ndef'
 
 def parse_output(output):
     ''' Parse Codex output:
@@ -14,7 +41,7 @@ def parse_output(output):
     kept = ''
     indented = False
     for i, line in enumerate(output.splitlines()):
-        print(f'{i:3}: {line}')
+        # print(f'{i:3}: {line}')
         if line.startswith('    '):
             indented = True
             kept += line + '\n'
@@ -23,9 +50,10 @@ def parse_output(output):
                 break # Stop saving input
             else:
                 kept += line + '\n'
-    print('Kept:')
-    print(kept)
-    print('(Done)')
+    print('(Parsed code):')
+    for line in kept.splitlines():
+        print(f'    {line}')
+    print('(End of parsed code)')
     node = ast.parse(kept)
     assert isinstance(node, ast.Module)
     for element in node.body:
@@ -45,9 +73,13 @@ def evaluate_output(codex_output, test_inputs, labels):
     try:
         function = parse_output(codex_output)
         correct = 0
+        print('Test outputs:')
         outputs = []
         for inp, lbl in zip(test_inputs, labels):
-            out = function(inp)
+            with time_limit(5.):
+                out = function(inp)
+            print(f'    {out == lbl:5}: {out}')
+            print(lbl)
             if out == lbl:
                 correct += 1
             outputs.append(out)
@@ -59,30 +91,65 @@ def evaluate_output(codex_output, test_inputs, labels):
         outputs = [''] * len(labels)
     return behavior, accuracy, outputs
 
+def linecount(filename):
+    with open(filename, 'r') as infile:
+        return sum(1 for line in infile)
+
+def batch_evaluate(prompt_batch, metadata, batch_size, n_samples, api_key, test_inputs):
+    ''' Run codex in batch mode '''
+    result = run_codex(api_key, prompt_batch, batch=True) # Will be an ordered list of prompt + response
+    print(result)
+    for i, meta in enumerate(metadata):
+        extended, problem_id, description, code, md5_hash, *labels = meta
+        print(code)
+        for k in range(n_samples):
+            codex_out = result[i * n_samples + k]
+            behavior, accuracy, outputs = evaluate_output(codex_out, test_inputs, labels)
+            print(behavior, accuracy)
+            yield ([problem_id, description, md5_hash, extended, k,
+                    behavior, accuracy] + outputs)
+
+def batch_generator(csvreader, description, total, n_samples, batch_size):
+    ''' Generator prompt batches and their metadata '''
+    metadata = []
+    batch    = []
+    for row in track(csvreader, description=description, total=total):
+        problem_id, description, code, md5_hash, *labels = row
+        problem_id = int(problem_id)
+        for extended in [True, False]:
+            metadata.append([extended] + list(row))
+            prompt = to_prompt(description, extended=extended)
+            samples = [prompt] * n_samples
+            batch.extend(samples)
+            if len(batch) == batch_size:
+                yield batch, metadata
+                metadata = []
+                batch    = []
+
 def run():
-    test_inputs = [v for k, v in sorted(test_cases.items(), key=lambda t:t[0])]
+    n_samples  = 1  # Since the problem is already very slow
+    batch_size = 20 # The maximum batch size for 500 tokens & 150,000 tokens / minute
+    # Also, batch size needs to be divisible by the number of samples
+    filtered_test_cases = copy(test_cases)
+    # filtered_test_cases.pop('whitespace') # Seems to be unfairly evaluated
+    test_inputs = [v for k, v in sorted(filtered_test_cases.items(), key=lambda t:t[0])]
     api_key = read_config()
 
-    headers = (['id', 'description', 'md5', 'behavior', 'accuracy']
-               + list(sorted(test_cases.keys())))
+    headers = (['id', 'description', 'md5', 'extended', 'sample',
+                'behavior', 'accuracy']
+               + list(sorted(filtered_test_cases.keys())))
 
-    samples = 10
     for depth in range(1, 6):
-        with open(f'data/synthetic_depth_{depth}.csv', 'r') as infile:
+        data_filename = f'data/synthetic_depth_{depth}.csv'
+        n_probs = linecount(data_filename)
+        with open(data_filename, 'r') as infile:
             with open(f'results/synthetic_depth_{depth}.csv', 'w') as outfile:
                 reader = csv.reader(infile)
                 writer = csv.writer(outfile)
                 writer.writerow(headers)
                 headers = next(reader)
-                for row in reader:
-                    problem_id, description, md5_hash, *labels = row
-                    problem_id = int(problem_id)
-                    print(description)
-                    prompt = to_prompt(description)
-                    codex_out = run_codex(api_key, prompt)
-                    total = prompt + codex_out
-                    print(total)
-                    behavior, accuracy, outputs = evaluate_output(total, test_inputs, labels)
-                    print(behavior, accuracy)
-                    writer.writerow([problem_id, description, md5_hash, behavior, accuracy]
-                                    + outputs)
+                description = f'Depth {depth} problems'
+                for batch, metadata in batch_generator(reader, description, n_probs, n_samples, batch_size):
+                    for row in batch_evaluate(batch, metadata, batch_size, n_samples, api_key, test_inputs):
+                        writer.writerow(row)
+                    sleep(69) # For good measure
