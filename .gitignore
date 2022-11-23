@@ -1,4 +1,5 @@
 __pycache__
+*.vscode
 database
 *.ipynb_checkpoints*
 xml_article_data/
