@@ -21,17 +21,22 @@ def time_limit(seconds: float):
     finally:
         signal.setitimer(signal.ITIMER_REAL, 0)
 
-def to_prompt(description, extended=False):
-    if extended:
-        n_components = description.count(' then ') + 1
-        components = description.split(' then ')
-        component_list = ''
-        for c, component in enumerate(components):
-            component_list += f'{c+1}. {component}\n'
-
-        return f'"""Write a python function with {n_components} components. These components should be composed step by step:\n{component_list}"""\ndef'
-    else:
-        return f'"""Write a python function to {description}"""\ndef'
+def to_prompt(description, prompt_type='Default'):
+    ''' Create default, chain of thought, or least-to-most prompts '''
+    match prompt_type:
+        case 'Default':
+            return f'"""Write a python function to {description}"""\ndef'
+        case extended:
+            n_components = description.count(' then ') + 1
+            components = description.split(' then ')
+            component_list = ''
+            for c, component in enumerate(components):
+                component_list += f'{c+1}. {component}\n'
+            if 'Least' in extended:
+                fstr = f'"""Write a python function with {n_components} components. These components should be composed step by step:\n{component_list}"""\ndef'
+            else:
+                fstr = f'"""Write a python function to:\n{component_list}'
+            return fstr
 
 def parse_output(output):
     ''' Parse Codex output:
@@ -116,9 +121,9 @@ def batch_generator(csvreader, description, total, n_samples, batch_size):
     for row in track(csvreader, description=description, total=total):
         problem_id, description, code, md5_hash, *labels = row
         problem_id = int(problem_id)
-        for extended in [True, False]:
+        for prompt_type in ['Default', 'Least-to-Most']:
             metadata.append([extended] + list(row))
-            prompt = to_prompt(description, extended=extended)
+            prompt = to_prompt(description, prompt_type=prompt_type)
             samples = [prompt] * n_samples
             batch.extend(samples)
             if len(batch) == batch_size:
