@@ -3,8 +3,9 @@
 
 from api_wrapper import *
 
-import re, ast
-from datasets import load_dataset
+import re, ast, time, json, pickle
+import numpy as np
+from datasets import load_dataset, Dataset
 
 def read_mbpp(sanitized=False):
     """
@@ -271,6 +272,7 @@ def eval_codex_out(codex_out, tests, verbose=0):
     return (0 if success else 1), code
 
 def eval_codex(instance, api_key, task="", prompt="", verbose=0):
+    """ Run and evaluate codex end-to-end """
     if prompt == "":
         query = create_codex_query(instance["text"], task=task)
     else:
@@ -283,53 +285,88 @@ def eval_codex(instance, api_key, task="", prompt="", verbose=0):
             print("Success")
     return status, query, codex_out, code
 
-def batch_eval_0shot(data, split, api_key, task="", max_n=10, k=1, verbose=0):
+def batch_eval_0shot(data, api_key, task="", k=1, verbose=0):
+    """ Run and evaluate codex on a batch of data in 0-shot setting """
     results = []
     status = []
-    ex = min(max_n, data[split].shape[0])
-    for i in range(ex):
+    for i in range(data.shape[0]):
         print("Example {0}".format(i))
         out = []
         for j in range(k):
             print("Trial {0}".format(j))
-            res = eval_codex(data[split][i], api_key, task=task, prompt="", verbose=verbose)
+            res = eval_codex(data[i], api_key, task=task, prompt="", verbose=verbose)
             out.append(res)
         results.append(out)
         status.append([True if res[0] == 0 else False for res in out])
     return results, status
 
 def create_few_shot_prompt(data, nshot=1, task=""):
-    split = "prompt"
-    nshot = min(nshot, data[split].shape[0])
+    """ Create few shot prompt using prompt split from MBPP dataset """
+    nshot = min(nshot, data.shape[0])
     prompt = ""
     for i in range(nshot):
-        query = create_codex_query(data[split][i]["text"], task=task)
-        prompt = prompt + query + "\n" + data[split][i]["code"] + "\n\n"
+        query = create_codex_query(data[i]["text"], task=task)
+        prompt = prompt + query + "\n" + data[i]["code"] + "\n\n"
     return prompt
 
-def batch_eval_fewshot(data, split, api_key, task="", nshot=1, max_n=10, k=1, verbose=0):
-    prompt = create_few_shot_prompt(data, nshot, task=task)
+def batch_eval_fewshot(data, prompt_data, api_key, task="", nshot=1, k=1, verbose=0):
+    """ Run and evaluate codex on a batch of data in few-shot setting """
+    prompt = create_few_shot_prompt(prompt_data, nshot, task=task)
     results = []
     status = []
-    ex = min(max_n, data[split].shape[0])
-    for i in range(ex):
+    for i in range(data.shape[0]):
         print("Example {0}".format(i))
         out = []
         for j in range(k):
             print("Trial {0}".format(j))
-            res = eval_codex(data[split][i], api_key, task=task, prompt=prompt, verbose=verbose)
+            res = eval_codex(data[i], api_key, task=task, prompt=prompt, verbose=verbose)
             out.append(res)
         results.append(out)
         status.append([True if res[0] == 0 else False for res in out])
     return results, status
 
-# Todo:
-# Get function names from AST
-# Modify assert statements to use function names and definition as given in output
+def complete_eval_setup(data, split, batch, api_key, task="", nshot=1, k=1, verbose=0):
+    """ Run and evaluate codex on a batch of data and save results in JSON """
+    batch_size = 100
+    mini_batch_size = 20
+    if batch * batch_size > data[split].shape[0]:
+        print("Invalid batch")
+        return [], []
+    batch_data = Dataset.from_dict(data[split][batch * batch_size : min((batch+1) * batch_size, data[split].shape[0])])
+    num_mini_batches = batch_data.shape[0] // mini_batch_size
+    for i in range(num_mini_batches):
+        mini_batch = Dataset.from_dict(batch_data[i * mini_batch_size : min((i+1) * mini_batch_size, batch_data.shape[0])])
+        if nshot > 0:
+            results, status = batch_eval_fewshot(mini_batch, data["prompt"], api_key, task=task, nshot=nshot, k=k, verbose=verbose)
+        else:
+            results, status = batch_eval_0shot(mini_batch, api_key, task=task, k=k, verbose=verbose)
+        status = np.any(status, axis=1)
+        for idx in range(len(results)):
+            query = results[idx][0][1]
+            d = {}
+            d["query"] = query
+            d["success"] = 1 if status[idx] else 0
+            for idy in range(k):
+                d[idy] = {}
+                d[idy]["status"] = results[idx][idy][0]
+                d[idy]["codex_out"] = results[idx][idy][2]
+                d[idy]["clean_code"] = results[idx][idy][3]
+            data_id = batch * batch_size + i * mini_batch_size + idx
+            save(d, "results/mbpp/{0}_{1}_{2}_no_prompt.json".format(split, data_id, nshot), is_json=True, is_pickle=False)
+        time.sleep(60)
+
+def save(obj, fname, is_json=True, is_pickle=False):
+    if is_json:
+        with open(fname, "w") as fp:
+            json.dump(obj, fp, indent=4)
+    elif is_pickle:
+        pass
+
 if __name__ == "__main__":
     api_key = read_config()
     data = read_mbpp(sanitized=False)
     # mbpp_play_demo("train", 0)
     task = "Write a python function to solve the above question. No additional comments and docstrings are needed."
     # results, status = batch_eval_0shot(data, "train", api_key, task, max_n=10, k=5, verbose=0)
-    results, status = batch_eval_fewshot(data, "train", api_key, task, nshot=10, max_n=10, k=5, verbose=0)
+    # results, status = batch_eval_fewshot(data["train"], data["prompt"], api_key, task, nshot=10, max_n=10, k=5, verbose=0)
+    complete_eval_setup(data, "train", 0, api_key, task=task, nshot=5, k=5, verbose=0)
