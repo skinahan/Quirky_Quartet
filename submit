@@ -23,7 +23,7 @@ GPU = SHARED + '''
 #SBATCH -C {gputype}
 # Cuda library and includes handled naturally:
 
-module load cuda/11.2.0
+module load cuda/11.3.0
 module load rclone/1.43
 
 export CUDA_VISIBLE_DEVICES=0
