@@ -70,7 +70,9 @@ def tune_model(dataset, preprocess, name='t5_tuning'):
 
     trainer_kwargs = dict(default_root_dir=f'{name}_checkpoints',
                           callbacks=[early_stop_callback, lr_monitor,
-                                     CheckpointEveryNSteps(save_step_frequency=1)],
+                                     # Nice, but uses too much disk space :(
+                                     # CheckpointEveryNSteps(save_step_frequency=1)
+                                     ],
                           logger=logger,
                           log_every_n_steps=1)
     # use_gpu = True
