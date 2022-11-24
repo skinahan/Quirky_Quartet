@@ -101,3 +101,10 @@ alias pip=pip3.10
 ```  
 Then, install this package normally, starting with `pip install poetry`.
 
+
+To setup git with tokens on Agave, obtain a token from GitHub, and use:
+``` bash
+git remote remove origin
+git remote add origin https://[USERNAME]:[NEW TOKEN]@github.com/[USERNAME]/[REPO].git
+```
+
