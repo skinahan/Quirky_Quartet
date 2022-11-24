@@ -59,7 +59,7 @@ You can read more about why this is done/needed (and how) at [this](https://stac
 First, login to the ASU VPN (or connect to ASU wifi), and then ssh into user@agave.asu.edu.
 It is helpful to start an interactive session on a CPU cluster so that compiling is faster: `interactive -p htc -q normal -t 120`.  
 
-First, load the gcc module using agave's software system:  
+First, load the gcc module using agave's software system (this may be necessary when doing `poetry update` as well):  
 `module load gcc/11.2.0`  
 
 Before installing Python, it is necessary to install OpenSSL 1.1.1, which Python 3.10 depends on. This needs to be done manually because admin access isn't available on Agave, and their OpenSSL version is 1.0.1:  
