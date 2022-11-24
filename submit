@@ -23,11 +23,13 @@ GPU = SHARED + '''
 #SBATCH -C {gputype}
 # Cuda library and includes handled naturally:
 
-module load cuda/11.3.0
+module load cuda/11.6.0
 module load rclone/1.43
+module load blas/3.7.0
+module load OpenBLAS/0.3.19
 
-export CUDA_VISIBLE_DEVICES=0
-export TF_CPP_MIN_LOG_LEVEL=0
+# export CUDA_VISIBLE_DEVICES=0
+# export TF_CPP_MIN_LOG_LEVEL=0
 export INCLUDEPATH=$INCLUDEPATH:$HOME/cuda/include
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/cuda/lib64
 # export XLA_PYTHON_CLIENT_MEM_FRACTION=.7
