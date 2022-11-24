@@ -5,7 +5,7 @@ import pytorch_lightning as pl
 # https://colab.research.google.com/github/NielsRogge/Transformers-Tutorials/blob/master/T5/Fine_tune_CodeT5_for_generating_docstrings_from_Ruby_code.ipynb
 
 class CodeT5(pl.LightningModule):
-    def __init__(self, train_dataloader, val_dataloader, test_dataloader, lr=5e-5, num_train_epochs=15,
+    def __init__(self, train_dataloader, val_dataloader=None, test_dataloader=None, lr=5e-5, num_train_epochs=15,
                  warmup_steps=1000):
         super().__init__()
         self.model = T5ForConditionalGeneration.from_pretrained("Salesforce/codet5-base")

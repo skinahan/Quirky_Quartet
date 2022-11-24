@@ -9,19 +9,47 @@ from transformers import T5ForConditionalGeneration, AdamW, get_linear_schedule_
 from pathlib import Path
 
 from .t5_model import CodeT5
+from .prompts  import to_prompt
+
+def process(descriptions, source_code_list, prompt_type='Default'):
+    prompts = [to_prompt(description, prompt_type=prompt_type)
+               for description in descriptions]
+    return postprocess(source_code_list, prompts)
+
+def postprocess(prompts, source_code_list, tokenizer_model='Salesforce/codet5-base'):
+    max_input_length = 256
+    max_target_length = 128
+    tokenizer = RobertaTokenizer.from_pretrained(tokenizer_model)
+
+    model_inputs = tokenizer(prompts, max_length=max_input_length, padding="max_length", truncation=True)
+
+    # encode the code responses
+    labels = tokenizer(source_code_list, max_length=max_target_length, padding="max_length", truncation=True).input_ids
+
+    # important: we need to replace the index of the padding tokens by -100
+    # such that they are not taken into account by the CrossEntropyLoss
+    labels_with_ignore_index = []
+    for labels_example in labels:
+        labels_example = [label if label != 0 else -100 for label in labels_example]
+        labels_with_ignore_index.append(labels_example)
+
+    model_inputs['labels'] = labels_with_ignore_index
+    return model_inputs
 
 def tune_model(dataset, preprocess, name='t5_tuning'):
     dataset = dataset.map(preprocess, batched=True)
     dataset.set_format(type="torch", columns=['input_ids', 'attention_mask', 'labels'])
     train_dataloader = DataLoader(dataset['train'], shuffle=True, batch_size=8)
-    valid_dataloader = DataLoader(dataset['validation'], batch_size=4)
-    test_dataloader = DataLoader(dataset['test'], batch_size=4)
+    if 'validation' in dataset:
+        valid_dataloader = DataLoader(dataset['validation'], batch_size=4)
+    else:
+        valid_dataloader = None
+    if 'test' in dataset:
+        test_dataloader  = DataLoader(dataset['test'], batch_size=4)
+    else:
+        test_dataloader = None
     batch = next(iter(train_dataloader))
     print(batch.keys())
-    tokenizer = RobertaTokenizer.from_pretrained("Salesforce/codet5-base")
-    tokenizer.decode(batch['input_ids'][0])
-    labels = batch['labels'][0]
-    tokenizer.decode([label for label in labels if label != -100])
     model = CodeT5(train_dataloader, valid_dataloader, test_dataloader)
     early_stop_callback = EarlyStopping(
         monitor='validation_loss',
@@ -45,15 +73,19 @@ def tune_model(dataset, preprocess, name='t5_tuning'):
         trainer = Trainer(accelerator='cpu', **trainer_kwargs)
     trainer.fit(model)
 
-    save_directory = Path(f'{name}/pretrained')
-    save_directory.mkdir(exist_ok=True)
+    save_directory = Path(f'{name}/pretrained/')
+    save_directory.mkdir(exist_ok=True, parents=True)
 
     model.model.save_pretrained(save_directory)
 
-def test_model(dataset):
+def test_model(dataset, name='t5_tuning'):
+    save_directory = Path(f'{name}/pretrained/')
     model = T5ForConditionalGeneration.from_pretrained(save_directory)
+    tokenizer = RobertaTokenizer.from_pretrained('Salesforce/codet5-base')
+    # tokenizer.decode(batch['input_ids'][0])
+    labels = batch['labels'][0]
+    # tokenizer.decode([label for label in labels if label != -100])
     test_example = dataset['test'][2]
-    print("Code:", test_example['code'])
     # prepare for the model
     input_ids = tokenizer(test_example['docstring'], return_tensors='pt').input_ids
     # generate
