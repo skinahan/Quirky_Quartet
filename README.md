@@ -52,7 +52,7 @@ Which will execute the command specified by `CMD` in `Dockerfile`, by default `m
 
 ### Agave Supercomputing Setup
 
-To setup Python 3.10 on Agave, it needs to be compiled from scratch, which is less daunting than it seems. There is [good documentation](https://asurc.atlassian.net/wiki/spaces/RC/overview) on various aspects of Agave.
+To setup Python 3.10 on Agave, it needs to be compiled from scratch, which is less daunting than it seems. There is [good documentation](https://asurc.atlassian.net/wiki/spaces/RC/overview) on various aspects of Agave. In particulary, the [GPU](https://asurc.atlassian.net/wiki/spaces/RC/pages/45678646/Using+Graphics+Processing+Units+GPUs) documentation is helpful.  
 Also, it is necessary to compile OpenSSL from scratch.
 You can read more about why this is done/needed (and how) at [this](https://stackoverflow.com/questions/5937337/building-python-with-ssl-support-in-non-standard-location) stackoverflow post.  
 

@@ -6,7 +6,7 @@ authors = ["LSaldyt <lucassaldyt@gmail.com>"]
 license = "MIT"
 
 [tool.poetry.dependencies]
-python = ">3.10,<3.11"
+python = ">=3.10,<3.11"
 openai = "^0.24.0"
 PyYAML = "^6.0"
 rich = "^12.6.0"
