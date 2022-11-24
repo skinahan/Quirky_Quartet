@@ -17,6 +17,7 @@ datasets = "^2.6.1"
 transformers = "^4.24.0"
 python-graphs = "^1.2.3"
 seaborn = "^0.12.1"
+pytorch-lightning = "^1.8.3"
 
 [tool.poetry.dev-dependencies]
 

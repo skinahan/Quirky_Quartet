@@ -9,3 +9,4 @@ plots
 *.csv
 *plots*
 samples.jsonl
+logs
