@@ -8,11 +8,12 @@ class CodeT5(pl.LightningModule):
     def __init__(self, train_dataloader, val_dataloader=None, test_dataloader=None, lr=5e-5, num_train_epochs=15,
                  warmup_steps=1000):
         super().__init__()
-        self.model = T5ForConditionalGeneration.from_pretrained("Salesforce/codet5-base")
+        self.model = T5ForConditionalGeneration.from_pretrained('Salesforce/codet5-small')
         self.save_hyperparameters()
         self.training_dataloader = train_dataloader
         self.valid_dataloader = val_dataloader
         self.testing_dataloader = test_dataloader
+        self.log('initialized', -1)
 
     def forward(self, input_ids, attention_mask, labels=None):
         outputs = self.model(input_ids=input_ids, attention_mask=attention_mask, labels=labels)
@@ -26,21 +27,18 @@ class CodeT5(pl.LightningModule):
 
     def training_step(self, batch, batch_idx):
         loss = self.common_step(batch, batch_idx)
-        # logs metrics for each training_step,
-        # and the average across the epoch
-        self.log("training_loss", loss)
+        self.log('training_loss', loss, on_step=True)
 
         return loss
 
     def validation_step(self, batch, batch_idx):
         loss = self.common_step(batch, batch_idx)
-        self.log("validation_loss", loss, on_epoch=True)
+        self.log('validation_loss', loss, on_epoch=True)
 
         return loss
 
     def test_step(self, batch, batch_idx):
         loss = self.common_step(batch, batch_idx)
-
         return loss
 
     def configure_optimizers(self):

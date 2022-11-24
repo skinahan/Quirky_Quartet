@@ -10,6 +10,7 @@ from pathlib import Path
 
 from .t5_model import CodeT5
 from .prompts  import to_prompt
+from .checkpointer import *
 
 def process(descriptions, source_code_list, prompt_type='Default'):
     prompts = [to_prompt(description, prompt_type=prompt_type)
@@ -39,13 +40,18 @@ def postprocess(prompts, source_code_list, tokenizer_model='Salesforce/codet5-ba
 def tune_model(dataset, preprocess, name='t5_tuning'):
     dataset = dataset.map(preprocess, batched=True)
     dataset.set_format(type="torch", columns=['input_ids', 'attention_mask', 'labels'])
-    train_dataloader = DataLoader(dataset['train'], shuffle=True, batch_size=8)
+    if 'train' in dataset:
+        train_dataloader = DataLoader(dataset['train'], shuffle=True, batch_size=8,
+                                      num_workers=4)
+    else:
+        train_dataloader = DataLoader(dataset, shuffle=True, batch_size=8,
+                                      num_workers=4)
     if 'validation' in dataset:
-        valid_dataloader = DataLoader(dataset['validation'], batch_size=4)
+        valid_dataloader = DataLoader(dataset['validation'], batch_size=4, num_workers=4)
     else:
         valid_dataloader = None
     if 'test' in dataset:
-        test_dataloader  = DataLoader(dataset['test'], batch_size=4)
+        test_dataloader  = DataLoader(dataset['test'], batch_size=4, num_workers=4)
     else:
         test_dataloader = None
     batch = next(iter(train_dataloader))
@@ -59,12 +65,14 @@ def tune_model(dataset, preprocess, name='t5_tuning'):
         mode='min'
     )
     lr_monitor = LearningRateMonitor(logging_interval='step')
-    logger = CSVLogger('logs', name=name)
+    logger = CSVLogger('csv_data', name=name, flush_logs_every_n_steps=1)
     print(logger)
 
     trainer_kwargs = dict(default_root_dir=f'{name}_checkpoints',
-                          callbacks=[early_stop_callback, lr_monitor],
-                          logger=[logger])
+                          callbacks=[early_stop_callback, lr_monitor,
+                                     CheckpointEveryNSteps(save_step_frequency=1)],
+                          logger=logger,
+                          log_every_n_steps=1)
     # use_gpu = True
     use_gpu = False
     if use_gpu:
@@ -83,7 +91,6 @@ def test_model(dataset, name='t5_tuning'):
     model = T5ForConditionalGeneration.from_pretrained(save_directory)
     tokenizer = RobertaTokenizer.from_pretrained('Salesforce/codet5-base')
     # tokenizer.decode(batch['input_ids'][0])
-    labels = batch['labels'][0]
     # tokenizer.decode([label for label in labels if label != -100])
     test_example = dataset['test'][2]
     # prepare for the model

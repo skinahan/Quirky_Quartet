@@ -7,7 +7,7 @@ def process_synthetic(batch, prompt_type='Default'):
 
 def make_dataset(max_depth=5, min_depth=1):
     data_files = [f'synthetic_depth_{d}.csv' for d in range(min_depth, max_depth + 1)]
-    return load_dataset('data/', data_files=data_files)
+    return load_dataset('data/', data_files=data_files, split='train[:10]')
 
 def run():
     prompt_type = 'Least-to-Most'
