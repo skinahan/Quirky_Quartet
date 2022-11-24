@@ -50,3 +50,54 @@ Once the image is built successfully, the project can be run with:
 `docker run codex_codegen:latest`  
 Which will execute the command specified by `CMD` in `Dockerfile`, by default `main.py`  
 
+### Agave Supercomputing Setup
+
+To setup Python 3.10 on Agave, it needs to be compiled from scratch, which is less daunting than it seems. There is [good documentation](https://asurc.atlassian.net/wiki/spaces/RC/overview) on various aspects of Agave.
+Also, it is necessary to compile OpenSSL from scratch.
+You can read more about why this is done/needed (and how) at [this](https://stackoverflow.com/questions/5937337/building-python-with-ssl-support-in-non-standard-location) stackoverflow post.  
+
+First, login to the ASU VPN (or connect to ASU wifi), and then ssh into user@agave.asu.edu.
+It is helpful to start an interactive session on a CPU cluster so that compiling is faster: `interactive -p htc -q normal -t 120`.  
+
+First, load the gcc module using agave's software system:  
+`module load gcc/11.2.0`  
+
+Before installing Python, it is necessary to install OpenSSL 1.1.1, which Python 3.10 depends on. This needs to be done manually because admin access isn't available on Agave, and their OpenSSL version is 1.0.1:  
+``` bash
+mkdir openssl_111
+wget https://www.openssl.org/source/openssl-1.1.1q.tar.gz
+tar -xzvf openssl-1.1.1q.tar.gz
+cd openssl-1.1.1q
+./config --prefix=$HOME/openssl_111 --openssldir=$HOME/openssl_111/ssl
+make -j 24
+make test
+make install
+cd ..
+```
+
+Once the session is started, make a directory for the python executables, and then clone the cpython repository:
+``` bash
+mkdir python3.10
+git clone https://github.com/python/cpython/
+cd cpython
+git checkout 3.10
+```  
+Importantly, the `./configure` step needs to enable optimizations and point to the directory we created:  
+`CFLAGS="-I/home/username/openssl_111/include/" LDFLAGS="${LDFLAGS} -Wl,-rpath=/home/username/openssl_111/lib64" ./configure --prefix=$HOME/python3.10 --enable-optimizations --with-openssl=$HOME/openssl_111/`
+After this is done, we can compile like normal, except that the install is done in our local directory.
+``` bash
+make -j 8
+make -j 8 test
+make install
+```
+If the tests fail, it is likely because of the OpenSSL library. You might see a message like "Could not build the ssl module!  Python requires a OpenSSL 1.1.1 or newer," in the log. If this is the case, check the linked stackoverflow about this, and follow the last answer (most recent). You can test that Python is successfully linked against OpenSSL by running `./python` and trying to `import ssl`.
+
+To setup your path correctly, use these commands (potentially in `~/.bash_profile`):  
+``` bash
+export PATH=$HOME/python3.10/bin/:$PATH
+alias python=python3.10
+export PYTHONPATH=$HOME/python3.10
+alias pip=pip3.10
+```  
+Then, install this package normally, starting with `pip install poetry`.
+
