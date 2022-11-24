@@ -6,9 +6,12 @@ import pytorch_lightning as pl
 
 class CodeT5(pl.LightningModule):
     def __init__(self, train_dataloader, val_dataloader=None, test_dataloader=None, lr=5e-5, num_train_epochs=15,
-                 warmup_steps=1000):
+                 warmup_steps=1000, freeze=True):
         super().__init__()
         self.model = T5ForConditionalGeneration.from_pretrained('Salesforce/codet5-small')
+        if freeze:
+            for param in model.base_model.parameters():
+                param.requires_grad = False
         self.save_hyperparameters()
         self.training_dataloader = train_dataloader
         self.valid_dataloader = val_dataloader

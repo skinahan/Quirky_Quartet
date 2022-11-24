@@ -38,7 +38,7 @@ def postprocess(prompts, source_code_list, tokenizer_model='Salesforce/codet5-ba
     return model_inputs
 
 def tune_model(dataset, preprocess, name='t5_tuning', prefix_dir=''):
-    dataset = dataset.map(preprocess, batched=True)
+    dataset = dataset.map(preprocess, batched=True, freeze=True)
     dataset.set_format(type="torch", columns=['input_ids', 'attention_mask', 'labels'])
     if 'train' in dataset:
         train_dataloader = DataLoader(dataset['train'], shuffle=True, batch_size=8,
@@ -58,7 +58,7 @@ def tune_model(dataset, preprocess, name='t5_tuning', prefix_dir=''):
         print(f'No test data provided!!')
     batch = next(iter(train_dataloader))
     print(batch.keys())
-    model = CodeT5(train_dataloader, valid_dataloader, test_dataloader)
+    model = CodeT5(train_dataloader, valid_dataloader, test_dataloader, freeze=freeze)
     early_stop_callback = EarlyStopping(
         monitor='validation_loss',
         patience=3,

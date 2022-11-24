@@ -15,6 +15,7 @@ def run():
     restricted = make_dataset(min_depth=1, max_depth=4)
     generalize = make_dataset(min_depth=5, max_depth=5)
     tune_model(restricted, partial(process_synthetic, prompt_type=prompt_type),
-               name='synthetic', prefix_dir='/scratch/lsaldyt/experiments/')
+               name='synthetic', prefix_dir='/scratch/lsaldyt/experiments/',
+               freeze=True)
     test_model(generalize,
                name='synthetic', prefix_dir='/scratch/lsaldyt/experiments/')
