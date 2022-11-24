@@ -37,7 +37,7 @@ def postprocess(prompts, source_code_list, tokenizer_model='Salesforce/codet5-ba
     model_inputs['labels'] = labels_with_ignore_index
     return model_inputs
 
-def tune_model(dataset, preprocess, name='t5_tuning'):
+def tune_model(dataset, preprocess, name='t5_tuning', prefix_dir=''):
     dataset = dataset.map(preprocess, batched=True)
     dataset.set_format(type="torch", columns=['input_ids', 'attention_mask', 'labels'])
     if 'train' in dataset:
@@ -50,10 +50,12 @@ def tune_model(dataset, preprocess, name='t5_tuning'):
         valid_dataloader = DataLoader(dataset['validation'], batch_size=4, num_workers=4)
     else:
         valid_dataloader = None
+        print(f'No validation data provided!!')
     if 'test' in dataset:
         test_dataloader  = DataLoader(dataset['test'], batch_size=4, num_workers=4)
     else:
         test_dataloader = None
+        print(f'No test data provided!!')
     batch = next(iter(train_dataloader))
     print(batch.keys())
     model = CodeT5(train_dataloader, valid_dataloader, test_dataloader)
@@ -65,7 +67,7 @@ def tune_model(dataset, preprocess, name='t5_tuning'):
         mode='min'
     )
     lr_monitor = LearningRateMonitor(logging_interval='step')
-    logger = CSVLogger('csv_data', name=name, flush_logs_every_n_steps=1)
+    logger = CSVLogger(f'{prefix_dir}csv_data', name=name, flush_logs_every_n_steps=1)
     print(logger)
 
     trainer_kwargs = dict(default_root_dir=f'{name}_checkpoints',
@@ -83,13 +85,17 @@ def tune_model(dataset, preprocess, name='t5_tuning'):
         trainer = Trainer(accelerator='cpu', **trainer_kwargs)
     trainer.fit(model)
 
-    save_directory = Path(f'{name}/pretrained/')
+    save_directory = Path(f'{prefix_dir}{name}/pretrained/')
     save_directory.mkdir(exist_ok=True, parents=True)
-
     model.model.save_pretrained(save_directory)
 
-def test_model(dataset, name='t5_tuning'):
-    save_directory = Path(f'{name}/pretrained/')
+    if test_dataloader is not None:
+        trainer.test(model, dataloaders=[test_dataloader])
+    else:
+        print(f'No test dataloader provided, skipping')
+
+def test_model(dataset, name='t5_tuning', prefix_dir=''):
+    save_directory = Path(f'{prefix_dir}{name}/pretrained/')
     model = T5ForConditionalGeneration.from_pretrained(save_directory)
     tokenizer = RobertaTokenizer.from_pretrained('Salesforce/codet5-base')
     # tokenizer.decode(batch['input_ids'][0])

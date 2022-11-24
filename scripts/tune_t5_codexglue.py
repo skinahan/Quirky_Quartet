@@ -9,5 +9,5 @@ def run():
     example = dataset['train'][0]
     print("Code:", example["code"])
     print("Docstring:", example["docstring"])
-    tune_model(dataset, process_codexglue)
-    test_model(dataset)
+    tune_model(dataset, process_codexglue, prefix_dir='/scratch/lsaldyt/experiments/')
+    test_model(dataset, prefix_dir='/scratch/lsaldyt/experiments/')
