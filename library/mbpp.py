@@ -327,12 +327,13 @@ def batch_eval_fewshot(data, prompt_data, api_key, task="", nshot=1, k=1, verbos
 
 def complete_eval_setup(data, split, batch, api_key, task="", nshot=1, k=1, verbose=0):
     """ Run and evaluate codex on a batch of data and save results in JSON """
+    offset = 0
     batch_size = 100
-    mini_batch_size = 20
+    mini_batch_size = 1
     if batch * batch_size > data[split].shape[0]:
         print("Invalid batch")
         return [], []
-    batch_data = Dataset.from_dict(data[split][batch * batch_size : min((batch+1) * batch_size, data[split].shape[0])])
+    batch_data = Dataset.from_dict(data[split][offset + batch * batch_size : min(offset + (batch+1) * batch_size, data[split].shape[0])])
     num_mini_batches = batch_data.shape[0] // mini_batch_size
     for i in range(num_mini_batches):
         mini_batch = Dataset.from_dict(batch_data[i * mini_batch_size : min((i+1) * mini_batch_size, batch_data.shape[0])])
@@ -351,8 +352,9 @@ def complete_eval_setup(data, split, batch, api_key, task="", nshot=1, k=1, verb
                 d[idy]["status"] = results[idx][idy][0]
                 d[idy]["codex_out"] = results[idx][idy][2]
                 d[idy]["clean_code"] = results[idx][idy][3]
-            data_id = batch * batch_size + i * mini_batch_size + idx
-            save(d, "results/mbpp/{0}_{1}_{2}_no_prompt.json".format(split, data_id, nshot), is_json=True, is_pickle=False)
+            data_id = offset + batch * batch_size + i * mini_batch_size + idx
+            print("Saving {0}".format(data_id))
+            save(d, "results/mbpp/no_prompt/{2}-shot/{0}_{1}_{2}_no_prompt.json".format(split, data_id, nshot), is_json=True, is_pickle=False)
         time.sleep(60)
 
 def save(obj, fname, is_json=True, is_pickle=False):
@@ -369,4 +371,4 @@ if __name__ == "__main__":
     task = "Write a python function to solve the above question. No additional comments and docstrings are needed."
     # results, status = batch_eval_0shot(data, "train", api_key, task, max_n=10, k=5, verbose=0)
     # results, status = batch_eval_fewshot(data["train"], data["prompt"], api_key, task, nshot=10, max_n=10, k=5, verbose=0)
-    complete_eval_setup(data, "train", 0, api_key, task=task, nshot=5, k=5, verbose=0)
+    complete_eval_setup(data, "train", 0, api_key, task=task, nshot=1, k=5, verbose=0)
