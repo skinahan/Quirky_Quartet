@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to find the longest chain which can be formed from the given set of pairs.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 1,
+        "codex_out": "\n\ndef max_chain_length(arr, n):\n    mcl = [1 for i in range(n)]\n\n    for i in range(1, n):\n        for j in range(0, i):\n            if arr[i][0] > arr[j][1] and mcl[i] < mcl[j] + 1:\n                mcl[i] = mcl[j]+1\n\n    maximum = 0\n\n    for i in range(n):\n        maximum = max(maximum, mcl[i])\n\n    return maximum",
+        "clean_code": "def max_chain_length(arr, n):\n    mcl = [1 for i in range(n)]\n\n    for i in range(1, n):\n        for j in range(0, i):\n            if arr[i][0] > arr[j][1] and mcl[i] < mcl[j] + 1:\n                mcl[i] = mcl[j]+1\n\n    maximum = 0\n\n    for i in range(n):\n        maximum = max(maximum, mcl[i])\n\n    return maximum"
+    },
+    "1": {
+        "status": 1,
+        "codex_out": "\ndef longest_chain(pairs):\n    l=len(pairs)\n    pairs.sort()\n    dp=[1 for i in range(l)]\n    for i in range(1,l):\n        for j in range(i):\n            if pairs[i][0]>pairs[j][1] and dp[i]<dp[j]+1:  #checking the condition and updating the value of dp[i] accordingly. \n                dp[i]=dp[j]+1     #dp is storing the length of longest chain possible till that index.  \n\n    return max(dp)   #returning the maximum value from dp list.\n\n\t\t\t\t\t#END OF CODE#",
+        "clean_code": "def longest_chain(pairs):\n    l=len(pairs)\n    pairs.sort()\n    dp=[1 for i in range(l)]\n    for i in range(1,l):\n        for j in range(i):\n            if pairs[i][0]>pairs[j][1] and dp[i]<dp[j]+1:  #checking the condition and updating the value of dp[i] accordingly. \n                dp[i]=dp[j]+1     #dp is storing the length of longest chain possible till that index.  \n\n    return max(dp)   #returning the maximum value from dp list.\n\n\t\t\t\t\t#END OF CODE#"
+    },
+    "2": {
+        "status": 1,
+        "codex_out": "\ndef find_longest_chain(pairs):\n    pairs.sort()\n    length = len(pairs)\n    dp = [1] * length\n\n    for i in range(length):\n        for j in range(i):\n            if pairs[j][1] < pairs[i][0]:\n                dp[i] = max(dp[i], dp[j]+1)\n\n    return max(dp)\n\n  */",
+        "clean_code": "def find_longest_chain(pairs):\n    pairs.sort()\n    length = len(pairs)\n    dp = [1] * length\n\n    for i in range(length):\n        for j in range(i):\n            if pairs[j][1] < pairs[i][0]:\n                dp[i] = max(dp[i], dp[j]+1)\n\n    return max(dp)"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\ndef longest_chain(pairs):\n    chain = []\n    pairs.sort()\n    for i in range(len(pairs)):\n        if len(chain) == 0:\n            chain.append(pairs[i])\n        else:\n            if pairs[i][0] <= chain[-1][1]:  # check if the current pair's first element is less than or equal to the last pair's second element, then replace it with the new pair as this would give us a longer chain. If not, add it to the list of pairs.\n\n                chain[-1] = pairs[i]\n\n            else:\n\n                chain.append(pairs[i])\n\n    return len(chain), [pair for pair in chain]  # return length of longest chain and its elements\n\n \n\"\"\"",
+        "clean_code": "def longest_chain(pairs):\n    chain = []\n    pairs.sort()\n    for i in range(len(pairs)):\n        if len(chain) == 0:\n            chain.append(pairs[i])\n        else:\n            if pairs[i][0] <= chain[-1][1]:  # check if the current pair's first element is less than or equal to the last pair's second element, then replace it with the new pair as this would give us a longer chain. If not, add it to the list of pairs.\n\n                chain[-1] = pairs[i]\n\n            else:\n\n                chain.append(pairs[i])\n\n    return len(chain), [pair for pair in chain]  # return length of longest chain and its elements\n\n \n\"\"\""
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\ndef longest_chain(pairs):\n    pairs = sorted(pairs, key=lambda x:x[1])\n    print(pairs)\n    n = len(pairs)\n    LIS = [1]*n  #LIS[i] is the length of the longest chain ending at i.\n                  #So, LIS[0] will be the answer.\n\n    for i in range(n):\n\n        for j in range(i):\n\n            if pairs[j][1] < pairs[i][0]:\n\n                if LIS[j]+1 > LIS[i]:\n\n                    LIS[i] = LIS[j]+1\n\n    return max(LIS)'''",
+        "clean_code": "def longest_chain(pairs):\n    pairs = sorted(pairs, key=lambda x:x[1])\n    print(pairs)\n    n = len(pairs)\n    LIS = [1]*n  #LIS[i] is the length of the longest chain ending at i.\n                  #So, LIS[0] will be the answer.\n\n    for i in range(n):\n\n        for j in range(i):\n\n            if pairs[j][1] < pairs[i][0]:\n\n                if LIS[j]+1 > LIS[i]:\n\n                    LIS[i] = LIS[j]+1\n\n    return max(LIS)'''"
+    }
+}

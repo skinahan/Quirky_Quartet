@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a python function to find the average of even numbers till a given even number.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\n\n\ndef avg_even(n):\n    s = 0\n    count = 0\n    for i in range(2, n+1, 2):\n        s += i\n        count += 1\n\n    return s/count",
+        "clean_code": "\"\"\"\n\n\ndef avg_even(n):\n    s = 0\n    count = 0\n    for i in range(2, n+1, 2):\n        s += i\n        count += 1\n\n    return s/count"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\ndef avg_even(n):\n    sum=0.0\n    cnt=0.0\n    for i in range(2,n+1,2):\n        sum+=i #sum=sum+i;\n        cnt+=1 #cnt=cnt+1; \n\n    return sum/cnt",
+        "clean_code": "\"\"\"\ndef avg_even(n):\n    sum=0.0\n    cnt=0.0\n    for i in range(2,n+1,2):\n        sum+=i #sum=sum+i;\n        cnt+=1 #cnt=cnt+1; \n\n    return sum/cnt"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\n'''\n\n\ndef average_even_number(n):\n    sum = 0\n    count = 0\n\n    for i in range(2, n + 1, 2):\n        sum += i\n        count += 1\n\n    return sum / count\n\n\nprint(average_even_number(10))",
+        "clean_code": "'''\n\n\ndef average_even_number(n):\n    sum = 0\n    count = 0\n\n    for i in range(2, n + 1, 2):\n        sum += i\n        count += 1\n\n    return sum / count\n\n\nprint(average_even_number(10))"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n'''\ndef avg_even(n):\n    sum = 0.0\n    for i in range(2, n + 1, 2):\n        sum += i\n\n    return float(sum / (n // 2))\n\n\nprint(avg_even(10))",
+        "clean_code": "'''\ndef avg_even(n):\n    sum = 0.0\n    for i in range(2, n + 1, 2):\n        sum += i\n\n    return float(sum / (n // 2))\n\n\nprint(avg_even(10))"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef avg_even(x):\n    sum = 0.0\n    count = 0.0\n    for i in range(2, x+1, 2):\n        sum = sum + i\n        count += 1.0\n\n    return sum / count\n\n\nprint(avg_even(10))",
+        "clean_code": "\"\"\"\ndef avg_even(x):\n    sum = 0.0\n    count = 0.0\n    for i in range(2, x+1, 2):\n        sum = sum + i\n        count += 1.0\n\n    return sum / count\n\n\nprint(avg_even(10))"
+    }
+}

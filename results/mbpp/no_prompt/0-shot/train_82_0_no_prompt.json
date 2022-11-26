@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a python function to check whether the given number can be represented by sum of two squares or not.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAnswer:",
+    "success": 1,
+    "0": {
+        "status": 0,
+        "codex_out": "\ndef check_square_sum(n):\n    for i in range(1, n+1):\n        if i*i > n:\n            return False\n        else:\n            if (n - i*i)**0.5 == int((n - i*i)**0.5):  #check whether the number is a perfect square or not. If yes, then return True else continue with the loop. \n                return True\n\n    return False",
+        "clean_code": "def check_square_sum(n):\n    for i in range(1, n+1):\n        if i*i > n:\n            return False\n        else:\n            if (n - i*i)**0.5 == int((n - i*i)**0.5):  #check whether the number is a perfect square or not. If yes, then return True else continue with the loop. \n                return True\n\n    return False"
+    },
+    "1": {
+        "status": 0,
+        "codex_out": "\ndef sum_of_squares(N):\n    #Remove pass and write your logic here\n    sum = 0\n    if N >= 0:\n        for i in range(1, N + 1):\n            for j in range(i, N + 1):\n                if i * i + j * j == N:\n                    return True\n\n        return False\n\n    else:\n        return False\n\n    \n\n    \n\n    \n\n  # Note: Kindly refer the below link to know how to approach this assignment.https://www.geeksforgeeks.org/check-if-a-number-can-be-expressed-as-xy/  '''",
+        "clean_code": "def sum_of_squares(N):\n    #Remove pass and write your logic here\n    sum = 0\n    if N >= 0:\n        for i in range(1, N + 1):\n            for j in range(i, N + 1):\n                if i * i + j * j == N:\n                    return True\n\n        return False\n\n    else:\n        return False\n\n    \n\n    \n\n    \n\n  # Note: Kindly refer the below link to know how to approach this assignment.https://www.geeksforgeeks.org/check-if-a-number-can-be-expressed-as-xy/  '''"
+    },
+    "2": {
+        "status": 1,
+        "codex_out": "\ndef check_sum_of_squares(num):\n    if num < 0:\n        return False\n    for i in range(1, int(math.sqrt(num) + 1)):\n        for j in range(i, int(math.sqrt(num) + 1)):\n            if i * i + j * j == num:\n                return True\n\n    return False\n\n  */",
+        "clean_code": "def check_sum_of_squares(num):\n    if num < 0:\n        return False\n    for i in range(1, int(math.sqrt(num) + 1)):\n        for j in range(i, int(math.sqrt(num) + 1)):\n            if i * i + j * j == num:\n                return True\n\n    return False"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\ndef is_square_sum(n):\n    for i in range(1,int(n**0.5)+1):\n        for j in range(i,int(n**0.5)+1):\n            if i*i+j*j==n: return True\n\n    return False\n\n \n \n \n \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n   \"\"\"",
+        "clean_code": "def is_square_sum(n):\n    for i in range(1,int(n**0.5)+1):\n        for j in range(i,int(n**0.5)+1):\n            if i*i+j*j==n: return True\n\n    return False\n\n \n \n \n \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n   \"\"\""
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\ndef square_sum(n):\n    \"\"\"\n    :param n: An integer value.\n    :return: True if the given number can be represented by sum of two squares, else False.\n    \"\"\"\n    # remove pass and write your logic here\n\n\n\n\n\n\n\n\n\n\n\n\n\n  return False\"\"\"",
+        "clean_code": "def square_sum(n):\n    \"\"\"\n    :param n: An integer value.\n    :return: True if the given number can be represented by sum of two squares, else False.\n    \"\"\"\n    # remove pass and write your logic here\n\n\n\n\n\n\n\n\n\n\n\n\n\n  return False\"\"\""
+    }
+}

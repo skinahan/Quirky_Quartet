@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to split a string at uppercase letters.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\ndef split_at_uppercase(s):\n    return re.findall('[A-Z][^A-Z]*', s)\n\"\"\"\n\n\ndef split_at_uppercase(s):\n    return re.findall('[A-Z][^A-Z]*', s)",
+        "clean_code": "def split_at_uppercase(s):\n    return re.findall('[A-Z][^A-Z]*', s)\n\"\"\"\n\n\ndef split_at_uppercase(s):\n    return re.findall('[A-Z][^A-Z]*', s)"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\ndef split_at_uppercase(s):\n    return [s[i:j] for i, j in zip((0,) + tuple(filter(lambda x: s[x].isupper(), range(1, len(s)))), tuple(filter(lambda x: s[x].isupper(), range(1, len(s)))) + (None,))]\n\n\nprint split_at_uppercase('SplitMeAtUpperCase')",
+        "clean_code": "\"\"\"\n\n\ndef split_at_uppercase(s):\n    return [s[i:j] for i, j in zip((0,) + tuple(filter(lambda x: s[x].isupper(), range(1, len(s)))), tuple(filter(lambda x: s[x].isupper(), range(1, len(s)))) + (None,))]\n\n\nprint split_at_uppercase('SplitMeAtUpperCase')"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef split_string(s):\n    return re.findall('[A-Z][^A-Z]*', s)",
+        "clean_code": "\"\"\"\ndef split_string(s):\n    return re.findall('[A-Z][^A-Z]*', s)"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n'''\n\n\ndef split_at_upper(s):\n    return [x for x in re.split('([A-Z][^A-Z]*)', s) if x]\n\n\nprint(split_at_upper(\"HeLlO\"))",
+        "clean_code": "'''\n\n\ndef split_at_upper(s):\n    return [x for x in re.split('([A-Z][^A-Z]*)', s) if x]\n\n\nprint(split_at_upper(\"HeLlO\"))"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef solution(string):\n    return re.findall('[A-Z][^A-Z]*', string)",
+        "clean_code": "\"\"\"\ndef solution(string):\n    return re.findall('[A-Z][^A-Z]*', string)"
+    }
+}

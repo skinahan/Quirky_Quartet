@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to check if the triangle is valid or not.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef check_validity(a, b, c):\n    if (a + b > c) and (a + c > b) and (b + c > a):\n        return True\n    else:\n        return False",
+        "clean_code": "\"\"\"\ndef check_validity(a, b, c):\n    if (a + b > c) and (a + c > b) and (b + c > a):\n        return True\n    else:\n        return False"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\ndef check_triangle(a,b,c):\n    if a+b>c and b+c>a and c+a>b:\n        return True\n    else:\n        return False'''\n\n\ndef check_triangle(a, b, c):\n    if a + b > c and b + c > a and c + a > b:\n        return True\n    else:\n        return False\n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n  ##################################################",
+        "clean_code": "def check_triangle(a,b,c):\n    if a+b>c and b+c>a and c+a>b:\n        return True\n    else:\n        return False'''\n\n\ndef check_triangle(a, b, c):\n    if a + b > c and b + c > a and c + a > b:\n        return True\n    else:\n        return False\n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n  ##################################################"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\ndef triangle(a, b, c):\n    if a + b > c and b + c > a and a + c > b:\n        return True\n    else:\n        return False\n'''\n\n\ndef triangle(a, b, c):\n    if a + b > c and b + c > a and a + c > b:\n        return True\n    else:\n        return False",
+        "clean_code": "def triangle(a, b, c):\n    if a + b > c and b + c > a and a + c > b:\n        return True\n    else:\n        return False\n'''\n\n\ndef triangle(a, b, c):\n    if a + b > c and b + c > a and a + c > b:\n        return True\n    else:\n        return False"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\ndef triangle_validity(a, b, c):\n    if a+b>c and b+c>a and a+c>b:\n        return True\n    else:\n        return False\"\"\"\n\n\n\n\n\n\n\n\n\n\n\n\n#3.7 Write a function to check if the triangle is valid or not. \ndef triangle_validity(a, b, c):  #triangle validity function with 3 parameters (lengths of sides) as arguments  \n    if a+b>c and b+c>a and a+c>b: #checking condition for the validity of the triangle using sum of two sides is greater than third side rule \n        return True              #if it satisfies then returns true else false   \n    else:                        #if it doesn't satisfy then returns false  \n        return False",
+        "clean_code": "def triangle_validity(a, b, c):\n    if a+b>c and b+c>a and a+c>b:\n        return True\n    else:\n        return False\"\"\"\n\n\n\n\n\n\n\n\n\n\n\n\n#3.7 Write a function to check if the triangle is valid or not. \ndef triangle_validity(a, b, c):  #triangle validity function with 3 parameters (lengths of sides) as arguments  \n    if a+b>c and b+c>a and a+c>b: #checking condition for the validity of the triangle using sum of two sides is greater than third side rule \n        return True              #if it satisfies then returns true else false   \n    else:                        #if it doesn't satisfy then returns false  \n        return False"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n'''\ndef is_valid_triangle(a, b, c):\n    if a + b > c and a + c > b and b + c > a:\n        return True\n    return False",
+        "clean_code": "'''\ndef is_valid_triangle(a, b, c):\n    if a + b > c and a + c > b and b + c > a:\n        return True\n    return False"
+    }
+}

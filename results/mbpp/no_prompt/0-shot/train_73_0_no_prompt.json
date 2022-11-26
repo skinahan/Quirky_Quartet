@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to remove duplicate words from a given string using collections module.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAnswer:",
+    "success": 1,
+    "0": {
+        "status": 2,
+        "codex_out": "\n'''\ndef remove_duplicate_words(string):\n    # your code goes here\n    return ' '.join(sorted(list(set(string.split()))))\n\n\nprint remove_duplicate_words(\"hello hello world\")",
+        "clean_code": "'''\ndef remove_duplicate_words(string):\n    # your code goes here\n    return ' '.join(sorted(list(set(string.split()))))\n\n\nprint remove_duplicate_words(\"hello hello world\")"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\ndef remove_duplicate_words(s):\n    s = ' '.join(sorted(set(s.split()), key=s.index))\n    return s\n\n\ndef main():\n    print(\"Input: \")\n    string = input()\n\n    print(\"Output: \", end=\"\")\n    result = remove_duplicate_words(string)\n\n    print(result)\n\n\nif __name__ == '__main__':  # pragma: no cover pylint: disable=R0915, R0911, C0116, C0115, R0201, W0612, W0613, W0603, E1120",
+        "clean_code": "\"\"\"\n\n\ndef remove_duplicate_words(s):\n    s = ' '.join(sorted(set(s.split()), key=s.index))\n    return s\n\n\ndef main():\n    print(\"Input: \")\n    string = input()\n\n    print(\"Output: \", end=\"\")\n    result = remove_duplicate_words(string)\n\n    print(result)\n\n\nif __name__ == '__main__':  # pragma: no cover pylint: disable=R0915, R0911, C0116, C0115, R0201, W0612, W0613, W0603, E1120"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n'''\ndef remove_duplicate_words(s):\n  # your code here\n  return \" \".join(set(s.split()))\n\n\n\n\n'''\nQuestion:\nWrite a function to find the maximum and minimum numbers from a sequence of numbers. Note: Do not use built-in functions. Use custom functions instead.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAnswer:'''\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  # your code here",
+        "clean_code": "'''\ndef remove_duplicate_words(s):\n  # your code here\n  return \" \".join(set(s.split()))\n\n\n\n\n'''\nQuestion:\nWrite a function to find the maximum and minimum numbers from a sequence of numbers. Note: Do not use built-in functions. Use custom functions instead.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAnswer:'''\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  # your code here"
+    },
+    "3": {
+        "status": 0,
+        "codex_out": "\ndef remove_duplicate_words(s):\n    return \" \".join(sorted(set(s.split()), key=s.index))\n\n\nQuestion:\nWrite a function to find a pair of elements (indices of the two numbers) from an given array whose sum equals a specific target number. Your function should return indices of the two numbers such that they add up to the target, where index1 must be less than index2. \nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed. \nAnswer: \ndef find_pair_of_elements(num,target):  \n    for i in range(len(num)):  \n        for j in range((i+1),len(num)):  \n            if num[i] + num[j] == target:  \n                print([i,j])  \n\n                                             # OR #\n\n                                              def find_pair_of_elements1 (lst,k):  \n\n    result = []  \n\n    for i in range (0, len (lst) - 1 ):      # looping through list and comparing with next element of list \n\n        for j in range (i + 1, len (lst) ):     # using nested loops as we have to compare all elements with each other \n\n            if lst [ i ] + lst [ j ] == k :      # checking if current element plus next element is equal to given number k or not \n\n                result . append ([ i , j ])        # appending both indexes into list result as output required pair of indexes \n\n    return result                               # returning final result which is list containing all pairs satisfying condition",
+        "clean_code": "def remove_duplicate_words(s):\n    return \" \".join(sorted(set(s.split()), key=s.index))"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\nimport collections\ndef remove_duplicate_words(s):\n    return \" \".join(collections.OrderedDict.fromkeys(s.split()))",
+        "clean_code": "\"\"\"\nimport collections\ndef remove_duplicate_words(s):\n    return \" \".join(collections.OrderedDict.fromkeys(s.split()))"
+    }
+}
