@@ -328,7 +328,7 @@ def batch_eval_fewshot(data, prompt_data, api_key, task="", nshot=1, k=1, verbos
 
 def complete_eval_setup(data, split, batch, result_dir, api_key, task="", nshot=1, k=1, verbose=0):
     """ Run and evaluate codex on a batch of data and save results in JSON """
-    offset = 0
+    offset = 1
     batch_size = 100
     mini_batch_size = 1
     if batch * batch_size > data[split].shape[0]:
@@ -343,6 +343,8 @@ def complete_eval_setup(data, split, batch, result_dir, api_key, task="", nshot=
         else:
             results, status = batch_eval_0shot(mini_batch, api_key, task=task, k=k, verbose=verbose)
         status = np.any(status, axis=1)
+        result_dir = result_dir + "/" + "{0}-shot".format(nshot)
+        os.makedirs(result_dir, exist_ok=True)
         for idx in range(len(results)):
             query = results[idx][0][1]
             d = {}
@@ -355,8 +357,6 @@ def complete_eval_setup(data, split, batch, result_dir, api_key, task="", nshot=
                 d[idy]["clean_code"] = results[idx][idy][3]
             data_id = offset + batch * batch_size + i * mini_batch_size + idx
             print("Saving {0}".format(data_id))
-            result_dir = result_dir + "/" + "{0}-shot".format(nshot)
-            os.makedirs(result_dir, exist_ok=True)
             save_result_file(d, "{0}/{1}_{2}.json".format(result_dir, split, data_id), is_json=True, is_pickle=False)
         time.sleep(60)
 
