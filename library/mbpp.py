@@ -5,6 +5,7 @@ from api_wrapper import *
 
 import os, re, ast, time, json, pickle
 import numpy as np
+import pandas as pd
 from datasets import load_dataset, Dataset
 
 def read_mbpp(sanitized=False):
@@ -325,7 +326,7 @@ def batch_eval_fewshot(data, prompt_data, api_key, task="", nshot=1, k=1, verbos
         status.append([True if res[0] == 0 else False for res in out])
     return results, status
 
-def complete_eval_setup(data, split, batch, api_key, task="", nshot=1, k=1, verbose=0):
+def complete_eval_setup(data, split, batch, result_dir, api_key, task="", nshot=1, k=1, verbose=0):
     """ Run and evaluate codex on a batch of data and save results in JSON """
     offset = 0
     batch_size = 100
@@ -354,7 +355,9 @@ def complete_eval_setup(data, split, batch, api_key, task="", nshot=1, k=1, verb
                 d[idy]["clean_code"] = results[idx][idy][3]
             data_id = offset + batch * batch_size + i * mini_batch_size + idx
             print("Saving {0}".format(data_id))
-            save_result_file(d, "results/mbpp/no_prompt/{2}-shot/{0}_{1}_{2}_no_prompt.json".format(split, data_id, nshot), is_json=True, is_pickle=False)
+            result_dir = result_dir + "/" + "{0}-shot".format(nshot)
+            os.makedirs(result_dir, exist_ok=True)
+            save_result_file(d, "{0}/{1}_{2}.json".format(result_dir, split, data_id), is_json=True, is_pickle=False)
         time.sleep(60)
 
 def save_result_file(obj, fname, is_json=True, is_pickle=False):
@@ -397,11 +400,27 @@ def eval_results(dir, nshot=0, k=1):
     return fs, results
 
 if __name__ == "__main__":
-    # api_key = read_config()
-    # data = read_mbpp(sanitized=False)
+    api_key = read_config()
+    data = read_mbpp(sanitized=False)
     # mbpp_play_demo("train", 0)
+
     task = "Write a python function to solve the above question. No additional comments and docstrings are needed."
+    prompt_file = "prompts/mbpp_prompts.txt"
+    prompts = pd.read_csv(prompt_file, sep="\t", header=0, index_col="id")  # Columns are id, prompt
+    prompt_id = 0
+    prompt_tag = "Additional info:"
+    prompt = prompts.iloc[prompt_id]["prompt"]
+
+    if prompt_id == -1:
+        final_task = task
+        result_dir = "results/mbpp/no_prompt/"
+    else:
+        final_task = task + "\n" + prompt_tag + "\n" + prompt
+        result_dir = "results/mbpp/prompt_{0}/".format(prompt_id)
+
     # results, status = batch_eval_0shot(data, "train", api_key, task, max_n=10, k=5, verbose=0)
     # results, status = batch_eval_fewshot(data["train"], data["prompt"], api_key, task, nshot=10, max_n=10, k=5, verbose=0)
-    # complete_eval_setup(data, "train", 0, api_key, task=task, nshot=1, k=5, verbose=0)
-    eval_results("results/mbpp/", nshot=10, k=5)
+
+    complete_eval_setup(data, "train", 0, result_dir, api_key, task=final_task, nshot=5, k=5, verbose=0)
+
+    # eval_results("results/mbpp/", nshot=10, k=5)
