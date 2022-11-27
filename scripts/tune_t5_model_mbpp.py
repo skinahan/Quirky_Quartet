@@ -120,7 +120,7 @@ def test_model():
 
 
 def eval_instance(instance, query, t5_out):
-    verbose = True
+    verbose = 1
     tests = [parse_test_asserts(ast.parse(t)) for t in instance["test_list"]]
     status, code = eval_codex_out(t5_out, tests, verbose=verbose)
     if status == 0:
@@ -134,7 +134,7 @@ def eval_model():
     test_set = dataset['test']
     results = []
     status = []
-    with open('t5_out_mbpp_tuned.csv', 'r', encoding="utf-8") as f_obj:
+    with open('./results/t5/t5_out_mbpp_untuned.csv', 'r', encoding="utf-8") as f_obj:
         reader_obj = csv.reader(f_obj)
         idx = 0
         for row in reader_obj:
