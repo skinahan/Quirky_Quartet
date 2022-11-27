@@ -358,7 +358,7 @@ def complete_eval_setup(data, split, batch, result_dir, api_key, task="", nshot=
             data_id = offset + batch * batch_size + i * mini_batch_size + idx
             print("Saving {0}".format(data_id))
             save_result_file(d, "{0}/{1}_{2}.json".format(result_dir, split, data_id), is_json=True, is_pickle=False)
-        time.sleep(60)
+        time.sleep(69)
 
 def save_result_file(obj, fname, is_json=True, is_pickle=False):
     if is_json:
@@ -407,7 +407,7 @@ if __name__ == "__main__":
     task = "Write a python function to solve the above question. No additional comments and docstrings are needed."
     prompt_file = "prompts/mbpp_prompts.txt"
     prompts = pd.read_csv(prompt_file, sep="\t", header=0, index_col="id")  # Columns are id, prompt
-    prompt_id = 0
+    prompt_id = 1
     prompt_tag = "Additional info:"
     prompt = prompts.iloc[prompt_id]["prompt"]
 
