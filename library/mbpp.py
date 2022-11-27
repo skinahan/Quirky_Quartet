@@ -3,7 +3,7 @@
 
 from api_wrapper import *
 
-import re, ast, time, json, pickle
+import os, re, ast, time, json, pickle
 import numpy as np
 from datasets import load_dataset, Dataset
 
@@ -354,21 +354,54 @@ def complete_eval_setup(data, split, batch, api_key, task="", nshot=1, k=1, verb
                 d[idy]["clean_code"] = results[idx][idy][3]
             data_id = offset + batch * batch_size + i * mini_batch_size + idx
             print("Saving {0}".format(data_id))
-            save(d, "results/mbpp/no_prompt/{2}-shot/{0}_{1}_{2}_no_prompt.json".format(split, data_id, nshot), is_json=True, is_pickle=False)
+            save_result_file(d, "results/mbpp/no_prompt/{2}-shot/{0}_{1}_{2}_no_prompt.json".format(split, data_id, nshot), is_json=True, is_pickle=False)
         time.sleep(60)
 
-def save(obj, fname, is_json=True, is_pickle=False):
+def save_result_file(obj, fname, is_json=True, is_pickle=False):
     if is_json:
         with open(fname, "w") as fp:
             json.dump(obj, fp, indent=4)
     elif is_pickle:
-        pass
+        with open(fname, "wb") as fp:
+            pickle.dump(obj, fp)
+
+def load_result_file(fname, is_json=True, is_pickle=False):
+    if is_json:
+        with open(fname, "r") as fp:
+            return json.load(fp)
+    elif is_pickle:
+        with open(fname, "rb") as fp:
+            return pickle.load(fp)
+
+def eval_results(dir, nshot=0, k=1):
+    res_dir = "{0}/no_prompt/{1}-shot/".format(dir, nshot)
+    fs = ["{0}/{1}".format(res_dir, f) for f in os.listdir(res_dir) if os.path.isfile("{0}/{1}".format(res_dir, f))]
+    results = []
+    for f in fs:
+        data = load_result_file(f, is_json=True)
+        results.append([])
+        for j in range(k):
+            results[-1].append(data[str(j)]["status"])
+    results = np.array(results, dtype=np.int64)
+    print("Total samples = {0}".format(results.shape[0]))
+    def res_at_pass_k(kk=1):
+        print("Results for pass@{0}".format(kk))
+        vals, counts = np.unique(np.min(results[:,:kk], axis=1), return_counts=True)
+        print("Success = {0} | Failure = {1} | Unparseable = {2}".format(counts[0], counts[1], counts[2]))
+        print("Total unparseable = {0}".format(np.sum(results[:,:kk] == 2)))
+        print("Pass rate @ {0} = {1:.3f}".format(kk, 100*counts[0]/results.shape[0]))
+        print("Unparseable rate @ {0} = {1:.3f}".format(kk, 100*np.sum(results[:,:kk] == 2)/(results.shape[0]*kk)))
+    res_at_pass_k(kk=1)
+    res_at_pass_k(kk=2)
+    res_at_pass_k(kk=5)
+    return fs, results
 
 if __name__ == "__main__":
-    api_key = read_config()
-    data = read_mbpp(sanitized=False)
+    # api_key = read_config()
+    # data = read_mbpp(sanitized=False)
     # mbpp_play_demo("train", 0)
     task = "Write a python function to solve the above question. No additional comments and docstrings are needed."
     # results, status = batch_eval_0shot(data, "train", api_key, task, max_n=10, k=5, verbose=0)
     # results, status = batch_eval_fewshot(data["train"], data["prompt"], api_key, task, nshot=10, max_n=10, k=5, verbose=0)
-    complete_eval_setup(data, "train", 0, api_key, task=task, nshot=1, k=5, verbose=0)
+    # complete_eval_setup(data, "train", 0, api_key, task=task, nshot=1, k=5, verbose=0)
+    eval_results("results/mbpp/", nshot=10, k=5)
