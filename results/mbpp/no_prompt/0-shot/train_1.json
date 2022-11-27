@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a python function to find the first repeated character in a given string.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 1,
+        "codex_out": "\ndef first_repeated(str):\n    for i in str:\n        if str.count(i) > 1:\n            return i\n    else:\n        return \"No repeated characters found\"\n\n \n#Test Cases:\nprint(first_repeated(\"abcab\")) # Should print \"a\" as it is the first repeated character in the string. \n\n \n\n \n\n \n\n \n\n \n\n \n\n   #print(\"No repeated characters found\") # Should print \"No repeated characters found\" as there are no repeating characters in the string.",
+        "clean_code": "def first_repeated(str):\n    for i in str:\n        if str.count(i) > 1:\n            return i\n    else:\n        return \"No repeated characters found\"\n\n \n#Test Cases:\nprint(first_repeated(\"abcab\")) # Should print \"a\" as it is the first repeated character in the string. \n\n \n\n \n\n \n\n \n\n \n\n \n\n   #print(\"No repeated characters found\") # Should print \"No repeated characters found\" as there are no repeating characters in the string."
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n'''\ndef first_repeated_char(str1):\n    count = {}\n    for ch in str1:\n        if ch in count:\n            return ch;\n        else: \n            count[ch] = 0; \n\n    return '\\0'\n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n        \nprint(first_repeated_char(\"abcab\"))",
+        "clean_code": "'''\ndef first_repeated_char(str1):\n    count = {}\n    for ch in str1:\n        if ch in count:\n            return ch;\n        else: \n            count[ch] = 0; \n\n    return '\\0'\n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n        \nprint(first_repeated_char(\"abcab\"))"
+    },
+    "2": {
+        "status": 1,
+        "codex_out": "\n\ndef find_first_repeat(given_string):\n    \"\"\"This function returns the first repeated character in a given string.\n\n    Args:\n        given_string (str): A string where we have to find the first repeated character.\n\n    Returns:\n        str: First repeated character.\n\n    \"\"\"\n    for i in range(len(given_string)):\n        if given_string[i] in given_string[i+1:]:\n            return given_string[i]\n\n    return None",
+        "clean_code": "def find_first_repeat(given_string):\n    \"\"\"This function returns the first repeated character in a given string.\n\n    Args:\n        given_string (str): A string where we have to find the first repeated character.\n\n    Returns:\n        str: First repeated character.\n\n    \"\"\"\n    for i in range(len(given_string)):\n        if given_string[i] in given_string[i+1:]:\n            return given_string[i]\n\n    return None"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n*/\ndef first_repeated(string):\n    for i in range(len(string)): \n        for j in range(i + 1, len(string)): \n            if (string[i] == string[j]): \n                return string[i] \n\n    return \"None\"\n\n    \nfirst_repeated(\"abcdab\")",
+        "clean_code": "*/\ndef first_repeated(string):\n    for i in range(len(string)): \n        for j in range(i + 1, len(string)): \n            if (string[i] == string[j]): \n                return string[i] \n\n    return \"None\"\n\n    \nfirst_repeated(\"abcdab\")"
+    },
+    "4": {
+        "status": 1,
+        "codex_out": "\ndef first_repeat(str1):\n    for i in range(len(str1)):\n        if str1[i] in str1[i+1:]:\n            return str1[i]\n    return '-1'\n\n \nprint(first_repeat('abcdab'))\n\n \nprint(first_repeat('abcd'))\n\n \nprint(first_repeat('123435'))\n\n \nprint(first_repeat('the quick brown fox jumps then quickly blow air'))\n\n \nprint(first_repeat('abcdefghijklmnopqrstuvwxyzt'))",
+        "clean_code": "def first_repeat(str1):\n    for i in range(len(str1)):\n        if str1[i] in str1[i+1:]:\n            return str1[i]\n    return '-1'\n\n \nprint(first_repeat('abcdab'))\n\n \nprint(first_repeat('abcd'))\n\n \nprint(first_repeat('123435'))\n\n \nprint(first_repeat('the quick brown fox jumps then quickly blow air'))\n\n \nprint(first_repeat('abcdefghijklmnopqrstuvwxyzt'))"
+    }
+}

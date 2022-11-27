@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to exchange the position of every n-th value with (n+1)th value and (n+1)th value with n-th value in a given list.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n'''\ndef exchange_list(number_list):\n    #start writing your code here\n    for i in range(0,len(number_list),2):\n        temp=number_list[i]\n        number_list[i]=number_list[i+1]\n        number_list[i+1]=temp\n\n    return number_list\n\n\n#Provide different values for the variables and test your program.\nnumber_list=[1,2,3,4,5,6]\nprint(\"After exchanging the elements of list:\",exchange_list(number_list))",
+        "clean_code": "'''\ndef exchange_list(number_list):\n    #start writing your code here\n    for i in range(0,len(number_list),2):\n        temp=number_list[i]\n        number_list[i]=number_list[i+1]\n        number_list[i+1]=temp\n\n    return number_list\n\n\n#Provide different values for the variables and test your program.\nnumber_list=[1,2,3,4,5,6]\nprint(\"After exchanging the elements of list:\",exchange_list(number_list))"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\n\ndef exchange_list(input_list):\n    length = len(input_list)\n    if length == 0: return []\n\n    if length % 2 == 0:\n        for i in range(0,length-1,2): input_list[i], input_list[i+1] = input_list[i+1], input_list[i]\n\n    else: \n        for i in range(0,length-2,2): input_list[i], input_list[i+1] = input_li",
+        "clean_code": "\"\"\"\n\ndef exchange_list(input_list):\n    length = len(input_list)\n    if length == 0: return []\n\n    if length % 2 == 0:\n        for i in range(0,length-1,2): input_list[i], input_list[i+1] = input_list[i+1], input_list[i]\n\n    else: \n        for i in range(0,length-2,2): input_list[i], input_list[i+1] = input_li"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\ndef exchange_list(l,n):\n    l[n::n+1], l[n+1::n+1] = l[n+1::n+1], l[n::n+1]\n    return l\nInput:\nexchange_list([0, 1, 2, 3, 4, 5], 2)\nOutput:\n[0, 3, 1, 4, 2, 5]\n\n  ######################################################################################################################  */\n\n\n\n\n\n\n\n\n\n   //#############################################     code     ###########################################################//   */ \n\n   function exchange_list(lst){\n       for(var i=0;i<=lst.length-2;i+=2){\n           var temp=lst[i];\n           lst[i]=lst[i+1];\n           lst[i+1]=temp;            //swapping of elements at even and odd positions in list.         }        return (lst);}console.log(\"Swapped List is:\");console.log(exchange_list([0 , 1 , 2 , 3 , 4 , 5]));",
+        "clean_code": "def exchange_list(l,n):\n    l[n::n+1], l[n+1::n+1] = l[n+1::n+1], l[n::n+1]\n    return l\nInput:\nexchange_list([0, 1, 2, 3, 4, 5], 2)\nOutput:\n[0, 3, 1, 4, 2, 5]\n\n  ######################################################################################################################  */\n\n\n\n\n\n\n\n\n\n   //#############################################     code     ###########################################################//   */ \n\n   function exchange_list(lst){\n       for(var i=0;i<=lst.length-2;i+=2){\n           var temp=lst[i];\n           lst[i]=lst[i+1];\n           lst[i+1]=temp;            //swapping of elements at even and odd positions in list.         }        return (lst);}console.log(\"Swapped List is:\");console.log(exchange_list([0 , 1 , 2 , 3 , 4 , 5]));"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\n\n\ndef exchange_list(n,lst):\n    lst1 = lst[:]\n    for i in range(0,len(lst),n):\n        if i+n<len(lst):\n            lst1[i],lst1[i+n] = lst1[i+n],lst1[i]\n\n    return lst1",
+        "clean_code": "\"\"\"\n\n\ndef exchange_list(n,lst):\n    lst1 = lst[:]\n    for i in range(0,len(lst),n):\n        if i+n<len(lst):\n            lst1[i],lst1[i+n] = lst1[i+n],lst1[i]\n\n    return lst1"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n'''\ndef exchange_list(n,sample_list):\n\tfor i in range(0,len(sample_list),n+1):\n\t\tif i+n<len(sample_list):\n\t\t\ttemp=sample_list[i]\n\t\t\tsample_list[i]=sample_list[i+n]\n\treturn sample_list",
+        "clean_code": "'''\ndef exchange_list(n,sample_list):\n\tfor i in range(0,len(sample_list),n+1):\n\t\tif i+n<len(sample_list):\n\t\t\ttemp=sample_list[i]\n\t\t\tsample_list[i]=sample_list[i+n]\n\treturn sample_list"
+    }
+}

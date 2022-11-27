@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to remove multiple spaces in a string by using regex.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\ndef remove_spaces(str):\n    return re.sub(' +', ' ', str)\n\"\"\"\n\n\nimport re\n\n\ndef remove_spaces(str):\n    return re.sub(' +', ' ', str)",
+        "clean_code": "def remove_spaces(str):\n    return re.sub(' +', ' ', str)\n\"\"\"\n\n\nimport re\n\n\ndef remove_spaces(str):\n    return re.sub(' +', ' ', str)"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\ndef func(string):\n    return re.sub(' +',' ',string)\n'''",
+        "clean_code": "def func(string):\n    return re.sub(' +',' ',string)\n'''"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\ndef remove_multiple_spaces(string):\n    return re.sub('\\s+', ' ', string).strip()\n'''\n\n\ndef remove_multiple_spaces(string):\n    return re.sub('\\s+', ' ', string).strip()",
+        "clean_code": "def remove_multiple_spaces(string):\n    return re.sub('\\s+', ' ', string).strip()\n'''\n\n\ndef remove_multiple_spaces(string):\n    return re.sub('\\s+', ' ', string).strip()"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\ndef removeMultipleSpaces(string):\n    return re.sub(' +', ' ', string)\nSample Input:\n\"I      love python\"\nSample Output:\n\"I love python\"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n'''",
+        "clean_code": "def removeMultipleSpaces(string):\n    return re.sub(' +', ' ', string)\nSample Input:\n\"I      love python\"\nSample Output:\n\"I love python\"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n'''"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\nThis is a regular expression question.\nYou can use re.sub() to solve this problem.\n'''\nimport re\n\n\ndef remove_multiple_spaces(text):\n    return re.sub(' +', ' ', text)",
+        "clean_code": "This is a regular expression question.\nYou can use re.sub() to solve this problem.\n'''\nimport re\n\n\ndef remove_multiple_spaces(text):\n    return re.sub(' +', ' ', text)"
+    }
+}

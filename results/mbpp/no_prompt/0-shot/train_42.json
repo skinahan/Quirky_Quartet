@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function that matches a word containing 'z', not at the start or end of the word.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n'''\nimport re\ndef match_words(words):\n  c = re.compile(r'\\b[^\\Wz][a-z]*z[a-z]*\\b',re.I)\n  return c.findall(words)",
+        "clean_code": "'''\nimport re\ndef match_words(words):\n  c = re.compile(r'\\b[^\\Wz][a-z]*z[a-z]*\\b',re.I)\n  return c.findall(words)"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\n\n\ndef match_z(word):\n    return bool(re.search(r'\\Bz\\B', word))",
+        "clean_code": "\"\"\"\n\n\ndef match_z(word):\n    return bool(re.search(r'\\Bz\\B', word))"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n'''\n\n\nimport re\ndef match_sxz(n):\n    if n[0] == 'x':\n        return True\n    elif n[-1] == 'x':\n        return True \n    elif re.search(r'\\b[^\\We]+\\b', n): # \\b represents a word boundary, [^\\We]+ matches any word containing z not at the start or end of the word.  \n        return True  # It will match as many characters as possible.  The + is a \"one or more\" quantifier.  The \\w is a \"word character\" (letters, numbers, and underscores) and the \\W is its negation (everything else).  \n\n    else:          # The [ ]+ means \"one or more of the enclosed characters\".   So it will match one or more of any character that isn't a letter, number, underscore, space or hyphen.\n\n        return False",
+        "clean_code": "'''\n\n\nimport re\ndef match_sxz(n):\n    if n[0] == 'x':\n        return True\n    elif n[-1] == 'x':\n        return True \n    elif re.search(r'\\b[^\\We]+\\b', n): # \\b represents a word boundary, [^\\We]+ matches any word containing z not at the start or end of the word.  \n        return True  # It will match as many characters as possible.  The + is a \"one or more\" quantifier.  The \\w is a \"word character\" (letters, numbers, and underscores) and the \\W is its negation (everything else).  \n\n    else:          # The [ ]+ means \"one or more of the enclosed characters\".   So it will match one or more of any character that isn't a letter, number, underscore, space or hyphen.\n\n        return False"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n'''\nimport re\n\n\ndef check_z(word):\n    return re.search(r'\\Bz\\B', word)\n\n\nprint(check_z('zzz'))  # None\nprint(check_z('baz'))  # <re.Match object; span=(1, 2), match='a'>",
+        "clean_code": "'''\nimport re\n\n\ndef check_z(word):\n    return re.search(r'\\Bz\\B', word)\n\n\nprint(check_z('zzz'))  # None\nprint(check_z('baz'))  # <re.Match object; span=(1, 2), match='a'>"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\n'''\nimport re\n\n\ndef check_z(text): return re.search(r'\\Bz\\B', text) is not None",
+        "clean_code": "'''\nimport re\n\n\ndef check_z(text): return re.search(r'\\Bz\\B', text) is not None"
+    }
+}

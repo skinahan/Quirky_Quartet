@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to convert degrees to radians.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n'''\ndef degree_to_radians(degrees):\n    return degrees * 3.14 / 180.0\n\n\n# In[ ]:\n\n\n# Test Cases:\nprint(degree_to_radians(180))\n\n\n# In[ ]:\n\n\nprint(degree_to_radians(45))",
+        "clean_code": "'''\ndef degree_to_radians(degrees):\n    return degrees * 3.14 / 180.0\n\n\n# In[ ]:\n\n\n# Test Cases:\nprint(degree_to_radians(180))\n\n\n# In[ ]:\n\n\nprint(degree_to_radians(45))"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n'''\nimport math\ndef degrees_to_radians(degrees):\n    radians = (math.pi*degrees)/180\n    return radians",
+        "clean_code": "'''\nimport math\ndef degrees_to_radians(degrees):\n    radians = (math.pi*degrees)/180\n    return radians"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\ndef radians(degrees):\n    return degrees * (3.14 / 180)\nprint(radians(360))\n\"\"\"\n\n\ndef radians(degrees):\n    return degrees * (3.14 / 180)\n\n\nprint(radians(360))",
+        "clean_code": "def radians(degrees):\n    return degrees * (3.14 / 180)\nprint(radians(360))\n\"\"\"\n\n\ndef radians(degrees):\n    return degrees * (3.14 / 180)\n\n\nprint(radians(360))"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n'''\ndef radian(deg):\n    return (deg*3.14)/180\nprint(radian(30))",
+        "clean_code": "'''\ndef radian(deg):\n    return (deg*3.14)/180\nprint(radian(30))"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\n\n\ndef deg_to_rad(deg):\n    return deg * 3.14 / 180",
+        "clean_code": "\"\"\"\n\n\ndef deg_to_rad(deg):\n    return deg * 3.14 / 180"
+    }
+}

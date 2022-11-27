@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to find the n-th power of individual elements in a list using lambda function.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n'''\ndef power(l,n):\n    return list(map(lambda x:x**n,l))\nprint(power([1,2,3],4))",
+        "clean_code": "'''\ndef power(l,n):\n    return list(map(lambda x:x**n,l))\nprint(power([1,2,3],4))"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\n\n\ndef power_list(lst, n):\n    return list(map(lambda x: x ** n, lst))\n\n\nif __name__ == '__main__':\n    l = [1, 2, 3]\n    print(\"Power of the list:\", power_list(l, 3))",
+        "clean_code": "\"\"\"\n\n\ndef power_list(lst, n):\n    return list(map(lambda x: x ** n, lst))\n\n\nif __name__ == '__main__':\n    l = [1, 2, 3]\n    print(\"Power of the list:\", power_list(l, 3))"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n'''\ndef power(l, n):\n    return list(map(lambda x: x**n, l))",
+        "clean_code": "'''\ndef power(l, n):\n    return list(map(lambda x: x**n, l))"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef power_list(l, n):\n    return list(map(lambda x: x**n, l))\n    \n#Test Cases:\nprint(\"Power List:\\n\",power_list([1, 2, 3], 4))",
+        "clean_code": "\"\"\"\ndef power_list(l, n):\n    return list(map(lambda x: x**n, l))\n    \n#Test Cases:\nprint(\"Power List:\\n\",power_list([1, 2, 3], 4))"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n'''\n\ndef power_of_list(my_list, n):\n    return list(map(lambda x: x**n, my_list))\n\n\nprint(power_of_list([1, 2, 3], 3))",
+        "clean_code": "'''\n\ndef power_of_list(my_list, n):\n    return list(map(lambda x: x**n, my_list))\n\n\nprint(power_of_list([1, 2, 3], 3))"
+    }
+}

@@ -1,0 +1,2 @@
+id	prompt
+0	Think along the lines of the variables and data structures that need to be used. Also think about the way to access the elements in the data structures.
