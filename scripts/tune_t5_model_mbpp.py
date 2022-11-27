@@ -3,8 +3,7 @@ from torch.utils.data import DataLoader
 from datasets import load_dataset
 from pytorch_lightning import Trainer
 from pytorch_lightning.callbacks import EarlyStopping, LearningRateMonitor
-import pandas as pd
-import numpy as np
+from csv import writer
 
 from library.t5_model import CodeT5
 from transformers import T5ForConditionalGeneration, AdamW, get_linear_schedule_with_warmup
@@ -16,12 +15,11 @@ from transformers import T5ForConditionalGeneration, AdamW, get_linear_schedule_
 def preprocess_examples(examples):
     # encode the code-docstring pairs
     codes = examples['code']
-    docstrings = examples['docstring']
+    docstrings = examples['text']
     # [SK] note: additional prompting methods can be introduced here
     prefix = "Generate Python: "
-    max_input_length = 256
-    max_target_length = 128
-    #tokenizer = RobertaTokenizer.from_pretrained("Salesforce/codet5-base")
+    max_input_length = 512
+    max_target_length = 256
     tokenizer = RobertaTokenizer.from_pretrained("Salesforce/codet5-small")
     inputs = [prefix + docstring for docstring in docstrings]
     model_inputs = tokenizer(inputs, max_length=max_input_length, padding="max_length", truncation=True)
@@ -42,13 +40,13 @@ def preprocess_examples(examples):
 
 
 def tune_model():
-    dataset = load_dataset("code_x_glue_ct_code_to_text", "python")
+    dataset = load_dataset("mbpp")
     print(dataset)
 
     example = dataset['train'][0]
 
     print("Code:", example["code"])
-    print("Docstring:", example["docstring"])
+    print("Docstring:", example["text"])
     dataset = dataset.map(preprocess_examples, batched=True)
     dataset.set_format(type="torch", columns=['input_ids', 'attention_mask', 'labels'])
     train_dataloader = DataLoader(dataset['train'], shuffle=True, batch_size=8, num_workers=4)
@@ -84,34 +82,30 @@ def tune_model():
     save_directory = "./"
     model.model.save_pretrained(save_directory)
 
-from csv import writer
 
 def test_model():
     save_file = "./"
     model = T5ForConditionalGeneration.from_pretrained(save_file)
     tokenizer = RobertaTokenizer.from_pretrained("Salesforce/codet5-small")
-    dataset = load_dataset("code_x_glue_ct_code_to_text", "python")
+    dataset = load_dataset("mbpp")
     test_example = dataset['test'][2]
-    #print("Code:", test_example['code'])
+    # print("Code:", test_example['code'])
     # prepare for the model
-    input_ids = tokenizer(test_example['docstring'], return_tensors='pt').input_ids
+    input_ids = tokenizer(test_example['text'], return_tensors='pt').input_ids
     # generate
     outputs = model.generate(input_ids)
-    print("Generated code:", tokenizer.decode(outputs[0], skip_special_tokens=False))
-    print("Ground truth:", test_example['code'])
+    # print("Generated code:", tokenizer.decode(outputs[0], skip_special_tokens=False))
+    # print("Ground truth:", test_example['code'])
     test_set = dataset['test']
 
-    generated_outputs = []
-    ground_truth = []
-    docstrings = []
     headers = ['docstring', 'label', 'output']
     with open('t5_out.csv', 'a', encoding="utf-8") as f_obj:
         writer_obj = writer(f_obj)
         writer_obj.writerow(headers)
         for val in test_set:
             row_list = []
-            row_list.append(val['docstring'])
-            input_ids = tokenizer(val['docstring'], return_tensors='pt').input_ids
+            row_list.append(val['text'])
+            input_ids = tokenizer(val['text'], return_tensors='pt').input_ids
             # Using default generation setting: greedy decoding
             outputs = model.generate(input_ids, max_length=len(val['code']))
             outputs = [tokenizer.decode(x, skip_special_tokens=True) for x in outputs]
@@ -122,8 +116,6 @@ def test_model():
         f_obj.close()
 
 
-
-
 def run():
-    #tune_model()
-    test_model()
+    tune_model()
+    # test_model()
