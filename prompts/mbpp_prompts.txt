@@ -1,2 +1,5 @@
 id	prompt
 0	Think along the lines of the variables and data structures that need to be used. Also think about the way to access the elements in the data structures.
+1	Which data structure is being used? Can the task be split into smaller sub-tasks? How many loops are needed to solve the tasks? Solve sub-tasks iteratively to find the answer
+2	"Break the problem down into smaller pieces. Sorting the input might help you create an efficient solution, use vectorised operations when possible. Apply recursion where possible."
+3	Pay attention to the datatype of input and expected output. Is the input a tuple? Is the input a string? Is the input a matrix? Use correct data structure to derive the needed answer.
