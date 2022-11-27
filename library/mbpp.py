@@ -331,8 +331,8 @@ def complete_eval_setup(data, split, batch, result_dir, api_key, task="", nshot=
     offset = 0
     batch_size = 100
     mini_batch_size = 1
-    status = np.any(status, axis=1)
     result_dir = result_dir + "/" + "{0}-shot".format(nshot)
+    os.makedirs(result_dir, exist_ok=True)
     if batch * batch_size > data[split].shape[0]:
         print("Invalid batch")
         return [], []
@@ -344,7 +344,7 @@ def complete_eval_setup(data, split, batch, result_dir, api_key, task="", nshot=
             results, status = batch_eval_fewshot(mini_batch, data["prompt"], api_key, task=task, nshot=nshot, k=k, verbose=verbose)
         else:
             results, status = batch_eval_0shot(mini_batch, api_key, task=task, k=k, verbose=verbose)
-        os.makedirs(result_dir, exist_ok=True)
+        status = np.any(status, axis=1)
         for idx in range(len(results)):
             query = results[idx][0][1]
             d = {}
