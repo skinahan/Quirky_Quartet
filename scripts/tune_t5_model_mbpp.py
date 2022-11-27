@@ -6,6 +6,7 @@ from pytorch_lightning.callbacks import EarlyStopping, LearningRateMonitor
 from csv import writer
 
 from library.t5_model import CodeT5
+from library.mbpp import *
 from transformers import T5ForConditionalGeneration, AdamW, get_linear_schedule_with_warmup
 
 
@@ -116,6 +117,35 @@ def test_model():
             row_list.append(decoded)
             writer_obj.writerow(row_list)
         f_obj.close()
+
+
+def eval_instance(instance, query, t5_out):
+    verbose = True
+    tests = [parse_test_asserts(ast.parse(t)) for t in instance["test_list"]]
+    status, code = eval_codex_out(t5_out, tests, verbose=verbose)
+    if status == 0:
+        if verbose > 0:
+            print("Success")
+    return status, query, t5_out, code
+
+
+def eval_model():
+    dataset = load_dataset("mbpp")
+    test_set = dataset['test']
+    results = []
+    status = []
+    with open('t5_out_mbpp_tuned.csv', 'r', encoding="utf-8") as f_obj:
+        reader_obj = csv.reader(f_obj)
+        idx = 0
+        for row in reader_obj:
+            query = row[0]
+            t5_out = row[2]
+            instance = test_set[idx]
+            res = eval_instance(instance, query, t5_out)
+            results.append(res)
+            status.append(True if res[0] == 0 else False)
+            idx = idx + 1
+    return results, status
 
 
 def run():
