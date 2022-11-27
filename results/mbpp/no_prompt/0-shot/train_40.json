@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to find the nth nonagonal number.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\n<code>def nth_nonagonal(n):\n    return (n * ((3 * n) - 2)) / 2\n</code>\n\n",
+        "clean_code": "<code>def nth_nonagonal(n):\n    return (n * ((3 * n) - 2)) / 2\n</code>"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n<code>def nonagonal(n):\n    return n*(3*n-2)\n</code>\n",
+        "clean_code": "<code>def nonagonal(n):\n    return n*(3*n-2)\n</code>"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n'''\n\n\ndef nonagonal(n):\n    return (n**2 + n) / 2\n\n\nprint(nonagonal(3))",
+        "clean_code": "'''\n\n\ndef nonagonal(n):\n    return (n**2 + n) / 2\n\n\nprint(nonagonal(3))"
+    },
+    "3": {
+        "status": 1,
+        "codex_out": "\ndef nth_nonagonal(n):\n    return (n * (3 * n - 2)) // 2\n\n",
+        "clean_code": "def nth_nonagonal(n):\n    return (n * (3 * n - 2)) // 2"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef nth_nonagonal_number(n):\n  return (n * (3 * n - 1)) / 2",
+        "clean_code": "\"\"\"\ndef nth_nonagonal_number(n):\n  return (n * (3 * n - 1)) / 2"
+    }
+}

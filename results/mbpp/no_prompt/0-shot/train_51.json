@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to flatten the given tuple matrix into the tuple list with each tuple representing each column.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n'''\ndef flatten_matrix(matrix):\n    return tuple(zip(*matrix))",
+        "clean_code": "'''\ndef flatten_matrix(matrix):\n    return tuple(zip(*matrix))"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\ndef flatten_tuple(input_tuple):\n    return [i for j in input_tuple for i in j]\nInput:\n((1,2,3),(4,5,6),(7,8))\nOutput:\n[1, 4, 7, 2, 5, 8, 3]\n\n \n \n\n \n\n \n\n \n\n \n\n \n\n \n\n \n\n */",
+        "clean_code": "def flatten_tuple(input_tuple):\n    return [i for j in input_tuple for i in j]\nInput:\n((1,2,3),(4,5,6),(7,8))\nOutput:\n[1, 4, 7, 2, 5, 8, 3]\n\n \n \n\n \n\n \n\n \n\n \n\n \n\n \n\n \n\n */"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n'''\ndef flatten_tuple(tup):\n    flat_list = []\n    for i in tup:\n        for j in i:\n            flat_list.append(j)\n\n    return flat_list\n\n\nprint(flatten_tuple(((1, 2), (3, 4))))",
+        "clean_code": "'''\ndef flatten_tuple(tup):\n    flat_list = []\n    for i in tup:\n        for j in i:\n            flat_list.append(j)\n\n    return flat_list\n\n\nprint(flatten_tuple(((1, 2), (3, 4))))"
+    },
+    "3": {
+        "status": 1,
+        "codex_out": "\ndef flatten(tup):\n    lst = []\n    for i in tup:\n        if type(i) == tuple:\n            lst.extend(flatten(i))\n        else:\n            lst.append(i)\n\n    return lst\n\n \ndef transpose_matrix_columns_to_tuples(*args):\n\n    tup = args[0] if len(args) == 1 else args\n\n    flat = flatten(tup)\n\n    return tuple([flat[x::len(tup)] for x in range(len(tup))])",
+        "clean_code": "def flatten(tup):\n    lst = []\n    for i in tup:\n        if type(i) == tuple:\n            lst.extend(flatten(i))\n        else:\n            lst.append(i)\n\n    return lst\n\n \ndef transpose_matrix_columns_to_tuples(*args):\n\n    tup = args[0] if len(args) == 1 else args\n\n    flat = flatten(tup)\n\n    return tuple([flat[x::len(tup)] for x in range(len(tup))])"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef flatten(tuple_matrix):\n    # Write your code here.\n    return tuple(map(lambda *x: x, *tuple_matrix))\n\n\n# Test case 1\nA = ((1,2), (3,4), (5,6), (7,8)) # tuple matrix\nB = flatten(A) # tuple list as output \nprint(\"Test case 1\") \nprint(\"Input:\", A) \nprint(\"Output:\", B) \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n    \t\t\t\t\t\t###     ###     ###     ###     ###     ###",
+        "clean_code": "\"\"\"\ndef flatten(tuple_matrix):\n    # Write your code here.\n    return tuple(map(lambda *x: x, *tuple_matrix))\n\n\n# Test case 1\nA = ((1,2), (3,4), (5,6), (7,8)) # tuple matrix\nB = flatten(A) # tuple list as output \nprint(\"Test case 1\") \nprint(\"Input:\", A) \nprint(\"Output:\", B) \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n  \n\n    \t\t\t\t\t\t###     ###     ###     ###     ###     ###"
+    }
+}

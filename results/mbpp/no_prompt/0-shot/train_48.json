@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a python function to calculate the sum of the numbers in a list between the indices of a specified range.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAnswer:",
+    "success": 1,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\n'''\ndef sum_of_list(lst,start,end):\n    return sum(lst[start:end+1])",
+        "clean_code": "'''\ndef sum_of_list(lst,start,end):\n    return sum(lst[start:end+1])"
+    },
+    "1": {
+        "status": 0,
+        "codex_out": "\n\ndef sum_of_list(input_list, start_index, end_index):\n    sum = 0\n    for i in range(start_index, end_index + 1):\n        sum += input_list[i]\n\n    return sum\n\n\ndef test():\n    assert (sum([1, 2, 3], 0, 2) == 6)\n\n    assert (sum([1, 2], 0, 1) == 3)\n\n    assert (sum([1], 0, 0) == 1)\n\n    assert (sum([], -2147483648, -2147483648) == None)",
+        "clean_code": "def sum_of_list(input_list, start_index, end_index):\n    sum = 0\n    for i in range(start_index, end_index + 1):\n        sum += input_list[i]\n\n    return sum\n\n\ndef test():\n    assert (sum([1, 2, 3], 0, 2) == 6)\n\n    assert (sum([1, 2], 0, 1) == 3)\n\n    assert (sum([1], 0, 0) == 1)\n\n    assert (sum([], -2147483648, -2147483648) == None)"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\nWrite your answer below this line:'''\ndef sum_of_list_elements(input_list,start,end):\n    return sum(input_list[start:end+1])",
+        "clean_code": "Write your answer below this line:'''\ndef sum_of_list_elements(input_list,start,end):\n    return sum(input_list[start:end+1])"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\n#PF-Assgn-49\ndef sms_encoding(data):\n    #start writing your code here\n    data = list(data)\n    vowels = ['a','e','i','o','u']  #declaring the list of vowels.  \n\n    for i in range(0,len(data)): #iterating through the characters of 'data' string.\n\n        if data[i] in vowels:     #if character is vowel then replace it with '#' symbol. \n\n            data[i] = \"#\"          #replacing the vowel with '#' symbol. \n\n        else:                     #if character is not a vowel then convert it to its corresponding ASCII value and add it to the list 'data'.\n\n            data[i] = str(ord(data[i]) - 96)       #converting the character to its corresponding ASCII value and adding it to the list 'data'.  \n\n        \n    return \"\".join(str(x) for x in data)      #returning the elements of list as a string by joining them together. \n\n    \nprint(sms_encoding(\"I will meet you at nine\"))",
+        "clean_code": "\"\"\"\n\n\n#PF-Assgn-49\ndef sms_encoding(data):\n    #start writing your code here\n    data = list(data)\n    vowels = ['a','e','i','o','u']  #declaring the list of vowels.  \n\n    for i in range(0,len(data)): #iterating through the characters of 'data' string.\n\n        if data[i] in vowels:     #if character is vowel then replace it with '#' symbol. \n\n            data[i] = \"#\"          #replacing the vowel with '#' symbol. \n\n        else:                     #if character is not a vowel then convert it to its corresponding ASCII value and add it to the list 'data'.\n\n            data[i] = str(ord(data[i]) - 96)       #converting the character to its corresponding ASCII value and adding it to the list 'data'.  \n\n        \n    return \"\".join(str(x) for x in data)      #returning the elements of list as a string by joining them together. \n\n    \nprint(sms_encoding(\"I will meet you at nine\"))"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n'''\ndef sum_of_num(lst,start,end):\n    return sum(lst[start:end+1])",
+        "clean_code": "'''\ndef sum_of_num(lst,start,end):\n    return sum(lst[start:end+1])"
+    }
+}

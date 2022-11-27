@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to zip two given lists of lists.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n'''\ndef zip(l1,l2):\n    return [list(i) for i in list(zip(*[l1, l2]))]",
+        "clean_code": "'''\ndef zip(l1,l2):\n    return [list(i) for i in list(zip(*[l1, l2]))]"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\ndef zip_lists(list1, list2):\n    return [[i, j] for i in list1 for j in list2]\n\"\"\"\n\n\ndef zip_lists(list1, list2):\n    return [[i, j] for i in list1 for j in list2]",
+        "clean_code": "def zip_lists(list1, list2):\n    return [[i, j] for i in list1 for j in list2]\n\"\"\"\n\n\ndef zip_lists(list1, list2):\n    return [[i, j] for i in list1 for j in list2]"
+    },
+    "2": {
+        "status": 1,
+        "codex_out": "\ndef zip_lists(list1, list2):\n    if len(list1) != len(list2):\n        return None\n    else:\n        new_list = []\n        for i in range(len(list1)):\n            new_sub_list = []\n            for j in range(len(list1[i])):\n                new_sub_list.append((list1[i][j], list2[i][j]))  # tuples are immutable, so they can't be changed later. That's why we're using them here.\n            new_list.append(new_sub_list)\n\n        return new_l",
+        "clean_code": "def zip_lists(list1, list2):\n    if len(list1) != len(list2):\n        return None\n    else:\n        new_list = []\n        for i in range(len(list1)):\n            new_sub_list = []\n            for j in range(len(list1[i])):\n                new_sub_list.append((list1[i][j], list2[i][j]))  # tuples are immutable, so they can't be changed later. That's why we're using them here.\n            new_list.append(new_sub_list)\n\n        return new_l"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\ndef zip(a, b):\n    return list(map(lambda x, y: [x] + [y], a, b))\nExample:\n>>> zip([[1, 2], [3, 4]], [[5, 6]])\n[[1, 2], [5, 6]]\n\n \n */\n\n // TODO: Write code here",
+        "clean_code": "def zip(a, b):\n    return list(map(lambda x, y: [x] + [y], a, b))\nExample:\n>>> zip([[1, 2], [3, 4]], [[5, 6]])\n[[1, 2], [5, 6]]\n\n \n */\n\n // TODO: Write code here"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef zip_lists(list1, list2):\n    \"\"\"\n    This function takes two lists as arguments. Each list contains sub-lists. \n    It returns a new list by combining the elements of the sub-lists.\n\n    Args:\n        list1 (list): List containing sub-lists. \n        list2 (list): List containing sub-lists.\n\n    Returns:\n        new_list (list): New list created by combining elements of the sub-lists.\n\n    Examples:\n        >>> zip_lists([[1, 2], [3, 4]], [[5, 6], [7, 8]])\n        [[1, 5], [2, 6], [3, 7], [4, 8]]    \n\n        >>> zip_lists([[1],[2],[3]],[[4],[5],[6]])  # One way to create a 3x3 matrix using nested lists  \n        [[1, 4], [2, 5], [3, 6]]    \n\n    \"\"\"    \n\n    if len(list1) != len(list2): return \"List lengths must be equal.\"  # Check if both lists are of equal length. If not return error message.\n\n    else:   # If both lists are of equal length then proceed with function execution                                                              # Create an empty new_list to store the results in it and initialize count to 0 for iteration purposes            \t\t\t\t\t\t# Iterate over all elements in first given list and append them to new_list after extracting each element from its respective sub-list                                   # Iterate over all elements in second given list and append them to new_list after extracting each element from its respective sub-lis      \t      # Return final result stored in new_lis        \t         t                                                t           t            t             t               count = 0   nw = []      for i in range(len(lst)):          nw += lst[i][count:] + lst[i+1][count:]          count += 1      return nw",
+        "clean_code": "\"\"\"\ndef zip_lists(list1, list2):\n    \"\"\"\n    This function takes two lists as arguments. Each list contains sub-lists. \n    It returns a new list by combining the elements of the sub-lists.\n\n    Args:\n        list1 (list): List containing sub-lists. \n        list2 (list): List containing sub-lists.\n\n    Returns:\n        new_list (list): New list created by combining elements of the sub-lists.\n\n    Examples:\n        >>> zip_lists([[1, 2], [3, 4]], [[5, 6], [7, 8]])\n        [[1, 5], [2, 6], [3, 7], [4, 8]]    \n\n        >>> zip_lists([[1],[2],[3]],[[4],[5],[6]])  # One way to create a 3x3 matrix using nested lists  \n        [[1, 4], [2, 5], [3, 6]]    \n\n    \"\"\"    \n\n    if len(list1) != len(list2): return \"List lengths must be equal.\"  # Check if both lists are of equal length. If not return error message.\n\n    else:   # If both lists are of equal length then proceed with function execution                                                              # Create an empty new_list to store the results in it and initialize count to 0 for iteration purposes            \t\t\t\t\t\t# Iterate over all elements in first given list and append them to new_list after extracting each element from its respective sub-list                                   # Iterate over all elements in second given list and append them to new_list after extracting each element from its respective sub-lis      \t      # Return final result stored in new_lis        \t         t                                                t           t            t             t               count = 0   nw = []      for i in range(len(lst)):          nw += lst[i][count:] + lst[i+1][count:]          count += 1      return nw"
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to find the frequency of each element in the given list.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef frequency(list1):\n    frequency_dict = {}\n    for i in list1:\n        if i in frequency_dict:\n            frequency_dict[i] += 1\n        else:\n            frequency_dict[i] = 1\n\n    return sorted(frequency_dict.items(), key=lambda x:x[0])",
+        "clean_code": "\"\"\"\ndef frequency(list1):\n    frequency_dict = {}\n    for i in list1:\n        if i in frequency_dict:\n            frequency_dict[i] += 1\n        else:\n            frequency_dict[i] = 1\n\n    return sorted(frequency_dict.items(), key=lambda x:x[0])"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\n\n\ndef find_frequency(lst):\n    \"\"\" Returns a dictionary with frequency of each element in the list \"\"\"\n    freq = {}\n\n    for item in lst:\n        if item not in freq:\n            freq[item] = 1\n        else:\n            freq[item] += 1\n\n    return freq",
+        "clean_code": "\"\"\"\n\n\ndef find_frequency(lst):\n    \"\"\" Returns a dictionary with frequency of each element in the list \"\"\"\n    freq = {}\n\n    for item in lst:\n        if item not in freq:\n            freq[item] = 1\n        else:\n            freq[item] += 1\n\n    return freq"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n'''\ndef frequency(lst):\n    freq = {}  # empty dictionary\n    for item in lst:\n        if (item in freq):\n            freq[item] += 1   #Increase frequency of the element.\n        else:  #If the element is not present in dictionary then add it to dictionary with frequency 1. \n            freq[item] = 1\n\n    return freq",
+        "clean_code": "'''\ndef frequency(lst):\n    freq = {}  # empty dictionary\n    for item in lst:\n        if (item in freq):\n            freq[item] += 1   #Increase frequency of the element.\n        else:  #If the element is not present in dictionary then add it to dictionary with frequency 1. \n            freq[item] = 1\n\n    return freq"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n'''\ndef frequency(list):\n    #Remove pass and write your logic here\n    freq = {} \n    for item in list: \n        if (item in freq): \n            freq[item] += 1\n        else: \n            freq[item] = 1\n\n    for key, value in freq.items(): \n        print (\"% d : % d\"%(key, value))",
+        "clean_code": "'''\ndef frequency(list):\n    #Remove pass and write your logic here\n    freq = {} \n    for item in list: \n        if (item in freq): \n            freq[item] += 1\n        else: \n            freq[item] = 1\n\n    for key, value in freq.items(): \n        print (\"% d : % d\"%(key, value))"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n'''\ndef frequency(l):\n    freq = {} \n    for item in l: \n        if (item in freq): \n            freq[item] += 1\n        else: \n            freq[item] = 1\n\n    for key, value in freq.items(): \n        print (\"% d : % d\"%(key, value))  \n\n      \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n         #END OF CODE",
+        "clean_code": "'''\ndef frequency(l):\n    freq = {} \n    for item in l: \n        if (item in freq): \n            freq[item] += 1\n        else: \n            freq[item] = 1\n\n    for key, value in freq.items(): \n        print (\"% d : % d\"%(key, value))  \n\n      \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n         #END OF CODE"
+    }
+}

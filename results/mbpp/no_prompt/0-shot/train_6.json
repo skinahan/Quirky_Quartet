@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to search a literals string in a string and also find the location within the original string where the pattern occurs by using regex.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\n\ndef regex_search(pattern, string):\n    import re\n\n    if re.search(pattern, string):\n        print(\"The match is found at {}\".format(re.search(pattern, string).start()))\n\n    else:\n        print(\"No match found\")",
+        "clean_code": "\"\"\"\n\ndef regex_search(pattern, string):\n    import re\n\n    if re.search(pattern, string):\n        print(\"The match is found at {}\".format(re.search(pattern, string).start()))\n\n    else:\n        print(\"No match found\")"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n'''\ndef find_pattern(string, pattern):\n    # Write your code here.\n    import re\n\n    match = re.search(pattern, string)\n\n    if match:\n        return (match.start(), match.end())\n\n    else:\n        return (-1, -1)",
+        "clean_code": "'''\ndef find_pattern(string, pattern):\n    # Write your code here.\n    import re\n\n    match = re.search(pattern, string)\n\n    if match:\n        return (match.start(), match.end())\n\n    else:\n        return (-1, -1)"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n'''\nimport re\n\n\ndef find_string(s, pattern):\n    pos = []\n    for m in re.finditer(pattern, s):\n        pos.append((m.start(), m.end()-1))\n\n    return pos\n\n\nif __name__ == '__main__':\n    s = input()  # original string to be searched in the pattern string.\n    pattern = input()  # literal string to be searched in the original string s.\n\n    result = find_string(s, pattern)  # call the function and store its output in a variable named result.\n\n    print(result)",
+        "clean_code": "'''\nimport re\n\n\ndef find_string(s, pattern):\n    pos = []\n    for m in re.finditer(pattern, s):\n        pos.append((m.start(), m.end()-1))\n\n    return pos\n\n\nif __name__ == '__main__':\n    s = input()  # original string to be searched in the pattern string.\n    pattern = input()  # literal string to be searched in the original string s.\n\n    result = find_string(s, pattern)  # call the function and store its output in a variable named result.\n\n    print(result)"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\ndef find_pattern(string, pattern):\n    import re\n    return re.search(pattern, string)\nExample:\nInput:  string = \"The quick brown fox jumps over the lazy dog.\" pattern = \"fox\" Output: <re.Match object; span=(16, 19), match='fox'> Input:  string = \"The quick brown fox jumps over the lazy dog.\" pattern = \"cat\" Output: None \n\n\nQuestion : Write a function to search a literals string in a string and also find the location within the original string where the pattern occurs by using regex. Task : Write a python function to solve the above question. No additional comments and docstrings are needed. Answer : def find_pattern(string, pattern): import re return re.search(pattern, string) Example : Input:  string = \"The quick brown fox jumps over the lazy dog.\" pattern = \"fox\" Output: <re.Match object; span=(16, 19), match='fox'> Input:  string = \"The quick brown fox jumps over the lazy dog.\" pattern = \"cat\" Output: None",
+        "clean_code": "def find_pattern(string, pattern):\n    import re\n    return re.search(pattern, string)\nExample:\nInput:  string = \"The quick brown fox jumps over the lazy dog.\" pattern = \"fox\" Output: <re.Match object; span=(16, 19), match='fox'> Input:  string = \"The quick brown fox jumps over the lazy dog.\" pattern = \"cat\" Output: None \n\n\nQuestion : Write a function to search a literals string in a string and also find the location within the original string where the pattern occurs by using regex. Task : Write a python function to solve the above question. No additional comments and docstrings are needed. Answer : def find_pattern(string, pattern): import re return re.search(pattern, string) Example : Input:  string = \"The quick brown fox jumps over the lazy dog.\" pattern = \"fox\" Output: <re.Match object; span=(16, 19), match='fox'> Input:  string = \"The quick brown fox jumps over the lazy dog.\" pattern = \"cat\" Output: None"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n<code>import re\ndef search_literal_string(original, pattern):\n    # your code goes here\n    return re.search(pattern, original).span()\n\n\nprint(search_literal_string(\"abcdefg\", \"def\"))  # expected output: (3, 6)\nprint(search_literal_string(\"abcdefg\", \"hij\"))  # expected output: None\n</code>\n\n",
+        "clean_code": "<code>import re\ndef search_literal_string(original, pattern):\n    # your code goes here\n    return re.search(pattern, original).span()\n\n\nprint(search_literal_string(\"abcdefg\", \"def\"))  # expected output: (3, 6)\nprint(search_literal_string(\"abcdefg\", \"hij\"))  # expected output: None\n</code>"
+    }
+}

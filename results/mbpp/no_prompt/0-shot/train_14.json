@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to find average value of the numbers in a given tuple of tuples.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef average_value(t):\n    sum=0.0\n    count=0.0\n    for i in t:\n        for j in i:\n            sum+=j\n            count+=1.0\n\n    return sum/count",
+        "clean_code": "\"\"\"\ndef average_value(t):\n    sum=0.0\n    count=0.0\n    for i in t:\n        for j in i:\n            sum+=j\n            count+=1.0\n\n    return sum/count"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\n'''\ndef f(t):\n    return sum(sum(x) for x in t)/len([sum(x) for x in t])",
+        "clean_code": "'''\ndef f(t):\n    return sum(sum(x) for x in t)/len([sum(x) for x in t])"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef average(tuple_of_tuples):\n    return sum(sum(i) for i in tuple_of_tuples)/len(tuple_of_tuples)",
+        "clean_code": "\"\"\"\ndef average(tuple_of_tuples):\n    return sum(sum(i) for i in tuple_of_tuples)/len(tuple_of_tuples)"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\ndef find_avg(tpl):\n    sum = 0\n    count = 0\n    for t in tpl:\n        sum += sum(t)\n        count += len(t)\n\n    return float(sum)/count \n\n \n  \"\"\"",
+        "clean_code": "def find_avg(tpl):\n    sum = 0\n    count = 0\n    for t in tpl:\n        sum += sum(t)\n        count += len(t)\n\n    return float(sum)/count \n\n \n  \"\"\""
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n'''\ndef avg(t):\n    return sum(sum(i) for i in t)/len(t)\n#print (avg(([1,2],[3,4])))",
+        "clean_code": "'''\ndef avg(t):\n    return sum(sum(i) for i in t)/len(t)\n#print (avg(([1,2],[3,4])))"
+    }
+}

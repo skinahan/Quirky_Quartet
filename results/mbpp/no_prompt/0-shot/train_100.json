@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to find the equilibrium index of the given array.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAnswer:",
+    "success": 1,
+    "0": {
+        "status": 2,
+        "codex_out": "\n*/\ndef find_equilibrium_index(array):\n    left = 0\n    right = sum(array)\n\n    for i in range(len(array)):\n        right -= array[i]\n\n        if left == right:\n            return i\n\n        left += array[i]\n\n    return -1",
+        "clean_code": "*/\ndef find_equilibrium_index(array):\n    left = 0\n    right = sum(array)\n\n    for i in range(len(array)):\n        right -= array[i]\n\n        if left == right:\n            return i\n\n        left += array[i]\n\n    return -1"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\ndef equilibrium(arr):\n    # Please add your code here\n    sum_left = 0\n    sum_right = sum(arr)\n\n    for i in range(len(arr)):\n\n        if i > 0:\n            sum_left += arr[i - 1]\n\n        sum_right -= arr[i]\n\n        if sum_left == sum_right:\n            return i\n\n    return -1  # Equilibrium index does not exists.\n\n\n# Test cases. Don't modify below this line. \n# --------------------------------------------\t\t\t    \t\t \t\t\t \t \t \t\t \t\t \t  \t\t   \t  \t",
+        "clean_code": "\"\"\"\ndef equilibrium(arr):\n    # Please add your code here\n    sum_left = 0\n    sum_right = sum(arr)\n\n    for i in range(len(arr)):\n\n        if i > 0:\n            sum_left += arr[i - 1]\n\n        sum_right -= arr[i]\n\n        if sum_left == sum_right:\n            return i\n\n    return -1  # Equilibrium index does not exists.\n\n\n# Test cases. Don't modify below this line. \n# --------------------------------------------"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n'''\n\ndef equilibriumIndex(a):\n    sum1=0\n    sum2=0\n\n    for i in range(len(a)):\n\n        for j in range(i+1,len(a)):\n\n            sum1+=a[j]\n\n        if i!=0:    \n            for k in range(i-1,-1,-1):\n\n                sum2+=a[k]\n\n        if sum2==sum1:  #equilibrium index found when left and right sums are equal. \n\n            return i   #Return the equilibrium index. \n\n        else:          #If not found, reset the sums to 0 and continue with the loop. \n            \n            sum2=0     #This will help to check all possible combinations of left and right sums.     \n            \n            sum1=0     #For example, if a=[3,4,5], then the loop will check [3],[4],[5], [3,4],[4,5].",
+        "clean_code": "'''\n\ndef equilibriumIndex(a):\n    sum1=0\n    sum2=0\n\n    for i in range(len(a)):\n\n        for j in range(i+1,len(a)):\n\n            sum1+=a[j]\n\n        if i!=0:    \n            for k in range(i-1,-1,-1):\n\n                sum2+=a[k]\n\n        if sum2==sum1:  #equilibrium index found when left and right sums are equal. \n\n            return i   #Return the equilibrium index. \n\n        else:          #If not found, reset the sums to 0 and continue with the loop. \n            \n            sum2=0     #This will help to check all possible combinations of left and right sums.     \n            \n            sum1=0     #For example, if a=[3,4,5], then the loop will check [3],[4],[5], [3,4],[4,5]."
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n'''\ndef equilibrium_index(l):\n    # Write your code here.\n    sum = 0\n    leftsum = 0\n\n    for i in l:\n        sum += i\n\n    for i,j in enumerate(l):\n        sum -= j\n\n        if leftsum == sum:\n            return i\n\n        leftsum += j",
+        "clean_code": "'''\ndef equilibrium_index(l):\n    # Write your code here.\n    sum = 0\n    leftsum = 0\n\n    for i in l:\n        sum += i\n\n    for i,j in enumerate(l):\n        sum -= j\n\n        if leftsum == sum:\n            return i\n\n        leftsum += j"
+    },
+    "4": {
+        "status": 0,
+        "codex_out": "\ndef equilibrium_index(l):\n    for i in range(len(l)):\n        if sum(l[:i]) == sum(l[i + 1:]):\n            return i\n    return -1\n\n",
+        "clean_code": "def equilibrium_index(l):\n    for i in range(len(l)):\n        if sum(l[:i]) == sum(l[i + 1:]):\n            return i\n    return -1"
+    }
+}
