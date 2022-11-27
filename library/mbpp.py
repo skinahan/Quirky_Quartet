@@ -328,7 +328,7 @@ def batch_eval_fewshot(data, prompt_data, api_key, task="", nshot=1, k=1, verbos
 
 def complete_eval_setup(data, split, batch, result_dir, api_key, task="", nshot=1, k=1, verbose=0):
     """ Run and evaluate codex on a batch of data and save results in JSON """
-    offset = 1
+    offset = 0
     batch_size = 100
     mini_batch_size = 1
     if batch * batch_size > data[split].shape[0]:
