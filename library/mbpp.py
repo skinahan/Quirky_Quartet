@@ -331,6 +331,8 @@ def complete_eval_setup(data, split, batch, result_dir, api_key, task="", nshot=
     offset = 0
     batch_size = 100
     mini_batch_size = 1
+    result_dir = result_dir + "/" + "{0}-shot".format(nshot)
+    os.makedirs(result_dir, exist_ok=True)
     if batch * batch_size > data[split].shape[0]:
         print("Invalid batch")
         return [], []
@@ -355,8 +357,6 @@ def complete_eval_setup(data, split, batch, result_dir, api_key, task="", nshot=
                 d[idy]["clean_code"] = results[idx][idy][3]
             data_id = offset + batch * batch_size + i * mini_batch_size + idx
             print("Saving {0}".format(data_id))
-            result_dir = result_dir + "/" + "{0}-shot".format(nshot)
-            os.makedirs(result_dir, exist_ok=True)
             save_result_file(d, "{0}/{1}_{2}.json".format(result_dir, split, data_id), is_json=True, is_pickle=False)
         time.sleep(60)
 
