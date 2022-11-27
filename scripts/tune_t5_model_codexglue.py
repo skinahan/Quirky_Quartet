@@ -3,8 +3,8 @@ from torch.utils.data import DataLoader
 from datasets import load_dataset
 from pytorch_lightning import Trainer
 from pytorch_lightning.callbacks import EarlyStopping, LearningRateMonitor
-import pandas as pd
-import numpy as np
+import csv
+import json
 
 from library.t5_model import CodeT5
 from transformers import T5ForConditionalGeneration, AdamW, get_linear_schedule_with_warmup
@@ -21,7 +21,7 @@ def preprocess_examples(examples):
     prefix = "Generate Python: "
     max_input_length = 256
     max_target_length = 128
-    #tokenizer = RobertaTokenizer.from_pretrained("Salesforce/codet5-base")
+    # tokenizer = RobertaTokenizer.from_pretrained("Salesforce/codet5-base")
     tokenizer = RobertaTokenizer.from_pretrained("Salesforce/codet5-small")
     inputs = [prefix + docstring for docstring in docstrings]
     model_inputs = tokenizer(inputs, max_length=max_input_length, padding="max_length", truncation=True)
@@ -84,7 +84,9 @@ def tune_model():
     save_directory = "./"
     model.model.save_pretrained(save_directory)
 
+
 from csv import writer
+
 
 def test_model():
     save_file = "./"
@@ -92,7 +94,7 @@ def test_model():
     tokenizer = RobertaTokenizer.from_pretrained("Salesforce/codet5-small")
     dataset = load_dataset("code_x_glue_ct_code_to_text", "python")
     test_example = dataset['test'][2]
-    #print("Code:", test_example['code'])
+    # print("Code:", test_example['code'])
     # prepare for the model
     input_ids = tokenizer(test_example['docstring'], return_tensors='pt').input_ids
     # generate
@@ -105,25 +107,49 @@ def test_model():
     ground_truth = []
     docstrings = []
     headers = ['docstring', 'label', 'output']
-    with open('t5_out.csv', 'a', encoding="utf-8") as f_obj:
+    with open('t5_out_codex_tuned.csv', 'a', encoding="utf-8") as f_obj:
         writer_obj = writer(f_obj)
         writer_obj.writerow(headers)
         for val in test_set:
             row_list = []
-            row_list.append(val['docstring'])
+            docstring = val['docstring']
+            label = val['code']
             input_ids = tokenizer(val['docstring'], return_tensors='pt').input_ids
             # Using default generation setting: greedy decoding
             outputs = model.generate(input_ids, max_length=len(val['code']))
             outputs = [tokenizer.decode(x, skip_special_tokens=True) for x in outputs]
             decoded = ''.join(outputs)
-            row_list.append(val['code'])
+            row_list.append(docstring)
+            row_list.append(label)
             row_list.append(decoded)
             writer_obj.writerow(row_list)
         f_obj.close()
 
 
+def evaluation_format():
+    answer_file = open("answers.json", "w")
+    pred_file = open("predictions.txt", "w")
+
+    with open('t5_out_codex_tuned.csv', 'r', encoding="utf-8") as f_obj:
+        reader_obj = csv.reader(f_obj)
+        for row in reader_obj:
+            # Create a dict for the answer
+            answer_obj = {}
+            answer_obj["code"] = row[1]
+            answer_obj["nl"] = row[0]
+
+            # Output the json to the answer file
+            json.dump(answer_obj, answer_file)
+
+            # Output the prediction to the predictions file
+            pred_no_newlines = row[2].replace("\n", "")
+            pred_file.write(pred_no_newlines + "\n")
+
+        f_obj.close()
+    answer_file.close()
+    pred_file.close()
 
 
 def run():
-    #tune_model()
+    # tune_model()
     test_model()

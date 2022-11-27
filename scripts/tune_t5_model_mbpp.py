@@ -104,13 +104,15 @@ def test_model():
         writer_obj.writerow(headers)
         for val in test_set:
             row_list = []
-            row_list.append(val['text'])
+            docstring = val['text']
+            label = val['code']
             input_ids = tokenizer(val['text'], return_tensors='pt').input_ids
             # Using default generation setting: greedy decoding
             outputs = model.generate(input_ids, max_length=len(val['code']))
             outputs = [tokenizer.decode(x, skip_special_tokens=True) for x in outputs]
             decoded = ''.join(outputs)
-            row_list.append(val['code'])
+            row_list.append(docstring)
+            row_list.append(label)
             row_list.append(decoded)
             writer_obj.writerow(row_list)
         f_obj.close()
