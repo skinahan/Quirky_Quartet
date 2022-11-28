@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to remove duplicate words from a given string using collections module.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nPay attention to the datatype of input and expected output. Is the input a tuple? Is the input a string? Is the input a matrix? Use correct data structure to derive the needed answer.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\ndef remove_duplicate_words(text):\n    \"\"\"Remove duplicate words from a given string\"\"\"\n    return \" \".join(set(text.split()))\n\n\nif __name__ == '__main__':\n\n    assert remove_duplicate_words(\"alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta\") == \"alpha beta gamma delta\", \"Test 1 Failed\"\n\n    assert remove_duplicate_words(\"my cat is my cat fat\") == \"fat is my cat\", \"Test 2 Failed\"\n\n    print(\"Tests Passed!\")\n'''",
+        "clean_code": "def remove_duplicate_words(text):\n    \"\"\"Remove duplicate words from a given string\"\"\"\n    return \" \".join(set(text.split()))\n\n\nif __name__ == '__main__':\n\n    assert remove_duplicate_words(\"alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta\") == \"alpha beta gamma delta\", \"Test 1 Failed\"\n\n    assert remove_duplicate_words(\"my cat is my cat fat\") == \"fat is my cat\", \"Test 2 Failed\"\n\n    print(\"Tests Passed!\")\n'''"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n'''\n\ndef remove_duplicate_words(s):\n    l = []\n    for i in s.split():\n        if i not in l:\n            l.append(i)\n\n    return ' '.join(l)",
+        "clean_code": "'''\n\ndef remove_duplicate_words(s):\n    l = []\n    for i in s.split():\n        if i not in l:\n            l.append(i)\n\n    return ' '.join(l)"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\ndef remove_duplicate(str1):\n    str1 = str1.split(\" \")\n    lst = []\n    for i in str1:\n        if i not in lst:\n            lst.append(i)\n\n    return \" \".join(lst)\n\n \nprint(remove_duplicate(\"Hi Hi How are you\"))\n\n \nprint(remove_duplicate(\"How are you how\"))\n\n \nprint(remove_duplicate(\"Hi Hi How are you\"))'''",
+        "clean_code": "def remove_duplicate(str1):\n    str1 = str1.split(\" \")\n    lst = []\n    for i in str1:\n        if i not in lst:\n            lst.append(i)\n\n    return \" \".join(lst)\n\n \nprint(remove_duplicate(\"Hi Hi How are you\"))\n\n \nprint(remove_duplicate(\"How are you how\"))\n\n \nprint(remove_duplicate(\"Hi Hi How are you\"))'''"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\n\n\ndef remove_duplicate_words(s):\n    return ' '.join(sorted(set(s.split(' ')), key=s.index))",
+        "clean_code": "\"\"\"\n\n\ndef remove_duplicate_words(s):\n    return ' '.join(sorted(set(s.split(' ')), key=s.index))"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n'''\n\ndef remove_duplicate_words(s):\n    # your code here\n    from collections import OrderedDict\n\n    s = ' '.join(OrderedDict.fromkeys(s.split()))\n\n    return s",
+        "clean_code": "'''\n\ndef remove_duplicate_words(s):\n    # your code here\n    from collections import OrderedDict\n\n    s = ' '.join(OrderedDict.fromkeys(s.split()))\n\n    return s"
+    }
+}

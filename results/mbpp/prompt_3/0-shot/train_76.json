@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to check if the triangle is valid or not.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nPay attention to the datatype of input and expected output. Is the input a tuple? Is the input a string? Is the input a matrix? Use correct data structure to derive the needed answer.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 1,
+        "codex_out": "\n\nimport numpy as np\ndef check_triangle(sides):\n    if np.array(sides).shape == (3,):\n        if sides[0] + sides[1] > sides[2] and \\\n           sides[0] + sides[2] > sides[1] and \\\n           sides[1] + sides[2] > sides[0]:\n            return True, 'valid'  # valid triangle\n\n        else:  # invalid triangle -- one side is longer than the sum of the other two.\n\n            return False, 'invalid'\n\n    else:  # invalid input -- not a tuple of three numbers.\n\n        return False, 'invalid'",
+        "clean_code": "import numpy as np\ndef check_triangle(sides):\n    if np.array(sides).shape == (3,):\n        if sides[0] + sides[1] > sides[2] and \\\n           sides[0] + sides[2] > sides[1] and \\\n           sides[1] + sides[2] > sides[0]:\n            return True, 'valid'  # valid triangle\n\n        else:  # invalid triangle -- one side is longer than the sum of the other two.\n\n            return False, 'invalid'\n\n    else:  # invalid input -- not a tuple of three numbers.\n\n        return False, 'invalid'"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\n'''\n# Write your function here\ndef is_triangle(a, b, c):\n    if a + b > c and a + c > b and b + c > a:\n        return True\n\n    else:\n        return False",
+        "clean_code": "'''\n# Write your function here\ndef is_triangle(a, b, c):\n    if a + b > c and a + c > b and b + c > a:\n        return True\n\n    else:\n        return False"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\n'''\n\n\ndef check_triangle(tuple):\n    if len(tuple) != 3:\n        return False\n\n    for i in range(3):\n        if tuple[i] <= 0:\n            return False\n\n    tuple = sorted(tuple)\n\n    if (tuple[0] + tuple[1]) < tuple[2]:\n        return False\n\n    return True",
+        "clean_code": "'''\n\n\ndef check_triangle(tuple):\n    if len(tuple) != 3:\n        return False\n\n    for i in range(3):\n        if tuple[i] <= 0:\n            return False\n\n    tuple = sorted(tuple)\n\n    if (tuple[0] + tuple[1]) < tuple[2]:\n        return False\n\n    return True"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n<code>def is_valid_triangle(sides):\n    a, b, c = sorted(sides)\n    return (a + b) &gt; c\n</code>\n",
+        "clean_code": "<code>def is_valid_triangle(sides):\n    a, b, c = sorted(sides)\n    return (a + b) &gt; c\n</code>"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\ndef is_valid(triangle):\n    # Write your code here\n    return True or False\n\n\nA:\n\nYou'll need to use the <code>sum()</code> function, which will add up all the elements of a list. You can also use the <code>max()</code> function, which will give you the maximum value in a list. \nSo, to check if it's valid, you want to make sure that two of the sides are greater than or equal to the longest side. \n<code>def is_valid(triangle):\n\n    #Add up all three sides and save as variable \"total\" \n\n    total = sum(triangle)\n\n    #Find longest side and save as variable \"longest\"\n\n    longest = max(triangle)\n\n    #Check if sum of other two sides is greater than or equal to longest side. If so, return True. If not, return False. \n\n    if (total - longest) &gt;= longest:\n        return True \n    else: \n        return False  \n\n     #Note: The above code assumes that there are only three elements in each triangle list (i.e., three sides). If you have more than 3 elements in your lists, then you'll need to use a loop instead of subtracting max from sum (that's just an easy shortcut).  \n</code>\n",
+        "clean_code": "def is_valid(triangle):\n    # Write your code here\n    return True or False\n\n\nA:\n\nYou'll need to use the <code>sum()</code> function, which will add up all the elements of a list. You can also use the <code>max()</code> function, which will give you the maximum value in a list. \nSo, to check if it's valid, you want to make sure that two of the sides are greater than or equal to the longest side. \n<code>def is_valid(triangle):\n\n    #Add up all three sides and save as variable \"total\" \n\n    total = sum(triangle)\n\n    #Find longest side and save as variable \"longest\"\n\n    longest = max(triangle)\n\n    #Check if sum of other two sides is greater than or equal to longest side. If so, return True. If not, return False. \n\n    if (total - longest) &gt;= longest:\n        return True \n    else: \n        return False  \n\n     #Note: The above code assumes that there are only three elements in each triangle list (i.e., three sides). If you have more than 3 elements in your lists, then you'll need to use a loop instead of subtracting max from sum (that's just an easy shortcut).  \n</code>"
+    }
+}

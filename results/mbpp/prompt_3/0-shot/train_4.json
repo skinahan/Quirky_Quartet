@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to check if the given integer is a prime number.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nPay attention to the datatype of input and expected output. Is the input a tuple? Is the input a string? Is the input a matrix? Use correct data structure to derive the needed answer.\nAnswer:",
+    "success": 1,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\n'''\n\n\ndef is_prime(num):\n    if num > 1:\n        for i in range(2, num):\n            if (num % i) == 0:\n                return False  # Not prime number.\n\n        else:  # If the number is divisible by itself and 1 only, then it is a prime number.\n            return True  # Prime number.\n\n    else:  # If the given integer is not greater than 1, it's not a prime number.\n        return False  # Not prime.",
+        "clean_code": "'''\n\n\ndef is_prime(num):\n    if num > 1:\n        for i in range(2, num):\n            if (num % i) == 0:\n                return False  # Not prime number.\n\n        else:  # If the number is divisible by itself and 1 only, then it is a prime number.\n            return True  # Prime number.\n\n    else:  # If the given integer is not greater than 1, it's not a prime number.\n        return False  # Not prime."
+    },
+    "1": {
+        "status": 0,
+        "codex_out": "\n\ndef is_prime(n):\n    if n <= 1:\n        return False\n    for i in range(2, n):\n        if n % i == 0:\n            return False\n\n    return True\n\n \n# Test cases to check the program. Should all print true. \nprint (\"Pass\" if (is_prime(0)) else \"Fail\") \t\t# Fail case \t\t-> 0 is not a prime number. \nprint (\"Pass\" if (is_prime(1)) else \"Fail\")  \t# Fail case  \t-> 1 is not a prime number. \nprint (\"Pass\" if (is_prime(2)) else \"Fail\")   # Pass case   -> 2 is a prime number. \nprint (\"Pass\" if (is_prime(3)) else \"Fail\")   # Pass case   -> 3 is a prime number. \n\n\n\n\n\n\n\n\n\n */",
+        "clean_code": "def is_prime(n):\n    if n <= 1:\n        return False\n    for i in range(2, n):\n        if n % i == 0:\n            return False\n\n    return True\n\n \n# Test cases to check the program. Should all print true. \nprint (\"Pass\" if (is_prime(0)) else \"Fail\") \t\t# Fail case \t\t-> 0 is not a prime number. \nprint (\"Pass\" if (is_prime(1)) else \"Fail\")  \t# Fail case  \t-> 1 is not a prime number. \nprint (\"Pass\" if (is_prime(2)) else \"Fail\")   # Pass case   -> 2 is a prime number. \nprint (\"Pass\" if (is_prime(3)) else \"Fail\")   # Pass case   -> 3 is a prime number."
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\ndef is_prime(n):\n    if n == 1:\n        return False\n\n    for i in range(2, n):\n        if n % i == 0:\n            return False\n\n    return True\n\"\"\"",
+        "clean_code": "def is_prime(n):\n    if n == 1:\n        return False\n\n    for i in range(2, n):\n        if n % i == 0:\n            return False\n\n    return True\n\"\"\""
+    },
+    "3": {
+        "status": 1,
+        "codex_out": "\ndef is_prime(n):\n    if n==1:\n        return False\n    elif n==2:\n        return True;\n    else:\n        for x in range(2,n):\n            if(n % x==0):\n                return False\n\n        return True \n\n \n\n \n\n \n\n \n\n \n\n \n\n \n\n */",
+        "clean_code": "def is_prime(n):\n    if n==1:\n        return False\n    elif n==2:\n        return True;\n    else:\n        for x in range(2,n):\n            if(n % x==0):\n                return False\n\n        return True"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n'''\ndef is_prime(n):\n    if n<2: return False\n    if n==2: return True\n    if not n&1: return False\n\n    for x in range(3, int(n**0.5)+1, 2):\n        if n%x == 0:\n            return False\n\n    return True",
+        "clean_code": "'''\ndef is_prime(n):\n    if n<2: return False\n    if n==2: return True\n    if not n&1: return False\n\n    for x in range(3, int(n**0.5)+1, 2):\n        if n%x == 0:\n            return False\n\n    return True"
+    }
+}

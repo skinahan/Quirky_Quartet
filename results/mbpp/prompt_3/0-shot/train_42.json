@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function that matches a word containing 'z', not at the start or end of the word.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nPay attention to the datatype of input and expected output. Is the input a tuple? Is the input a string? Is the input a matrix? Use correct data structure to derive the needed answer.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\n\nimport re\n\n\ndef z_words(words):\n    return list(filter(lambda word: re.search('[^z]z[^z]', word), words))\n\n\nif __name__ == '__main__':\n    assert z_words(['abcz', 'fghijklmnopqrstuvwxyz', 'abbbbb']) == ['abcz', 'fghijklmnopqrstuvwxyz']",
+        "clean_code": "\"\"\"\n\nimport re\n\n\ndef z_words(words):\n    return list(filter(lambda word: re.search('[^z]z[^z]', word), words))\n\n\nif __name__ == '__main__':\n    assert z_words(['abcz', 'fghijklmnopqrstuvwxyz', 'abbbbb']) == ['abcz', 'fghijklmnopqrstuvwxyz']"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n'''\n\ndef match_z(word):\n    if re.search(r'\\Bz\\B', word):\n        return True\n    else:\n        return False",
+        "clean_code": "'''\n\ndef match_z(word):\n    if re.search(r'\\Bz\\B', word):\n        return True\n    else:\n        return False"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\n'''\n\n\ndef z_check(word):\n    return 'z' in word[1:-1]",
+        "clean_code": "'''\n\n\ndef z_check(word):\n    return 'z' in word[1:-1]"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n<code>import re\ndef regex_match(string):\n    return bool(re.search(r\"\\Bz\\B\", string))\n</code>\n",
+        "clean_code": "<code>import re\ndef regex_match(string):\n    return bool(re.search(r\"\\Bz\\B\", string))\n</code>"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\nimport re\ndef match_z(word):\n    return re.search(r'\\b[a-y]*z[a-y]*\\b', word) != None\n\n\nif __name__ == '__main__':\n    #These \"asserts\" using only for self-checking and not necessary for auto-testing\n    assert match_z(\"My name is ...\") == False, \"1st example\"\n    assert match_z(\"... My name is ...\") == False, \"2st example\"\n    assert match_z(\"... My name is zee\") == True, \"3st example\"",
+        "clean_code": "\"\"\"\nimport re\ndef match_z(word):\n    return re.search(r'\\b[a-y]*z[a-y]*\\b', word) != None\n\n\nif __name__ == '__main__':\n    #These \"asserts\" using only for self-checking and not necessary for auto-testing\n    assert match_z(\"My name is ...\") == False, \"1st example\"\n    assert match_z(\"... My name is ...\") == False, \"2st example\"\n    assert match_z(\"... My name is zee\") == True, \"3st example\""
+    }
+}
