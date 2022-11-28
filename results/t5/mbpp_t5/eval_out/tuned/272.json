@@ -1,0 +1,4 @@
+{
+    "query": "Write a python function to check whether the frequency of each digit is less than or equal to the digit itself.",
+    "success": 0
+}

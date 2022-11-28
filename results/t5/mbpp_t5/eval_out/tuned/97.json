@@ -1,0 +1,4 @@
+{
+    "query": "Write a function to merge multiple sorted inputs into a single sorted iterator using heap queue algorithm.",
+    "success": 0
+}

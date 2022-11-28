@@ -1,0 +1,4 @@
+{
+    "query": "Write a function to check that the given string contains only a certain set of characters(in this case a-z, a-z and 0-9) by using regex.",
+    "success": 0
+}

@@ -1,0 +1,4 @@
+{
+    "query": "Write a function to calculate the difference between the squared sum of first n natural numbers and the sum of squared first n natural numbers.",
+    "success": 1
+}

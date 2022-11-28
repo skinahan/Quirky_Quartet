@@ -1,0 +1,4 @@
+{
+    "query": "Write a function to find the number of subsequences having product smaller than k for the given non negative array.",
+    "success": 1
+}
