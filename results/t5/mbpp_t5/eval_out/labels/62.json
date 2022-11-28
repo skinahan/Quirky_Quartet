@@ -1,0 +1,4 @@
+{
+    "query": "Write a function to split the given string with multiple delimiters by using regex.",
+    "success": 1
+}

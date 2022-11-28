@@ -141,7 +141,7 @@ def eval_model(tuned=False):
     csv_file = './results/t5/mbpp_t5/t5_out_mbpp_untuned.csv'
     if tuned:
         csv_file = './results/t5/mbpp_t5/t5_out_mbpp_tuned.csv'
-
+    ground_truth = True
 
     with open(csv_file, 'r', encoding="utf-8") as f_obj:
         reader_obj = csv.reader(f_obj)
@@ -156,9 +156,12 @@ def eval_model(tuned=False):
                     break
                 query = row[0]
                 t5_out = row[2]
+                if ground_truth:
+                    t5_out = row[1]  # Use the label instead of the generated code
                 instance = test_set[idx]
-                #print(query)
-                #print(instance['text'])
+                # Sanity check: Make sure the queries line up
+                # print(query)
+                # print(instance['text'])
                 res = eval_instance(instance, query, t5_out)
                 results.append(res)
                 status.append(True if res[0] == 0 else False)
@@ -168,14 +171,17 @@ def eval_model(tuned=False):
 
 def eval_and_save(tuned=False):
     results, status = eval_model(tuned)
-    #status = np.any(status)
+    # status = np.any(status)
+    ground_truth = True
     result_dir = "./results/t5/mbpp_t5/eval_out/untuned"
     if tuned:
         result_dir = "./results/t5/mbpp_t5/eval_out/tuned"
+    if ground_truth:
+        result_dir = "./results/t5/mbpp_t5/eval_out/labels"
     os.makedirs(result_dir, exist_ok=True)
     for idx in range(len(results)):
         query = results[idx][1]
-        #print(status)
+        # print(status)
         d = {"query": query, "success": 1 if status[idx] else 0}
         save_result_file(d, os.path.join(result_dir, "{0}.json".format(idx)), is_json=True, is_pickle=False)
 

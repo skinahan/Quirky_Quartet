@@ -1,0 +1,4 @@
+{
+    "query": "Write a function to convert the given snake case string to camel case string by using regex.",
+    "success": 1
+}
