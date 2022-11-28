@@ -85,12 +85,13 @@ def tune_model():
     model.model.save_pretrained(save_directory)
 
 
-from csv import writer
+
 
 
 def test_model():
     save_file = "./"
-    model = T5ForConditionalGeneration.from_pretrained(save_file)
+    #model = T5ForConditionalGeneration.from_pretrained(save_file)
+    model = T5ForConditionalGeneration.from_pretrained("Salesforce/codet5-small")
     tokenizer = RobertaTokenizer.from_pretrained("Salesforce/codet5-small")
     dataset = load_dataset("code_x_glue_ct_code_to_text", "python")
     test_example = dataset['test'][2]
@@ -99,16 +100,16 @@ def test_model():
     input_ids = tokenizer(test_example['docstring'], return_tensors='pt').input_ids
     # generate
     outputs = model.generate(input_ids)
-    print("Generated code:", tokenizer.decode(outputs[0], skip_special_tokens=False))
-    print("Ground truth:", test_example['code'])
+    #print("Generated code:", tokenizer.decode(outputs[0], skip_special_tokens=False))
+    #print("Ground truth:", test_example['code'])
     test_set = dataset['test']
 
     generated_outputs = []
     ground_truth = []
     docstrings = []
     headers = ['docstring', 'label', 'output']
-    with open('t5_out_codex_tuned.csv', 'a', encoding="utf-8") as f_obj:
-        writer_obj = writer(f_obj)
+    with open('t5_out_codex_untuned.csv', 'a', encoding="utf-8") as f_obj:
+        writer_obj = csv.writer(f_obj)
         writer_obj.writerow(headers)
         for val in test_set:
             row_list = []
@@ -153,3 +154,7 @@ def evaluation_format():
 def run():
     # tune_model()
     test_model()
+
+test_model()
+
+
