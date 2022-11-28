@@ -10,3 +10,4 @@ plots
 *.csv
 *plots*
 samples.jsonl
+.DS_Store
