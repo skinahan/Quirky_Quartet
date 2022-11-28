@@ -1,0 +1,4 @@
+{
+    "query": "Write a function to find the top k integers that occur most frequently from given lists of sorted and distinct integers using heap queue algorithm.",
+    "success": 1
+}

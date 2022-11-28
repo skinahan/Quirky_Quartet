@@ -1,0 +1,1001 @@
+import redef remove_first_last(text,char):  text = re.sub(r"([a-z])([A-Z])([A-Z])", text,text)  return (text)
+def sort_matrix(matrix):  res = matrix.sum()  return (res) 
+def most_common_words(dict1):  res = {key: str(i) for i in dict1.items()}  return (res) 
+def triangular_prism_volume(n):  res = 0  for i in range(n):      res += (i * i)  return (res) 
+import redef split_lowercase(text):  res = re.sub('[A-Z]', text)  return (res) 
+def lower_case_sequence(str1):  res = [str1[0] for str1 in str1[1:]].join(' '))  return (res) 
+def perimeter_square(a,b,c):  perimeter = a * b  return perimeter
+import redef remove_char(text):  res = re.sub(r"[A-Z]", text)  return (res) 
+def duplicate_element(arr,n):  res = True  for i in range(n):      res = False      res = True      res = False      res = True      res = False      res = True      res = False      res = True      res = True      res = False      res = True      res = False      res = False      res = (res) and
+def check_woodball(n):  res = True  for i in range(n):      res = False  if (res == True):      res = True      return (res) 
+def m_multi_mul(n,m):    m = 0    for i in range(m,n+1):        if (i % 2 == 0):        return i    return -1
+def find_duplicate(arr,n):  res = [0 for i in range(n + 1)]  return (res) 
+def max_sum(list1):  res = [0 for i in list1 if i > 0]  return (res) 
+def to_decimal(num):  result = int(num)  return result
+def product_non_repeated(arr,n):  res = [0 for i in range(n + 1)]  return (res) 
+def check_all(test_list, k):  res = all(test_list[k] for k in k if test_list[k] == test_list[k]])  return (res) 
+import redef remove_digits(str1):  res = re.sub('[A-Z]', r'\1_\2', r'\1_\2_\3_\4_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\
+def binomial_co_efficient(n):  res = [1 for i in range(n + 1)]  return (res) 
+def odd_element(n):  if (n % 2 == 0):      return 1  else:      return 2
+import redef count_substring(s,n):    s = re.findall('[A-Z]',s,n)    return (s) 
+def top_k_int(nums):  res = [0 for i in nums]  return (res) 
+def largest_prime_factor(n):     i = 0;     for j in range(n + 1):         if (i % j == 0):         return i;         return i; 
+def decimal_to_binary(n):  result = int(n)  return result
+def find_missing(arr,n):  res = [0 for i in range(n + 1)]  return (res) 
+def rectangular_n(n,r):  res = 0  for i in range(r):      res += (r * r)  return
+def nth_digit(n):     n = n % 2     for i in range(1,n + 1):         if (n % i == 0):         return i     return -1
+def sort_int(nums,str):  res = sorted(nums, key = lambda x: x[0] == str[1]):  return (res) 
+def div_odd(nums):    result = [0 for i in range(1, nums+1)]    return result
+def check_letters(text):  res = False  for i in range(len(text)):      res = True  return (res) 
+def find_frequency(list1):  res = [0 for i in list1 if i % 2 == 0]  return (res) 
+def filter_even(nums):  res = lambda x: x % x == 0  return (res) 
+def sum_repeated(arr,n):  sum = 0  for i in range(n):      sum += arr[i]  return sum
+import redef lower_case_words(text):  res = re.findall('[A-Z]', text)  return (res) 
+import redef match_word(text):  res = re.search(r"^[a-z0-9]+$", text)  return (res) 
+def gcd(arr,n):  res = [0 for i in range(n)]  return (res) 
+def are_Different(nums,other):    if (all(nums == other)):        return True    return False
+def last_Digit(a,b):     result = 0    while (a * a <= b) :         result += (a * a)         result += (b * a)         if (result == b):         return result     return result
+def set_odd_bits(n):     n = n % 2     for i in range(n + 1):         if (n % i == 0):         return True    return False
+def extract_first(list1,2):  res = list1[0]  return (res) 
+def min_length(list1,n):  res = list1.sort()  return (res) 
+def is_Equilateral(a,b,c):  res = True  if (a == b):      return False  else:      return False
+def area_caluclate(a,b,c):  area = a * b  return area
+import redef check_first_last(text):  res = re.search(r"[A-Z]", text)  return (res) 
+def sort_array(arr,n):  res = [0 for i in range(n + 1)]  return (res) 
+def geometric_t_nth(n):  t = 0  for i in range(n):      if (i == 0):      t = i + 1      return t
+def check_Less_Than_One_Less(n):     if (n < 1):         return False    return True
+def max_num(n):     n = 0    for i in range(n):         if (n % i == 0):         return i     return -1
+def check_opposite_sign(test_list, n):  res = all(x == n for x in test_list if x == n) and (x == n) and (x == n) and (x ==
+def octagonal_number(n):    octagonal_number = 0    for i in range(n):        octagonal_number += i        octagonal_number
+def max_length(arr,n):  res = 0  for i in range(n):      res += arr[i]  return (res) 
+import mathdef count_substring(s,n):    count = math.sqrt(math.log10(n) / 2)    return count
+def find_smallest_number(list1):  res = [0 for i in list1 if i % 2 == 0]  return (res)
+def max_difference(test_list, n):  res = max(test_list[0] - 1, n)  return (res) 
+def sort_tuples(test_list):  res = sorted(test_list, key = lambda x: x[0] <= y[1]):  return (res) 
+def recursion_sum(arr,n):  res = [0 for i in range(n + 1)]  return (res) 
+def count_positive(nums):    count = 0    for i in range(0,nums.count(i)):        count += 1    for j in range(i + 1,nums.count(i) - 1) :        count += 1        if (count % i == 0):            count += 1        count += 1    return count
+def partition_bell(bells):  res = [bells[0] for bells in bells]  return (res) 
+def is_monotonic(arr):  res = True  if arr[0] == arr[1] :      res = False  return (res) 
+def contains_list(list1,sublist):  res = list1.issubset(sublist)  return (res) 
+def equal_length(test_tup):  res = all(test_tup == test_tup)  return (res) 
+def sort_list(list1):  res = list(map(lambda x: x[0] == x[1]), list1))  return (res) 
+def is_difference(n):     if (n % 2 == 0):         return True    return False
+import redef split_string(text):  res = re.sub(r"([a-z0-9])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])
+def check_sequence(arr,n):  res = True  for i in range(n):      res = False  return (res) 
+def divisible_by_k(test_list, k):  res = [test_list[k] for test_list in test_list if test_list[k] == test_list[k] ]  return (res) 
+def count_squares(r,n):     if (r > n):         return 1    return 2
+def difference_odd(n):     sum = 0    for i in range(1,n):         sum += i         if (sum % i == 0
+def odd_set_bits(n, bits):    if (n % bits == 0):        return 1    return 2
+def is_odd(word):  if (word[0] % 2 == 0):    return True  else:    return False
+def tetrahedral_number(n):  n = n + 1  for i in range(n):      if (n % i == 0):      n = i + 1      return n
+def zip_tuples(test_tup1, test_tup2):  res = zip(test_tup1, test_tup2)  return (res) 
+def volume(s,a):  volume = a * a  return volume
+import redef add_char(text):  text = re.sub(r"([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([
+def find_N_th_conway(n,m):  n = m + 1  for i in range(m):      if (n == m):      return i  else:      return -1
+def surface_area(sphere):  area = sphere.get_surface_area(sphere.get_surface_area(sphere.get_surface_area(sphere.get_surface_area(sphere.get_surface_area(sphere))))  return area
+def find_North_Hexagonal(n):    n = n + 1    for i in range(n):        if (n % i == 0):        return i    return -1
+def merge_dict(test_list, d):  res = dict(test_list)  return (res) 
+def get_frequency(list1):  res = [0 for i in list1 if i % 2 == 0]  return (res) 
+def closest_smaller(n,n):     if (n < 0):         return -1    return -1
+def longest_word_length(n):     if (n > 0 and n < 0 and n < 0 and n < 0) :         return 1    return 2
+def check_substring(text1,text2):  res = True  for i in range(len(text1)):      res = False  return (res) 
+def undulating_num(n):  res = True  for i in range(n):      res = False  if (res == True):      res = True      return (res) 
+def power_b(a,b):  res = 0  for i in range(a + b):      res += (res * (a + b) * (b + 1))  return (res) 
+def extract_min_value(test_tup):  res = [test_tup[0] for test_tup in test_tup[1] for test_tup in test_tup]  return (res) 
+def min_length(sublist):  res = [0 for i in range(len(sublist))]  return (res) 
+def divisors_num(n):     divisors = 0    for i in range(n):         divisors += 1        if (divisors[i] % divisors[i] % divisors[i] % divisors[i] % divisors[i] % divisors[i] % divisors[i] % divisors[i] % divis[i
+def frequency_count(list1):  res = [0 for i in list1 if i % 2 == 0]  return (res) 
+def multiply_list(nums,n):    result = [0 for i in nums if i % i == 0]    return result
+def decimal_to_binary(n):  result = (n * n) / 2  return result
+def next_palindrome(n):  res = [1 for i in range(n+1)]  return (res) 
+def find_kth(arr,n):  res = [i for i in arr if i[i] == arr[i] ]  return (res) 
+import redef snake_case(str):  return re.sub('([A-Z])([A-Z])', r'\1_\2', r'\1_\2', r'\1_\2', r'\1_\2', r'\1_\2_\2', r'\1_\2_\2', r'\1_\2_\2_\2_\2_\2_\2_\2_\2_\2_\2_\2_\2_\2_\2_\2_\2_\2_\2_\2_\2',
+def find_eulerian(n,m):     i = 0;if(i > n) return i; i = i + 1;     return i; 
+def sort_list(test_list):  res = sorted(test_list, key = lambda x: x[0] == x[1] for x in test_list if x[1] == x[1]):      res = res  return (res) 
+def count_bool(test_list):  res = 0  for i in test_list:      res += 1  return (res)
+def add_list(test_list):  res = [test_list[0] for test_list in test_list]  return (res) 
+def count_hex(range1,range2):  res = 0  for i in range1:      res += i  return (res) 
+def merge_input(input, m, n):  res = [(key, m, n) for key, m in zip(input, m)]  return (res) 
+def count_Rotations(str1,str2):  count = 0  while count < odd:      count += 1      count += 1      count += 1      count += 1      count += 1      count += 1      count += 1      count += 1      count += 1      count += 1      count += 1      count += 1      count += 1      count += 1  count += 1      count += 1      count += 1      count += 1      count += 1
+def extract_ranges(list1):  res = list1[0]  return (res) 
+def common_elements(list1):  res = [(item[0] for item in list1 if item[1] == list1[1]])  return (res) 
+def perimeter_cylinder(a,b,c):  perimeter = a * b  return perimeter
+def is_integer(str):  res = True  return (res) 
+def assign_frequency(test_list, frequency):  res = tuple(test_list)  return (res) 
+def check_list_empty(list1):  res = list(map(lambda x: (x[0] == x[1] for x in list1 if x[0] == x[1])))  return (res) 
+def int_to_int(test_tup):  res = tuple(map(int, test_tup))  return (res) 
+def convert_list(list1):  res = list1[0]  return (res) 
+import redef convert_list(text):  res = re.findall('[a-z0-9]+', text)  return (res) 
+def find_element(arr,n):  res = [i for i in range(n + 1)]  return (res) 
+def max_product(test_list):  res = max(test_list[0] for test_list in test_list if test_list[1] > test_list[2]):      res = max(res)  return (res) 
+def sum_triplet(arr,n):  sum = arr[n - 1]  return sum
+def find_Smart_Number(n,smart_num):  n = smart_num + 1  for i in range(smart_num + 1):      if (n % i == 0):      return n  else:      return -1
+def sum_amicable_numbers(n):  sum_amicable_numbers = [1 for i in range(n + 1)]  return sum_amicable_numbers
+def angle_complex(n):  angle = n * 2  return angle
+def max_difference(text):  res = max(text, 0, -1)  return (res) 
+def common_divisors(nums):    sum = 0    for i in range(0,nums.count(i)):        sum += sum * i        if (sum % i == 0):        return sum    return sum
+def multiply_two(nums,n):  res = [1 for i in range(n)]  return (res) 
+def shortlist_longer_than_n(words,n):  res = [(n - 1) for i in words if i>= n]  return (res) 
+def magic_square(n):    m = 0    for i in range(n):        m = m + i        if (m == 0):        return m
+def max_frequency(list1):  res = [item for item in list1 if item[0] > max_frequency]  return (res) 
+def reverse_vowels(text):  res ='' * text  return (res) 
+def tuple_to_string(test_tup):  res = tuple(test_tup)  return (res) 
+def sum_Negative_Numbers(nums):  sum = sum + nums  return sum
+def last_element_odd(arr,n):  res = False  if (arr[n] % n == 0):      res = True  return (res) 
+def hexagonal_number(n):    n = n + 1    for i in range(n):        if (n % i == 0):        return
+def electricity_bill(n):    electricity = 0    for i in range(n):        electricity += i    if electricity >= 0:        electricity += i        else:        electricity += i        electricity += i    if electricity >= 0:        electricity += i        else:            electricity += i            electricity += i    if electricity >= 0:        return 
+def ration_zero(arr,n):  res = [0 for i in range(n)]  return (res) 
+def is_Sum_Of_Powers(n):     sum = 0    for i in range(n + 1):         if (n % i == 0):         return True    return False
+def circle_circumference(a,b,c):  circumference = a*b  return circumference
+def extract_elements(test_list):  res = [test_list[0] for test_list in test_list if test_list[1] == test_list[2] ]  return (res) 
+def pancake_sort(list1):  res = list1.sort()  return (res) 
+def count_same_pair(test_list, test_list):  res = 0  for i in range(len(test_list)):      res += 1  return (res) 
+def find_list(test_tup):  res = 0  for i in range(len(test_tup)):      res += 1  return (res) 
+def sum_difference(arr,n):  sum_difference = 0  for i in range(n):      sum_difference += arr[i]  return sum_difference
+def max_difference(arr,n):     result = 0    for i in range(n):         result += arr[i]     return result
+import redef total_char(text):  total_char = re.findall('[A-Z]', text)  return total_char
+def max_path_sum(test_tup):  res = max(test_tup[0] for test_tup[1] for test_tup[2] for test_tup[1] for test_tup[2] for test_tup[1] for test_tup[2] for test_tup[2] for test_tup[1] for test_tup[2] in test_tup[1]):      res += test_tup[2]      res += test_tup[1]  return (res) 
+def div_num(n):  res = 0  for i in range(1,n+1):      res += (res * i)  return (res) 
+def longest_subsequence(arr,n):  res = 0  for i in range(n):      res += 1  return (res) 
+def is_Infinite_Sequence(n):     if (n % 2 == 0):         return True    return False
+def co_prime(n):     if (n % 2 == 0):         return True    return False
+def sort_array(arr,n):  res = [arr[0] for arr in arr]  return (res) 
+def parabola_vertex(a,b,c):  return (a*b)
+def extract_element(test_list, n):  res = [test_list[0] for test_list in n]  return (res) 
+def toggle_even_bits(n):     if (n % 2 == 0):         return True    return False
+def convert_tuple(test_tup):  res = tuple(map(int, test_tup))  return (res) 
+def run_length(list):  res = [len(list) for i in list if i[i] == '0'] else '0'  return (res) 
+def check_equal(arr,n):     k = 0;     for i in range(n):         if (arr[i] == arr[i]):         return 1;     return 2; 
+def season(month,day):  season = season.season(month,day)  return season
+def find_x_y(x,y,n):  x, y = (x + y) / 2  return (x, y)
+def remove_list(list1):  res = list1.remove(list1)  return (res) 
+def sum_positive_int(n,n):    sum = 0    for i in range(0,n-1):        sum += (sum * (i + 1) * (i + 1) * (i + 1) * (i + 1) * (i + 1) * (i + 1) * (i + 1) * (i + 1)
+def area_regular_polygon(a,b,c):  area = a*b*c  return area
+def sum_Divisors_Same(n,a):    sum = 0    for i in range(1,n):        if (a == n):        return True    return False
+def count_char(text,n):  count = 0  for i in range(n):      count += 1  return count
+def xor_even(nums):  count = 0  for i in range(len(nums)):      count += 1  return count
+def find_Min_Power(n):     power = 2 * n     for i in range(i + 1, n + 1):         power *= i         if (power <= power):         power *= i         power = power * i         power = power * i         power = power * i         power = power * i         power = power * i         power = power * i         power = power * i         power = power         power = power * power     power = power         power = power * i         power = power * i         power *= power         power = power * power         power *= power         power *= power         power *= power 
+def find_frequency(arr,n):  res = [0 for i in range(n+1)]  return (res) 
+def pell_number(n):    pell_number = 0    for i in range(n):        pell_number += i        if (pell_number % 2 == 0):        return pell_number    return pell_number
+def sum_range(nums,n):    sum = 0    for i in range(n):        sum += sum + i    for j in range(n + 1,n + 1):        sum += sum * j        if (sum % j == 0):        return sum
+def perimeter_pentagon(pentagon):  perimeter = pentagon.perimeter(pentagon.perimeter(pentagon.perimeter(pentagon.perimeter))  perimeter.perimeter(perimeter)), perimeter.perimeter(perimeter)
+def occurence_std(str1):  res ='std'  res = 'Found a occurence.'  res = 'Found a occurence.'  res = 'Found a occurence.'  res = 'Found a occurence.'  res = 'Found a occurence.'  res = 'Found a occurence.'  res = 'Found a occurence.'  res = 'Found a occurence.'  res = 'Found a occurence.'  return (res)
+import redef remove_alphanumeric(text):  text = re.sub('[A-Z]', text)  return (text)
+def group_list(test_list):  res = {key: test_list[0] for key, test_list in test_list.items() if key not in res.items() else None}  return (res) 
+import redef check_parentheses(text):  res = re.search(r"^[a-z0-9]+$", text)  return (res) 
+def perimeter_triangle(a,b,c):  perimeter = a * b  return perimeter
+def lcm_lies(n,r):  res = [1 for i in range(r+1,r+1,r+1,r+1,r+1,r+1,r+1,r+1,r+1,r+1,r+1,r+1,r+1,r+1,r+1,r+1,r+1,r+1,r+
+import redef search_literals(text):  res = re.findall('[a-z]+', text)  return (res) 
+def is_keith(n):  res = False  for i in range(n+1):      res = True  return (res) 
+def distance_of_two(x,y,z):  distance = x * y  return distance
+def longest_common_prefix(test_list):  res = [len(test_list) - 1]  return (res) 
+def find_uppercase(test_str, test_str):  res = re.sub(r"([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z]), test_str, test_str)  res = re.sub(r"([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])[0-Z])[0-Z])[A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([0-Z])([0-9])([A-Z])([A-Z])([A-Z])
+def count_distinct(arr,k):  res = 0  for i in range(len(arr)):      res += 1  return (res) 
+def greater_than_num(nums,n):  res = [i for i in range(n + 1)]  return (res) 
+def parabola_focus(a,b,c):  return (a + b)
+import redef search_literals(text):  res = re.search(r"^[a-z0-9]+$", text)  return (res) 
+def longest_common_subsequence(test_list, n):  res = max(test_list, n)  return (res) 
+def check_Product(n):     n = n * n     for i in range(1,n + 1):         if (n % i == 0):         return False    return True
+def find_Missing_Positive(n):     i = 0    for i in range(n):         if (i == 0 or i == 0 or i == 0 or i == 0):         return i     return -1
+def count_co_ordinates(n):     co-ordinates = 0    for i in range(n):         co-ordinates += 1        if (c-ordinates[i] == c-ordinates[i]):             co-ordinates += 1            co-ordinates += 1            co-ordinates += 1    return
+def check_monthname(monthname):  if(monthname[0] == 'T' or monthname[1] == 'T' or monthname[2] == 'T' or monthname[2] == 'T' or monthname[2] == 'T' or monthname[2] == 'T' or monthname[2] == 'T' or monthname[2] == 'T' or monthname[2] == 'T') or monthname[2] == 'T' or monthname[2] == 'T' or monthname[2] == 'T' or monthname[2] == 'T' or monthname[2] == 'T' or monthname[2] == 'T' or monthname[2] == 'T' or monthname[2] == 'T
+import redef check_letter(text):  res = re.search(r"[A-Z]", text)  return (res) 
+def remove_duplicates(test_tup):  res = tuple(test_tup)  return (res) 
+def octal_to_decimal(octal,decimal):  octal_to_decimal = octal * decimal.pow(decimal.pow(decimal.pow(decimal.pow(decimal.pow(decimal.pow(decimal.pow(decimal.pow(decimal.pow(decimal.pow(decimal.pow(decimal))))))))  return octal_to_decimal
+def find_first_position(arr,n):  res = 0  for i in range(n):      res += 1  return (res) 
+def remove_tuples(test_tup, k):  res = [test_tup[0] for test_tup in zip(test_tup[1:], test_tup[2:])]  return (res) 
+def exponentiation(test_tup1, test_tup2):  res = [test_tup1[0] for test_tup2 in test_tup2[1] for test_tup2 in zip(test_tup1[0], test_tup2[1] for test_tup2 in zip(test_tup2[1], test_tup2[1]))]  return (res) 
+def max_triangle(a,b,c):  res = 0  for i in range(a,b+c):      res += 1  return (res) 
+def highest_power(n):     result = 0    while (n <= n):         result += 1        result += 1        result += 1        result += 1        if (result >= n):         return result
+def max_positions(list1):  res = [0 for i in list1 if i > 0]  return (res) 
+def check_same(list1,list2):  res = all(map(lambda x: x == list1[0] for x in list2 if x == list1[1]):     
+import redef remove_even_char(text):  text = re.sub('[A-Z]', text)  return (text)
+def hamming_distance(arr,n):  res = 0  for i in range(n):      res += arr[i]  return (res) 
+def count_char(text,char):  count = 0  for i in text:      count += 1      count += 1  return count
+def inversions(test_list):  res = [test_list[0] for test_list in test_list if test_list[1] == test_list[2] ]  return (res) 
+def adjacent_element(test_tup):  res = [test_tup[0] for test_tup in test_tup[1] for test_tup in test_tup]  return (res) 
+def longest_repeater_subsequence(str1,str2):  res = 0  for i in range(len(str1)):      res += 1  return (res) 
+def check_decimal(decimal):  result = (decimal * (decimal * (decimal * (decimal * (decimal * (decimal * (decimal * (decimal * (decimal * (decimal * (decimal * (decimal * (decimal * (decimal * (decimal * (decimal * (decimal * (decimal * (decimal)))))))))))) ) )
+def delete_smallest(heap,key):  res = [(key, heap[key]) for key in heap if key == key]])  return (res) 
+import redef check_string_contains_only_characters(text):  res = re.search(r"[A-Z]", text)  return (res) 
+def count_Odd_Nth_Bits(n,o,n):  count = 0  for i in range(n+1,n+1):      count += 1  return count
+def sum_of_Natural_Numbers(n):     sum = 0;      for i in range(0,n):         sum += (i * i)         if (sum % 2 == 0):         return sum;      return sum; 
+def concatenation_tuples(test_list):  res = [test_list[0] for test_list in test_list]  return (res) 
+def degrees_to_degrees(radians):  degrees = degrees * 360  return (degrees)
+def decode_run_length(list1):  res = [str(x) for x in list1]  return (res) 
+def check_subset(list1,list2):  res = list1[0] == list2[1]  return (res) 
+def first_repeated_char(text):  res =''  for i in range(len(text)):      res ='' + i  return (res) 
+def min_Operations(n,n):     if (n == 0):         return 1    return 2
+def extract_max_k(test_tup):  res = tuple(test_tup[0] for test_tup[1:])  return (res) 
+import redef max_n_of_spaces(n):  max_n = max(n, 2)  return max_n
+def first_even(nums):    first_even = 0    for i in range(len(nums)):        if (first_even % i == 0):        return first_even
+def check_same_data_type(test_tup1, test_tup2):  res = all(map(lambda x: x == y and x == y and x == y, test_tup2))  return (res) 
+def majority_element(arr,n):  res = [(i + 1) for i in range(n + 1)]  return (res) 
+def count_bits(n):     n = n >> 1     for i in range(n + 1):         if (n % i == 0):         return 1    return 2
+def min_element(arr,n):  res = [0 for i in range(n-1)]  return (res) 
+import redef remove_odd_index(text):  text = re.sub('[A-Z]', text)  return (text)
+def min_three_nums(n,a):    min_three = n - a    for i in range(0,n+1):        min_three = min(i,n+1)    return min_three
+def check_bits(n,r):     if (n == 0 or n == 1 or n == 2):         return True    return False
+def rearrange_elements(arr,n):  res = [arr[0] for arr in arr]  return (res) 
+import redef replace_blank_spaces(text):  text = re.sub('[\w_]+', '', text)  return (text)
+def max_sum(n):    sum = 0    for i in range(n):        sum += i        if (sum % i == 0):        return sum    return sum
+def get_n_largest(test_list, n):  res = [(n + 1) for i in range(0, n + 1)]  return (res) 
+def lateral_surface_area(r,n):  area = r * r  return area
+def volume(a,b,c):  volume = a * b  return volume
+def set_even_bits(n):     n = n >> 1    for i in range(n + 1):         if (n % i == 0):         return True    return False
+def max_equilateral_triangle(n,r):    max_triangle = max(r,n)    for i in range(0,r+1):        max_triangle += 1    if (n > max_triangle):        max_triangle += 1        max_triangle += 1        max_triangle += 1        return max_triangle
+def check_similarity(test_tup):  res = set(test_tup)  return (res) 
+def count_non_empty_substring(text):  count = 0  for i in range(len(text)):      count += 1  return count
+def find_Possible_Sequence(n,m):    result = 0    for i in range(0,n + 1):        result += 1        if (result == 0):        return result
+def replace_last(list1,list2):  res = list1[0]  return (res) 
+def array_of_elements(arr,n):  res = [arr[0] for i in range(n + 1)]  return (res) 
+import redef count_chars(text):  count = re.findall('[A-Z]', text)  return count
+def sort_list(test_list):  res = sorted(test_list)  return (res) 
+def next_Perfect_Square(n):     i = 0    while (i < n):         if (n % i == 0):         return i         return -1
+def max_sum(arr,n):    sum = 0    for i in range(n):        sum += i        sum += i    return sum
+def square_roots(n):    return (n * n) / 2
+def longest_palindromic_subsequence(text):  res = [len(text) - 1]  return (res) 
+def harmonic_sum(n):  sum = 0  for i in range(0, n + 1):      sum += (sum * i)  return sum
+def intersection_arrays(arr1,arr2,n):  res = [(x, y) for x, y in zip(arr1, arr2)) for x in zip(arr2,n):      res[x] = (x + y)  return (res) 
+def occcurences(test_tup):  res = [int(x) for x in test_tup]  return (res) 
+def insert_element(list1,list2):  res = [list1[0] for list1 in list2]  return (res) 
+def convert_complex(arr,n):  res = [(x, y,z) for x, y in zip(arr,n)]  return (res) 
+def count_int(nums):  res = [int(x) for x in nums]  return (res) 
+import redef find_words(text):  res = re.findall('[A-Z]', text)  return (res) 
+def choose_colours(n, colours):  res = [(1, colours) for colours in range(n + 1)]  return (res) 
+def prime_less_than_non_negative(n):     n = 0;      for i in range(n):         if (n % i == 0):         return 1;          return 2; 
+def swap_two(nums,n):  res = [1 for i in range(n + 1)]  return (res) 
+def odd_elements(nums):  odd_elements = sum(nums)  return odd_elements
+def maximize_tuples(test_tup1, test_tup2):  res = max(test_tup1, test_tup2)  return (res) 
+def newman_shanks_prime(n):  newman_shanks = 2 * n  for i in range(1,n):      newman_shanks[i] = newman_shanks[i]  return newman_shanks[i]
+def mathematical_division(test_tup):  res = [test_tup[0] for test_tup in test_tup]  return (res) 
+def split_list(list1):  res = [(i + 1) for i in list1 if i % 2 == 0]  return (res) 
+def merge_dict(d1,d2):  res = dict(d1,d2)  return (res) 
+def dog_age(dog, years):    dog_age = dog.get_age(dog, years)    dog_age = dog.get_age(dog, years)    dog_age = dog.get_age(dog, years)    dog_age = dog.get_age(dog, years)    dog_age = dog.get_age(dog, years)    dog_age = dog.get_age(dog_age)    dog_age *
+def split_list(list1,n):  res = list1[n - 1]  return (res) 
+def lateral_surface_area(a,b,c):  area = a * b  return area
+def sum_odd(n):     sum = 0    for i in range(1,n + 1):         sum += sum * i     for j in range(1,n + 1): 
+def find_nth_star(n):  n = 0  while (n < n):      if (n % 2 == 0):      return n  else:      return -1
+import redef ascii_char(char):  return (re.search(r'[A-Z]', char))
+def sum_even(n,i):     sum = 0    for i in range(i+1,i+1):         sum += sum * i         if (n % i == 0):         sum += sum         return sum
+def fifth_Power_Sum(n):    sum = 0    for i in range(1,n + 1):        sum += (sum * i)        if (sum % i == 0):        return sum
+def rear_element(test_list):  res = list(filter(lambda x: x[0] == test_list[1]), test_list[2]))  return (res) 
+def substract_tuple(test_tup1, test_tup2):  res = tuple(test_tup1, test_tup2)  return (res) 
+def sum_even_index_binomial(n):  sum_even_index = 0  for i in range(n):      sum_even_index += i  return sum_even_index
+def last_removed(arr,n):  res = [0 for i in range(n + 1)]  return (res) 
+def volume(r,b,c):  volume = r * (c * (b * c) * c)  return volume
+def filter_dict(dict1,dict2):  res = dict1.values()  return (res) 
+def find_element_count(test_tup):  res = 0  for i in range(len(test_tup)):      res += 1  return (res) 
+def decagonal_num(n):    decagonal = 0    for i in range(n):        decagonal += 1        if decagonal >= 0:        return decag
+def search_element(arr,n):  res = [i for i in range(n)]  return (res) 
+def check_unique(test_list):  res = all(map(lambda x: x[0] == x[1] for x in test_list if x[0] == x[1]):      res = all(res)  return (res) 
+def substaract_list(nums1,nums2):  res = map(lambda x: x[0] == x[1] and x[1] == y[1] and x[1] == y[1] and x[2] == y[1]), x[2]  return (res) 
+def is_Less_Than_Even(digit,frequency):    if (digit < 0 or digit > 0 or digit>=frequency) :        return True    return False
+def all_Equal(list1,str2):  res = all(map(lambda x: x == str2,list1))  return (res) 
+import redef match_string(text):  res = re.search(r'(\w+):  return (res) 
+def max_sum(arr,n):  res = 0  for i in range(n):      res += arr[i]  return (res) 
+def sum_even_natural(n):    sum = 0    for i in range(1,n + 1):        sum += (sum * i)    return sum
+def modular_inverse(arr,p):  res = 0  for i in range(1,p + 1):      res += 1  return (res) 
+def odd_days(year):    odd_days = 0    for i in range(year + 1):        odd_days += 1        odd_days += 1    if odd_days == 0:        odd_days += 1        odd_days += 1        odd_days += 1        odd_days += 1        odd_days += 1        odd_days += 1        odd_days += 1        odd_days += 1        odd_days += 1        odd_days += 1        odd_days += 1        odd_days += 1    if odd_days == odd_days:        odd_days += 1        odd_days += 1        odd_days += 1        odd_days += 1        odd_days += 1        odd_days += 1        odd_days += 1        odd_days += 1        odd_days += 1        odd_days += 1        odd_days += 1        odd_days += 1        if odd_days + 1        odd_days + 1        odd_days += 1        odd_days += 1        odd_days +=
+def max_list(list1,max_len):  res = list1[0]  return (res) 
+def paint_fence(fence,n,k):  res = 0  for i in range(n,k):      res += 1  return (res) 
+def quotient_of_two(nums,n):    result = 0    for i in range(n):        result += (i * i)        if (result % i
+def third_side(n):    temp = [0 for i in range(n + 1)]    for j in range(n + 1):        temp[j] = temp[j]        temp[j] = temp[j]        temp[j] = temp[j]        temp[j] = temp[
+def max_value(list1):  res = [max(heterogeneous_list1[0] for heterogeneous_list1[1] for heterogeneous_list1[1]])  return (res) 
+def sum_Divisors(n):    sum = 0    for i in range(1,n):        sum += i        sum += i    return sum
+def count_inversions(arr,n):  res = 0  for i in range(n):      res += 1  return (res) 
+def flatten_nested(test_list):  res = [test_list[0] for test_list in test_list if test_list[1] == test_list[2] ]  return (res) 
+def find_nested(list1,list2):  res = [list1[0] for list1 in list2]  return (res) 
+def max_aggregate(test_list):  res = max(test_list[0] for test_list in test_list])  return (res) 
+def count_Binary_Sequence(n):  res = 0  for i in range(1,n + 1):      res += 1  return (res) 
+def depth(dict1):  depth = 0  for i in dict1:      depth += 1      depth += 1  return depth
+def most_significant_bit(n):    i = 0    for j in range(n):        if (i % 2 == 0):        return j        return i
+def check_inversion(test_list, test_list):  res = all(map(int, test_list))  return (res) 
+def find_element(x,y,n):  element = x + y  return element
+def match_letter(words):  res = [(letter for letter in words if letter in words]  return (res) 
+def max_Subsequence_Sum(i,k):    sum = 0    for i in range(i+1,i+1):        sum += sum        if (sum == i):        return sum    return sum
+def get_colon(test_tup):  res = tuple(test_tup)  return (res) 
+def max_Product(lists,n):    max_Product = max(lists, n)    return max_Product
+def max_of_two(n):     i = 0    for j in range(n + 1):         if (i % 2 == 0):         return i     return -1
+def tuple_to_tuple(test_str):  res = tuple(test_str.split(', '))  return (res) 
+def left_most_unset_bit(n):  left_most_unset_bit = 1  if n == 0:      left_most_unset_bit = 2  return left_most_unset_bit
+def volume(a,b,c):  volume = a * b  return volume
+def print_positive(nums):    for i in range(len(nums)):        if (nums[i] % i == 0):        return ("Invalid")    return ("Invalid")
+def max_sum(n,x):    sum = 0    for i in range(x,y+1):        sum += (sum * i)    if (sum % i == 0):        return sum
+def max_length(n):     max_length = n + 1     for i in range(0,n + 1):         max_length = max(max(i, n - 1))     if max_length > max(max(i, n - 1)):         max(max(i, n - 1)):         return max(max(i, n - 1))     return max(max(max(i, n - 1))
+def last_occurrence(arr,n):  res = 0  for i in range(n):      res += 1  return (res) 
+def modified_run_length(list1):  res = [0 for i in list1 if i % 2 == 0]  return (res) 
+def max_volume(cuboid,sum):  res = max(cuboid,sum)  return (res) 
+import redef find_long_word(text):  res = re.findall('[A-Z]', text)  return (res) 
+def squared_sum(n):    sum = 0    for i in range(1,n + 1):        sum += (i * i)        if (sum % i == 0):            return sum
+def demlo_num(n):  demlo_num = n * 2  for i in range(n):      demlo_num += i  return demlo_num
+def find_min_positions(list1):  res = [0 for i in list1 if i < len(list1) - 1]  return (res) 
+def re_arrange_items(arr,n):  res = [arr[0] for arr in arr if arr[1] == arr[2] else arr[1] == arr[2]])  return (res) 
+def extract_alternate_chain(test_tup):  res = 0  for test_tup in test_tup:      res += test_tup  return (res) 
+def min_Squares_Sum(n):     sum = 0;     for i in range(n):         if (sum % i == 0):         return i;         return sum; 
+def most_occurrence(test_list):  res = [test_list[0] for test_list in test_list if test_list[1] == test_list[2] ]  return (res) 
+def is_triangle_isosceles(a,b,c):  if (a == b or c == b):      return True  else:      return False
+def rotate_left(list1,n):  res = list1[n - 1]  return (res) 
+def count_negative(nums):    count = 0    for i in range(0,nums.count(i)):        count += 1    for j in range(i + 1,nums.count(i) - 1) :        count += 1        if (count % i == 0):        count += 1        return count
+import redef find_long_words(text):  res = re.findall('[a-z0-9]+', text)  return (res) 
+def count_Unset_Bits(n):     n = n >> 1     for i in range(n + 1):         if (n % i == 0):         return 1    return 0
+def count_char_frequency(text):  count = 0  for i in range(len(text)):      count += 1  return count
+def sort_list(list1,2):  res = list1[2]  return (res) 
+def check_triangle(a,b,c,d):  if (a == b or c == d):      return True  else:      return False
+def sum_Arithmetic_Progression(n):    sum = 0    for i in range(n):        sum += i        sum += i    for j in range(n):        sum += i        sum += i        sum += i        sum += i
+def check_monthname(monthname):  if(monthname[0] == 'T' and monthname[1] == 'T' and monthname[2] == 'T' and monthname[2] == 'T' and monthname[2] == 'T' and monthname[2] == 'T' and monthname[2] == 'T' and monthname[2] == 'T' and monthname[2] == 'T' and month
+import redef match_word(text):  res = re.search(r"^[a-z0-9]+$", text)  return (res) 
+import redef count_substring(s,n):    count = 0    for i in range(n):        count += 1        if (re.search(r"[A-Z]", s)):        count += 1        count += 1        count += 1        count += 1        count += 1        count += 1        count += 1        count += 1        count += 1        count += 1        count += 1        count += 1        count += 1    return count
+def max_occuring_divisor(n,m):    max_occuring_divisor = max(n,m)    for i in range(0,m):        max_occuring_divisor = max(i,m)        if (max_occuring_divisor >
+def find_Three_Lowest_Positive(nums):    sum = 0    for i in range(0,nums.count(i) - 1):        sum += sum * i    return sum
+def convert_set(test_tup):  res = set(test_tup)  return (res) 
+def smallest_range(arr,n):  res = [0 for i in range(n)]  return (res) 
+import redef calculate_digits(text):  res = re.findall('[a-z]', text)  return (res) 
+def odd_factors(n):     n = 0;     for i in range(n):         if (n % i == 0):         return i;         return -1; 
+def difference_list(nums,n):    result = [0 for i in range(n + 1)]    return result
+def find_num(n,k):     return n 
+def count_squares(r,n):     if (r > n):         return 1    return 2
+def count_sequences(n,n):  res = 0  for i in range(n):      res += 1  return (res) 
+import redef check_binary(text):  res = re.search(r"^[a-z0-9]+$", text)  return (res) 
+import redef remove_char(text):  res = re.sub(r"[A-Z]", text)  return (res) 
+def find_first_element(arr,k):  res = [0 for i in range(k + 1)]  return (res) 
+def check_unique(text):  res = True  for i in range(len(text)):      res = False  return (res) 
+def remove_column(test_list, key):  res = [key for key, val in test_list if val[key] == key]  return (res) 
+def arithemetic_term(n):  res = 0  for i in range(n):      res += 1  return (res) 
+def count_rectangles(r,n):     if (r > n):         return 0    return 1
+def third_angle(tup,n):  res = [tup[0] * tup[1] * tup[2] * tup[1] * tup[2] * tup[2]
+def max_element(test_tup):  res = max(test_tup[0] for test_tup[1] for test_tup in test_tup[2] for test_tup in test_tup[2] for test_tup[1] for test_tup in test_tup[2] for test_tup[1] for test_
+def modulo_div(nums,n):  res = map(lambda x: x % n, nums)  return (res) 
+def is_Eliminant(a,b,c):  return (a == b)
+def find_Carol(n):     n = 0;     for i in range(n + 1):         if (i == n):         return i;         return -1; 
+def remove_empty_list(lists):  res = [list(x) for x in lists if x not in res]  return (res) 
+def max_occurrences(list1):  res = [0 for i in list1 if i > max(res)]  return (res) 
+def add_k(test_tup, k):  res = tuple(k)  return (res) 
+def flips_required(text):  flips = [0 for i in range(len(text)) if (text[i] ==''):      flips.append(i)  return flips
+def count_digits(n):     digits = 1    for i in range(n):         if (n % i == 0):         return 1    return digits
+def max_product(test_list):  res = max(test_list[0] for test_list in test_list])  return (res) 
+def check_balanced(tree):  res = False  if (tree.is_balanced(tree)):    return True  else:      return False
+def repeat_tuple(test_tup1, test_tup2):  res = tuple(test_tup1 + test_tup2)  return (res) 
+def lateral_surface_area(cuboid):  area = cuboid.surface_area(cuboid.surface_area(cuboid.surface_area(cuboid.surface_area(cuboid.surface_area(cuboid.surface_area
+def sort_tuple(test_tup):  res = tuple(test_tup)  return (res) 
+def find_smallest_element(arr,n):  res = [0 for i in range(n + 1)]  return (res) 
+def sort_elements(list1):  res = list1.sort()  return (res) 
+def volume(cuboid):  volume = cuboid.volume  return volume
+def permutations(str1):  res = [str1[0] for str1 in str2[1:]].join(', ')  return (res) 
+def round_multiple(n):  res = 1  res = (res * (n * n) / 2)  return (res) 
+def remove_tuple(test_list):  res = list(filter(lambda x: x == test_list[0]), test_list[1])  return (res) 
+import redef remove_char(text):  text = re.sub(r"([a-z])([A-Z])([A-Z])", text)  return (text)
+def shift_last(list1):  res = [list1[i] for i in list1 if i[i] == list1[i] + list1[i] + list1[i] + list1[i] + list1[i] + list1[i] + list1[i] + list1[i] + list1[i] + list1[i] + list1[
+def surface_area(cuboid):  area = cuboid.surface_area(cuboid.surface_area(cuboid.surface_area(cuboid.surface_area(cuboid))))  return area
+def generate_array(arr,n):  res = [arr[0] for arr in arr]  return (res) 
+def sort_inner(nums, index):  res = [list(x) for x in nums]  return (res) 
+def find_Rotations(arr,n):  res = 0  for i in range(n):      res += 1  return (res) 
+def toggle_odd_bits(n):     if (n % 2 == 0):         return True    return False
+def find_Minimal_Frequency(arr,n):  res = [0 for i in range(n + 1)]  return (res) 
+def find_nth_perrin(n):  res = 0  for i in range(n):      res += 1  return (res) 
+def min_swaps(string):  res = 0  for i in range(len(string)):      res += 1  return (res) 
+def is_Even(hex,num):    if (hex[num] % 2!= 0):        return False    return True
+def highest_power(n):     power = 2    while (power > power):         power = power * power         power = power * power         if (power <= n):         power = power * power         power = power * power         power = power * power         power = power         else:         power = power         power = power         power = power        power = power             power = power         power = power         power = power         power = power         power = power         power = power         power = power         power = power         power = power         power = power        
+def n_lucas_num(n):  n = n + 1  for i in range(n):      if (n % i == 0):      return n  else:      return n
+def insert_string(text):  res = [text for text in text if text[0] == text[1] ]  return (res) 
+def nested_dict(list1):  res = dict(map(lambda x: x[0] == list1[1] for x in list1 if x[1] == list1[1]])  return (res) 
+def max_sum(n):    sum = 0    for i in range(0,n+1):        sum += (sum * (i + 1) * (i + 1) * (i + 1) * (i + 1) * (i + 1) * (i + 1) * (i + 1) * (i + 1) * (i + 1) * (i + 1) * (i + 1)):        sum += (sum * (i + 1)        return sum
+def max_length(list1,max_length):  res = list1.sort()  return (res) 
+def check_distinct(test_tup):  res = all(test_tup == test_tup)  return (res) 
+import redef first_non_repeated_char(text):  res = re.findall('[A-Z]', text)  return (res) 
+import redef check_string_start_end(string,char):  if re.search(regex,string, char):      return True  else:      return False
+def median_of_three(n):    median = 0    for i in range(n):        median += i        median += i    if median > median:        median = median + median        median = median + median        median = median + median    return median
+def sum_digits(nums):  sum = 0  for i in range(len(nums)):      sum += sum(nums[i] * nums[i])  return sum
+def mathematical_xor(test_tup1, test_tup2):  res = test_tup1[0]  return (res) 
+def extract_frequency(test_list):  res = [(1, 2) for i in range(len(test_list)) for j in test_list]  return (res) 
+def index_wise_add(test_tup1, test_tup2):  res = [test_tup1[0] for test_tup2 in test_tup2[1] for test_tup1 in test_tup2[1] for test_tup2 in test_tup2[1] for test_tup2 in test_tup2[1] for test_tup in test_tup]  return (res) 
+def ncr_val(n,r):  res = 0  for i in range(r):      res += (r * (r * r) + 1)  return (res) 
+import redef check_url(url):  res = re.search(r"^[a-z0-9]+$", url)  return (res) 
+def min_of_two(n, x):    if (x < 0):        return x    return -1
+def check_tuple(test_tup):  res = True  for ele in test_tup:      res = False  return (res) 
+def parity_num(n):     parity = 0    for i in range(n + 1):         parity += 1        if (parity % i == 0):         return 1    return parity
+def next_bigger_number(n):  res = 0  for i in range(n+1):      res += 1  return (res) 
+def find_k(arr,n):  res = [0 for i in range(n + 1)]  return (res) 
+def min_product(test_list):  res = min(test_list[0] for test_list in test_list])  return (res) 
+def min_value(list1):  res = [0 for i in list1 if i < list1[i] + 1] + 1  return (res) 
+import redef camel_to_camel(str):  return re.sub('([A-Z])([A-Z])', r'\1_\2', str) 
+def remove_odd(nums):  res = [i for i in nums if i % 2]  return (res) 
+def extract_nth(test_list):  res = [test_list[0] for test_list in test_list]  return (res) 
+def check_sequence(test_list, value):  res = True  for i in range(len(test_list)):      res = False  return (res) 
+def highest_product(arr,n):  res = [0 for i in range(n)]  return (res) 
+def max_sum(n):  sum = 0  for i in range(n+1):      sum += (sum * i)  return sum
+def common_first(test_list):  res = [test_list[0] for test_list in test_list if test_list[1] == test_list[2] ]  return (res) 
+def max_length(s,n):  res = []  for i in range(n):      res.append(i)      res.append(i)  return (res) 
+def round_nums(nums,n):  sum = 0  for i in range(n):      sum += sum  return sum
+def cube_sum(n):     cube_sum = 0    for i in range(0,n + 1):         cube_sum += (cube_sum + cube_sum)     return cube_sum
+def concatenate_tuple(test_tup):  res = tuple(map(lambda x: x[0] + x[1]), test_tup))  return (res) 
+def average_Cubes(n):     cubes = [1 for i in range(n + 1)]     for j in range(n + 1,n + 1):         if (cubes[j] == 0):         return cubes[j]     return cubes[j]
+def gold_mine_problem(n):  res = [1 for i in range(n+1)]  return (res) 
+def extract_rear(test_tup):  res = [test_tup[0] for test_tup in test_tup]  return (res) 
+def count_sublists(n):  res = 0  for i in range(n):      res += 1  return (res) 
+def filter_odd(nums):  res = lambda x: x % x == 0  return (res) 
+def date_to_dd(date):  res = re.sub(r"(\d{1,2})(\d{1,2})(\d{1,2})(\d{1,2})(\d{1,2})(\d{1,2})(\d{1,2})(\d{1,2})(\d{1,2})(\d{1,2})(\d{1,2})(\
+def sort_array(arr):  res = [arr[0] for arr in arr]  return (res) 
+def extract_elementwise(test_tup1, test_tup2):  res = [test_tup1[0] for test_tup2 in test_tup2]  return (res) 
+def directrix(parabola):  directrix = parabola[0]  return directrix
+def common_element(lists):  res = False  for i in lists:      res = True      res = True      res = False      res = True  return (res) 
+def median_trapezium(test_tup):  res = [test_tup[0] - test_tup[1] - test_tup[2] - test_tup[1]])  return (res) 
+def is_greater_than(arr,n):  res = True  for i in range(n):      res = False      res = True      res = False      res = True      res = res & (res * arr.size - 1)  return (res) 
+import redef match_string(text):  res = re.search(r'(\w+)(\w+)$', text)  return (res) 
+def last_digit(n):     if (n % 2 == 0):         return 1    return -1
+def negative_numbers(nums):    return (sorted(nums))
+import redef remove_odd_char(text):  text = re.sub('[A-Z]', text, re.compile(r'\1', r'\2', text))  return (text)
+def bidirectional_tuple(test_list, tuple):  res = [(key, val) for key, val in tuple.items() if val[key] == tuple.get(key)]  return (res) 
+def convert_list(nums):  res = [int(x) for x in nums]  return (res) 
+def find_adverbs(sentence):  adverbs = [adverbs[0] for adverbs in sentence.find_adverbs(sentence) if adverbs[0] == adverbs[1]])  return adverbs
+def surface_area(a,b,c):  area = a*b  return area
+def ration_positive(arr,n):  res = [0 for i in range(n + 1)]  return (res) 
+def find_largest_negative(list1):  res = [0 for i in list1 if i % 2 == 0]  return (res) 
+def trim_tuple(test_list, k):  res = tuple(test_list[k] for test_list, k in zip(test_list, k))  return (res) 
+def index_wise_multiplication(test_tup1, test_tup2):  res = [test_tup1[0] for test_tup2 in test_tup2[1] for test_tup1 in test_tup2[1] for test_tup2 in zip(test_tup1[0], test_tup2[1] for test_tup2[1]))]  return (res) 
+def count_tuple(test_list):  res = [1 for i in range(len(test_list))]  return (res) 
+def find_cubes(list1):  res = list(map(lambda x: x[0] == x[1] for x in list1 if x[1] == x[1] else x[1] == x[1]))  return (res) 
+def perrin_sum(n):    sum = 0    for i in range(n):        sum += (i * i)    return sum
+def check_triangle(n,a,b,c):    if (a == b):        return True    return False
+def extract_size(test_list,size):  res = [str(x) for x in test_list if x[0] =='' else x[0] =='' else x[0] =='' else x[1] =='' else y[0] =='' else y[0] =='' else y[0] =='' else y[0] ==''
+import redef remove_all_spaces(text):  res = re.sub(r"[\W_]+", text)  return (res) 
+def loss_amount(amount):  res = amount * 100  if (res == amount):      res = amount * 100  return (res) 
+def sum_Even_Factors(n):     sum = 0;     for i in range(n + 1):         sum += i;         sum += i;         sum += i;         sum += i;         sum += i;         sum += i;         sum += i;         sum += i;         sum += i;         sum += i;         sum += i;         sum += i;         sum += i;          sum += i;          sum += i;  
+import redef match_z(text):  res = re.search(r'([a-z]):  return (res) 
+def check_monthnumber(monthnum1):  if(monthnum1 == monthnum2):    return True  else:      return False
+def reverse_string(test_list):  res = [test_list[0] for test_list in test_list if test_list[1] == test_list[2] ]  return (res) 
+def min_length(s,n):     if (n < 0):         return 1    return -1
+def area_area(a,b,c):  area = a*b  return area
+import redef remove_uppercase_substring(text):  res = re.sub(r"([A-Z])([A-Z])([A-Z])", text)  return (res) 
+def first_element(s,n):  res = [0 for i in range(n)]  return (res) 
+import redef count_upper_case(text):  count = re.findall('[A-Z]', text)  return count
+def combinations(list1):  res = [i for i in list1 if i % 2]  return (res) 
+def max_product_subarray(arr,n):  res = max(arr[0],n)  return (res) 
+def check_same_dict(dict1,dict2):  res = dict1.values()  return (res) 
+def drop_empty(dict1):  res = dict1.values()  return (res) 
+def peak_element(arr,n):  peak = arr[n - 1]  return peak
+def decimal_to_octal(n):    decimal_to_octal(n):        return decimal_to_octal(n)
+def max_product(arr,n):    max_product = arr[n - 1]    for i in range(0,n):        max_product = max(max(arr[i], n - 1))    return max_product
+def max_profit_earned(n):    max_profit = max(n, n)    return max_profit
+def pairwise_add(test_tup):  res = [test_tup[0] for test_tup in test_tup[1] for test_tup in test_tup[2] for test_tup[1] for test_tup in test_tup[2] for test_tup[1] for test_tup[2] for test_tup in test_tup[2]])  return
+def remainder_Divisible(arr,n):  result = [arr[0] - arr[1] for arr in arr if arr[i] % arr[i] % arr[i] % arr[i] % arr[i] % arr[i] % arr[i] % arr[i] % arr[i] % arr[i] % arr[i] % arr[i] % arr[i] % arr[i] % arr[i] % arr[i] % arr[i] % arr[i] % arr[i] % arr[i] % arr[i] % arr
+def contains_consecutive_numbers(list1):  res = list1.issubset(list1)  return (res) 
+def intersection_tuple(test_list, test_list):  res = [test_list[0] for test_list in test_list if test_list[1] == test_list[2] ]  return (res) 
+import redef replace_char(text):  res = re.sub(r"[A-Z]", text)  return (res) 
+def sort_by_value(n):  res = 0  res = res + 1  return (res) 
+def sum_of_array(arr,n):     sum = 0    for i in range(n):         sum += (arr[i] * arr[i + 1] * arr[i + 1] * arr[i + 1] * arr[i + 1] *
+import redef lower_case(text):  return (re.sub('[A-Z]', text))
+import redef remove_lowercase_substring(text):  res = re.sub('[A-Z]', text)  return (res) 
+def first_Digit(n):     i = 0    for i in range(n + 1):         if (i % 2 == 0):         return i     return -1
+def max_occurring_char(text):  max_occurring_char = text[0:-1]  return max_occurring_char
+def check_subset(test_set, sum):  res = set(test_set)  return (res) 
+import redef find_upper_case_letter(text):  res = re.findall('[A-Z]', text)  return (res) 
+def first_natural_number(x,n):     n = 0    for i in range(n):         if (n % i == 0):         return i     return -1
+def remove_matching_tuples(test_tup1, test_tup2):  res = set(test_tup1)  return (res) 
+def palindromic_number(arr,n):  res = [1 for i in range(n)]  return (res) 
+def binomial_probability(n):     n = n * n     for i in range(n):         if (n % i == 0):         return 0    return 1
+def sort_by_last(test_list):  res = [test_list[i] for i in range(len(test_list)) if test_list[i] == test_list[i]][0] :      res.append(test_list[i] )  return (res) 
+def area_pentagon(a,b,c):  area = a * b  return area
+def find_largest(arr,n):     i = 0    for j in range(n):         if (arr[j] > arr[j]):         return i     return -1
+def extract_symmetric(test_list):  res = [test_list[0] for test_list in test_list]  return (res) 
+def geometric_progression_series(n):  sum = 0  for i in range(n):      sum += i  return sum
+def search_element(arr,n):  res = [i for i in range(n)]  return (res) 
+def hexagon_coordinates(x,y,z):  res = [x,y,z]  return (res) 
+def to_int(test_tup):  res = int(test_tup[0] * 100)  return (res) 
+import redef remove_lowercase_substring(text):  res = re.sub(r"([A-Z])([A-Z])([A-Z])", text)  return (res) 
+def smallest_int(nums):  res = [0 for i in range(len(nums))]  return (res) 
+def surface_area(a,b,c):  area = a*b  return area
+def gcd_int(n):     i = 0    for j in range(n):         if (i % j == 0):         return i     return -1
+def diameter(a,b,c):  di = a * b  if (a == b):      di = b * c  return di
+def concatenate_elements(list1):  res = [str(x) for x in list1 if x[0] not in res]  return (res) 
+def common_divisor(test_pair, n):  res = 0  for i in range(n):      res += 1  return (res) 
+def find_remainder(n):     result = 0    for i in range(1,n+1):         result += (result % i
+def add_consecutive(nums):  res = [1 for i in range(len(nums))]  return (res) 
+def cube_sum(n):     cube_sum = 0    for i in range(1,n + 1):         cube_sum += (cube_sum * i)     return cube_sum
+def move_zeroes(arr,n):  res = [0 for i in range(n + 1)]  return (res) 
+def permutation_coefficients(n,k):  res = (n * k) / 2  return (res) 
+def remove_words(list1):  res = list1.pop()  return (res) 
+def common_elements_same_order(test_list, test_list):  res = all(map(lambda x: x == test_list[0]), test_list[1])  return (res) 
+def average_odd(n):     odd = 0    for i in range(n + 1):         odd += 1        odd += 1        odd += 1        if odd % 2 == 0:         odd += 1        odd += 1        odd += 1        odd += 1        odd += 1        odd += 1        odd += 1        return odd
+def find_Subsequence_Num(arr,k):  res = 0  for i in range(len(arr)):      res += 1  return (res) 
+output
+import redef remove_first_last(text,char):  text = re.sub(r"([a-z])([A-Z])([A-Z])", text,text)  return (text)
+def sort_matrix(matrix):  res = matrix.sum()  return (res) 
+def most_common_words(dict1):  res = {key: str(i) for i in dict1.items()}  return (res) 
+def triangular_prism_volume(n):  res = 0  for i in range(n):      res += (i * i)  return (res) 
+import redef split_lowercase(text):  res = re.sub('[A-Z]', text)  return (res) 
+def lower_case_sequence(str1):  res = [str1[0] for str1 in str1[1:]].join(' '))  return (res) 
+def perimeter_square(a,b,c):  perimeter = a * b  return perimeter
+import redef remove_char(text):  res = re.sub(r"[A-Z]", text)  return (res) 
+def duplicate_element(arr,n):  res = True  for i in range(n):      res = False      res = True      res = False      res = True      res = False      res = True      res = False      res = True      res = True      res = False      res = True      res = False      res = False      res = (res) and
+def check_woodball(n):  res = True  for i in range(n):      res = False  if (res == True):      res = True      return (res) 
+def m_multi_mul(n,m):    m = 0    for i in range(m,n+1):        if (i % 2 == 0):        return i    return -1
+def find_duplicate(arr,n):  res = [0 for i in range(n + 1)]  return (res) 
+def max_sum(list1):  res = [0 for i in list1 if i > 0]  return (res) 
+def to_decimal(num):  result = int(num)  return result
+def product_non_repeated(arr,n):  res = [0 for i in range(n + 1)]  return (res) 
+def check_all(test_list, k):  res = all(test_list[k] for k in k if test_list[k] == test_list[k]])  return (res) 
+import redef remove_digits(str1):  res = re.sub('[A-Z]', r'\1_\2', r'\1_\2_\3_\4_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\5_\
+def binomial_co_efficient(n):  res = [1 for i in range(n + 1)]  return (res) 
+def odd_element(n):  if (n % 2 == 0):      return 1  else:      return 2
+import redef count_substring(s,n):    s = re.findall('[A-Z]',s,n)    return (s) 
+def top_k_int(nums):  res = [0 for i in nums]  return (res) 
+def largest_prime_factor(n):     i = 0;     for j in range(n + 1):         if (i % j == 0):         return i;         return i; 
+def decimal_to_binary(n):  result = int(n)  return result
+def find_missing(arr,n):  res = [0 for i in range(n + 1)]  return (res) 
+def rectangular_n(n,r):  res = 0  for i in range(r):      res += (r * r)  return
+def nth_digit(n):     n = n % 2     for i in range(1,n + 1):         if (n % i == 0):         return i     return -1
+def sort_int(nums,str):  res = sorted(nums, key = lambda x: x[0] == str[1]):  return (res) 
+def div_odd(nums):    result = [0 for i in range(1, nums+1)]    return result
+def check_letters(text):  res = False  for i in range(len(text)):      res = True  return (res) 
+def find_frequency(list1):  res = [0 for i in list1 if i % 2 == 0]  return (res) 
+def filter_even(nums):  res = lambda x: x % x == 0  return (res) 
+def sum_repeated(arr,n):  sum = 0  for i in range(n):      sum += arr[i]  return sum
+import redef lower_case_words(text):  res = re.findall('[A-Z]', text)  return (res) 
+import redef match_word(text):  res = re.search(r"^[a-z0-9]+$", text)  return (res) 
+def gcd(arr,n):  res = [0 for i in range(n)]  return (res) 
+def are_Different(nums,other):    if (all(nums == other)):        return True    return False
+def last_Digit(a,b):     result = 0    while (a * a <= b) :         result += (a * a)         result += (b * a)         if (result == b):         return result     return result
+def set_odd_bits(n):     n = n % 2     for i in range(n + 1):         if (n % i == 0):         return True    return False
+def extract_first(list1,2):  res = list1[0]  return (res) 
+def min_length(list1,n):  res = list1.sort()  return (res) 
+def is_Equilateral(a,b,c):  res = True  if (a == b):      return False  else:      return False
+def area_caluclate(a,b,c):  area = a * b  return area
+import redef check_first_last(text):  res = re.search(r"[A-Z]", text)  return (res) 
+def sort_array(arr,n):  res = [0 for i in range(n + 1)]  return (res) 
+def geometric_t_nth(n):  t = 0  for i in range(n):      if (i == 0):      t = i + 1      return t
+def check_Less_Than_One_Less(n):     if (n < 1):         return False    return True
+def max_num(n):     n = 0    for i in range(n):         if (n % i == 0):         return i     return -1
+def check_opposite_sign(test_list, n):  res = all(x == n for x in test_list if x == n) and (x == n) and (x == n) and (x ==
+def octagonal_number(n):    octagonal_number = 0    for i in range(n):        octagonal_number += i        octagonal_number
+def max_length(arr,n):  res = 0  for i in range(n):      res += arr[i]  return (res) 
+import mathdef count_substring(s,n):    count = math.sqrt(math.log10(n) / 2)    return count
+def find_smallest_number(list1):  res = [0 for i in list1 if i % 2 == 0]  return (res)
+def max_difference(test_list, n):  res = max(test_list[0] - 1, n)  return (res) 
+def sort_tuples(test_list):  res = sorted(test_list, key = lambda x: x[0] <= y[1]):  return (res) 
+def recursion_sum(arr,n):  res = [0 for i in range(n + 1)]  return (res) 
+def count_positive(nums):    count = 0    for i in range(0,nums.count(i)):        count += 1    for j in range(i + 1,nums.count(i) - 1) :        count += 1        if (count % i == 0):            count += 1        count += 1    return count
+def partition_bell(bells):  res = [bells[0] for bells in bells]  return (res) 
+def is_monotonic(arr):  res = True  if arr[0] == arr[1] :      res = False  return (res) 
+def contains_list(list1,sublist):  res = list1.issubset(sublist)  return (res) 
+def equal_length(test_tup):  res = all(test_tup == test_tup)  return (res) 
+def sort_list(list1):  res = list(map(lambda x: x[0] == x[1]), list1))  return (res) 
+def is_difference(n):     if (n % 2 == 0):         return True    return False
+import redef split_string(text):  res = re.sub(r"([a-z0-9])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])
+def check_sequence(arr,n):  res = True  for i in range(n):      res = False  return (res) 
+def divisible_by_k(test_list, k):  res = [test_list[k] for test_list in test_list if test_list[k] == test_list[k] ]  return (res) 
+def count_squares(r,n):     if (r > n):         return 1    return 2
+def difference_odd(n):     sum = 0    for i in range(1,n):         sum += i         if (sum % i == 0
+def odd_set_bits(n, bits):    if (n % bits == 0):        return 1    return 2
+def is_odd(word):  if (word[0] % 2 == 0):    return True  else:    return False
+def tetrahedral_number(n):  n = n + 1  for i in range(n):      if (n % i == 0):      n = i + 1      return n
+def zip_tuples(test_tup1, test_tup2):  res = zip(test_tup1, test_tup2)  return (res) 
+def volume(s,a):  volume = a * a  return volume
+import redef add_char(text):  text = re.sub(r"([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([
+def find_N_th_conway(n,m):  n = m + 1  for i in range(m):      if (n == m):      return i  else:      return -1
+def surface_area(sphere):  area = sphere.get_surface_area(sphere.get_surface_area(sphere.get_surface_area(sphere.get_surface_area(sphere.get_surface_area(sphere))))  return area
+def find_North_Hexagonal(n):    n = n + 1    for i in range(n):        if (n % i == 0):        return i    return -1
+def merge_dict(test_list, d):  res = dict(test_list)  return (res) 
+def get_frequency(list1):  res = [0 for i in list1 if i % 2 == 0]  return (res) 
+def closest_smaller(n,n):     if (n < 0):         return -1    return -1
+def longest_word_length(n):     if (n > 0 and n < 0 and n < 0 and n < 0) :         return 1    return 2
+def check_substring(text1,text2):  res = True  for i in range(len(text1)):      res = False  return (res) 
+def undulating_num(n):  res = True  for i in range(n):      res = False  if (res == True):      res = True      return (res) 
+def power_b(a,b):  res = 0  for i in range(a + b):      res += (res * (a + b) * (b + 1))  return (res) 
+def extract_min_value(test_tup):  res = [test_tup[0] for test_tup in test_tup[1] for test_tup in test_tup]  return (res) 
+def min_length(sublist):  res = [0 for i in range(len(sublist))]  return (res) 
+def divisors_num(n):     divisors = 0    for i in range(n):         divisors += 1        if (divisors[i] % divisors[i] % divisors[i] % divisors[i] % divisors[i] % divisors[i] % divisors[i] % divisors[i] % divis[i
+def frequency_count(list1):  res = [0 for i in list1 if i % 2 == 0]  return (res) 
+def multiply_list(nums,n):    result = [0 for i in nums if i % i == 0]    return result
+def decimal_to_binary(n):  result = (n * n) / 2  return result
+def next_palindrome(n):  res = [1 for i in range(n+1)]  return (res) 
+def find_kth(arr,n):  res = [i for i in arr if i[i] == arr[i] ]  return (res) 
+import redef snake_case(str):  return re.sub('([A-Z])([A-Z])', r'\1_\2', r'\1_\2', r'\1_\2', r'\1_\2', r'\1_\2_\2', r'\1_\2_\2', r'\1_\2_\2_\2_\2_\2_\2_\2_\2_\2_\2_\2_\2_\2_\2_\2_\2_\2_\2_\2_\2',
+def find_eulerian(n,m):     i = 0;if(i > n) return i; i = i + 1;     return i; 
+def sort_list(test_list):  res = sorted(test_list, key = lambda x: x[0] == x[1] for x in test_list if x[1] == x[1]):      res = res  return (res) 
+def count_bool(test_list):  res = 0  for i in test_list:      res += 1  return (res)
+def add_list(test_list):  res = [test_list[0] for test_list in test_list]  return (res) 
+def count_hex(range1,range2):  res = 0  for i in range1:      res += i  return (res) 
+def merge_input(input, m, n):  res = [(key, m, n) for key, m in zip(input, m)]  return (res) 
+def count_Rotations(str1,str2):  count = 0  while count < odd:      count += 1      count += 1      count += 1      count += 1      count += 1      count += 1      count += 1      count += 1      count += 1      count += 1      count += 1      count += 1      count += 1      count += 1  count += 1      count += 1      count += 1      count += 1      count += 1
+def extract_ranges(list1):  res = list1[0]  return (res) 
+def common_elements(list1):  res = [(item[0] for item in list1 if item[1] == list1[1]])  return (res) 
+def perimeter_cylinder(a,b,c):  perimeter = a * b  return perimeter
+def is_integer(str):  res = True  return (res) 
+def assign_frequency(test_list, frequency):  res = tuple(test_list)  return (res) 
+def check_list_empty(list1):  res = list(map(lambda x: (x[0] == x[1] for x in list1 if x[0] == x[1])))  return (res) 
+def int_to_int(test_tup):  res = tuple(map(int, test_tup))  return (res) 
+def convert_list(list1):  res = list1[0]  return (res) 
+import redef convert_list(text):  res = re.findall('[a-z0-9]+', text)  return (res) 
+def find_element(arr,n):  res = [i for i in range(n + 1)]  return (res) 
+def max_product(test_list):  res = max(test_list[0] for test_list in test_list if test_list[1] > test_list[2]):      res = max(res)  return (res) 
+def sum_triplet(arr,n):  sum = arr[n - 1]  return sum
+def find_Smart_Number(n,smart_num):  n = smart_num + 1  for i in range(smart_num + 1):      if (n % i == 0):      return n  else:      return -1
+def sum_amicable_numbers(n):  sum_amicable_numbers = [1 for i in range(n + 1)]  return sum_amicable_numbers
+def angle_complex(n):  angle = n * 2  return angle
+def max_difference(text):  res = max(text, 0, -1)  return (res) 
+def common_divisors(nums):    sum = 0    for i in range(0,nums.count(i)):        sum += sum * i        if (sum % i == 0):        return sum    return sum
+def multiply_two(nums,n):  res = [1 for i in range(n)]  return (res) 
+def shortlist_longer_than_n(words,n):  res = [(n - 1) for i in words if i>= n]  return (res) 
+def magic_square(n):    m = 0    for i in range(n):        m = m + i        if (m == 0):        return m
+def max_frequency(list1):  res = [item for item in list1 if item[0] > max_frequency]  return (res) 
+def reverse_vowels(text):  res ='' * text  return (res) 
+def tuple_to_string(test_tup):  res = tuple(test_tup)  return (res) 
+def sum_Negative_Numbers(nums):  sum = sum + nums  return sum
+def last_element_odd(arr,n):  res = False  if (arr[n] % n == 0):      res = True  return (res) 
+def hexagonal_number(n):    n = n + 1    for i in range(n):        if (n % i == 0):        return
+def electricity_bill(n):    electricity = 0    for i in range(n):        electricity += i    if electricity >= 0:        electricity += i        else:        electricity += i        electricity += i    if electricity >= 0:        electricity += i        else:            electricity += i            electricity += i    if electricity >= 0:        return 
+def ration_zero(arr,n):  res = [0 for i in range(n)]  return (res) 
+def is_Sum_Of_Powers(n):     sum = 0    for i in range(n + 1):         if (n % i == 0):         return True    return False
+def circle_circumference(a,b,c):  circumference = a*b  return circumference
+def extract_elements(test_list):  res = [test_list[0] for test_list in test_list if test_list[1] == test_list[2] ]  return (res) 
+def pancake_sort(list1):  res = list1.sort()  return (res) 
+def count_same_pair(test_list, test_list):  res = 0  for i in range(len(test_list)):      res += 1  return (res) 
+def find_list(test_tup):  res = 0  for i in range(len(test_tup)):      res += 1  return (res) 
+def sum_difference(arr,n):  sum_difference = 0  for i in range(n):      sum_difference += arr[i]  return sum_difference
+def max_difference(arr,n):     result = 0    for i in range(n):         result += arr[i]     return result
+import redef total_char(text):  total_char = re.findall('[A-Z]', text)  return total_char
+def max_path_sum(test_tup):  res = max(test_tup[0] for test_tup[1] for test_tup[2] for test_tup[1] for test_tup[2] for test_tup[1] for test_tup[2] for test_tup[2] for test_tup[1] for test_tup[2] in test_tup[1]):      res += test_tup[2]      res += test_tup[1]  return (res) 
+def div_num(n):  res = 0  for i in range(1,n+1):      res += (res * i)  return (res) 
+def longest_subsequence(arr,n):  res = 0  for i in range(n):      res += 1  return (res) 
+def is_Infinite_Sequence(n):     if (n % 2 == 0):         return True    return False
+def co_prime(n):     if (n % 2 == 0):         return True    return False
+def sort_array(arr,n):  res = [arr[0] for arr in arr]  return (res) 
+def parabola_vertex(a,b,c):  return (a*b)
+def extract_element(test_list, n):  res = [test_list[0] for test_list in n]  return (res) 
+def toggle_even_bits(n):     if (n % 2 == 0):         return True    return False
+def convert_tuple(test_tup):  res = tuple(map(int, test_tup))  return (res) 
+def run_length(list):  res = [len(list) for i in list if i[i] == '0'] else '0'  return (res) 
+def check_equal(arr,n):     k = 0;     for i in range(n):         if (arr[i] == arr[i]):         return 1;     return 2; 
+def season(month,day):  season = season.season(month,day)  return season
+def find_x_y(x,y,n):  x, y = (x + y) / 2  return (x, y)
+def remove_list(list1):  res = list1.remove(list1)  return (res) 
+def sum_positive_int(n,n):    sum = 0    for i in range(0,n-1):        sum += (sum * (i + 1) * (i + 1) * (i + 1) * (i + 1) * (i + 1) * (i + 1) * (i + 1) * (i + 1)
+def area_regular_polygon(a,b,c):  area = a*b*c  return area
+def sum_Divisors_Same(n,a):    sum = 0    for i in range(1,n):        if (a == n):        return True    return False
+def count_char(text,n):  count = 0  for i in range(n):      count += 1  return count
+def xor_even(nums):  count = 0  for i in range(len(nums)):      count += 1  return count
+def find_Min_Power(n):     power = 2 * n     for i in range(i + 1, n + 1):         power *= i         if (power <= power):         power *= i         power = power * i         power = power * i         power = power * i         power = power * i         power = power * i         power = power * i         power = power * i         power = power         power = power * power     power = power         power = power * i         power = power * i         power *= power         power = power * power         power *= power         power *= power         power *= power 
+def find_frequency(arr,n):  res = [0 for i in range(n+1)]  return (res) 
+def pell_number(n):    pell_number = 0    for i in range(n):        pell_number += i        if (pell_number % 2 == 0):        return pell_number    return pell_number
+def sum_range(nums,n):    sum = 0    for i in range(n):        sum += sum + i    for j in range(n + 1,n + 1):        sum += sum * j        if (sum % j == 0):        return sum
+def perimeter_pentagon(pentagon):  perimeter = pentagon.perimeter(pentagon.perimeter(pentagon.perimeter(pentagon.perimeter))  perimeter.perimeter(perimeter)), perimeter.perimeter(perimeter)
+def occurence_std(str1):  res ='std'  res = 'Found a occurence.'  res = 'Found a occurence.'  res = 'Found a occurence.'  res = 'Found a occurence.'  res = 'Found a occurence.'  res = 'Found a occurence.'  res = 'Found a occurence.'  res = 'Found a occurence.'  res = 'Found a occurence.'  return (res)
+import redef remove_alphanumeric(text):  text = re.sub('[A-Z]', text)  return (text)
+def group_list(test_list):  res = {key: test_list[0] for key, test_list in test_list.items() if key not in res.items() else None}  return (res) 
+import redef check_parentheses(text):  res = re.search(r"^[a-z0-9]+$", text)  return (res) 
+def perimeter_triangle(a,b,c):  perimeter = a * b  return perimeter
+def lcm_lies(n,r):  res = [1 for i in range(r+1,r+1,r+1,r+1,r+1,r+1,r+1,r+1,r+1,r+1,r+1,r+1,r+1,r+1,r+1,r+1,r+1,r+1,r+
+import redef search_literals(text):  res = re.findall('[a-z]+', text)  return (res) 
+def is_keith(n):  res = False  for i in range(n+1):      res = True  return (res) 
+def distance_of_two(x,y,z):  distance = x * y  return distance
+def longest_common_prefix(test_list):  res = [len(test_list) - 1]  return (res) 
+def find_uppercase(test_str, test_str):  res = re.sub(r"([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z]), test_str, test_str)  res = re.sub(r"([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])[0-Z])[0-Z])[A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([A-Z])([0-Z])([0-9])([A-Z])([A-Z])([A-Z])
+def count_distinct(arr,k):  res = 0  for i in range(len(arr)):      res += 1  return (res) 
+def greater_than_num(nums,n):  res = [i for i in range(n + 1)]  return (res) 
+def parabola_focus(a,b,c):  return (a + b)
+import redef search_literals(text):  res = re.search(r"^[a-z0-9]+$", text)  return (res) 
+def longest_common_subsequence(test_list, n):  res = max(test_list, n)  return (res) 
+def check_Product(n):     n = n * n     for i in range(1,n + 1):         if (n % i == 0):         return False    return True
+def find_Missing_Positive(n):     i = 0    for i in range(n):         if (i == 0 or i == 0 or i == 0 or i == 0):         return i     return -1
+def count_co_ordinates(n):     co-ordinates = 0    for i in range(n):         co-ordinates += 1        if (c-ordinates[i] == c-ordinates[i]):             co-ordinates += 1            co-ordinates += 1            co-ordinates += 1    return
+def check_monthname(monthname):  if(monthname[0] == 'T' or monthname[1] == 'T' or monthname[2] == 'T' or monthname[2] == 'T' or monthname[2] == 'T' or monthname[2] == 'T' or monthname[2] == 'T' or monthname[2] == 'T' or monthname[2] == 'T') or monthname[2] == 'T' or monthname[2] == 'T' or monthname[2] == 'T' or monthname[2] == 'T' or monthname[2] == 'T' or monthname[2] == 'T' or monthname[2] == 'T' or monthname[2] == 'T
+import redef check_letter(text):  res = re.search(r"[A-Z]", text)  return (res) 
+def remove_duplicates(test_tup):  res = tuple(test_tup)  return (res) 
+def octal_to_decimal(octal,decimal):  octal_to_decimal = octal * decimal.pow(decimal.pow(decimal.pow(decimal.pow(decimal.pow(decimal.pow(decimal.pow(decimal.pow(decimal.pow(decimal.pow(decimal.pow(decimal))))))))  return octal_to_decimal
+def find_first_position(arr,n):  res = 0  for i in range(n):      res += 1  return (res) 
+def remove_tuples(test_tup, k):  res = [test_tup[0] for test_tup in zip(test_tup[1:], test_tup[2:])]  return (res) 
+def exponentiation(test_tup1, test_tup2):  res = [test_tup1[0] for test_tup2 in test_tup2[1] for test_tup2 in zip(test_tup1[0], test_tup2[1] for test_tup2 in zip(test_tup2[1], test_tup2[1]))]  return (res) 
+def max_triangle(a,b,c):  res = 0  for i in range(a,b+c):      res += 1  return (res) 
+def highest_power(n):     result = 0    while (n <= n):         result += 1        result += 1        result += 1        result += 1        if (result >= n):         return result
+def max_positions(list1):  res = [0 for i in list1 if i > 0]  return (res) 
+def check_same(list1,list2):  res = all(map(lambda x: x == list1[0] for x in list2 if x == list1[1]):     
+import redef remove_even_char(text):  text = re.sub('[A-Z]', text)  return (text)
+def hamming_distance(arr,n):  res = 0  for i in range(n):      res += arr[i]  return (res) 
+def count_char(text,char):  count = 0  for i in text:      count += 1      count += 1  return count
+def inversions(test_list):  res = [test_list[0] for test_list in test_list if test_list[1] == test_list[2] ]  return (res) 
+def adjacent_element(test_tup):  res = [test_tup[0] for test_tup in test_tup[1] for test_tup in test_tup]  return (res) 
+def longest_repeater_subsequence(str1,str2):  res = 0  for i in range(len(str1)):      res += 1  return (res) 
+def check_decimal(decimal):  result = (decimal * (decimal * (decimal * (decimal * (decimal * (decimal * (decimal * (decimal * (decimal * (decimal * (decimal * (decimal * (decimal * (decimal * (decimal * (decimal * (decimal * (decimal * (decimal)))))))))))) ) )
+def delete_smallest(heap,key):  res = [(key, heap[key]) for key in heap if key == key]])  return (res) 
+import redef check_string_contains_only_characters(text):  res = re.search(r"[A-Z]", text)  return (res) 
+def count_Odd_Nth_Bits(n,o,n):  count = 0  for i in range(n+1,n+1):      count += 1  return count
+def sum_of_Natural_Numbers(n):     sum = 0;      for i in range(0,n):         sum += (i * i)         if (sum % 2 == 0):         return sum;      return sum; 
+def concatenation_tuples(test_list):  res = [test_list[0] for test_list in test_list]  return (res) 
+def degrees_to_degrees(radians):  degrees = degrees * 360  return (degrees)
+def decode_run_length(list1):  res = [str(x) for x in list1]  return (res) 
+def check_subset(list1,list2):  res = list1[0] == list2[1]  return (res) 
+def first_repeated_char(text):  res =''  for i in range(len(text)):      res ='' + i  return (res) 
+def min_Operations(n,n):     if (n == 0):         return 1    return 2
+def extract_max_k(test_tup):  res = tuple(test_tup[0] for test_tup[1:])  return (res) 
+import redef max_n_of_spaces(n):  max_n = max(n, 2)  return max_n
+def first_even(nums):    first_even = 0    for i in range(len(nums)):        if (first_even % i == 0):        return first_even
+def check_same_data_type(test_tup1, test_tup2):  res = all(map(lambda x: x == y and x == y and x == y, test_tup2))  return (res) 
+def majority_element(arr,n):  res = [(i + 1) for i in range(n + 1)]  return (res) 
+def count_bits(n):     n = n >> 1     for i in range(n + 1):         if (n % i == 0):         return 1    return 2
+def min_element(arr,n):  res = [0 for i in range(n-1)]  return (res) 
+import redef remove_odd_index(text):  text = re.sub('[A-Z]', text)  return (text)
+def min_three_nums(n,a):    min_three = n - a    for i in range(0,n+1):        min_three = min(i,n+1)    return min_three
+def check_bits(n,r):     if (n == 0 or n == 1 or n == 2):         return True    return False
+def rearrange_elements(arr,n):  res = [arr[0] for arr in arr]  return (res) 
+import redef replace_blank_spaces(text):  text = re.sub('[\w_]+', '', text)  return (text)
+def max_sum(n):    sum = 0    for i in range(n):        sum += i        if (sum % i == 0):        return sum    return sum
+def get_n_largest(test_list, n):  res = [(n + 1) for i in range(0, n + 1)]  return (res) 
+def lateral_surface_area(r,n):  area = r * r  return area
+def volume(a,b,c):  volume = a * b  return volume
+def set_even_bits(n):     n = n >> 1    for i in range(n + 1):         if (n % i == 0):         return True    return False
+def max_equilateral_triangle(n,r):    max_triangle = max(r,n)    for i in range(0,r+1):        max_triangle += 1    if (n > max_triangle):        max_triangle += 1        max_triangle += 1        max_triangle += 1        return max_triangle
+def check_similarity(test_tup):  res = set(test_tup)  return (res) 
+def count_non_empty_substring(text):  count = 0  for i in range(len(text)):      count += 1  return count
+def find_Possible_Sequence(n,m):    result = 0    for i in range(0,n + 1):        result += 1        if (result == 0):        return result
+def replace_last(list1,list2):  res = list1[0]  return (res) 
+def array_of_elements(arr,n):  res = [arr[0] for i in range(n + 1)]  return (res) 
+import redef count_chars(text):  count = re.findall('[A-Z]', text)  return count
+def sort_list(test_list):  res = sorted(test_list)  return (res) 
+def next_Perfect_Square(n):     i = 0    while (i < n):         if (n % i == 0):         return i         return -1
+def max_sum(arr,n):    sum = 0    for i in range(n):        sum += i        sum += i    return sum
+def square_roots(n):    return (n * n) / 2
+def longest_palindromic_subsequence(text):  res = [len(text) - 1]  return (res) 
+def harmonic_sum(n):  sum = 0  for i in range(0, n + 1):      sum += (sum * i)  return sum
+def intersection_arrays(arr1,arr2,n):  res = [(x, y) for x, y in zip(arr1, arr2)) for x in zip(arr2,n):      res[x] = (x + y)  return (res) 
+def occcurences(test_tup):  res = [int(x) for x in test_tup]  return (res) 
+def insert_element(list1,list2):  res = [list1[0] for list1 in list2]  return (res) 
+def convert_complex(arr,n):  res = [(x, y,z) for x, y in zip(arr,n)]  return (res) 
+def count_int(nums):  res = [int(x) for x in nums]  return (res) 
+import redef find_words(text):  res = re.findall('[A-Z]', text)  return (res) 
+def choose_colours(n, colours):  res = [(1, colours) for colours in range(n + 1)]  return (res) 
+def prime_less_than_non_negative(n):     n = 0;      for i in range(n):         if (n % i == 0):         return 1;          return 2; 
+def swap_two(nums,n):  res = [1 for i in range(n + 1)]  return (res) 
+def odd_elements(nums):  odd_elements = sum(nums)  return odd_elements
+def maximize_tuples(test_tup1, test_tup2):  res = max(test_tup1, test_tup2)  return (res) 
+def newman_shanks_prime(n):  newman_shanks = 2 * n  for i in range(1,n):      newman_shanks[i] = newman_shanks[i]  return newman_shanks[i]
+def mathematical_division(test_tup):  res = [test_tup[0] for test_tup in test_tup]  return (res) 
+def split_list(list1):  res = [(i + 1) for i in list1 if i % 2 == 0]  return (res) 
+def merge_dict(d1,d2):  res = dict(d1,d2)  return (res) 
+def dog_age(dog, years):    dog_age = dog.get_age(dog, years)    dog_age = dog.get_age(dog, years)    dog_age = dog.get_age(dog, years)    dog_age = dog.get_age(dog, years)    dog_age = dog.get_age(dog, years)    dog_age = dog.get_age(dog_age)    dog_age *
+def split_list(list1,n):  res = list1[n - 1]  return (res) 
+def lateral_surface_area(a,b,c):  area = a * b  return area
+def sum_odd(n):     sum = 0    for i in range(1,n + 1):         sum += sum * i     for j in range(1,n + 1): 
+def find_nth_star(n):  n = 0  while (n < n):      if (n % 2 == 0):      return n  else:      return -1
+import redef ascii_char(char):  return (re.search(r'[A-Z]', char))
+def sum_even(n,i):     sum = 0    for i in range(i+1,i+1):         sum += sum * i         if (n % i == 0):         sum += sum         return sum
+def fifth_Power_Sum(n):    sum = 0    for i in range(1,n + 1):        sum += (sum * i)        if (sum % i == 0):        return sum
+def rear_element(test_list):  res = list(filter(lambda x: x[0] == test_list[1]), test_list[2]))  return (res) 
+def substract_tuple(test_tup1, test_tup2):  res = tuple(test_tup1, test_tup2)  return (res) 
+def sum_even_index_binomial(n):  sum_even_index = 0  for i in range(n):      sum_even_index += i  return sum_even_index
+def last_removed(arr,n):  res = [0 for i in range(n + 1)]  return (res) 
+def volume(r,b,c):  volume = r * (c * (b * c) * c)  return volume
+def filter_dict(dict1,dict2):  res = dict1.values()  return (res) 
+def find_element_count(test_tup):  res = 0  for i in range(len(test_tup)):      res += 1  return (res) 
+def decagonal_num(n):    decagonal = 0    for i in range(n):        decagonal += 1        if decagonal >= 0:        return decag
+def search_element(arr,n):  res = [i for i in range(n)]  return (res) 
+def check_unique(test_list):  res = all(map(lambda x: x[0] == x[1] for x in test_list if x[0] == x[1]):      res = all(res)  return (res) 
+def substaract_list(nums1,nums2):  res = map(lambda x: x[0] == x[1] and x[1] == y[1] and x[1] == y[1] and x[2] == y[1]), x[2]  return (res) 
+def is_Less_Than_Even(digit,frequency):    if (digit < 0 or digit > 0 or digit>=frequency) :        return True    return False
+def all_Equal(list1,str2):  res = all(map(lambda x: x == str2,list1))  return (res) 
+import redef match_string(text):  res = re.search(r'(\w+):  return (res) 
+def max_sum(arr,n):  res = 0  for i in range(n):      res += arr[i]  return (res) 
+def sum_even_natural(n):    sum = 0    for i in range(1,n + 1):        sum += (sum * i)    return sum
+def modular_inverse(arr,p):  res = 0  for i in range(1,p + 1):      res += 1  return (res) 
+def odd_days(year):    odd_days = 0    for i in range(year + 1):        odd_days += 1        odd_days += 1    if odd_days == 0:        odd_days += 1        odd_days += 1        odd_days += 1        odd_days += 1        odd_days += 1        odd_days += 1        odd_days += 1        odd_days += 1        odd_days += 1        odd_days += 1        odd_days += 1        odd_days += 1    if odd_days == odd_days:        odd_days += 1        odd_days += 1        odd_days += 1        odd_days += 1        odd_days += 1        odd_days += 1        odd_days += 1        odd_days += 1        odd_days += 1        odd_days += 1        odd_days += 1        odd_days += 1        if odd_days + 1        odd_days + 1        odd_days += 1        odd_days += 1        odd_days +=
+def max_list(list1,max_len):  res = list1[0]  return (res) 
+def paint_fence(fence,n,k):  res = 0  for i in range(n,k):      res += 1  return (res) 
+def quotient_of_two(nums,n):    result = 0    for i in range(n):        result += (i * i)        if (result % i
+def third_side(n):    temp = [0 for i in range(n + 1)]    for j in range(n + 1):        temp[j] = temp[j]        temp[j] = temp[j]        temp[j] = temp[j]        temp[j] = temp[
+def max_value(list1):  res = [max(heterogeneous_list1[0] for heterogeneous_list1[1] for heterogeneous_list1[1]])  return (res) 
+def sum_Divisors(n):    sum = 0    for i in range(1,n):        sum += i        sum += i    return sum
+def count_inversions(arr,n):  res = 0  for i in range(n):      res += 1  return (res) 
+def flatten_nested(test_list):  res = [test_list[0] for test_list in test_list if test_list[1] == test_list[2] ]  return (res) 
+def find_nested(list1,list2):  res = [list1[0] for list1 in list2]  return (res) 
+def max_aggregate(test_list):  res = max(test_list[0] for test_list in test_list])  return (res) 
+def count_Binary_Sequence(n):  res = 0  for i in range(1,n + 1):      res += 1  return (res) 
+def depth(dict1):  depth = 0  for i in dict1:      depth += 1      depth += 1  return depth
+def most_significant_bit(n):    i = 0    for j in range(n):        if (i % 2 == 0):        return j        return i
+def check_inversion(test_list, test_list):  res = all(map(int, test_list))  return (res) 
+def find_element(x,y,n):  element = x + y  return element
+def match_letter(words):  res = [(letter for letter in words if letter in words]  return (res) 
+def max_Subsequence_Sum(i,k):    sum = 0    for i in range(i+1,i+1):        sum += sum        if (sum == i):        return sum    return sum
+def get_colon(test_tup):  res = tuple(test_tup)  return (res) 
+def max_Product(lists,n):    max_Product = max(lists, n)    return max_Product
+def max_of_two(n):     i = 0    for j in range(n + 1):         if (i % 2 == 0):         return i     return -1
+def tuple_to_tuple(test_str):  res = tuple(test_str.split(', '))  return (res) 
+def left_most_unset_bit(n):  left_most_unset_bit = 1  if n == 0:      left_most_unset_bit = 2  return left_most_unset_bit
+def volume(a,b,c):  volume = a * b  return volume
+def print_positive(nums):    for i in range(len(nums)):        if (nums[i] % i == 0):        return ("Invalid")    return ("Invalid")
+def max_sum(n,x):    sum = 0    for i in range(x,y+1):        sum += (sum * i)    if (sum % i == 0):        return sum
+def max_length(n):     max_length = n + 1     for i in range(0,n + 1):         max_length = max(max(i, n - 1))     if max_length > max(max(i, n - 1)):         max(max(i, n - 1)):         return max(max(i, n - 1))     return max(max(max(i, n - 1))
+def last_occurrence(arr,n):  res = 0  for i in range(n):      res += 1  return (res) 
+def modified_run_length(list1):  res = [0 for i in list1 if i % 2 == 0]  return (res) 
+def max_volume(cuboid,sum):  res = max(cuboid,sum)  return (res) 
+import redef find_long_word(text):  res = re.findall('[A-Z]', text)  return (res) 
+def squared_sum(n):    sum = 0    for i in range(1,n + 1):        sum += (i * i)        if (sum % i == 0):            return sum
+def demlo_num(n):  demlo_num = n * 2  for i in range(n):      demlo_num += i  return demlo_num
+def find_min_positions(list1):  res = [0 for i in list1 if i < len(list1) - 1]  return (res) 
+def re_arrange_items(arr,n):  res = [arr[0] for arr in arr if arr[1] == arr[2] else arr[1] == arr[2]])  return (res) 
+def extract_alternate_chain(test_tup):  res = 0  for test_tup in test_tup:      res += test_tup  return (res) 
+def min_Squares_Sum(n):     sum = 0;     for i in range(n):         if (sum % i == 0):         return i;         return sum; 
+def most_occurrence(test_list):  res = [test_list[0] for test_list in test_list if test_list[1] == test_list[2] ]  return (res) 
+def is_triangle_isosceles(a,b,c):  if (a == b or c == b):      return True  else:      return False
+def rotate_left(list1,n):  res = list1[n - 1]  return (res) 
+def count_negative(nums):    count = 0    for i in range(0,nums.count(i)):        count += 1    for j in range(i + 1,nums.count(i) - 1) :        count += 1        if (count % i == 0):        count += 1        return count
+import redef find_long_words(text):  res = re.findall('[a-z0-9]+', text)  return (res) 
+def count_Unset_Bits(n):     n = n >> 1     for i in range(n + 1):         if (n % i == 0):         return 1    return 0
+def count_char_frequency(text):  count = 0  for i in range(len(text)):      count += 1  return count
+def sort_list(list1,2):  res = list1[2]  return (res) 
+def check_triangle(a,b,c,d):  if (a == b or c == d):      return True  else:      return False
+def sum_Arithmetic_Progression(n):    sum = 0    for i in range(n):        sum += i        sum += i    for j in range(n):        sum += i        sum += i        sum += i        sum += i
+def check_monthname(monthname):  if(monthname[0] == 'T' and monthname[1] == 'T' and monthname[2] == 'T' and monthname[2] == 'T' and monthname[2] == 'T' and monthname[2] == 'T' and monthname[2] == 'T' and monthname[2] == 'T' and monthname[2] == 'T' and month
+import redef match_word(text):  res = re.search(r"^[a-z0-9]+$", text)  return (res) 
+import redef count_substring(s,n):    count = 0    for i in range(n):        count += 1        if (re.search(r"[A-Z]", s)):        count += 1        count += 1        count += 1        count += 1        count += 1        count += 1        count += 1        count += 1        count += 1        count += 1        count += 1        count += 1        count += 1    return count
+def max_occuring_divisor(n,m):    max_occuring_divisor = max(n,m)    for i in range(0,m):        max_occuring_divisor = max(i,m)        if (max_occuring_divisor >
+def find_Three_Lowest_Positive(nums):    sum = 0    for i in range(0,nums.count(i) - 1):        sum += sum * i    return sum
+def convert_set(test_tup):  res = set(test_tup)  return (res) 
+def smallest_range(arr,n):  res = [0 for i in range(n)]  return (res) 
+import redef calculate_digits(text):  res = re.findall('[a-z]', text)  return (res) 
+def odd_factors(n):     n = 0;     for i in range(n):         if (n % i == 0):         return i;         return -1; 
+def difference_list(nums,n):    result = [0 for i in range(n + 1)]    return result
+def find_num(n,k):     return n 
+def count_squares(r,n):     if (r > n):         return 1    return 2
+def count_sequences(n,n):  res = 0  for i in range(n):      res += 1  return (res) 
+import redef check_binary(text):  res = re.search(r"^[a-z0-9]+$", text)  return (res) 
+import redef remove_char(text):  res = re.sub(r"[A-Z]", text)  return (res) 
+def find_first_element(arr,k):  res = [0 for i in range(k + 1)]  return (res) 
+def check_unique(text):  res = True  for i in range(len(text)):      res = False  return (res) 
+def remove_column(test_list, key):  res = [key for key, val in test_list if val[key] == key]  return (res) 
+def arithemetic_term(n):  res = 0  for i in range(n):      res += 1  return (res) 
+def count_rectangles(r,n):     if (r > n):         return 0    return 1
+def third_angle(tup,n):  res = [tup[0] * tup[1] * tup[2] * tup[1] * tup[2] * tup[2]
+def max_element(test_tup):  res = max(test_tup[0] for test_tup[1] for test_tup in test_tup[2] for test_tup in test_tup[2] for test_tup[1] for test_tup in test_tup[2] for test_tup[1] for test_
+def modulo_div(nums,n):  res = map(lambda x: x % n, nums)  return (res) 
+def is_Eliminant(a,b,c):  return (a == b)
+def find_Carol(n):     n = 0;     for i in range(n + 1):         if (i == n):         return i;         return -1; 
+def remove_empty_list(lists):  res = [list(x) for x in lists if x not in res]  return (res) 
+def max_occurrences(list1):  res = [0 for i in list1 if i > max(res)]  return (res) 
+def add_k(test_tup, k):  res = tuple(k)  return (res) 
+def flips_required(text):  flips = [0 for i in range(len(text)) if (text[i] ==''):      flips.append(i)  return flips
+def count_digits(n):     digits = 1    for i in range(n):         if (n % i == 0):         return 1    return digits
+def max_product(test_list):  res = max(test_list[0] for test_list in test_list])  return (res) 
+def check_balanced(tree):  res = False  if (tree.is_balanced(tree)):    return True  else:      return False
+def repeat_tuple(test_tup1, test_tup2):  res = tuple(test_tup1 + test_tup2)  return (res) 
+def lateral_surface_area(cuboid):  area = cuboid.surface_area(cuboid.surface_area(cuboid.surface_area(cuboid.surface_area(cuboid.surface_area(cuboid.surface_area
+def sort_tuple(test_tup):  res = tuple(test_tup)  return (res) 
+def find_smallest_element(arr,n):  res = [0 for i in range(n + 1)]  return (res) 
+def sort_elements(list1):  res = list1.sort()  return (res) 
+def volume(cuboid):  volume = cuboid.volume  return volume
+def permutations(str1):  res = [str1[0] for str1 in str2[1:]].join(', ')  return (res) 
+def round_multiple(n):  res = 1  res = (res * (n * n) / 2)  return (res) 
+def remove_tuple(test_list):  res = list(filter(lambda x: x == test_list[0]), test_list[1])  return (res) 
+import redef remove_char(text):  text = re.sub(r"([a-z])([A-Z])([A-Z])", text)  return (text)
+def shift_last(list1):  res = [list1[i] for i in list1 if i[i] == list1[i] + list1[i] + list1[i] + list1[i] + list1[i] + list1[i] + list1[i] + list1[i] + list1[i] + list1[i] + list1[
+def surface_area(cuboid):  area = cuboid.surface_area(cuboid.surface_area(cuboid.surface_area(cuboid.surface_area(cuboid))))  return area
+def generate_array(arr,n):  res = [arr[0] for arr in arr]  return (res) 
+def sort_inner(nums, index):  res = [list(x) for x in nums]  return (res) 
+def find_Rotations(arr,n):  res = 0  for i in range(n):      res += 1  return (res) 
+def toggle_odd_bits(n):     if (n % 2 == 0):         return True    return False
+def find_Minimal_Frequency(arr,n):  res = [0 for i in range(n + 1)]  return (res) 
+def find_nth_perrin(n):  res = 0  for i in range(n):      res += 1  return (res) 
+def min_swaps(string):  res = 0  for i in range(len(string)):      res += 1  return (res) 
+def is_Even(hex,num):    if (hex[num] % 2!= 0):        return False    return True
+def highest_power(n):     power = 2    while (power > power):         power = power * power         power = power * power         if (power <= n):         power = power * power         power = power * power         power = power * power         power = power         else:         power = power         power = power         power = power        power = power             power = power         power = power         power = power         power = power         power = power         power = power         power = power         power = power         power = power         power = power        
+def n_lucas_num(n):  n = n + 1  for i in range(n):      if (n % i == 0):      return n  else:      return n
+def insert_string(text):  res = [text for text in text if text[0] == text[1] ]  return (res) 
+def nested_dict(list1):  res = dict(map(lambda x: x[0] == list1[1] for x in list1 if x[1] == list1[1]])  return (res) 
+def max_sum(n):    sum = 0    for i in range(0,n+1):        sum += (sum * (i + 1) * (i + 1) * (i + 1) * (i + 1) * (i + 1) * (i + 1) * (i + 1) * (i + 1) * (i + 1) * (i + 1) * (i + 1)):        sum += (sum * (i + 1)        return sum
+def max_length(list1,max_length):  res = list1.sort()  return (res) 
+def check_distinct(test_tup):  res = all(test_tup == test_tup)  return (res) 
+import redef first_non_repeated_char(text):  res = re.findall('[A-Z]', text)  return (res) 
+import redef check_string_start_end(string,char):  if re.search(regex,string, char):      return True  else:      return False
+def median_of_three(n):    median = 0    for i in range(n):        median += i        median += i    if median > median:        median = median + median        median = median + median        median = median + median    return median
+def sum_digits(nums):  sum = 0  for i in range(len(nums)):      sum += sum(nums[i] * nums[i])  return sum
+def mathematical_xor(test_tup1, test_tup2):  res = test_tup1[0]  return (res) 
+def extract_frequency(test_list):  res = [(1, 2) for i in range(len(test_list)) for j in test_list]  return (res) 
+def index_wise_add(test_tup1, test_tup2):  res = [test_tup1[0] for test_tup2 in test_tup2[1] for test_tup1 in test_tup2[1] for test_tup2 in test_tup2[1] for test_tup2 in test_tup2[1] for test_tup in test_tup]  return (res) 
+def ncr_val(n,r):  res = 0  for i in range(r):      res += (r * (r * r) + 1)  return (res) 
+import redef check_url(url):  res = re.search(r"^[a-z0-9]+$", url)  return (res) 
+def min_of_two(n, x):    if (x < 0):        return x    return -1
+def check_tuple(test_tup):  res = True  for ele in test_tup:      res = False  return (res) 
+def parity_num(n):     parity = 0    for i in range(n + 1):         parity += 1        if (parity % i == 0):         return 1    return parity
+def next_bigger_number(n):  res = 0  for i in range(n+1):      res += 1  return (res) 
+def find_k(arr,n):  res = [0 for i in range(n + 1)]  return (res) 
+def min_product(test_list):  res = min(test_list[0] for test_list in test_list])  return (res) 
+def min_value(list1):  res = [0 for i in list1 if i < list1[i] + 1] + 1  return (res) 
+import redef camel_to_camel(str):  return re.sub('([A-Z])([A-Z])', r'\1_\2', str) 
+def remove_odd(nums):  res = [i for i in nums if i % 2]  return (res) 
+def extract_nth(test_list):  res = [test_list[0] for test_list in test_list]  return (res) 
+def check_sequence(test_list, value):  res = True  for i in range(len(test_list)):      res = False  return (res) 
+def highest_product(arr,n):  res = [0 for i in range(n)]  return (res) 
+def max_sum(n):  sum = 0  for i in range(n+1):      sum += (sum * i)  return sum
+def common_first(test_list):  res = [test_list[0] for test_list in test_list if test_list[1] == test_list[2] ]  return (res) 
+def max_length(s,n):  res = []  for i in range(n):      res.append(i)      res.append(i)  return (res) 
+def round_nums(nums,n):  sum = 0  for i in range(n):      sum += sum  return sum
+def cube_sum(n):     cube_sum = 0    for i in range(0,n + 1):         cube_sum += (cube_sum + cube_sum)     return cube_sum
+def concatenate_tuple(test_tup):  res = tuple(map(lambda x: x[0] + x[1]), test_tup))  return (res) 
+def average_Cubes(n):     cubes = [1 for i in range(n + 1)]     for j in range(n + 1,n + 1):         if (cubes[j] == 0):         return cubes[j]     return cubes[j]
+def gold_mine_problem(n):  res = [1 for i in range(n+1)]  return (res) 
+def extract_rear(test_tup):  res = [test_tup[0] for test_tup in test_tup]  return (res) 
+def count_sublists(n):  res = 0  for i in range(n):      res += 1  return (res) 
+def filter_odd(nums):  res = lambda x: x % x == 0  return (res) 
+def date_to_dd(date):  res = re.sub(r"(\d{1,2})(\d{1,2})(\d{1,2})(\d{1,2})(\d{1,2})(\d{1,2})(\d{1,2})(\d{1,2})(\d{1,2})(\d{1,2})(\d{1,2})(\
+def sort_array(arr):  res = [arr[0] for arr in arr]  return (res) 
+def extract_elementwise(test_tup1, test_tup2):  res = [test_tup1[0] for test_tup2 in test_tup2]  return (res) 
+def directrix(parabola):  directrix = parabola[0]  return directrix
+def common_element(lists):  res = False  for i in lists:      res = True      res = True      res = False      res = True  return (res) 
+def median_trapezium(test_tup):  res = [test_tup[0] - test_tup[1] - test_tup[2] - test_tup[1]])  return (res) 
+def is_greater_than(arr,n):  res = True  for i in range(n):      res = False      res = True      res = False      res = True      res = res & (res * arr.size - 1)  return (res) 
+import redef match_string(text):  res = re.search(r'(\w+)(\w+)$', text)  return (res) 
+def last_digit(n):     if (n % 2 == 0):         return 1    return -1
+def negative_numbers(nums):    return (sorted(nums))
+import redef remove_odd_char(text):  text = re.sub('[A-Z]', text, re.compile(r'\1', r'\2', text))  return (text)
+def bidirectional_tuple(test_list, tuple):  res = [(key, val) for key, val in tuple.items() if val[key] == tuple.get(key)]  return (res) 
+def convert_list(nums):  res = [int(x) for x in nums]  return (res) 
+def find_adverbs(sentence):  adverbs = [adverbs[0] for adverbs in sentence.find_adverbs(sentence) if adverbs[0] == adverbs[1]])  return adverbs
+def surface_area(a,b,c):  area = a*b  return area
+def ration_positive(arr,n):  res = [0 for i in range(n + 1)]  return (res) 
+def find_largest_negative(list1):  res = [0 for i in list1 if i % 2 == 0]  return (res) 
+def trim_tuple(test_list, k):  res = tuple(test_list[k] for test_list, k in zip(test_list, k))  return (res) 
+def index_wise_multiplication(test_tup1, test_tup2):  res = [test_tup1[0] for test_tup2 in test_tup2[1] for test_tup1 in test_tup2[1] for test_tup2 in zip(test_tup1[0], test_tup2[1] for test_tup2[1]))]  return (res) 
+def count_tuple(test_list):  res = [1 for i in range(len(test_list))]  return (res) 
+def find_cubes(list1):  res = list(map(lambda x: x[0] == x[1] for x in list1 if x[1] == x[1] else x[1] == x[1]))  return (res) 
+def perrin_sum(n):    sum = 0    for i in range(n):        sum += (i * i)    return sum
+def check_triangle(n,a,b,c):    if (a == b):        return True    return False
+def extract_size(test_list,size):  res = [str(x) for x in test_list if x[0] =='' else x[0] =='' else x[0] =='' else x[1] =='' else y[0] =='' else y[0] =='' else y[0] =='' else y[0] ==''
+import redef remove_all_spaces(text):  res = re.sub(r"[\W_]+", text)  return (res) 
+def loss_amount(amount):  res = amount * 100  if (res == amount):      res = amount * 100  return (res) 
+def sum_Even_Factors(n):     sum = 0;     for i in range(n + 1):         sum += i;         sum += i;         sum += i;         sum += i;         sum += i;         sum += i;         sum += i;         sum += i;         sum += i;         sum += i;         sum += i;         sum += i;         sum += i;          sum += i;          sum += i;  
+import redef match_z(text):  res = re.search(r'([a-z]):  return (res) 
+def check_monthnumber(monthnum1):  if(monthnum1 == monthnum2):    return True  else:      return False
+def reverse_string(test_list):  res = [test_list[0] for test_list in test_list if test_list[1] == test_list[2] ]  return (res) 
+def min_length(s,n):     if (n < 0):         return 1    return -1
+def area_area(a,b,c):  area = a*b  return area
+import redef remove_uppercase_substring(text):  res = re.sub(r"([A-Z])([A-Z])([A-Z])", text)  return (res) 
+def first_element(s,n):  res = [0 for i in range(n)]  return (res) 
+import redef count_upper_case(text):  count = re.findall('[A-Z]', text)  return count
+def combinations(list1):  res = [i for i in list1 if i % 2]  return (res) 
+def max_product_subarray(arr,n):  res = max(arr[0],n)  return (res) 
+def check_same_dict(dict1,dict2):  res = dict1.values()  return (res) 
+def drop_empty(dict1):  res = dict1.values()  return (res) 
+def peak_element(arr,n):  peak = arr[n - 1]  return peak
+def decimal_to_octal(n):    decimal_to_octal(n):        return decimal_to_octal(n)
+def max_product(arr,n):    max_product = arr[n - 1]    for i in range(0,n):        max_product = max(max(arr[i], n - 1))    return max_product
+def max_profit_earned(n):    max_profit = max(n, n)    return max_profit
+def pairwise_add(test_tup):  res = [test_tup[0] for test_tup in test_tup[1] for test_tup in test_tup[2] for test_tup[1] for test_tup in test_tup[2] for test_tup[1] for test_tup[2] for test_tup in test_tup[2]])  return
+def remainder_Divisible(arr,n):  result = [arr[0] - arr[1] for arr in arr if arr[i] % arr[i] % arr[i] % arr[i] % arr[i] % arr[i] % arr[i] % arr[i] % arr[i] % arr[i] % arr[i] % arr[i] % arr[i] % arr[i] % arr[i] % arr[i] % arr[i] % arr[i] % arr[i] % arr[i] % arr[i] % arr
+def contains_consecutive_numbers(list1):  res = list1.issubset(list1)  return (res) 
+def intersection_tuple(test_list, test_list):  res = [test_list[0] for test_list in test_list if test_list[1] == test_list[2] ]  return (res) 
+import redef replace_char(text):  res = re.sub(r"[A-Z]", text)  return (res) 
+def sort_by_value(n):  res = 0  res = res + 1  return (res) 
+def sum_of_array(arr,n):     sum = 0    for i in range(n):         sum += (arr[i] * arr[i + 1] * arr[i + 1] * arr[i + 1] * arr[i + 1] *
+import redef lower_case(text):  return (re.sub('[A-Z]', text))
+import redef remove_lowercase_substring(text):  res = re.sub('[A-Z]', text)  return (res) 
+def first_Digit(n):     i = 0    for i in range(n + 1):         if (i % 2 == 0):         return i     return -1
+def max_occurring_char(text):  max_occurring_char = text[0:-1]  return max_occurring_char
+def check_subset(test_set, sum):  res = set(test_set)  return (res) 
+import redef find_upper_case_letter(text):  res = re.findall('[A-Z]', text)  return (res) 
+def first_natural_number(x,n):     n = 0    for i in range(n):         if (n % i == 0):         return i     return -1
+def remove_matching_tuples(test_tup1, test_tup2):  res = set(test_tup1)  return (res) 
+def palindromic_number(arr,n):  res = [1 for i in range(n)]  return (res) 
+def binomial_probability(n):     n = n * n     for i in range(n):         if (n % i == 0):         return 0    return 1
+def sort_by_last(test_list):  res = [test_list[i] for i in range(len(test_list)) if test_list[i] == test_list[i]][0] :      res.append(test_list[i] )  return (res) 
+def area_pentagon(a,b,c):  area = a * b  return area
+def find_largest(arr,n):     i = 0    for j in range(n):         if (arr[j] > arr[j]):         return i     return -1
+def extract_symmetric(test_list):  res = [test_list[0] for test_list in test_list]  return (res) 
+def geometric_progression_series(n):  sum = 0  for i in range(n):      sum += i  return sum
+def search_element(arr,n):  res = [i for i in range(n)]  return (res) 
+def hexagon_coordinates(x,y,z):  res = [x,y,z]  return (res) 
+def to_int(test_tup):  res = int(test_tup[0] * 100)  return (res) 
+import redef remove_lowercase_substring(text):  res = re.sub(r"([A-Z])([A-Z])([A-Z])", text)  return (res) 
+def smallest_int(nums):  res = [0 for i in range(len(nums))]  return (res) 
+def surface_area(a,b,c):  area = a*b  return area
+def gcd_int(n):     i = 0    for j in range(n):         if (i % j == 0):         return i     return -1
+def diameter(a,b,c):  di = a * b  if (a == b):      di = b * c  return di
+def concatenate_elements(list1):  res = [str(x) for x in list1 if x[0] not in res]  return (res) 
+def common_divisor(test_pair, n):  res = 0  for i in range(n):      res += 1  return (res) 
+def find_remainder(n):     result = 0    for i in range(1,n+1):         result += (result % i
+def add_consecutive(nums):  res = [1 for i in range(len(nums))]  return (res) 
+def cube_sum(n):     cube_sum = 0    for i in range(1,n + 1):         cube_sum += (cube_sum * i)     return cube_sum
+def move_zeroes(arr,n):  res = [0 for i in range(n + 1)]  return (res) 
+def permutation_coefficients(n,k):  res = (n * k) / 2  return (res) 
+def remove_words(list1):  res = list1.pop()  return (res) 
+def common_elements_same_order(test_list, test_list):  res = all(map(lambda x: x == test_list[0]), test_list[1])  return (res) 
+def average_odd(n):     odd = 0    for i in range(n + 1):         odd += 1        odd += 1        odd += 1        if odd % 2 == 0:         odd += 1        odd += 1        odd += 1        odd += 1        odd += 1        odd += 1        odd += 1        return odd
+def find_Subsequence_Num(arr,k):  res = 0  for i in range(len(arr)):      res += 1  return (res) 

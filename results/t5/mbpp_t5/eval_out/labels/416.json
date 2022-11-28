@@ -1,0 +1,4 @@
+{
+    "query": "Write a function to convert a date of yyyy-mm-dd format to dd-mm-yyyy format by using regex.",
+    "success": 1
+}

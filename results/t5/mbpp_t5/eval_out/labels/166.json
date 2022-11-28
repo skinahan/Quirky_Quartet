@@ -1,0 +1,4 @@
+{
+    "query": "Write a python function to find two distinct numbers such that their lcm lies within the given range.",
+    "success": 1
+}

@@ -8,7 +8,7 @@ class CodeT5(pl.LightningModule):
     def __init__(self, train_dataloader, val_dataloader, test_dataloader, lr=5e-5, num_train_epochs=15,
                  warmup_steps=1000):
         super().__init__()
-        self.model = T5ForConditionalGeneration.from_pretrained("Salesforce/codet5-base")
+        self.model = T5ForConditionalGeneration.from_pretrained("Salesforce/codet5-small")
         self.save_hyperparameters()
         self.training_dataloader = train_dataloader
         self.valid_dataloader = val_dataloader
