@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a python function to count number of cubes of size k in a cube of size n.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nThink along the lines of the variables and data structures that need to be used. Also think about the way to access the elements in the data structures.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\ndef count_cubes(k,n):\n    return (n-k+1)**3\n\n\n'''",
+        "clean_code": "def count_cubes(k,n):\n    return (n-k+1)**3\n\n\n'''"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n'''\ndef count_cubes(k,n):\n    return n//k",
+        "clean_code": "'''\ndef count_cubes(k,n):\n    return n//k"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n'''\ndef count_cubes(n,k):\n    # write your code here\n    return n**3//k**3\n\n\n# Test Case 1:\nprint(count_cubes(10, 2)) # Should be 125.0",
+        "clean_code": "'''\ndef count_cubes(n,k):\n    # write your code here\n    return n**3//k**3\n\n\n# Test Case 1:\nprint(count_cubes(10, 2)) # Should be 125.0"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\nn = number of cubes in one dimension.\nk = size of the cubes.\nThe problem is to find number of k-cubes in n-cube.\nFor example, if n=3 and k=2, then the answer is 8. \nIf n=4 and k=2, then the answer is 32. \nIf n=5 and k=3, then the answer is 125. \nThe function should be named as count_cubes(n,k).\n\n",
+        "clean_code": "n = number of cubes in one dimension.\nk = size of the cubes.\nThe problem is to find number of k-cubes in n-cube.\nFor example, if n=3 and k=2, then the answer is 8. \nIf n=4 and k=2, then the answer is 32. \nIf n=5 and k=3, then the answer is 125. \nThe function should be named as count_cubes(n,k)."
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n'''\n\n\ndef count_cubes(n, k):\n    '''Returns the number of cubes of size k in a cube of size n.'''\n    return (n - k + 1) ** 3\n\n\nif __name__ == '__main__':\n    n = int(input())  # Size of the cube.\n    k = int(input())  # Size of the smaller cubes.\n\n    print(count_cubes(n, k))",
+        "clean_code": "'''\n\n\ndef count_cubes(n, k):\n    '''Returns the number of cubes of size k in a cube of size n.'''\n    return (n - k + 1) ** 3\n\n\nif __name__ == '__main__':\n    n = int(input())  # Size of the cube.\n    k = int(input())  # Size of the smaller cubes.\n\n    print(count_cubes(n, k))"
+    }
+}

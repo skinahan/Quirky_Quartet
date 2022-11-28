@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a python function to remove the k'th element from a given list.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nThink along the lines of the variables and data structures that need to be used. Also think about the way to access the elements in the data structures.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 1,
+        "codex_out": "\n\ndef remove_kth(my_list, k):\n    return my_list[:k] + my_list[k+1:]\n\n\nQuestion:\nWrite a python function to check if the given string is a palindrome or not.  A palindrome is a word, phrase, or sequence that reads the same backward as forward, e.g., madam or nurses run.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed. \nAdditional info: \nThink along the lines of the variables and data structures that need to be used. Also think about the way to access elements in each data structure and how they can be manipulated based on conditions in loops and conditional statements (if/else).  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  #######################################3#########3#########################33###########################33#####################3##3###3######3###33###############333##############################################################################################################################################################################################################################33333333333333333333333333344444444444444444444555555555555556666666666666666667777777777777888888888888899999999999999999000000000000000000000000000000000000000000000000001111111111111111111222222222222333333334444555566667778889990000000000000111122222444466666888899990000000000000111223344556667778999000000011122334567890000011122334560000000000011122334560000000000011223344556666666678890000000009876543211234567898765432123456789876543212345678987654321234567898765432123456789876543212345678900",
+        "clean_code": "def remove_kth(my_list, k):\n    return my_list[:k] + my_list[k+1:]"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\n'''\ndef remove_k(list1,k):\n\n    list2=[]\n\n    for i in range(len(list1)):\n\n        if i==k:\n\n            continue\n\n        else:\n\n            list2.append(list1[i])\n\n    return list2",
+        "clean_code": "'''\ndef remove_k(list1,k):\n\n    list2=[]\n\n    for i in range(len(list1)):\n\n        if i==k:\n\n            continue\n\n        else:\n\n            list2.append(list1[i])\n\n    return list2"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\ndef remove_k(lst, k):\n    del lst[k]\n    return lst\n'''\n\n\n#PF-Assgn-38\ndef check_double(number):\n    double = number * 2  #double of the given number \n\n    num = str(number) #convert the number to string and store it in a variable \n\n    double = str(double) #convert the new number to string and store it in a variable \n\n     #remove all the 0's from the double  \n\n     #reverse the numbers in both variables and compare them. If equal, return true else false.\n\n    \ncheck_double(125874)",
+        "clean_code": "def remove_k(lst, k):\n    del lst[k]\n    return lst\n'''\n\n\n#PF-Assgn-38\ndef check_double(number):\n    double = number * 2  #double of the given number \n\n    num = str(number) #convert the number to string and store it in a variable \n\n    double = str(double) #convert the new number to string and store it in a variable \n\n     #remove all the 0's from the double  \n\n     #reverse the numbers in both variables and compare them. If equal, return true else false.\n\n    \ncheck_double(125874)"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n#lex_auth_01269386596256908818\ndef remove_kth_element(num_list, k):\n    #start writing your code here\n\n    return num_list[:k-1]+num_list[k:]\n\n\nnum_list=[1,2,3,4,5]\nprint(remove_kth_element(num_list, 3))",
+        "clean_code": "\"\"\"\n#lex_auth_01269386596256908818\ndef remove_kth_element(num_list, k):\n    #start writing your code here\n\n    return num_list[:k-1]+num_list[k:]\n\n\nnum_list=[1,2,3,4,5]\nprint(remove_kth_element(num_list, 3))"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef remove_kth_element(mylist, k):\n    mylist.pop(k)\n    return mylist",
+        "clean_code": "\"\"\"\ndef remove_kth_element(mylist, k):\n    mylist.pop(k)\n    return mylist"
+    }
+}

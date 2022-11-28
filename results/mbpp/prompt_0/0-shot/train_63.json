@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a python function to find the average of even numbers till a given even number.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nThink along the lines of the variables and data structures that need to be used. Also think about the way to access the elements in the data structures.\nAnswer:",
+    "success": 1,
+    "0": {
+        "status": 0,
+        "codex_out": "\n\ndef average_of_even(number):\n    count = 0\n    sum = 0\n    for i in range(2, number + 1, 2):\n        sum += i\n        count += 1\n\n    return sum / count\n\n \nprint(\"Average of even numbers till\", 8, \"is:\", average_of_even(8))\n\n \nprint(\"Average of even numbers till\", 10, \"is:\", average_of_even(10))",
+        "clean_code": "def average_of_even(number):\n    count = 0\n    sum = 0\n    for i in range(2, number + 1, 2):\n        sum += i\n        count += 1\n\n    return sum / count\n\n \nprint(\"Average of even numbers till\", 8, \"is:\", average_of_even(8))\n\n \nprint(\"Average of even numbers till\", 10, \"is:\", average_of_even(10))"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef avg_even(n):\n    sum = 0.0\n    count = 0.0\n    for i in range(2, n+1, 2):\n        sum += i\n        count += 1\n\n    return sum/count\n\n\n\n \n#Provide different values for num and test your program.\nnum=8\nprint(avg_even(num))",
+        "clean_code": "\"\"\"\ndef avg_even(n):\n    sum = 0.0\n    count = 0.0\n    for i in range(2, n+1, 2):\n        sum += i\n        count += 1\n\n    return sum/count\n\n\n\n \n#Provide different values for num and test your program.\nnum=8\nprint(avg_even(num))"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n'''\n\n\ndef find_average(n):\n    sum = 0.0\n    for i in range(2, n + 1, 2):\n        sum += i\n\n    return sum / n\n\n\nprint(find_average(10))",
+        "clean_code": "'''\n\n\ndef find_average(n):\n    sum = 0.0\n    for i in range(2, n + 1, 2):\n        sum += i\n\n    return sum / n\n\n\nprint(find_average(10))"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\ndef avg_even(num):\n    sum = 0\n    for i in range(2, num + 1, 2):\n        sum += i\n\n    return sum / (num // 2)\n\n\nprint(avg_even(10))",
+        "clean_code": "\"\"\"\n\n\ndef avg_even(num):\n    sum = 0\n    for i in range(2, num + 1, 2):\n        sum += i\n\n    return sum / (num // 2)\n\n\nprint(avg_even(10))"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef avg_even(n):\n    sum=0\n    count=0\n    for i in range(2,n+1,2):  # Step size of 2 to get even numbers. \n        sum=sum+i              # The range function by default starts from 0 and ends at n-1. Hence the range is from 2 to n (inclusive) in steps of 2.        \n        count+=1               # Another way to write this statement is: count = count + 1. This is done using the increment operator +=. \n\n    return sum/count           # The return statement returns the value of the expression after it, to the caller function or program that called it.\n\n    \n\n\n# Main program starts here - DO NOT change it  \na = int(input(\"Enter a number: \"))   # Get input and convert it into an integer before assigning it to a variable called a. Variable names can be chosen by you.  \nprint(avg_even(a))",
+        "clean_code": "\"\"\"\ndef avg_even(n):\n    sum=0\n    count=0\n    for i in range(2,n+1,2):  # Step size of 2 to get even numbers. \n        sum=sum+i              # The range function by default starts from 0 and ends at n-1. Hence the range is from 2 to n (inclusive) in steps of 2.        \n        count+=1               # Another way to write this statement is: count = count + 1. This is done using the increment operator +=. \n\n    return sum/count           # The return statement returns the value of the expression after it, to the caller function or program that called it.\n\n    \n\n\n# Main program starts here - DO NOT change it  \na = int(input(\"Enter a number: \"))   # Get input and convert it into an integer before assigning it to a variable called a. Variable names can be chosen by you.  \nprint(avg_even(a))"
+    }
+}

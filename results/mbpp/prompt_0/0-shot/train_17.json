@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to divide two lists using map and lambda function.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nThink along the lines of the variables and data structures that need to be used. Also think about the way to access the elements in the data structures.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n<code>def divide(list1, list2):\n    return map(lambda x,y: x/y, list1, list2)\n</code>\n",
+        "clean_code": "<code>def divide(list1, list2):\n    return map(lambda x,y: x/y, list1, list2)\n</code>"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\n'''\nl1 = [2,4,6]\nl2 = [1,3,5]\nresult = list(map(lambda x,y: x/y if y!=0 else None , l1,l2))  #if y is 0 then map function returns None.\nprint(result)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n#CODE-2:   Addition of two lists using map and lambda function.  (Expected Output: [3 , 7 , 11])     (Hint: Use zip() to access the elements of the lists together)\n'''Question: Write a function to add two lists using map and lambda function. Task: Write a python function to solve the above question. No additional comments and docstrings are needed. Additional info: Think along the lines of the variables and data structures that need to be used. Also think about the way to access the elements in the data structures.'''  #Answer:-    l1 = [1, 3, 5]   l2 = [2, 4, 6]   result = list(map(lambda x : sum(x),zip(l1 , l2))) print(result)",
+        "clean_code": "'''\nl1 = [2,4,6]\nl2 = [1,3,5]\nresult = list(map(lambda x,y: x/y if y!=0 else None , l1,l2))  #if y is 0 then map function returns None.\nprint(result)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n#CODE-2:   Addition of two lists using map and lambda function.  (Expected Output: [3 , 7 , 11])     (Hint: Use zip() to access the elements of the lists together)\n'''Question: Write a function to add two lists using map and lambda function. Task: Write a python function to solve the above question. No additional comments and docstrings are needed. Additional info: Think along the lines of the variables and data structures that need to be used. Also think about the way to access the elements in the data structures.'''  #Answer:-    l1 = [1, 3, 5]   l2 = [2, 4, 6]   result = list(map(lambda x : sum(x),zip(l1 , l2))) print(result)"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n'''\n\n\ndef divide(list1, list2):\n    '''\n\n    :param list1: list of numbers\n    :param list2:  list of numbers\n    :return: list of quotients obtained by dividing corresponding elements in the lists. If a value in the second list is zero, use zero as the result for that position. If both lists are empty return an empty list.\n    '''\n\n    # write your code here\n\n     # write your code here\n\n     if len(list1) == 0 and len(list2) == 0:\n         return []\n\n     else:\n         return map(lambda x, y: x / y if y != 0 else 0, lis",
+        "clean_code": "'''\n\n\ndef divide(list1, list2):\n    '''\n\n    :param list1: list of numbers\n    :param list2:  list of numbers\n    :return: list of quotients obtained by dividing corresponding elements in the lists. If a value in the second list is zero, use zero as the result for that position. If both lists are empty return an empty list.\n    '''\n\n    # write your code here\n\n     # write your code here\n\n     if len(list1) == 0 and len(list2) == 0:\n         return []\n\n     else:\n         return map(lambda x, y: x / y if y != 0 else 0, lis"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\n'''\n\n\ndef divide_lists(l1, l2):\n    return list(map(lambda x, y: x / y, l1, l2))\n\n\nprint(divide_lists([100, 200], [10, 20]))",
+        "clean_code": "'''\n\n\ndef divide_lists(l1, l2):\n    return list(map(lambda x, y: x / y, l1, l2))\n\n\nprint(divide_lists([100, 200], [10, 20]))"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n'''\ndef divide_lists(list1, list2):\n    return list(map(lambda x, y: x/y, list1, list2))",
+        "clean_code": "'''\ndef divide_lists(list1, list2):\n    return list(map(lambda x, y: x/y, list1, list2))"
+    }
+}

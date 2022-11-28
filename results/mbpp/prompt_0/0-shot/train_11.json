@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a python function to merge the first and last elements separately in a list of lists.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nThink along the lines of the variables and data structures that need to be used. Also think about the way to access the elements in the data structures.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef merge_list(list1):\n    new_merge = []\n    for x in list1:\n        new_merge.append(x[0])\n        new_merge.append(x[-1])\n\n    return new_merge\n\n\nsample_list = [[1,2,3], [4,5,6], [7], [8,9]]\nprint(\"New List after merging :\", merge_list(sample_list))",
+        "clean_code": "\"\"\"\ndef merge_list(list1):\n    new_merge = []\n    for x in list1:\n        new_merge.append(x[0])\n        new_merge.append(x[-1])\n\n    return new_merge\n\n\nsample_list = [[1,2,3], [4,5,6], [7], [8,9]]\nprint(\"New List after merging :\", merge_list(sample_list))"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef merge_list(list1):\n    l = []\n    for i in list1:\n        l.append(i[0])\n        l.append(i[-1])\n\n    return l\n\n\nprint(merge_list([[2, 3], [5, 6]]))",
+        "clean_code": "\"\"\"\ndef merge_list(list1):\n    l = []\n    for i in list1:\n        l.append(i[0])\n        l.append(i[-1])\n\n    return l\n\n\nprint(merge_list([[2, 3], [5, 6]]))"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\n'''\ndef merge_first_last(x):\n    for i in range(len(x)):\n        if len(x[i])>=2:\n            x[i][0]+=x[i][-1]\n            x[i].pop(-1)\n\n    return x\n\n\n\n    \n\n    \n#Provide different values for the variable and test your program.\nlist1=[['Mumbai', 'Delhi', 'Kolkata'], ['Bangalore', 'Chennai', 'Hyderabad'], ['Ahmedabad', 'Pune', 'Surat']] \t\t\t#Expected output: [['MumbaiDelhi','Kolkata'] , ['BangaloreChennai','Hyderabad'] , ['AhmedabadPune','Surat'] ]",
+        "clean_code": "'''\ndef merge_first_last(x):\n    for i in range(len(x)):\n        if len(x[i])>=2:\n            x[i][0]+=x[i][-1]\n            x[i].pop(-1)\n\n    return x\n\n\n\n    \n\n    \n#Provide different values for the variable and test your program.\nlist1=[['Mumbai', 'Delhi', 'Kolkata'], ['Bangalore', 'Chennai', 'Hyderabad'], ['Ahmedabad', 'Pune', 'Surat']] \t\t\t#Expected output: [['MumbaiDelhi','Kolkata'] , ['BangaloreChennai','Hyderabad'] , ['AhmedabadPune','Surat'] ]"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n<code>def merge_first_last(list1):\n    for i in range(len(list1)):\n        if len(list1[i]) &gt;= 2:\n            list1[i][0] = list1[i][0] + list1[i][-1]\n            del list1[i][-1]\n\n    return list1\n\n\n# Test Data: \n# Sample Input : [['Red', 'Green'], ['Black'], ['Yellow', 'White', 'Pink']] \n# Sample Output : [['Reden', 'Greewhite'], ['Blackk'], ['Yellowink', 'Whiteowhite', 'Pinkinkowhite']] \n\n\nprint(merge_first_last([['Red','Green'] ,['Black'] ,['Yellow','White','Pink'] ])) # [[\u2018Reden\u2019, \u2018Greewhite\u2019], [\u2018Blackk\u2019], [\u2018Yellowink\u2019, \u2018Whiteowhite\u2019, \u2018Pinkinkowhite\u2019]])  \n\n print(merge_first_last([['a','b'] ,['c'] ,['d','e','f'] ])) # [[aebf, bdf],[c],[defefef])  \n\n print(merge_first_last([['a','b'] ,[] ,[] ])) # [[ab],[],[])  \n\n print(merge_first_last([[] ,[] ,[] ])) # [[],[],[])  \n\n print(merge_first_last([['a'] ,[] ,[] ])) # [[a],[],[])  \n\n print(merge_first_last([[''] ,[] ,[] ])) # [[''],[],[])  ```     ```python  def mergeFirstLastListElements (inputList): for i in range (len (inputList)): if len (inputList [i]) &gt;= 2: inputList [i] [0] = inputList [i] [0]+ inputList [i] [- 1] del inputList [I [- 1]] return inputlist```      ```python def mergeFirstLastElementOfEachSublistOfAList (inputLists): for sublists in range (len (inputLists)): if len",
+        "clean_code": "<code>def merge_first_last(list1):\n    for i in range(len(list1)):\n        if len(list1[i]) &gt;= 2:\n            list1[i][0] = list1[i][0] + list1[i][-1]\n            del list1[i][-1]\n\n    return list1\n\n\n# Test Data: \n# Sample Input : [['Red', 'Green'], ['Black'], ['Yellow', 'White', 'Pink']] \n# Sample Output : [['Reden', 'Greewhite'], ['Blackk'], ['Yellowink', 'Whiteowhite', 'Pinkinkowhite']] \n\n\nprint(merge_first_last([['Red','Green'] ,['Black'] ,['Yellow','White','Pink'] ])) # [[\u2018Reden\u2019, \u2018Greewhite\u2019], [\u2018Blackk\u2019], [\u2018Yellowink\u2019, \u2018Whiteowhite\u2019, \u2018Pinkinkowhite\u2019]])  \n\n print(merge_first_last([['a','b'] ,['c'] ,['d','e','f'] ])) # [[aebf, bdf],[c],[defefef])  \n\n print(merge_first_last([['a','b'] ,[] ,[] ])) # [[ab],[],[])  \n\n print(merge_first_last([[] ,[] ,[] ])) # [[],[],[])  \n\n print(merge_first_last([['a'] ,[] ,[] ])) # [[a],[],[])  \n\n print(merge_first_last([[''] ,[] ,[] ])) # [[''],[],[])  ```     ```python  def mergeFirstLastListElements (inputList): for i in range (len (inputList)): if len (inputList [i]) &gt;= 2: inputList [i] [0] = inputList [i] [0]+ inputList [i] [- 1] del inputList [I [- 1]] return inputlist```      ```python def mergeFirstLastElementOfEachSublistOfAList (inputLists): for sublists in range (len (inputLists)): if len"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\ndef merge_first_last(sample):\n    for i in range(len(sample)):\n        if len(sample[i]) > 1:\n            sample[i][0] = sample[i][0] + sample[i][-1]\n            del sample[i][-1]\n\n    return sample",
+        "clean_code": "\"\"\"\ndef merge_first_last(sample):\n    for i in range(len(sample)):\n        if len(sample[i]) > 1:\n            sample[i][0] = sample[i][0] + sample[i][-1]\n            del sample[i][-1]\n\n    return sample"
+    }
+}

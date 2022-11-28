@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a python function to check whether the given number can be represented by sum of two squares or not.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nThink along the lines of the variables and data structures that need to be used. Also think about the way to access the elements in the data structures.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef is_sum_of_two_squares(num):\n    #write your code here.\n    pass",
+        "clean_code": "\"\"\"\ndef is_sum_of_two_squares(num):\n    #write your code here.\n    pass"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\ndef is_sum_of_squares(num):\n    return any(num == x**2 + y**2 for x in range(1, int(num/2)+1) for y in range(x, int((num-x**2)**0.5)+1))\n'''",
+        "clean_code": "def is_sum_of_squares(num):\n    return any(num == x**2 + y**2 for x in range(1, int(num/2)+1) for y in range(x, int((num-x**2)**0.5)+1))\n'''"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\nYes, I have used the same variable names and data structures in my code.\nI have also used the same way to access the elements in the data structures.\n'''\ndef is_square(a):\n    return a**0.5 == int(a**0.5)\n\n\ndef squares_sum(n):\n    for i in range(int(n**0.5)+1):\n        if is_square(n-i*i): return True  # The function returns true if it can be represented by two squares, else false\n\n    return False\n\n    \n\n    \nprint(\"Can number be represented by sum of two squares:\",squares_sum(-3))",
+        "clean_code": "Yes, I have used the same variable names and data structures in my code.\nI have also used the same way to access the elements in the data structures.\n'''\ndef is_square(a):\n    return a**0.5 == int(a**0.5)\n\n\ndef squares_sum(n):\n    for i in range(int(n**0.5)+1):\n        if is_square(n-i*i): return True  # The function returns true if it can be represented by two squares, else false\n\n    return False\n\n    \n\n    \nprint(\"Can number be represented by sum of two squares:\",squares_sum(-3))"
+    },
+    "3": {
+        "status": 1,
+        "codex_out": "\ndef check_square_sum(n):\n    a, b = 0, 1\n    while a <= n and b <= n:\n        if (a * a + b * b == n):\n            return True\n\n        if (a * a + b * b < n):\n            a += 1\n\n        else: # (a*a +b*b >n)\n            b += 1\n\n    return False \n\n",
+        "clean_code": "def check_square_sum(n):\n    a, b = 0, 1\n    while a <= n and b <= n:\n        if (a * a + b * b == n):\n            return True\n\n        if (a * a + b * b < n):\n            a += 1\n\n        else: # (a*a +b*b >n)\n            b += 1\n\n    return False"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\ndef squaresum(N):\n    if N < 0: \n        return False\n    \n    while (N % 2 == 0): \n        N /= 2\n\n    for i in range(3, int(math.sqrt(N) + 1)): \n        count = 0;  \n        while (N % i == 0): \n            N /= i;  \n            count+= 1;  \n\n        if ((i % 4 == 3) and (count % 2 != 0)): \n            return False\n\n    return True if (N % 4 != 3) else False'''",
+        "clean_code": "def squaresum(N):\n    if N < 0: \n        return False\n    \n    while (N % 2 == 0): \n        N /= 2\n\n    for i in range(3, int(math.sqrt(N) + 1)): \n        count = 0;  \n        while (N % i == 0): \n            N /= i;  \n            count+= 1;  \n\n        if ((i % 4 == 3) and (count % 2 != 0)): \n            return False\n\n    return True if (N % 4 != 3) else False'''"
+    }
+}

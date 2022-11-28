@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to sort dictionary items by tuple product of keys for the given dictionary with tuple keys.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nThink along the lines of the variables and data structures that need to be used. Also think about the way to access the elements in the data structures.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n<code>def sort_tuple_product(d):\n    return sorted(d.items(), key=lambda x:x[0][0]*x[0][1])\n</code>\n",
+        "clean_code": "<code>def sort_tuple_product(d):\n    return sorted(d.items(), key=lambda x:x[0][0]*x[0][1])\n</code>"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n<code>def sort_by_tuple_product(d):\n    return sorted(d.items(), key=lambda x: x[0][0]*x[0][1], reverse=True)\n</code>\n",
+        "clean_code": "<code>def sort_by_tuple_product(d):\n    return sorted(d.items(), key=lambda x: x[0][0]*x[0][1], reverse=True)\n</code>"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n<code>def sort_dict(d):\n    return sorted(d.items(), key=lambda x: x[0][0] * x[0][1])\n</code>\n",
+        "clean_code": "<code>def sort_dict(d):\n    return sorted(d.items(), key=lambda x: x[0][0] * x[0][1])\n</code>"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\ndef sort_dict(d):\n    return sorted(d.items(), key=lambda item: item[0][0]*item[0][1])\n\n\n\"\"\"",
+        "clean_code": "def sort_dict(d):\n    return sorted(d.items(), key=lambda item: item[0][0]*item[0][1])\n\n\n\"\"\""
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\nAssume that input is a dictionary with tuple keys and values are numbers.\n'''\ndef sort_dict(input):\n\n    # create a list of tuples from the dictionary, where each tuple is (key, value) pair in the dictionary\n    input_tup = [(k,v) for k,v in input.items()]\n\n    # sort the list of tuples by multiplying the first and second element of each tuple. \n    # The multiplication result is used as key to sort the list of tuples. \n    # This step sorts all elements in descending order based on product of first and second element. \n    sorted_tup = sorted(input_tup, key=lambda x: x[0]*x[1], reverse=True)\n\n    # create a new dictionary from sorted list of tuples using dict constructor function (dict()) \n    output = dict(sorted_tup)\n\n    return output",
+        "clean_code": "Assume that input is a dictionary with tuple keys and values are numbers.\n'''\ndef sort_dict(input):\n\n    # create a list of tuples from the dictionary, where each tuple is (key, value) pair in the dictionary\n    input_tup = [(k,v) for k,v in input.items()]\n\n    # sort the list of tuples by multiplying the first and second element of each tuple. \n    # The multiplication result is used as key to sort the list of tuples. \n    # This step sorts all elements in descending order based on product of first and second element. \n    sorted_tup = sorted(input_tup, key=lambda x: x[0]*x[1], reverse=True)\n\n    # create a new dictionary from sorted list of tuples using dict constructor function (dict()) \n    output = dict(sorted_tup)\n\n    return output"
+    }
+}

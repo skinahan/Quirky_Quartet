@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to calculate wind chill index.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nThink along the lines of the variables and data structures that need to be used. Also think about the way to access the elements in the data structures.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\ndef main():\n    pass\n\n\nif __name__ == '__main__':\n    main()",
+        "clean_code": "\"\"\"\n\n\ndef main():\n    pass\n\n\nif __name__ == '__main__':\n    main()"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\nimport math\ndef windchill(temp,wind):\n\n    wc=35.74+0.6215*temp+(0.4275*temp-35.75)*math.pow(wind,0.16)\n\n    return round(wc,2)",
+        "clean_code": "\"\"\"\nimport math\ndef windchill(temp,wind):\n\n    wc=35.74+0.6215*temp+(0.4275*temp-35.75)*math.pow(wind,0.16)\n\n    return round(wc,2)"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef wind_chill(t,v):\n    return 35.74+0.6215*t+((0.4275*t)-35.75)*v**0.16\n\n\n\"\"\"\nQuestion:\nWrite a function to calculate the area of a triangle given the lengths of its three sides using Heron's Formula (http://www.mathsisfun.com/algebra/herons-formula.html). You can assume that the inputs are valid numbers and the triangle inequality holds for these numbers (i.e., for any side s, s < sum of other two sides). The function should return -1 if this is not the case (the inputs are invalid or triangle inequality does not hold). \nTask:\nWrite a python function to solve the above question with additional comments and docstrings where needed to make your code readable and understandable by others who might want to use it in future! \nAdditional info:   Think along the lines of variables and data structures that need to be used here, also think about how you would access elements in those data structures!  Assume that we have imported math module in our script already!   \"\"\"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  ########################################################################",
+        "clean_code": "\"\"\"\ndef wind_chill(t,v):\n    return 35.74+0.6215*t+((0.4275*t)-35.75)*v**0.16\n\n\n\"\"\"\nQuestion:\nWrite a function to calculate the area of a triangle given the lengths of its three sides using Heron's Formula (http://www.mathsisfun.com/algebra/herons-formula.html). You can assume that the inputs are valid numbers and the triangle inequality holds for these numbers (i.e., for any side s, s < sum of other two sides). The function should return -1 if this is not the case (the inputs are invalid or triangle inequality does not hold). \nTask:\nWrite a python function to solve the above question with additional comments and docstrings where needed to make your code readable and understandable by others who might want to use it in future! \nAdditional info:   Think along the lines of variables and data structures that need to be used here, also think about how you would access elements in those data structures!  Assume that we have imported math module in our script already!   \"\"\"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  ########################################################################"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\nimport math\n\n\ndef wind_chill(t, v):\n    return round(35.74 + (0.6215 * t) + ((0.4275 * t) - 35.75) * math.pow(v, 0.16), 2)\n\n\nif __name__ == '__main__':\n    print(\"Wind chill index: \", wind_chill(float(input()), float(input())))",
+        "clean_code": "\"\"\"\nimport math\n\n\ndef wind_chill(t, v):\n    return round(35.74 + (0.6215 * t) + ((0.4275 * t) - 35.75) * math.pow(v, 0.16), 2)\n\n\nif __name__ == '__main__':\n    print(\"Wind chill index: \", wind_chill(float(input()), float(input())))"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\n'''\ndef wind_chill_index(temp,wind):\n    if temp<=50 and (wind>3 and wind<=120):\n        wci = 35.74 + 0.6215*temp + (0.4275*temp - 35.75) * pow(wind,0.16)\n    else:\n        return \"Invalid input\"\n\n    return round(wci,2)\n\n\n\n    \n\n    \n\n    \n\n    \n\n    \n    \n\n    \n\n        \n\n        \n\n        \n \n  \n  \n  \n  \n  \n#Provide different values for temp, wind and test your program",
+        "clean_code": "'''\ndef wind_chill_index(temp,wind):\n    if temp<=50 and (wind>3 and wind<=120):\n        wci = 35.74 + 0.6215*temp + (0.4275*temp - 35.75) * pow(wind,0.16)\n    else:\n        return \"Invalid input\"\n\n    return round(wci,2)\n\n\n\n    \n\n    \n\n    \n\n    \n\n    \n    \n\n    \n\n        \n\n        \n\n        \n \n  \n  \n  \n  \n  \n#Provide different values for temp, wind and test your program"
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to find the cumulative sum of all the values that are present in the given tuple list.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nThink along the lines of the variables and data structures that need to be used. Also think about the way to access the elements in the data structures.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n'''\ndef cumulative_sum(tuple_list):\n    cumsum = 0\n    for i in range(len(tuple_list)):\n        cumsum += tuple_list[i][1]*tuple_list[i][2]\n\n    return cumsum\n\n    \n\n    \n\n    \n#Provide different values for the variable and test your program.\ntuple_list=[('English', 88, 65), ('Science', 90, 70), ('Maths', 97, 81), ('Social sciences', 82, 68)]\nprint(cumulative_sum(tuple_list))",
+        "clean_code": "'''\ndef cumulative_sum(tuple_list):\n    cumsum = 0\n    for i in range(len(tuple_list)):\n        cumsum += tuple_list[i][1]*tuple_list[i][2]\n\n    return cumsum\n\n    \n\n    \n\n    \n#Provide different values for the variable and test your program.\ntuple_list=[('English', 88, 65), ('Science', 90, 70), ('Maths', 97, 81), ('Social sciences', 82, 68)]\nprint(cumulative_sum(tuple_list))"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef cumulative_sum(tuple_list):\n    \"\"\"Return the cumulative sum of a list of tuples.\"\"\"\n\n    # Initialize a list for the result.\n    cumul_sum = []\n\n    # Iterate over the tuple list, and append to cumul_sum.\n    for tup in tuple_list:\n\n        # If it is the first tuple, simply append the first element.\n        if not cumul_sum:\n            cumul_sum.append(tup[0])\n\n        # Else, append the sum of last element and current element.\n        else:\n            cumul_sum.append(cumul_sum[-1] + tup[0])\n\n    return cumul_sum",
+        "clean_code": "\"\"\"\ndef cumulative_sum(tuple_list):\n    \"\"\"Return the cumulative sum of a list of tuples.\"\"\"\n\n    # Initialize a list for the result.\n    cumul_sum = []\n\n    # Iterate over the tuple list, and append to cumul_sum.\n    for tup in tuple_list:\n\n        # If it is the first tuple, simply append the first element.\n        if not cumul_sum:\n            cumul_sum.append(tup[0])\n\n        # Else, append the sum of last element and current element.\n        else:\n            cumul_sum.append(cumul_sum[-1] + tup[0])\n\n    return cumul_sum"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\nA tuple is a sequence of immutable Python objects. Tuples are sequences, just like lists. The differences between tuples and lists are, the tuples cannot be changed unlike lists and tuples use parentheses, whereas lists use square brackets.\n'''\n\n\ndef cumulative_sum(t):\n    \"\"\"Return new tuple with cumulative sum of values in t.\"\"\"\n    return tuple(sum(t[:i+1]) for i in range(len(t)))\n\n\n# Sample test case:\ntest_case = [1, 2, 3]  # [1, 3, 6]",
+        "clean_code": "A tuple is a sequence of immutable Python objects. Tuples are sequences, just like lists. The differences between tuples and lists are, the tuples cannot be changed unlike lists and tuples use parentheses, whereas lists use square brackets.\n'''\n\n\ndef cumulative_sum(t):\n    \"\"\"Return new tuple with cumulative sum of values in t.\"\"\"\n    return tuple(sum(t[:i+1]) for i in range(len(t)))\n\n\n# Sample test case:\ntest_case = [1, 2, 3]  # [1, 3, 6]"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\ndef find_cumulative_sum(tuple_list):\n    \"\"\"\n\n    :param tuple_list: a list of tuples containing numbers. Example: [(1, 2, 3), (4, 5, 6)]\n    :return: a list of tuples containing cumulative sum. Example: [(1, 3, 6), (10, 15, 21)]\n\n    \"\"\"\n\n    return [tuple([sum(tuple_list[i][0:j + 1]) for j in range(len(tuple_list[i]))]) for i in range(len(tuple_list))]",
+        "clean_code": "\"\"\"\n\n\ndef find_cumulative_sum(tuple_list):\n    \"\"\"\n\n    :param tuple_list: a list of tuples containing numbers. Example: [(1, 2, 3), (4, 5, 6)]\n    :return: a list of tuples containing cumulative sum. Example: [(1, 3, 6), (10, 15, 21)]\n\n    \"\"\"\n\n    return [tuple([sum(tuple_list[i][0:j + 1]) for j in range(len(tuple_list[i]))]) for i in range(len(tuple_list))]"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\ndef cumulative_sum(tuple_list):\n    \"\"\"\n    This function takes in a tuple list and returns the cumulative sum of all the values present in the list.\n\n    Parameters:\n        tuple_list (list) : Input list of tuples.\n\n    Returns:\n        list : Cumulative sum of all the values present in the input tuple list.\n\n    \"\"\"\n\n    # Write your code here    \n    \n\n  \"\"\"",
+        "clean_code": "def cumulative_sum(tuple_list):\n    \"\"\"\n    This function takes in a tuple list and returns the cumulative sum of all the values present in the list.\n\n    Parameters:\n        tuple_list (list) : Input list of tuples.\n\n    Returns:\n        list : Cumulative sum of all the values present in the input tuple list.\n\n    \"\"\"\n\n    # Write your code here    \n    \n\n  \"\"\""
+    }
+}

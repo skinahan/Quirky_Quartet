@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a python function to find even numbers from a mixed list.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nThink along the lines of the variables and data structures that need to be used. Also think about the way to access the elements in the data structures.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\n'''\ndef find_evens(l):\n    # write your code here.\n    return [i for i in l if isinstance(i,int) and i%2==0]",
+        "clean_code": "'''\ndef find_evens(l):\n    # write your code here.\n    return [i for i in l if isinstance(i,int) and i%2==0]"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\ndef even_nums(l):\n    return [i for i in l if i%2==0]\n\"\"\"",
+        "clean_code": "def even_nums(l):\n    return [i for i in l if i%2==0]\n\"\"\""
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\nCreate a function called find_even() which will take list as argument and return a list of even numbers.\nSample Input\tExpected Output\n[3,2,1,4]\t[2,4]\n[1,3,5]\t[]\n\"\"\"\n\n\n\n\ndef find_even(l):  #function definition to find even numbers in a list l\n\n    even = []  #list variable to store the even numbers from l\n\n    for i in l:   #iterate through the elements in l using for loop\n\n        if i % 2 == 0:  #if the element is divisible by 2 then it is an even number and append it to the list variable 'even'\n\n            even.append(i)   #append method adds elements to the end of a list\n\n    return(even)  #returns the list of all even numbers in l",
+        "clean_code": "Create a function called find_even() which will take list as argument and return a list of even numbers.\nSample Input\tExpected Output\n[3,2,1,4]\t[2,4]\n[1,3,5]\t[]\n\"\"\"\n\n\n\n\ndef find_even(l):  #function definition to find even numbers in a list l\n\n    even = []  #list variable to store the even numbers from l\n\n    for i in l:   #iterate through the elements in l using for loop\n\n        if i % 2 == 0:  #if the element is divisible by 2 then it is an even number and append it to the list variable 'even'\n\n            even.append(i)   #append method adds elements to the end of a list\n\n    return(even)  #returns the list of all even numbers in l"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\n'''\ndef even_num(l):\n    return [i for i in l if type(i) == int and i%2 == 0]\n\n\nprint(even_num([1,2,3,4,\"a\",\"b\"]))",
+        "clean_code": "'''\ndef even_num(l):\n    return [i for i in l if type(i) == int and i%2 == 0]\n\n\nprint(even_num([1,2,3,4,\"a\",\"b\"]))"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef even_numbers(data):\n    return [x for x in data if x%2==0]\nprint(even_numbers([1, 2, 3, 4, 5, 6]))",
+        "clean_code": "\"\"\"\ndef even_numbers(data):\n    return [x for x in data if x%2==0]\nprint(even_numbers([1, 2, 3, 4, 5, 6]))"
+    }
+}

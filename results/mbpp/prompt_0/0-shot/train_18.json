@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to move all the numbers in it to the given string.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nThink along the lines of the variables and data structures that need to be used. Also think about the way to access the elements in the data structures.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\ndef move_numbers(string):\n    return \"\".join(list(filter(lambda x: x.isdigit(), string))) + \"\".join(list(filter(lambda x: not x.isdigit(), string)))\n'''\n\n\n# In[ ]:\n\n\ndef move_numbers(string):\n    return \"\".join(list(filter(lambda x: x.isdigit(), string))) + \"\".join",
+        "clean_code": "def move_numbers(string):\n    return \"\".join(list(filter(lambda x: x.isdigit(), string))) + \"\".join(list(filter(lambda x: not x.isdigit(), string)))\n'''\n\n\n# In[ ]:\n\n\ndef move_numbers(string):\n    return \"\".join(list(filter(lambda x: x.isdigit(), string))) + \"\".join"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n'''\ndef move_numbers(string):\n    numbers = ''\n    alpha = ''\n\n    for i in string:\n        if i.isdigit():\n            numbers += i\n\n        else:\n            alpha += i\n\n    return numbers, alpha\n\n\nprint(move_numbers('A1B2C3D4E5F6G7H8I9J10K11L12M13N14O15P16Q17R18S19T20U21V22W23X24Y25Z26'))",
+        "clean_code": "'''\ndef move_numbers(string):\n    numbers = ''\n    alpha = ''\n\n    for i in string:\n        if i.isdigit():\n            numbers += i\n\n        else:\n            alpha += i\n\n    return numbers, alpha\n\n\nprint(move_numbers('A1B2C3D4E5F6G7H8I9J10K11L12M13N14O15P16Q17R18S19T20U21V22W23X24Y25Z26'))"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\ndef move_numbers(input_string):\n    num = []\n    alpha = []\n    output_string = ''\n<code>for i in input_string:\n\n  if i.isalpha():\n\n    alpha.append(i)\n\n  else:\n\n    num.append(i)\n\n  output_string = ''.join(alpha + num)\n</code>\nreturn output_string\"# python-assessment\" \n",
+        "clean_code": "def move_numbers(input_string):\n    num = []\n    alpha = []\n    output_string = ''\n<code>for i in input_string:\n\n  if i.isalpha():\n\n    alpha.append(i)\n\n  else:\n\n    num.append(i)\n\n  output_string = ''.join(alpha + num)\n</code>\nreturn output_string\"# python-assessment\""
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\nUse the following function to solve the above question:\n<code>def move_numbers(a):\n    return ''.join([x for x in a if x.isdigit()]) + ''.join([x for x in a if not x.isdigit()])\n</code>\n",
+        "clean_code": "Use the following function to solve the above question:\n<code>def move_numbers(a):\n    return ''.join([x for x in a if x.isdigit()]) + ''.join([x for x in a if not x.isdigit()])\n</code>"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n<code>def move_numbers(string):\n    numbers = '1234567890'\n    list_of_strings = []\n    list_of_numbers = []\n\n    for i in string:\n        if i in numbers:\n            list_of_numbers.append(i)\n        else:\n            list_of_strings.append(i)\n\n    string = ''.join(list_of_strings) + ''.join(list_of_numbers)\n\n    return string\n\n\nprint(move_numbers('a1b2c3d4e5f6g7h8i9j0'))  # abcdefghij0123456789</code>\n\n",
+        "clean_code": "<code>def move_numbers(string):\n    numbers = '1234567890'\n    list_of_strings = []\n    list_of_numbers = []\n\n    for i in string:\n        if i in numbers:\n            list_of_numbers.append(i)\n        else:\n            list_of_strings.append(i)\n\n    string = ''.join(list_of_strings) + ''.join(list_of_numbers)\n\n    return string\n\n\nprint(move_numbers('a1b2c3d4e5f6g7h8i9j0'))  # abcdefghij0123456789</code>"
+    }
+}

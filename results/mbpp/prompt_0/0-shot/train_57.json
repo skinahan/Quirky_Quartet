@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to find the item with maximum occurrences in a given list.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nThink along the lines of the variables and data structures that need to be used. Also think about the way to access the elements in the data structures.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\ndef most_frequent(given_list):\n    max_item = None\n    max_count = -1\n    count = 0\n\n    for i in range(len(given_list)):\n        count = given_list.count(given_list[i])\n\n        if count > max_count:\n            max_count = count  # update maximum count and item if the current item is more frequent than the previous one.\n\n            max_item = given_list[i]\n\n    return max_item,max_count\n\n  \"\"\"",
+        "clean_code": "def most_frequent(given_list):\n    max_item = None\n    max_count = -1\n    count = 0\n\n    for i in range(len(given_list)):\n        count = given_list.count(given_list[i])\n\n        if count > max_count:\n            max_count = count  # update maximum count and item if the current item is more frequent than the previous one.\n\n            max_item = given_list[i]\n\n    return max_item,max_count\n\n  \"\"\""
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\n'''\ndef max_occur(list):\n    count = 0\n    n = 0\n\n    for i in list:\n        curr_frequency = list.count(i)\n        if curr_frequency > count:\n            count = curr_frequency\n            n = i\n\n    return n",
+        "clean_code": "'''\ndef max_occur(list):\n    count = 0\n    n = 0\n\n    for i in list:\n        curr_frequency = list.count(i)\n        if curr_frequency > count:\n            count = curr_frequency\n            n = i\n\n    return n"
+    },
+    "2": {
+        "status": 1,
+        "codex_out": "\ndef max_occur(l):\n    count = 0\n    for i in l:\n        if l.count(i) > count:\n            count = l.count(i)\n            element = i\n    return element,count\n\n",
+        "clean_code": "def max_occur(l):\n    count = 0\n    for i in l:\n        if l.count(i) > count:\n            count = l.count(i)\n            element = i\n    return element,count"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\n'''\ndef max_occur(lst):\n    # Your code here. Use the variables and data structures as you deem fit.\n    dic = {} #dictionary to store each element in the list with its count of occurences. \n\n    for i in lst: #loop through the list, and update dictionary with the number of times each element occurs. \n        if i not in dic: \n            dic[i] = 1 \n\n        else: \n            dic[i] += 1\n\n    max_occur = 0 #variable to keep track of maximum number of occurences so far.  \n\n    for i in dic: #loop through dictionary, and check if any element has more occurences than current max_occur variable value. If so, update max_occur variable value.  \n\n        if dic[i] > max_occur: \n            max_occur = dic[i]\n\n    output = [key for key, val in dic.items() if val == max_occur] #list comprehension to create a list containing all elements that have maximum number of occurences from dictionary created earlier (dictionary is used because it is easier to access elements).  \n\n    return output",
+        "clean_code": "'''\ndef max_occur(lst):\n    # Your code here. Use the variables and data structures as you deem fit.\n    dic = {} #dictionary to store each element in the list with its count of occurences. \n\n    for i in lst: #loop through the list, and update dictionary with the number of times each element occurs. \n        if i not in dic: \n            dic[i] = 1 \n\n        else: \n            dic[i] += 1\n\n    max_occur = 0 #variable to keep track of maximum number of occurences so far.  \n\n    for i in dic: #loop through dictionary, and check if any element has more occurences than current max_occur variable value. If so, update max_occur variable value.  \n\n        if dic[i] > max_occur: \n            max_occur = dic[i]\n\n    output = [key for key, val in dic.items() if val == max_occur] #list comprehension to create a list containing all elements that have maximum number of occurences from dictionary created earlier (dictionary is used because it is easier to access elements).  \n\n    return output"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\ndef max_occur(l):\n    d = {}\n    for i in l:\n        if i in d:\n            d[i] += 1\n        else:\n            d[i] = 1\n\n    return max(d.items(), key=lambda x:x[1])[0]\n\n  '''",
+        "clean_code": "def max_occur(l):\n    d = {}\n    for i in l:\n        if i in d:\n            d[i] += 1\n        else:\n            d[i] = 1\n\n    return max(d.items(), key=lambda x:x[1])[0]\n\n  '''"
+    }
+}

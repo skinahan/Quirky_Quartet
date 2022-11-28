@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to remove the parenthesis area in a string.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nThink along the lines of the variables and data structures that need to be used. Also think about the way to access the elements in the data structures.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\n\n\ndef remove_parenthesis(s):\n    # Write your code here.\n\n    return s",
+        "clean_code": "\"\"\"\n\n\ndef remove_parenthesis(s):\n    # Write your code here.\n\n    return s"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\n'''\nimport re\n\n\ndef remove_parenthesis(str):\n    return re.sub(r'\\([^)]*\\)', '', str)",
+        "clean_code": "'''\nimport re\n\n\ndef remove_parenthesis(str):\n    return re.sub(r'\\([^)]*\\)', '', str)"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\ndef remove_parenthesis(string):\n    stack = []\n    for char in string:\n        if char == '(':\n            stack.append(char)\n        elif char == ')':\n            stack.pop()\n\n    res = ''\n\n    for char in string:\n\n        if len(stack) == 0 and (char == ')' or char == '('): # we have reached the end of parenthesis area, so we can start adding characters to res again. \n            continue\n\n        if len(stack) != 0 and (char == ')' or char == '('): # we are still inside the parenthesis area, so don't add any character to res. \n            continue\n\n        res += char # when we reach here, it means that current character is not a parenthesis, so we add it to res. \n\n    return res",
+        "clean_code": "\"\"\"\ndef remove_parenthesis(string):\n    stack = []\n    for char in string:\n        if char == '(':\n            stack.append(char)\n        elif char == ')':\n            stack.pop()\n\n    res = ''\n\n    for char in string:\n\n        if len(stack) == 0 and (char == ')' or char == '('): # we have reached the end of parenthesis area, so we can start adding characters to res again. \n            continue\n\n        if len(stack) != 0 and (char == ')' or char == '('): # we are still inside the parenthesis area, so don't add any character to res. \n            continue\n\n        res += char # when we reach here, it means that current character is not a parenthesis, so we add it to res. \n\n    return res"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\ndef remove_parenthesis(input_string):\n    output_string = ''\n\n    for i in range(len(input_string)):\n        if input_string[i] == '(' or input_string[i] == ')':\n            continue\n\n        output_string += input_string[i]\n\n    return output_string",
+        "clean_code": "\"\"\"\n\n\ndef remove_parenthesis(input_string):\n    output_string = ''\n\n    for i in range(len(input_string)):\n        if input_string[i] == '(' or input_string[i] == ')':\n            continue\n\n        output_string += input_string[i]\n\n    return output_string"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\ndef remove_parenthesis(s):\n    if s[0] == '(' and s[-1] == ')':  # check if string starts and ends with paranthesis\n        if s.count('(') == 1 and s.count(')') == 1:  # check if both paranthesis are single in the string\n            return s[1:-1]  # return the string without first and last character i.e. paranthesis\n\n    return None\n\n\nif __name__ == \"__main__\":\n\n    assert remove_parenthesis(\"((a))\") is None, \"Wrong answer\"\n    assert remove_parenthesis(\"((a)b(c))\") is None, \"Wrong answer\"",
+        "clean_code": "\"\"\"\n\n\ndef remove_parenthesis(s):\n    if s[0] == '(' and s[-1] == ')':  # check if string starts and ends with paranthesis\n        if s.count('(') == 1 and s.count(')') == 1:  # check if both paranthesis are single in the string\n            return s[1:-1]  # return the string without first and last character i.e. paranthesis\n\n    return None\n\n\nif __name__ == \"__main__\":\n\n    assert remove_parenthesis(\"((a))\") is None, \"Wrong answer\"\n    assert remove_parenthesis(\"((a)b(c))\") is None, \"Wrong answer\""
+    }
+}
