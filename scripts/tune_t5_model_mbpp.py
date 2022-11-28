@@ -122,32 +122,68 @@ def test_model():
 def eval_instance(instance, query, t5_out):
     verbose = 1
     tests = [parse_test_asserts(ast.parse(t)) for t in instance["test_list"]]
-    status, code = eval_codex_out(t5_out, tests, verbose=verbose)
+    try:
+        status, code = eval_codex_out(t5_out, tests, verbose=verbose)
+    except:
+        status = 1
+        code = t5_out
     if status == 0:
         if verbose > 0:
             print("Success")
     return status, query, t5_out, code
 
 
-def eval_model():
+def eval_model(tuned=False):
     dataset = load_dataset("mbpp")
     test_set = dataset['test']
     results = []
     status = []
-    with open('./results/t5/mbpp_t5/t5_out_mbpp_untuned.csv', 'r', encoding="utf-8") as f_obj:
+    csv_file = './results/t5/mbpp_t5/t5_out_mbpp_untuned.csv'
+    if tuned:
+        csv_file = './results/t5/mbpp_t5/t5_out_mbpp_tuned.csv'
+
+
+    with open(csv_file, 'r', encoding="utf-8") as f_obj:
         reader_obj = csv.reader(f_obj)
         idx = 0
+        header_row = True
+        max_len = len(test_set) - 1
         for row in reader_obj:
-            query = row[0]
-            t5_out = row[2]
-            instance = test_set[idx]
-            res = eval_instance(instance, query, t5_out)
-            results.append(res)
-            status.append(True if res[0] == 0 else False)
-            idx = idx + 1
+            if header_row:
+                header_row = False
+            else:
+                if idx > max_len:
+                    break
+                query = row[0]
+                t5_out = row[2]
+                instance = test_set[idx]
+                #print(query)
+                #print(instance['text'])
+                res = eval_instance(instance, query, t5_out)
+                results.append(res)
+                status.append(True if res[0] == 0 else False)
+                idx = idx + 1
     return results, status
 
 
+def eval_and_save(tuned=False):
+    results, status = eval_model(tuned)
+    #status = np.any(status)
+    result_dir = "./results/t5/mbpp_t5/eval_out/untuned"
+    if tuned:
+        result_dir = "./results/t5/mbpp_t5/eval_out/tuned"
+    os.makedirs(result_dir, exist_ok=True)
+    for idx in range(len(results)):
+        query = results[idx][1]
+        #print(status)
+        d = {"query": query, "success": 1 if status[idx] else 0}
+        save_result_file(d, os.path.join(result_dir, "{0}.json".format(idx)), is_json=True, is_pickle=False)
+
+
 def run():
-    tune_model()
+    # tune_model()
     # test_model()
+    eval_and_save()
+
+
+eval_and_save(tuned=True)
