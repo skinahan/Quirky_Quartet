@@ -134,7 +134,7 @@ def eval_model():
     test_set = dataset['test']
     results = []
     status = []
-    with open('./results/t5/t5_out_mbpp_untuned.csv', 'r', encoding="utf-8") as f_obj:
+    with open('./results/t5/mbpp_t5/t5_out_mbpp_untuned.csv', 'r', encoding="utf-8") as f_obj:
         reader_obj = csv.reader(f_obj)
         idx = 0
         for row in reader_obj:
