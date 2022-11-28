@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to count occurrence of a character in a string.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nWhich data structure is being used? Can the task be split into smaller sub-tasks? How many loops are needed to solve the tasks? Solve sub-tasks iteratively to find the answer\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef count_char(string, ch):\n  count = 0\n  for c in string:\n    if c == ch:\n      count += 1\n  return count\n\n\n\n\n\n\n\n\n\n\n\n\n\n   ##############################################################################",
+        "clean_code": "\"\"\"\ndef count_char(string, ch):\n  count = 0\n  for c in string:\n    if c == ch:\n      count += 1\n  return count\n\n\n\n\n\n\n\n\n\n\n\n\n\n   ##############################################################################"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef count_occurrence(string, char):\n    count = 0\n    for i in string:\n        if i == char:\n            count += 1\n\n    return count",
+        "clean_code": "\"\"\"\ndef count_occurrence(string, char):\n    count = 0\n    for i in string:\n        if i == char:\n            count += 1\n\n    return count"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\n'''\ndef count(s, c):\n    return s.count(c)\n\n\ndef main():\n\n    print(count(\"aaabbbccc\", \"a\"))\n\n\nif __name__ == '__main__':\n    main()",
+        "clean_code": "'''\ndef count(s, c):\n    return s.count(c)\n\n\ndef main():\n\n    print(count(\"aaabbbccc\", \"a\"))\n\n\nif __name__ == '__main__':\n    main()"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\n'''\ndef count_occurrence(string,char):\n    #write your code here\n    count = 0\n    for i in string:\n        if i == char:\n            count += 1\n\n    return count",
+        "clean_code": "'''\ndef count_occurrence(string,char):\n    #write your code here\n    count = 0\n    for i in string:\n        if i == char:\n            count += 1\n\n    return count"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n<code>def count_char(string, char):\n    if string == '':\n        return 0\n\n    count = 0\n\n    for c in string:\n        if c == char:\n            count += 1\n\n    return count \n</code>\n\n\nA:\n\nI think you can do this with a single line of code.  Try this.  It's not that much different than yours.   The only thing I've done is to replace the loop with a list comprehension, and then I use the built-in <code>sum</code> function to sum up the number of times <code>c == char</code>.  That will give you your total number of matches for <code>char</code>.   I also added a test case at the end, so it's easy to see what it does.     If you're not familiar with list comprehensions, they're really just a concise way of writing a loop to create lists.   In this case, we're using them to create a list containing True or False depending on whether or not each character in <code>string</code> matches <code>char</code>.   Then we use the built-in function sum() to add up all the True values (which are equivalent to 1) in that list.     Here's my version:    \n<code>def count_char(string, char):\n\n    return sum([True for c in string if c == char])\n\n # Test case below:  prints out 2 (because there are two z's)     \n\n print(count_char(\"abczc\", \"z\"))       # prints 2     \n</code>\n",
+        "clean_code": "<code>def count_char(string, char):\n    if string == '':\n        return 0\n\n    count = 0\n\n    for c in string:\n        if c == char:\n            count += 1\n\n    return count \n</code>\n\n\nA:\n\nI think you can do this with a single line of code.  Try this.  It's not that much different than yours.   The only thing I've done is to replace the loop with a list comprehension, and then I use the built-in <code>sum</code> function to sum up the number of times <code>c == char</code>.  That will give you your total number of matches for <code>char</code>.   I also added a test case at the end, so it's easy to see what it does.     If you're not familiar with list comprehensions, they're really just a concise way of writing a loop to create lists.   In this case, we're using them to create a list containing True or False depending on whether or not each character in <code>string</code> matches <code>char</code>.   Then we use the built-in function sum() to add up all the True values (which are equivalent to 1) in that list.     Here's my version:    \n<code>def count_char(string, char):\n\n    return sum([True for c in string if c == char])\n\n # Test case below:  prints out 2 (because there are two z's)     \n\n print(count_char(\"abczc\", \"z\"))       # prints 2     \n</code>"
+    }
+}

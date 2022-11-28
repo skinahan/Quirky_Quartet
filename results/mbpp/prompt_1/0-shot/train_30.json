@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to replace whitespaces with an underscore and vice versa in a given string by using regex.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nWhich data structure is being used? Can the task be split into smaller sub-tasks? How many loops are needed to solve the tasks? Solve sub-tasks iteratively to find the answer\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\ndef whitespaces_to_underscore(string):\n    return string.replace(' ', '_')\n\n\ndef underscore_to_whitespaces(string):\n    return string.replace('_', ' ')",
+        "clean_code": "\"\"\"\n\n\ndef whitespaces_to_underscore(string):\n    return string.replace(' ', '_')\n\n\ndef underscore_to_whitespaces(string):\n    return string.replace('_', ' ')"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\n\ndef replace_whitespace(string):\n    \"\"\"Replace whitespaces with an underscore and vice versa in a given string by using regex.\n\n    Args:\n        string (str): input string\n\n    Returns:\n        str: output string\n\n    Examples:\n        >>> replace_whitespace('hello world')\n        'hello_world'\n\n        >>> replace_whitespace('hello_world')  #doctest: +ELLIPSIS +NORMALIZE_WHITESPACE +REPORT_UDIFF\n        'hello world'...\n\n    \"\"\"\n\n    return re.sub(r\"[\\s]\", \"_\", re.sub(r\"[\\s]\", \" \", string))",
+        "clean_code": "\"\"\"\n\ndef replace_whitespace(string):\n    \"\"\"Replace whitespaces with an underscore and vice versa in a given string by using regex.\n\n    Args:\n        string (str): input string\n\n    Returns:\n        str: output string\n\n    Examples:\n        >>> replace_whitespace('hello world')\n        'hello_world'\n\n        >>> replace_whitespace('hello_world')  #doctest: +ELLIPSIS +NORMALIZE_WHITESPACE +REPORT_UDIFF\n        'hello world'...\n\n    \"\"\"\n\n    return re.sub(r\"[\\s]\", \"_\", re.sub(r\"[\\s]\", \" \", string))"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\ndef replace(string):\n    return string.replace(' ', '_')\n\n\ndef replace2(string):\n    return string.replace('_', ' ')\n\n\nprint(replace('hello world'))  # hello_world\nprint(replace2('hello_world'))  # hello world",
+        "clean_code": "\"\"\"\n\n\ndef replace(string):\n    return string.replace(' ', '_')\n\n\ndef replace2(string):\n    return string.replace('_', ' ')\n\n\nprint(replace('hello world'))  # hello_world\nprint(replace2('hello_world'))  # hello world"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\nimport re\ndef replace_white_space(string):\n    string = re.sub('\\s+', '_', string) #Replaces whitespace with underscore.\n    return string\n\n\ndef replace_underscore(string):\n    string = re.sub('\\_+', ' ', string) #Replaces underscore with whitespace.\n    return string\n\n    \n\n    \n\n    \n\n        \n\n            \n\n        \n\n            \n    \nprint(replace_white_space(\"Hello, World!\"))",
+        "clean_code": "\"\"\"\nimport re\ndef replace_white_space(string):\n    string = re.sub('\\s+', '_', string) #Replaces whitespace with underscore.\n    return string\n\n\ndef replace_underscore(string):\n    string = re.sub('\\_+', ' ', string) #Replaces underscore with whitespace.\n    return string\n\n    \n\n    \n\n    \n\n        \n\n            \n\n        \n\n            \n    \nprint(replace_white_space(\"Hello, World!\"))"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\ndef replace_whitespace(input_string):\n    \"\"\"Replace whitespaces with an underscore and vice versa in a given string.\"\"\"\n\n    # Replace whitespaces with underscore.\n    output_string = re.sub(r'\\s', '_', input_string)\n\n    # Replace underscore with whitespaces.\n    output_string = re.sub(r'[_]', ' ', output_string)\n\n    return output_string",
+        "clean_code": "\"\"\"\n\n\ndef replace_whitespace(input_string):\n    \"\"\"Replace whitespaces with an underscore and vice versa in a given string.\"\"\"\n\n    # Replace whitespaces with underscore.\n    output_string = re.sub(r'\\s', '_', input_string)\n\n    # Replace underscore with whitespaces.\n    output_string = re.sub(r'[_]', ' ', output_string)\n\n    return output_string"
+    }
+}

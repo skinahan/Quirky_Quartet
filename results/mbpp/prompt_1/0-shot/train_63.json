@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a python function to find the average of even numbers till a given even number.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nWhich data structure is being used? Can the task be split into smaller sub-tasks? How many loops are needed to solve the tasks? Solve sub-tasks iteratively to find the answer\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef average_even(number):\n    total = 0\n    for i in range(2, number + 1, 2):\n        total += i\n\n    return total / (number // 2)\n\n\nprint(average_even(8))",
+        "clean_code": "\"\"\"\ndef average_even(number):\n    total = 0\n    for i in range(2, number + 1, 2):\n        total += i\n\n    return total / (number // 2)\n\n\nprint(average_even(8))"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\ndef average_even(n):\n    sum = 0.0\n    for i in range(2, n+1, 2):  # Only even numbers from 2 to n inclusive are used. Step size is 2 so only evens are added.\n        sum += i  # Add the current number to the sum of all previous numbers.\n\n    return sum / (n / 2)  # Divide by half of the input to get the average\n\n\nprint(average_even(10))",
+        "clean_code": "\"\"\"\n\n\ndef average_even(n):\n    sum = 0.0\n    for i in range(2, n+1, 2):  # Only even numbers from 2 to n inclusive are used. Step size is 2 so only evens are added.\n        sum += i  # Add the current number to the sum of all previous numbers.\n\n    return sum / (n / 2)  # Divide by half of the input to get the average\n\n\nprint(average_even(10))"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n#PF-Assgn-41\ndef find_ten_substring(num_str):\n    #start writing your code here\n\n    #Remove pass and write your logic here\n\n    \n\n        \n\n    \n    return result\n\n    \nnum_str=\"2825302\" \nprint(\"The number is:\",num_str) \nresult=find_ten_substring(num_str) \nprint(result)",
+        "clean_code": "\"\"\"\n#PF-Assgn-41\ndef find_ten_substring(num_str):\n    #start writing your code here\n\n    #Remove pass and write your logic here\n\n    \n\n        \n\n    \n    return result\n\n    \nnum_str=\"2825302\" \nprint(\"The number is:\",num_str) \nresult=find_ten_substring(num_str) \nprint(result)"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\nThe average of even numbers till a given even number can be found by summing up all the even numbers and dividing it by the total number of even numbers.\nHere we are using for loop to find the sum and range function to generate the list of integers.\n\"\"\"\n\n\ndef find_average(number):\n    \"\"\"Function to find average\"\"\"\n    sum = 0  # variable initialization\n\n    for i in range(2, number + 1, 2):  # generating list of integers from 2 to given number with step 2\n        sum += i  # adding every integer in generated list\n\n    return sum / (number / 2)  # returning result",
+        "clean_code": "The average of even numbers till a given even number can be found by summing up all the even numbers and dividing it by the total number of even numbers.\nHere we are using for loop to find the sum and range function to generate the list of integers.\n\"\"\"\n\n\ndef find_average(number):\n    \"\"\"Function to find average\"\"\"\n    sum = 0  # variable initialization\n\n    for i in range(2, number + 1, 2):  # generating list of integers from 2 to given number with step 2\n        sum += i  # adding every integer in generated list\n\n    return sum / (number / 2)  # returning result"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\n'''\n\n\ndef average_even(n):\n    sum = 0\n    count = 0\n\n    for i in range(2, n + 1, 2):\n        sum += i\n        count += 1\n\n    return sum / count\n\n\nprint(\"Average of even numbers till 6:\", average_even(6))",
+        "clean_code": "'''\n\n\ndef average_even(n):\n    sum = 0\n    count = 0\n\n    for i in range(2, n + 1, 2):\n        sum += i\n        count += 1\n\n    return sum / count\n\n\nprint(\"Average of even numbers till 6:\", average_even(6))"
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to move all the numbers in it to the given string.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nWhich data structure is being used? Can the task be split into smaller sub-tasks? How many loops are needed to solve the tasks? Solve sub-tasks iteratively to find the answer\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef move_numbers(string):\n    new_list = []\n    numbers = []\n    for i in string:\n        if i.isdigit(): #if the character is a digit, append it to the list of numbers. otherwise append it to the new list of characters. \n            numbers.append(i) \n\n        else: #appending all the characters to a new list called new_list and returning that list as output. \n\n            new_list.append(i)\n\n    return \"\".join(new_list)+\"\".join(numbers)#joining both lists together using join method and returning as a string",
+        "clean_code": "\"\"\"\ndef move_numbers(string):\n    new_list = []\n    numbers = []\n    for i in string:\n        if i.isdigit(): #if the character is a digit, append it to the list of numbers. otherwise append it to the new list of characters. \n            numbers.append(i) \n\n        else: #appending all the characters to a new list called new_list and returning that list as output. \n\n            new_list.append(i)\n\n    return \"\".join(new_list)+\"\".join(numbers)#joining both lists together using join method and returning as a string"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n<code>def move_numbers(string):\n    numbers = \"\"\n    letters = \"\"\n    for i in string:\n        if i.isdigit():\n            numbers += i  # add the number to the end of the numbers variable (string)\n        else:\n            letters += i  # add the letter to the end of the letters variable (string)\n\n    return letters + numbers  # return a new string with all of its digits moved to its end.\n\n\nprint(move_numbers(\"a1b2c3\"))  # abc123 -&gt; print it out like this! Hint: use a loop! :)\n</code>\n\n",
+        "clean_code": "<code>def move_numbers(string):\n    numbers = \"\"\n    letters = \"\"\n    for i in string:\n        if i.isdigit():\n            numbers += i  # add the number to the end of the numbers variable (string)\n        else:\n            letters += i  # add the letter to the end of the letters variable (string)\n\n    return letters + numbers  # return a new string with all of its digits moved to its end.\n\n\nprint(move_numbers(\"a1b2c3\"))  # abc123 -&gt; print it out like this! Hint: use a loop! :)\n</code>"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef move_to(string, list_of_numbers):\n    # Write your code here to solve the question.\n    # If you are stuck please ask for help on the forum.\n\n    return string",
+        "clean_code": "\"\"\"\ndef move_to(string, list_of_numbers):\n    # Write your code here to solve the question.\n    # If you are stuck please ask for help on the forum.\n\n    return string"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n'''\ndef move_numbers(str):\n    lst = list(str)\n    numbers = []\n    for i in range(len(lst)):\n        if lst[i].isdigit():\n            numbers.append(lst[i])\n\n    for i in range(len(numbers)):\n        lst.remove(''.join(numbers[i]))\n\n    return ''.join(lst)+''.join([str(_) for _ in numbers])",
+        "clean_code": "'''\ndef move_numbers(str):\n    lst = list(str)\n    numbers = []\n    for i in range(len(lst)):\n        if lst[i].isdigit():\n            numbers.append(lst[i])\n\n    for i in range(len(numbers)):\n        lst.remove(''.join(numbers[i]))\n\n    return ''.join(lst)+''.join([str(_) for _ in numbers])"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n<code>def move_numbers(input_string):\n    numbers = ''\n    letters = ''\n\n    for char in input_string:\n        if char.isalpha():\n            letters += char\n        else:  # is a number, or other character (e.g. -, +)\n            numbers += char\n\n    return letters + numbers\n\n\nprint(move_numbers('a1b2c3'))  # abc123 (as a string)\n</code>\n\n",
+        "clean_code": "<code>def move_numbers(input_string):\n    numbers = ''\n    letters = ''\n\n    for char in input_string:\n        if char.isalpha():\n            letters += char\n        else:  # is a number, or other character (e.g. -, +)\n            numbers += char\n\n    return letters + numbers\n\n\nprint(move_numbers('a1b2c3'))  # abc123 (as a string)\n</code>"
+    }
+}
