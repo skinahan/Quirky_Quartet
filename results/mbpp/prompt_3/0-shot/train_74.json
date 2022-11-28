@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to add two integers. however, if the sum is between the given range it will return 20.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nPay attention to the datatype of input and expected output. Is the input a tuple? Is the input a string? Is the input a matrix? Use correct data structure to derive the needed answer.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\ndef add_two_integers(x, y):\n    \"\"\"Compute the sum of two integers.\n\n    Keyword arguments:\n    x -- first integer to be added\n    y -- second integer to be added\n\n    Return: The sum of the two integers. However, if the sum is between 10 and 20 (inclusive) return 20.\n\n    \"\"\"\n    s = x + y\n    ",
+        "clean_code": "\"\"\"\n\n\ndef add_two_integers(x, y):\n    \"\"\"Compute the sum of two integers.\n\n    Keyword arguments:\n    x -- first integer to be added\n    y -- second integer to be added\n\n    Return: The sum of the two integers. However, if the sum is between 10 and 20 (inclusive) return 20.\n\n    \"\"\"\n    s = x + y"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\ndef add_integers(a, b):\n    # Write your code here.\n    return a + b if (a + b) not in range(15, 21) else 20\n\n\n# Sample Input: 15, 10\n# Expected Output: 20",
+        "clean_code": "\"\"\"\n\n\ndef add_integers(a, b):\n    # Write your code here.\n    return a + b if (a + b) not in range(15, 21) else 20\n\n\n# Sample Input: 15, 10\n# Expected Output: 20"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\n\ndef add_two_numbers(a, b):\n    if a + b < 20:  # If sum is less than 20, return the sum.\n        return a + b\n\n    else:  # If sum is greater than or equal to 20, return 20.\n        return 20\n\n\nprint(add_two_numbers(10, 10))",
+        "clean_code": "\"\"\"\n\ndef add_two_numbers(a, b):\n    if a + b < 20:  # If sum is less than 20, return the sum.\n        return a + b\n\n    else:  # If sum is greater than or equal to 20, return 20.\n        return 20\n\n\nprint(add_two_numbers(10, 10))"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\n'''\n\n\ndef add_two_integers(n1, n2):\n    if 0 < (n1 + n2) < 10:\n        return 20\n    else:\n        return (n1 + n2)",
+        "clean_code": "'''\n\n\ndef add_two_integers(n1, n2):\n    if 0 < (n1 + n2) < 10:\n        return 20\n    else:\n        return (n1 + n2)"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n<code>def sum_of_digits(a, b):\n    if a + b &gt;= 15 and a + b &lt;= 20:\n        return 20\n    else:\n        return a + b\n</code>\n\n",
+        "clean_code": "<code>def sum_of_digits(a, b):\n    if a + b &gt;= 15 and a + b &lt;= 20:\n        return 20\n    else:\n        return a + b\n</code>"
+    }
+}

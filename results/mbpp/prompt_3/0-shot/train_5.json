@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to convert degrees to radians.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nPay attention to the datatype of input and expected output. Is the input a tuple? Is the input a string? Is the input a matrix? Use correct data structure to derive the needed answer.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\ndef convert_degrees_to_radians(degrees):\n    \"\"\"Convert degrees to radians.\n\n    Args:\n        degrees (list or tuple): List or tuple of angles in degrees.\n\n    Returns:\n        list: List of angles in radians.\n\n    Examples:\n        >>> convert_degrees_to_radians((0, 30, 45, 60, 90))  # doctest: +NORMALIZE_WHITESPACE\n        [0.0, 0.5235987755982988, 0.7853981633974483, 1.0471975511965976, 1.5707963267948966]\n\n    See Also:\n        https://en.wikipedia.org/wiki/Radian#Degree-based_measures\n\n    \"\"\"  # noqa E501",
+        "clean_code": "\"\"\"\n\n\ndef convert_degrees_to_radians(degrees):\n    \"\"\"Convert degrees to radians.\n\n    Args:\n        degrees (list or tuple): List or tuple of angles in degrees.\n\n    Returns:\n        list: List of angles in radians.\n\n    Examples:\n        >>> convert_degrees_to_radians((0, 30, 45, 60, 90))  # doctest: +NORMALIZE_WHITESPACE\n        [0.0, 0.5235987755982988, 0.7853981633974483, 1.0471975511965976, 1.5707963267948966]\n\n    See Also:\n        https://en.wikipedia.org/wiki/Radian#Degree-based_measures\n\n    \"\"\"  # noqa E501"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\n'''\n\n\ndef convert_to_radians(degrees):\n    return degrees * (3.14159 / 180)",
+        "clean_code": "'''\n\n\ndef convert_to_radians(degrees):\n    return degrees * (3.14159 / 180)"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n'''\n\ndef degree_to_radian(degree):\n    # write your code here\n    return degree * 3.141592653589793 / 180\n\n    \nif __name__ == \"__main__\":\n    print(degree_to_radian(180))",
+        "clean_code": "'''\n\ndef degree_to_radian(degree):\n    # write your code here\n    return degree * 3.141592653589793 / 180\n\n    \nif __name__ == \"__main__\":\n    print(degree_to_radian(180))"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\ndef convert_degrees_to_radians(degrees):\n    return degrees * (math.pi / 180)",
+        "clean_code": "\"\"\"\n\n\ndef convert_degrees_to_radians(degrees):\n    return degrees * (math.pi / 180)"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef deg_to_rad(degrees):\n    return degrees*3.141592/180",
+        "clean_code": "\"\"\"\ndef deg_to_rad(degrees):\n    return degrees*3.141592/180"
+    }
+}

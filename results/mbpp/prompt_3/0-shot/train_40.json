@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to find the nth nonagonal number.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nPay attention to the datatype of input and expected output. Is the input a tuple? Is the input a string? Is the input a matrix? Use correct data structure to derive the needed answer.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\n'''\ndef nonagonal(n):\n    # n is nth nonagonal number \n    # return the value of the nth nonagonal number.\n\n    if type(n) == int:\n        if n > 0: \n            return (n * (3 * n - 2)) // 2\n\n        else: \n            return \"Invalid input\"\n\n    else: \n        return \"Invalid input\"",
+        "clean_code": "'''\ndef nonagonal(n):\n    # n is nth nonagonal number \n    # return the value of the nth nonagonal number.\n\n    if type(n) == int:\n        if n > 0: \n            return (n * (3 * n - 2)) // 2\n\n        else: \n            return \"Invalid input\"\n\n    else: \n        return \"Invalid input\""
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\nThe nth nonagonal number is given by the formula: n(n+1)(3n-2)/6\n\"\"\"\ndef nonagonal(n):\n    return (n*(n+1)*(3*n-2))/6",
+        "clean_code": "The nth nonagonal number is given by the formula: n(n+1)(3n-2)/6\n\"\"\"\ndef nonagonal(n):\n    return (n*(n+1)*(3*n-2))/6"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\n'''\n\n\ndef nonagonal_number(n):\n    return n * (3 * n - 2)\n\n\nprint(nonagonal_number(1))",
+        "clean_code": "'''\n\n\ndef nonagonal_number(n):\n    return n * (3 * n - 2)\n\n\nprint(nonagonal_number(1))"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\n'''\ndef nonagonal_number(n):\n    if n == 1:\n        return 1\n    else:\n        return (n-1)*4 + nonagonal_number(n-1)\n\n  #remove pass and write your logic here",
+        "clean_code": "'''\ndef nonagonal_number(n):\n    if n == 1:\n        return 1\n    else:\n        return (n-1)*4 + nonagonal_number(n-1)\n\n  #remove pass and write your logic here"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\nThe following code is my answer to the question. The code is able to find the nth nonagonal number given a tuple of numbers. The code uses recursion and returns an integer.\n\"\"\"\ndef solve(n):\n    if len(n) == 1:  # Base case, returns the first element in the list if there is only one element left in the list.\n        return n[0]\n\n    else:  # Recursive case, finds the sum of all elements in a tuple by calling itself with a smaller tuple until it reaches base case.\n        return sum(n) + solve(tuple([x-1 for x in n][:-1]))",
+        "clean_code": "The following code is my answer to the question. The code is able to find the nth nonagonal number given a tuple of numbers. The code uses recursion and returns an integer.\n\"\"\"\ndef solve(n):\n    if len(n) == 1:  # Base case, returns the first element in the list if there is only one element left in the list.\n        return n[0]\n\n    else:  # Recursive case, finds the sum of all elements in a tuple by calling itself with a smaller tuple until it reaches base case.\n        return sum(n) + solve(tuple([x-1 for x in n][:-1]))"
+    }
+}
