@@ -191,5 +191,3 @@ def run():
     # test_model()
     eval_and_save()
 
-
-eval_and_save(tuned=True)
