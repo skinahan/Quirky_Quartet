@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a python function to find the sum of fifth power of n natural numbers.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nThink along the lines of the variables and data structures that need to be used. Also think about the way to access the elements in the data structures.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\n'''\ndef sum_of_fifth(n):\n    return sum([x**5 for x in range(1, n+1)])",
+        "clean_code": "'''\ndef sum_of_fifth(n):\n    return sum([x**5 for x in range(1, n+1)])"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\n'''\ndef sum_fifth(n):\n    sum=0\n    for i in range(1,n+1):\n        sum+=i**5\n    return sum",
+        "clean_code": "'''\ndef sum_fifth(n):\n    sum=0\n    for i in range(1,n+1):\n        sum+=i**5\n    return sum"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef sum_fifth_power(n):\n    sum = 0\n    for i in range(1, n+1):\n        sum += i**5\n    return sum",
+        "clean_code": "\"\"\"\ndef sum_fifth_power(n):\n    sum = 0\n    for i in range(1, n+1):\n        sum += i**5\n    return sum"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef sum_of_fifth_power(n):\n    return sum([int(i)**5 for i in str(n)])\n\n\nprint(sum_of_fifth_power(1234))",
+        "clean_code": "\"\"\"\ndef sum_of_fifth_power(n):\n    return sum([int(i)**5 for i in str(n)])\n\n\nprint(sum_of_fifth_power(1234))"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef sum_of_fifth_power(n):\n    sum=0\n    for i in range(1,n+1):\n        sum+=i**5\n    return sum",
+        "clean_code": "\"\"\"\ndef sum_of_fifth_power(n):\n    sum=0\n    for i in range(1,n+1):\n        sum+=i**5\n    return sum"
+    }
+}

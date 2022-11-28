@@ -1,0 +1,4 @@
+{
+    "query": "Write a function to remove tuple elements that occur more than once and replace the duplicates with some custom value.",
+    "success": 0
+}

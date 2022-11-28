@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to get a lucid number smaller than or equal to n.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nThink along the lines of the variables and data structures that need to be used. Also think about the way to access the elements in the data structures.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\ndef lucid_number(n):\n    #Code here\n\"\"\"\n\n\ndef lucid_number(n):\n    count = 0\n    while n > 0:\n        if n % 10 == 0:\n            count += 1\n        else: break\n\n        n //= 10\n\n    return 10 ** count",
+        "clean_code": "def lucid_number(n):\n    #Code here\n\"\"\"\n\n\ndef lucid_number(n):\n    count = 0\n    while n > 0:\n        if n % 10 == 0:\n            count += 1\n        else: break\n\n        n //= 10\n\n    return 10 ** count"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\n'''\n\ndef lucid(n):\n\n    # Write your code here\n\n    return n",
+        "clean_code": "'''\n\ndef lucid(n):\n\n    # Write your code here\n\n    return n"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef lucid(n):\n    if n > 9:\n        return lucid(n-9) + 9\n    else:\n        return n",
+        "clean_code": "\"\"\"\ndef lucid(n):\n    if n > 9:\n        return lucid(n-9) + 9\n    else:\n        return n"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\nIn this question we need to define a function which will return a lucid number smaller than or equal to n.\nLucid number is defined as the sum of the digits of its square is equal to the original number.\nFor example: 44, 121, 484 etc are lucid numbers.\nLet us take an example: 55^2 = 3025 and 3+0+2+5 = 10 (55)\nTherefore 55 is a lucid number.\nHence our function should return all the lucid numbers smaller than or equal to n. \n\n\n\n\n\n\n\n\n\n\n\n \n\n \n'''",
+        "clean_code": "In this question we need to define a function which will return a lucid number smaller than or equal to n.\nLucid number is defined as the sum of the digits of its square is equal to the original number.\nFor example: 44, 121, 484 etc are lucid numbers.\nLet us take an example: 55^2 = 3025 and 3+0+2+5 = 10 (55)\nTherefore 55 is a lucid number.\nHence our function should return all the lucid numbers smaller than or equal to n. \n\n\n\n\n\n\n\n\n\n\n\n \n\n \n'''"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n'''\ndef lucid(n):\n    li = []\n    for i in range(1,n+1):\n        if i % 2 == 0:\n            li.append(i)\n\n        elif i % 3 == 0:\n            li.append(i)\n\n        elif i % 5 == 0:\n            li.append(i)\n\n        else:\n            continue\n\n    return sum(li)",
+        "clean_code": "'''\ndef lucid(n):\n    li = []\n    for i in range(1,n+1):\n        if i % 2 == 0:\n            li.append(i)\n\n        elif i % 3 == 0:\n            li.append(i)\n\n        elif i % 5 == 0:\n            li.append(i)\n\n        else:\n            continue\n\n    return sum(li)"
+    }
+}

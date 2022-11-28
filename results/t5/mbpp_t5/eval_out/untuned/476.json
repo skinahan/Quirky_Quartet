@@ -1,0 +1,4 @@
+{
+    "query": "Write a function to sort a list of tuples in increasing order by the last element in each tuple.",
+    "success": 0
+}

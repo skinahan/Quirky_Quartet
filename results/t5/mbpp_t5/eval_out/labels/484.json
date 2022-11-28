@@ -1,0 +1,4 @@
+{
+    "query": "Write a function to remove lowercase substrings from a given string by using regex.",
+    "success": 1
+}

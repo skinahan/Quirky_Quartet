@@ -1,0 +1,4 @@
+{
+    "query": "Write a function to find out the maximum sum such that no two chosen numbers are adjacent for the given rectangular grid of dimension 2 x n.",
+    "success": 1
+}

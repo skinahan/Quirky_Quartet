@@ -1,0 +1,4 @@
+{
+    "query": "Write a python function to find the first natural number whose factorial is divisible by x.",
+    "success": 1
+}

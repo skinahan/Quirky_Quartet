@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a python function to find the minimum sum of absolute differences of two arrays.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nThink along the lines of the variables and data structures that need to be used. Also think about the way to access the elements in the data structures.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n<code>def min_sum(num1, num2):\n  num1.sort()\n  num2.sort()\n\n  a = b = 0\n  result = 0\n\n  while a &lt; len(num1) and b &lt; len(num2):\n    result += abs(num1[a] - num2[b])\n    if num1[a] &lt;= num2[b]: a+= 1\n    else: b+= 1\n\n  return result\n\n  \n</code>\n",
+        "clean_code": "<code>def min_sum(num1, num2):\n  num1.sort()\n  num2.sort()\n\n  a = b = 0\n  result = 0\n\n  while a &lt; len(num1) and b &lt; len(num2):\n    result += abs(num1[a] - num2[b])\n    if num1[a] &lt;= num2[b]: a+= 1\n    else: b+= 1\n\n  return result\n\n  \n</code>"
+    },
+    "1": {
+        "status": 1,
+        "codex_out": "\ndef min_sum_absolute(A, B):\n    # Write your code here.\n    A.sort()\n    B.sort()\n    diff = 0\n    for i in range(len(A)):\n        diff += abs(A[i] - B[i])\n\n    return diff\n\n",
+        "clean_code": "def min_sum_absolute(A, B):\n    # Write your code here.\n    A.sort()\n    B.sort()\n    diff = 0\n    for i in range(len(A)):\n        diff += abs(A[i] - B[i])\n\n    return diff"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef min_sum_absolute(l1, l2):\n    l1.sort()\n    l2.sort()\n    return sum([abs(a-b) for a, b in zip(l1, l2)])\n\n\nprint(\"Answer:\",min_sum_absolute([3, 4], [5, 6]))",
+        "clean_code": "\"\"\"\ndef min_sum_absolute(l1, l2):\n    l1.sort()\n    l2.sort()\n    return sum([abs(a-b) for a, b in zip(l1, l2)])\n\n\nprint(\"Answer:\",min_sum_absolute([3, 4], [5, 6]))"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n<code>def min_sum(A,B):\n    A.sort()\n    B.sort()\n\n    min_sum = 0\n\n    for i in range(len(A)):\n        min_sum += abs(A[i]-B[i])\n\n    return min_sum\n</code>\n\n\nA:\n\nI think you need to use the <code>zip</code> function to iterate through two arrays at once.  It will give you a tuple of values from each array so you can do your subtraction and summing logic on each pair of values.  Something like this (untested):\n<code>def min_sum(A,B):     # A and B are lists of integers    \n\n    for a, b in zip(sorted(A), sorted(B)):   # iterate through both lists at once, sorted ascending order \n\n        # do your math here on a and b...     \n\n        return value   # or whatever the result is supposed to be...  (if any)      \n</code>\n",
+        "clean_code": "<code>def min_sum(A,B):\n    A.sort()\n    B.sort()\n\n    min_sum = 0\n\n    for i in range(len(A)):\n        min_sum += abs(A[i]-B[i])\n\n    return min_sum\n</code>\n\n\nA:\n\nI think you need to use the <code>zip</code> function to iterate through two arrays at once.  It will give you a tuple of values from each array so you can do your subtraction and summing logic on each pair of values.  Something like this (untested):\n<code>def min_sum(A,B):     # A and B are lists of integers    \n\n    for a, b in zip(sorted(A), sorted(B)):   # iterate through both lists at once, sorted ascending order \n\n        # do your math here on a and b...     \n\n        return value   # or whatever the result is supposed to be...  (if any)      \n</code>"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\nI have used the Python zip function to iterate over two lists in parallel.\n<code>def min_abs_diff(arr1, arr2):\n    min_diff = abs(arr1[0] - arr2[0])\n    for a, b in zip(arr1, arr2):\n        if abs(a - b) &lt; min_diff:\n            min_diff = abs(a - b)\n\n    return min_diff\n\n\nprint(min_abs_diff([3, 1], [4, 2]))  # 1\nprint(min_abs_diff([3], [4]))  # 1\nprint(min_abs_diff([3], [4, 5]))  # 2 (the first element of the second list is considered) \n</code>\n\n",
+        "clean_code": "I have used the Python zip function to iterate over two lists in parallel.\n<code>def min_abs_diff(arr1, arr2):\n    min_diff = abs(arr1[0] - arr2[0])\n    for a, b in zip(arr1, arr2):\n        if abs(a - b) &lt; min_diff:\n            min_diff = abs(a - b)\n\n    return min_diff\n\n\nprint(min_abs_diff([3, 1], [4, 2]))  # 1\nprint(min_abs_diff([3], [4]))  # 1\nprint(min_abs_diff([3], [4, 5]))  # 2 (the first element of the second list is considered) \n</code>"
+    }
+}

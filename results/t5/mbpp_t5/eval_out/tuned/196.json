@@ -1,0 +1,4 @@
+{
+    "query": "Write a function to count the longest repeating subsequences such that the two subsequences don\u2019t have same string characters at same positions.",
+    "success": 0
+}
