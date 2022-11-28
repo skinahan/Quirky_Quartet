@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to remove duplicate words from a given string using collections module.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nBreak the problem down into smaller pieces. Sorting the input might help you create an efficient solution, use vectorised operations when possible. Apply recursion where possible.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 1,
+        "codex_out": "\ndef removeDuplicate(input):\n    output = []\n    seen = set()\n    for value in input:\n        # If value has not been encountered yet,\n        # ... add it to both list and set.\n        if value not in seen:\n            output.append(value)\n            seen.add(value)\n\n    return output\n\n \nprint(removeDuplicate([1,2,3,4,5]))   #[1, 2, 3, 4, 5] \n\n \n\n \n\n \n\n \n\n \n\n \n\n */",
+        "clean_code": "def removeDuplicate(input):\n    output = []\n    seen = set()\n    for value in input:\n        # If value has not been encountered yet,\n        # ... add it to both list and set.\n        if value not in seen:\n            output.append(value)\n            seen.add(value)\n\n    return output\n\n \nprint(removeDuplicate([1,2,3,4,5]))   #[1, 2, 3, 4, 5]"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\nfrom collections import OrderedDict\ndef remove_duplicate_words(s):\n    return \" \".join(OrderedDict.fromkeys(s.split()))",
+        "clean_code": "\"\"\"\nfrom collections import OrderedDict\ndef remove_duplicate_words(s):\n    return \" \".join(OrderedDict.fromkeys(s.split()))"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\ndef remove_duplicate_words(s):\n    return ' '.join(sorted(set(s.split()), key=s.index))\n\"\"\"\nfrom collections import Counter, OrderedDict\n\n\nclass OrderedCounter(Counter, OrderedDict):\n    pass\n\n\nif __name__ == '__main__':\n    s = input()\n\n    print(' '.join(OrderedCounter(s.split()).keys()))",
+        "clean_code": "def remove_duplicate_words(s):\n    return ' '.join(sorted(set(s.split()), key=s.index))\n\"\"\"\nfrom collections import Counter, OrderedDict\n\n\nclass OrderedCounter(Counter, OrderedDict):\n    pass\n\n\nif __name__ == '__main__':\n    s = input()\n\n    print(' '.join(OrderedCounter(s.split()).keys()))"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\ndef remove_duplicates(sentence: str) -> str:\n    \"\"\"\n    Remove duplicate words from given sentence.\n\n    :param sentence: input sentence.\n    :return: sentence without duplicates.\n\n    Examples:\n        >>> remove_duplicates(\"I am am learning learning python python\") == \"I am learning python\"\n        True\n\n        >>> remove_duplicates(\"A A A B B C C\") == \"A B C\"\n        True\n\n        >>> remove_duplicates(\"A A A\") == \"A\"  # noqa E501 - ignoring line length in this example. It is too long to pass PEP8 checker with max-line-length set to 80 chars.  # noqa E501 - ignoring line length in this example. It is too long to pass PEP8 checker with max-line-length set to 80 chars.  # noqa E501 - ignoring line length in this example. It is too long to pass PEP8 checker with max-line-length set to 80 chars.  # noqa E501 - ignoring line length in this example. It is too long to pass PEP8 checker with max-line-length set to 80 chars.  # noqa E501 - ignoring line length in this example. It is too long to pass PEP8 checker with max-line-length set to 80 chars.\"\"\"\n\n    return ' '.join(set(sentence[::].split()))",
+        "clean_code": "\"\"\"\n\n\ndef remove_duplicates(sentence: str) -> str:\n    \"\"\"\n    Remove duplicate words from given sentence.\n\n    :param sentence: input sentence.\n    :return: sentence without duplicates.\n\n    Examples:\n        >>> remove_duplicates(\"I am am learning learning python python\") == \"I am learning python\"\n        True\n\n        >>> remove_duplicates(\"A A A B B C C\") == \"A B C\"\n        True\n\n        >>> remove_duplicates(\"A A A\") == \"A\"  # noqa E501 - ignoring line length in this example. It is too long to pass PEP8 checker with max-line-length set to 80 chars.  # noqa E501 - ignoring line length in this example. It is too long to pass PEP8 checker with max-line-length set to 80 chars.  # noqa E501 - ignoring line length in this example. It is too long to pass PEP8 checker with max-line-length set to 80 chars.  # noqa E501 - ignoring line length in this example. It is too long to pass PEP8 checker with max-line-length set to 80 chars.  # noqa E501 - ignoring line length in this example. It is too long to pass PEP8 checker with max-line-length set to 80 chars.\"\"\"\n\n    return ' '.join(set(sentence[::].split()))"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\nimport collections\n\n\ndef remove_duplicate_words(s):\n    return \" \".join(collections.OrderedDict.fromkeys(s.split()))",
+        "clean_code": "\"\"\"\nimport collections\n\n\ndef remove_duplicate_words(s):\n    return \" \".join(collections.OrderedDict.fromkeys(s.split()))"
+    }
+}

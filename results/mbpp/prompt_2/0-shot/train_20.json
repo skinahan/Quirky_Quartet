@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to increment the numeric values in the given strings by k.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nBreak the problem down into smaller pieces. Sorting the input might help you create an efficient solution, use vectorised operations when possible. Apply recursion where possible.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\ndef increment_string(strng, k):\n    if not strng: return '0' * k\n    i = len(strng) - 1\n    while i >= 0 and strng[i].isdigit(): i -= 1\n\n    num = int(strng[i + 1:] or 0) + k\n\n    return strng[:i + 1] + str(num).zfill(len(strng) - (i + 1))",
+        "clean_code": "\"\"\"\n\n\ndef increment_string(strng, k):\n    if not strng: return '0' * k\n    i = len(strng) - 1\n    while i >= 0 and strng[i].isdigit(): i -= 1\n\n    num = int(strng[i + 1:] or 0) + k\n\n    return strng[:i + 1] + str(num).zfill(len(strng) - (i + 1))"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\nimport numpy as np\n\n\ndef increment_numeric(lst, k):\n    lst = np.array(lst)\n    lst[np.char.isnumeric(lst)] = [str(int(x)+k) for x in lst[np.char.isnumeric(lst)]]\n    return list(lst)",
+        "clean_code": "\"\"\"\nimport numpy as np\n\n\ndef increment_numeric(lst, k):\n    lst = np.array(lst)\n    lst[np.char.isnumeric(lst)] = [str(int(x)+k) for x in lst[np.char.isnumeric(lst)]]\n    return list(lst)"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\n'''\nimport numpy as np\ndef incrementString(string, k):\n    string = list(string)\n\n    # loop through the string and check if it is a number or not. If it is, convert it to an int and add k to it. Then convert the result back to a string. \n    for i in range(len(string)): \n\n        if string[i].isdigit() == True: \n\n            string[i] = str(int(string[i]) + k)\n\n    return ''.join(string)",
+        "clean_code": "'''\nimport numpy as np\ndef incrementString(string, k):\n    string = list(string)\n\n    # loop through the string and check if it is a number or not. If it is, convert it to an int and add k to it. Then convert the result back to a string. \n    for i in range(len(string)): \n\n        if string[i].isdigit() == True: \n\n            string[i] = str(int(string[i]) + k)\n\n    return ''.join(string)"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\n'''\nimport numpy as np\n\n\ndef increment_numeric_values(sentence, k):\n    return np.array([str(int(i) + k) if i.isdigit() else i for i in sentence])",
+        "clean_code": "'''\nimport numpy as np\n\n\ndef increment_numeric_values(sentence, k):\n    return np.array([str(int(i) + k) if i.isdigit() else i for i in sentence])"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n'''\n\n\ndef increment_string(strng, k):\n    if not strng:\n        return '0' * k\n\n    if strng[-1].isdigit():\n        return increment_string(strng[:-1], k) + str(int(strng[-1]) + k) % 10\n\n    return strng + '0' * k",
+        "clean_code": "'''\n\n\ndef increment_string(strng, k):\n    if not strng:\n        return '0' * k\n\n    if strng[-1].isdigit():\n        return increment_string(strng[:-1], k) + str(int(strng[-1]) + k) % 10\n\n    return strng + '0' * k"
+    }
+}

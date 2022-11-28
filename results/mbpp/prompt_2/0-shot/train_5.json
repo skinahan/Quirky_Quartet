@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to convert degrees to radians.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nBreak the problem down into smaller pieces. Sorting the input might help you create an efficient solution, use vectorised operations when possible. Apply recursion where possible.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\ndef convert_radians(degrees):\n    \"\"\"Converts degrees to radians.\n\n    Args:\n        degrees (float): Angle in degrees.\n\n    Returns:\n        (float) Converted angle in radians.\n\n    \"\"\"\n\n    return np.radians(degrees)",
+        "clean_code": "\"\"\"\ndef convert_radians(degrees):\n    \"\"\"Converts degrees to radians.\n\n    Args:\n        degrees (float): Angle in degrees.\n\n    Returns:\n        (float) Converted angle in radians.\n\n    \"\"\"\n\n    return np.radians(degrees)"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n<code>def degreesToRadians(degrees):\n    return np.radians(degrees)\n</code>\n",
+        "clean_code": "<code>def degreesToRadians(degrees):\n    return np.radians(degrees)\n</code>"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\ndef degrees_to_radians(degrees):\n    # Write your code here.\n\n    return degrees * 3.14 / 180\n\n\nprint(degrees_to_radians(90))",
+        "clean_code": "\"\"\"\n\n\ndef degrees_to_radians(degrees):\n    # Write your code here.\n\n    return degrees * 3.14 / 180\n\n\nprint(degrees_to_radians(90))"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\ndef deg2rad(degrees):\n    return degrees * np.pi / 180",
+        "clean_code": "\"\"\"\n\n\ndef deg2rad(degrees):\n    return degrees * np.pi / 180"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\ndef degrees_to_radians(degrees):\n    return degrees * (math.pi/180)\n\"\"\"",
+        "clean_code": "def degrees_to_radians(degrees):\n    return degrees * (math.pi/180)\n\"\"\""
+    }
+}

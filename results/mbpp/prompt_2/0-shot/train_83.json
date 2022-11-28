@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a python function to count occurences of a character in a repeated string.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nBreak the problem down into smaller pieces. Sorting the input might help you create an efficient solution, use vectorised operations when possible. Apply recursion where possible.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\ndef count_occurences(string, character):\n    return string.count(character)",
+        "clean_code": "\"\"\"\n\n\ndef count_occurences(string, character):\n    return string.count(character)"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\nThe following code is my solution to the above question:\n\n\nA:\n\n<code>def count_occurrences(string, char):  # function definition\n\n    if string == '':  # base case 1, end of string\n\n        return 0  # do nothing and return 0\n\n    elif string[0] == char:  # base case 2, check if first character matches char\n\n        return 1 + count_occurrences(string[1:], char)  # increment counter by 1 and check the rest of the string\n\n    else:  # recursive case, first character does not match char\n\n        return count_occurrences(string[1:], char)  # check the rest of the string without incrementing counter\n</code>\n",
+        "clean_code": "The following code is my solution to the above question:\n\n\nA:\n\n<code>def count_occurrences(string, char):  # function definition\n\n    if string == '':  # base case 1, end of string\n\n        return 0  # do nothing and return 0\n\n    elif string[0] == char:  # base case 2, check if first character matches char\n\n        return 1 + count_occurrences(string[1:], char)  # increment counter by 1 and check the rest of the string\n\n    else:  # recursive case, first character does not match char\n\n        return count_occurrences(string[1:], char)  # check the rest of the string without incrementing counter\n</code>"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\nimport numpy as np\n\n\ndef count_char(string, char):\n\n    def count(string, char):\n        if len(string) == 0: return 0\n        else: return (1 if string[0] == char else 0) + count(string[1:], char)\n\n    return sum([count(s, char) for s in string.split(' ')])",
+        "clean_code": "\"\"\"\nimport numpy as np\n\n\ndef count_char(string, char):\n\n    def count(string, char):\n        if len(string) == 0: return 0\n        else: return (1 if string[0] == char else 0) + count(string[1:], char)\n\n    return sum([count(s, char) for s in string.split(' ')])"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n<code>def count_occurences(string, char):\n    count = 0\n    for i in string:\n        if i == char:\n            count += 1\n\n    return count\n\n\nprint(count_occurences('abcdabcd', 'b'))  # 2\nprint(count_occurences('abcdefghijklmnopqrstuvwxyz', 'a'))  # 1\nprint(count_occurences('abcdefghijklmnopqrstuvwxyz', 'z'))  # 1\n</code>\n\n",
+        "clean_code": "<code>def count_occurences(string, char):\n    count = 0\n    for i in string:\n        if i == char:\n            count += 1\n\n    return count\n\n\nprint(count_occurences('abcdabcd', 'b'))  # 2\nprint(count_occurences('abcdefghijklmnopqrstuvwxyz', 'a'))  # 1\nprint(count_occurences('abcdefghijklmnopqrstuvwxyz', 'z'))  # 1\n</code>"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\ndef count_char(string, char):\n    # your code here\n\n \nNotes: \n- The function name should be \"count_char\" (without quotes).\n- You can't use any other python library except for the ones that are imported in the starter code. You also can't import any additional libraries. \n- Do not modify the input and output parameters of the function. They are already set to what we need for testing purposes. Please do not change them.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n# Solution:\u00b6 \n# In[ ]:  def count_char(string, char):   # your code here   return(sum([1 for x in string if x == char])) print(count_char('banana', 'a')) print(count_char('banana', 'b')) print(count_char('banana', 'z'))",
+        "clean_code": "def count_char(string, char):\n    # your code here\n\n \nNotes: \n- The function name should be \"count_char\" (without quotes).\n- You can't use any other python library except for the ones that are imported in the starter code. You also can't import any additional libraries. \n- Do not modify the input and output parameters of the function. They are already set to what we need for testing purposes. Please do not change them.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n# Solution:\u00b6 \n# In[ ]:  def count_char(string, char):   # your code here   return(sum([1 for x in string if x == char])) print(count_char('banana', 'a')) print(count_char('banana', 'b')) print(count_char('banana', 'z'))"
+    }
+}

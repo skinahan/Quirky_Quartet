@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to group a sequence of key-value pairs into a dictionary of lists using collections module.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nBreak the problem down into smaller pieces. Sorting the input might help you create an efficient solution, use vectorised operations when possible. Apply recursion where possible.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n'''\nimport collections\ndef groupby(func, seq):\n    d = collections.defaultdict(list)\n    for i in seq:\n        key = func(i)\n        d[key].append(i)\n\n    return dict(d)",
+        "clean_code": "'''\nimport collections\ndef groupby(func, seq):\n    d = collections.defaultdict(list)\n    for i in seq:\n        key = func(i)\n        d[key].append(i)\n\n    return dict(d)"
+    },
+    "1": {
+        "status": 1,
+        "codex_out": "\n\ndef group_by_key(list_of_pairs):\n    grouped = collections.defaultdict(list)\n    for key, value in list_of_pairs:\n        grouped[key].append(value)\n\n    return dict(grouped)  # convert to regular dict if you don't need defaultdict's extra features.\n\n",
+        "clean_code": "def group_by_key(list_of_pairs):\n    grouped = collections.defaultdict(list)\n    for key, value in list_of_pairs:\n        grouped[key].append(value)\n\n    return dict(grouped)  # convert to regular dict if you don't need defaultdict's extra features."
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\nBelow is a solution to the above question, written in python 2.7.10.\n'''\nimport collections as coll\ndef groupby(func, seq):\n    return coll.defaultdict(list, [(func(x), x) for x in seq])",
+        "clean_code": "Below is a solution to the above question, written in python 2.7.10.\n'''\nimport collections as coll\ndef groupby(func, seq):\n    return coll.defaultdict(list, [(func(x), x) for x in seq])"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\n'''\n\n\ndef groupby(func, seq):\n    d = {}\n    for i in seq:\n        key = func(i)\n        if key in d:\n            d[key].append(i)\n\n        else:  # key not in dict, create a new list and append to it. Then add the list to the dict with the key as value.\n\n            lst = [i]  # new list with only one element (the current item)\n\n            d[key] = lst  # add the new list to the dictionary using current item as key.\n\n    return d",
+        "clean_code": "'''\n\n\ndef groupby(func, seq):\n    d = {}\n    for i in seq:\n        key = func(i)\n        if key in d:\n            d[key].append(i)\n\n        else:  # key not in dict, create a new list and append to it. Then add the list to the dict with the key as value.\n\n            lst = [i]  # new list with only one element (the current item)\n\n            d[key] = lst  # add the new list to the dictionary using current item as key.\n\n    return d"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\n'''\nimport collections\n\n\ndef group_by_key(input):\n    input = collections.OrderedDict(sorted(input))\n\n    output = {}\n\n    for key, value in input.items():\n        if key not in output:\n            output[key] = [value]  # create new key and assign value to it.\n\n        else:  # if the key is already present, then append the value to it.\n            output[key].append(value)\n\n    return output",
+        "clean_code": "'''\nimport collections\n\n\ndef group_by_key(input):\n    input = collections.OrderedDict(sorted(input))\n\n    output = {}\n\n    for key, value in input.items():\n        if key not in output:\n            output[key] = [value]  # create new key and assign value to it.\n\n        else:  # if the key is already present, then append the value to it.\n            output[key].append(value)\n\n    return output"
+    }
+}

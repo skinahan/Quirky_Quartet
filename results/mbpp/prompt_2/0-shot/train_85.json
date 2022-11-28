@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to find the frequency of each element in the given list.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nBreak the problem down into smaller pieces. Sorting the input might help you create an efficient solution, use vectorised operations when possible. Apply recursion where possible.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\ndef frequency(l):\n    \"\"\"\n    Returns the frequency of each element in the list.\n\n    Parameters:\n    l (list): List of elements\n\n    Returns:\n    dict: Dictionary containing frequency of each element in the list. \n\n    \"\"\"\n\n     # Write your code here! \n\n     return freq_dict  # Return a dictionary containing frequency of each element.  \n\"\"\"",
+        "clean_code": "def frequency(l):\n    \"\"\"\n    Returns the frequency of each element in the list.\n\n    Parameters:\n    l (list): List of elements\n\n    Returns:\n    dict: Dictionary containing frequency of each element in the list. \n\n    \"\"\"\n\n     # Write your code here! \n\n     return freq_dict  # Return a dictionary containing frequency of each element.  \n\"\"\""
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\n'''\ndef freq(l):\n    return list(map(lambda x: l.count(x), l))",
+        "clean_code": "'''\ndef freq(l):\n    return list(map(lambda x: l.count(x), l))"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\n'''\n\ndef freq_list(a):\n    '''\n\n    :param a: list of integers, floats or strings.\n    :return: list of tuples, each tuple contains (element, frequency) in the same order as given in the input list.\n\n    '''\n\n    # write your code here. You can add more functions if required.",
+        "clean_code": "'''\n\ndef freq_list(a):\n    '''\n\n    :param a: list of integers, floats or strings.\n    :return: list of tuples, each tuple contains (element, frequency) in the same order as given in the input list.\n\n    '''\n\n    # write your code here. You can add more functions if required."
+    },
+    "3": {
+        "status": 1,
+        "codex_out": "\ndef frequency(input_list):\n    # Initialize the dictionary\n    freq = {}\n\n    # Loop over the list and count the number of times each element occurs in it. \n    for item in input_list:\n        if (item in freq):\n            freq[item] += 1  # If item is present, increment its count by one. \n        else:  # If item is not present, then add it to the dictionary with a value of 1. \n            freq[item] = 1\n\n    return freq\n\n",
+        "clean_code": "def frequency(input_list):\n    # Initialize the dictionary\n    freq = {}\n\n    # Loop over the list and count the number of times each element occurs in it. \n    for item in input_list:\n        if (item in freq):\n            freq[item] += 1  # If item is present, increment its count by one. \n        else:  # If item is not present, then add it to the dictionary with a value of 1. \n            freq[item] = 1\n\n    return freq"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\ndef frequency(lst):\n    \"\"\"Returns the frequency of each element in the list.\n\n    Parameters:\n    -----------\n    lst : list\n\n    Returns:\n    -----------\n    dict : dictionary containing the frequency of each element in the list.\n\n    Example:  >>>frequency([1,2,3,4])  {1: 1, 2: 1, 3: 1, 4: 1}\n\n        \"\"\"\n\n     # YOUR CODE HERE",
+        "clean_code": "\"\"\"\ndef frequency(lst):\n    \"\"\"Returns the frequency of each element in the list.\n\n    Parameters:\n    -----------\n    lst : list\n\n    Returns:\n    -----------\n    dict : dictionary containing the frequency of each element in the list.\n\n    Example:  >>>frequency([1,2,3,4])  {1: 1, 2: 1, 3: 1, 4: 1}\n\n        \"\"\"\n\n     # YOUR CODE HERE"
+    }
+}

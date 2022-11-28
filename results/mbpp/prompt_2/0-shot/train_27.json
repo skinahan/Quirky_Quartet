@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to replace all spaces in the given string with character * list item * list item * list item * list item '%20'.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nBreak the problem down into smaller pieces. Sorting the input might help you create an efficient solution, use vectorised operations when possible. Apply recursion where possible.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\nimport numpy as np\n\n\ndef replace_spaces(string):\n\n    # Create a list from the string.\n    string = list(string)\n\n    # Replace all spaces in the string with '%20'.\n    for i in range(len(string)):\n\n        if string[i] == ' ':\n\n            string[i] = '%20'\n\n        else:\n            continue\n\n    # Join the elements of the list and return it as a single string.\n    return \"\".join(string)",
+        "clean_code": "\"\"\"\nimport numpy as np\n\n\ndef replace_spaces(string):\n\n    # Create a list from the string.\n    string = list(string)\n\n    # Replace all spaces in the string with '%20'.\n    for i in range(len(string)):\n\n        if string[i] == ' ':\n\n            string[i] = '%20'\n\n        else:\n            continue\n\n    # Join the elements of the list and return it as a single string.\n    return \"\".join(string)"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\n'''\ndef replace_space(string):\n\n    return string.replace(\" \",\"%20\")",
+        "clean_code": "'''\ndef replace_space(string):\n\n    return string.replace(\" \",\"%20\")"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\ndef replace_spaces(input_str):\n    input_str = input_str.replace(' ', '%20')\n    return input_str\n\n\nif __name__ == \"__main__\":  # main function to run the program.\n\n    test_case = 'a b c'  # test case for the program.\n\n    print('Input: {}'.format(test_case))  # printing the test case.\n\n    output = replace_spaces(test_case)  # calling the function to get the output.\n\n    print('Output: {}'.format(output))  # printing the output of the program",
+        "clean_code": "\"\"\"\n\n\ndef replace_spaces(input_str):\n    input_str = input_str.replace(' ', '%20')\n    return input_str\n\n\nif __name__ == \"__main__\":  # main function to run the program.\n\n    test_case = 'a b c'  # test case for the program.\n\n    print('Input: {}'.format(test_case))  # printing the test case.\n\n    output = replace_spaces(test_case)  # calling the function to get the output.\n\n    print('Output: {}'.format(output))  # printing the output of the program"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\n'''\nimport numpy as np\ndef replace_spaces(string):\n    if type(string) != str: raise TypeError(\"Input must be a string\") # Check the type of input\n    string = list(string) # Convert the string to a list of characters. This is done to enable vectorized operations on it.\n\n    spaces = np.where(np.array(string) == ' ')[0] # Find all the spaces in the given string and return their indices\n\n    for i in range(len(spaces)): # Replace all spaces with '%20' \n        string[spaces[i]] = \"%20\"\n\n    return \"\".join(string) # Convert back to a single string and return it",
+        "clean_code": "'''\nimport numpy as np\ndef replace_spaces(string):\n    if type(string) != str: raise TypeError(\"Input must be a string\") # Check the type of input\n    string = list(string) # Convert the string to a list of characters. This is done to enable vectorized operations on it.\n\n    spaces = np.where(np.array(string) == ' ')[0] # Find all the spaces in the given string and return their indices\n\n    for i in range(len(spaces)): # Replace all spaces with '%20' \n        string[spaces[i]] = \"%20\"\n\n    return \"\".join(string) # Convert back to a single string and return it"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\nThe code is written in a way that the function checks for spaces and replaces them with '%20'.\n\"\"\"\ndef replace_space(string):\n    return string.replace(\" \", \"%20\")",
+        "clean_code": "The code is written in a way that the function checks for spaces and replaces them with '%20'.\n\"\"\"\ndef replace_space(string):\n    return string.replace(\" \", \"%20\")"
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to find the greatest common divisor (gcd) of two integers by using recursion.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nBreak the problem down into smaller pieces. Sorting the input might help you create an efficient solution, use vectorised operations when possible. Apply recursion where possible.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\n'''\n\n\ndef gcd(a, b):\n    if a == 0:\n        return b\n\n    return gcd(b % a, a)\n\n\nprint(gcd(12, 15))  # 3",
+        "clean_code": "'''\n\n\ndef gcd(a, b):\n    if a == 0:\n        return b\n\n    return gcd(b % a, a)\n\n\nprint(gcd(12, 15))  # 3"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\nI have written a function to solve the above question. No additional comments and docstrings are needed.\n'''\n\n\ndef gcd(a, b):\n\n    if a == 0:\n        return b\n\n    if b == 0:\n        return a\n\n    if a == b:\n        return a\n\n    if a > b:\n        return gcd(a-b, b)\n\n    return gcd(a, b-a)",
+        "clean_code": "I have written a function to solve the above question. No additional comments and docstrings are needed.\n'''\n\n\ndef gcd(a, b):\n\n    if a == 0:\n        return b\n\n    if b == 0:\n        return a\n\n    if a == b:\n        return a\n\n    if a > b:\n        return gcd(a-b, b)\n\n    return gcd(a, b-a)"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\n```python\ndef gcd(x, y):\n    if y == 0: return x\n    return gcd(y, x % y)\n```",
+        "clean_code": "```python\ndef gcd(x, y):\n    if y == 0: return x\n    return gcd(y, x % y)\n```"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n'''\ndef gcd(a, b):\n    if b==0: return a\n    return gcd(b,a%b)\n\n \nprint(gcd(10,15))",
+        "clean_code": "'''\ndef gcd(a, b):\n    if b==0: return a\n    return gcd(b,a%b)\n\n \nprint(gcd(10,15))"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\n'''\n# Write your code here. Make sure it passes all the test cases.\n\n \ndef gcd(x, y): \n    if x == 0 : \n        return y \n\n    return gcd(y % x, x) \n\n  \n# Driver program to test above function \nx = 12; y = 18; print(\"gcd({}, {}) = {}\".format(x, y, gcd(x, y)))",
+        "clean_code": "'''\n# Write your code here. Make sure it passes all the test cases.\n\n \ndef gcd(x, y): \n    if x == 0 : \n        return y \n\n    return gcd(y % x, x) \n\n  \n# Driver program to test above function \nx = 12; y = 18; print(\"gcd({}, {}) = {}\".format(x, y, gcd(x, y)))"
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to remove multiple spaces in a string by using regex.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nBreak the problem down into smaller pieces. Sorting the input might help you create an efficient solution, use vectorised operations when possible. Apply recursion where possible.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\n'''\n\n\ndef remove_multiple_spaces(string):\n    return re.sub(\"\\s+\", \" \", string)",
+        "clean_code": "'''\n\n\ndef remove_multiple_spaces(string):\n    return re.sub(\"\\s+\", \" \", string)"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n<code>def remove_spaces(string):\n    # write your code here\n    return string.replace(\"  \", \" \")\n\n\nif __name__ == '__main__':\n    print(remove_spaces(\"a   b   c\"))  # a b c\n</code>\n\n\nA:\n\nI would use <code>re.sub()</code>:\n<code>import re\ndef remove_spaces(string):     # string is the input string that you need to modify and return\n\n    return re.sub(' +', ' ', string)       # replace multiple spaces with a single space using regex sub() function\n\n         # write your code here\n\n         # return the modified string as output. You can also use print() to print directly but in this case, it will not be captured by our grader script, so please avoid printing and use return only to pass your answer back to the caller function. \n\n     if __name__ == '__main__':      # call your function here using input strings of your choice and check the output manually on IDE or command line terminal as shown below: \n\n     print(remove_spaces(\"a   b   c\"))  # a b c (output) \n\n      print(remove_spaces(\" abc\"))       # abc (output) \n\n      print(remove_spaces(\"abc \"))       # abc (output) \n\n      print(remove_spaces(\"abc def ghi jkl mno pqr stu vwx yz\"))        ## abc def ghi jkl mno pqr stu vwx yz (output)`enter code here`enter code here`enter code here`enter code here`enter code here`enter code here`enter code here`enter code her``e``e``e``e``e``e``e``e``ee ``ee ``ee ``ee ``ee ``ee ` ` ` ` ` ` ` e e e e e e e e eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeddddddddddddffffffffff ffff ffff ffff fff fff fff ff f ff ff ff ff ffffff rrrrrrr rrr rr rr rr rr rr tttttttt tttt tttt tttt tttt uuuuuuu uuu",
+        "clean_code": "<code>def remove_spaces(string):\n    # write your code here\n    return string.replace(\"  \", \" \")\n\n\nif __name__ == '__main__':\n    print(remove_spaces(\"a   b   c\"))  # a b c\n</code>\n\n\nA:\n\nI would use <code>re.sub()</code>:\n<code>import re\ndef remove_spaces(string):     # string is the input string that you need to modify and return\n\n    return re.sub(' +', ' ', string)       # replace multiple spaces with a single space using regex sub() function\n\n         # write your code here\n\n         # return the modified string as output. You can also use print() to print directly but in this case, it will not be captured by our grader script, so please avoid printing and use return only to pass your answer back to the caller function. \n\n     if __name__ == '__main__':      # call your function here using input strings of your choice and check the output manually on IDE or command line terminal as shown below: \n\n     print(remove_spaces(\"a   b   c\"))  # a b c (output) \n\n      print(remove_spaces(\" abc\"))       # abc (output) \n\n      print(remove_spaces(\"abc \"))       # abc (output) \n\n      print(remove_spaces(\"abc def ghi jkl mno pqr stu vwx yz\"))        ## abc def ghi jkl mno pqr stu vwx yz (output)`enter code here`enter code here`enter code here`enter code here`enter code here`enter code here`enter code here`enter code her``e``e``e``e``e``e``e``e``ee ``ee ``ee ``ee ``ee ``ee ` ` ` ` ` ` ` e e e e e e e e eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeddddddddddddffffffffff ffff ffff ffff fff fff fff ff f ff ff ff ff ffffff rrrrrrr rrr rr rr rr rr rr tttttttt tttt tttt tttt tttt uuuuuuu uuu"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n<code>def remove_multiple_spaces(string):\n    return re.sub(' +', ' ', string)\n</code>\n",
+        "clean_code": "<code>def remove_multiple_spaces(string):\n    return re.sub(' +', ' ', string)\n</code>"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\n'''\n\n\nimport re\ndef remove_multiple_spaces(string):\n    # Write your code here.\n    return re.sub(' +', ' ', string)",
+        "clean_code": "'''\n\n\nimport re\ndef remove_multiple_spaces(string):\n    # Write your code here.\n    return re.sub(' +', ' ', string)"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\n'''\nimport re\n\n\ndef remove_multiple_spaces(string):\n    return re.sub(' +', ' ', string)",
+        "clean_code": "'''\nimport re\n\n\ndef remove_multiple_spaces(string):\n    return re.sub(' +', ' ', string)"
+    }
+}

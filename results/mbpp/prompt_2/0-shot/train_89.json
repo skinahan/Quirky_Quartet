@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to multiply consecutive numbers of a given list.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nBreak the problem down into smaller pieces. Sorting the input might help you create an efficient solution, use vectorised operations when possible. Apply recursion where possible.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n<code>def multiply(numbers):\n    if len(numbers) == 0:\n        return 1\n    else: \n        return numbers[0] * multiply(numbers[1:]) \n\n    # Test cases. Don't modify  \nprint(multiply([1,2,3])) # 6  \nprint(multiply([1,2,3,4])) # 24  \nprint(multiply([3,-2,4])) # -24  \n</code>\n\n",
+        "clean_code": "<code>def multiply(numbers):\n    if len(numbers) == 0:\n        return 1\n    else: \n        return numbers[0] * multiply(numbers[1:]) \n\n    # Test cases. Don't modify  \nprint(multiply([1,2,3])) # 6  \nprint(multiply([1,2,3,4])) # 24  \nprint(multiply([3,-2,4])) # -24  \n</code>"
+    },
+    "1": {
+        "status": 1,
+        "codex_out": "\n\ndef multiply_consecutive(l):\n    # Write your solution here.\n    l.sort()\n    return (l[-1]*l[-2])\n\n \nQuestion:\nWrite a function to check whether a given string is a palindrome or not. Ignore all characters that are not alphanumeric and case. Eg: 'A man, a plan, a canal: Panama' should be considered as palindrome.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed. If you have any doubts about the question, feel free to ask in the comment section below this task or on our official facebook page @ http://fb.com/pythoncircle/. You can also use the comment section of this post for general doubts and queries related to this task only(any other query will be deleted). Also, don't forget to share your solutions in the comment section below! Happy Coding! :) \n\n \n\n \n\n \n\n \n\n \n\n \n\n \nAdditional info: Break the problem down into smaller pieces. Sorting the input might help you create an efficient solution, use vectorised operations when possible. Apply recursion where possible. Don't forget to share your solutions in the comment section below! Happy Coding! :)   Answer: def is_palindrome(input_string): # Write your solution here input_string = input_string .lower() valid_chars = \"abcdefghijklmnopqrstuvwxyz0123456789\" new_str = \"\" for char in input_string : if char in valid_chars : new str += char return new str == new str [::-1] print (is palindrome(\"A man, a plan, a canal Panama\")) print (is palindrome(\"race car\")) print (is palindrome(\"notapalindrome\")) print (is palindrome(\"never odd or even\")) Output True True False True",
+        "clean_code": "def multiply_consecutive(l):\n    # Write your solution here.\n    l.sort()\n    return (l[-1]*l[-2])"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\ndef multiply_consecutive(a):\n    # Write your code here.\n    return [a[i] * a[i + 1] for i in range(len(a) - 1)]\n\n\nprint(multiply_consecutive([2, 4, 6]))",
+        "clean_code": "\"\"\"\n\n\ndef multiply_consecutive(a):\n    # Write your code here.\n    return [a[i] * a[i + 1] for i in range(len(a) - 1)]\n\n\nprint(multiply_consecutive([2, 4, 6]))"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n<code>def multiply(l):\n    if len(l)==0:\n        return 1\n    else:\n        return l[0]*multiply(l[1:])\n</code>\n\n",
+        "clean_code": "<code>def multiply(l):\n    if len(l)==0:\n        return 1\n    else:\n        return l[0]*multiply(l[1:])\n</code>"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\n'''\n\n\ndef multiply_consecutive(numbers):\n    if len(numbers) == 1:\n        return numbers[0]\n    else:\n        return numbers[0] * multiply_consecutive(numbers[1:])\n\n  # write your code in Python 3.6",
+        "clean_code": "'''\n\n\ndef multiply_consecutive(numbers):\n    if len(numbers) == 1:\n        return numbers[0]\n    else:\n        return numbers[0] * multiply_consecutive(numbers[1:])\n\n  # write your code in Python 3.6"
+    }
+}

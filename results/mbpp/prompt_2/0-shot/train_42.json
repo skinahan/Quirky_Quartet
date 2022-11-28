@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function that matches a word containing 'z', not at the start or end of the word.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nBreak the problem down into smaller pieces. Sorting the input might help you create an efficient solution, use vectorised operations when possible. Apply recursion where possible.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\nimport re \ndef test_z(string): \n    \"\"\"Tests the string for the word containing 'z'\"\"\"\n    if re.search(r\"\\Bz\\B\", string): \n        return True \n\n    else: \n\n        return False",
+        "clean_code": "\"\"\"\nimport re \ndef test_z(string): \n    \"\"\"Tests the string for the word containing 'z'\"\"\"\n    if re.search(r\"\\Bz\\B\", string): \n        return True \n\n    else: \n\n        return False"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\ndef regex_match(string):\n    return re.search(r'\\Bz\\B', string) != None\n'''\n\n\ndef regex_match(string):\n    return re.search(r'\\Bz\\B', string) != None",
+        "clean_code": "def regex_match(string):\n    return re.search(r'\\Bz\\B', string) != None\n'''\n\n\ndef regex_match(string):\n    return re.search(r'\\Bz\\B', string) != None"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n<code>import re\ndef match_sxz(noun):\n    return bool(re.search(r'\\b[^z]*z[^z]*\\b', noun))\n</code>\n",
+        "clean_code": "<code>import re\ndef match_sxz(noun):\n    return bool(re.search(r'\\b[^z]*z[^z]*\\b', noun))\n</code>"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\nUse the following function signature:\ndef regex_match(test_string):\n    # Your code goes here\n    return result\nTest Cases:\nInput\tOutput\tExplanation\n\"z\"\tFalse\tNo other character in the word.\n\"abc\"\tFalse\tNo character matches.\n\"abzabc\"\tTrue\t'z' is present in the word. ('abz' or 'bza') \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                    Solution:   def regex_match(test_string):  # Your code goes here   return True if re.search(\"\\\\w*[^aeiou][^aeiou]\\\\w*\", test_string) else False",
+        "clean_code": "Use the following function signature:\ndef regex_match(test_string):\n    # Your code goes here\n    return result\nTest Cases:\nInput\tOutput\tExplanation\n\"z\"\tFalse\tNo other character in the word.\n\"abc\"\tFalse\tNo character matches.\n\"abzabc\"\tTrue\t'z' is present in the word. ('abz' or 'bza') \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                    Solution:   def regex_match(test_string):  # Your code goes here   return True if re.search(\"\\\\w*[^aeiou][^aeiou]\\\\w*\", test_string) else False"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\nimport re\ndef match_z(words):\n    \"\"\"This function matches a word containing 'z', not at the start or end of the word.\"\"\"\n    return [word for word in words if re.search(r'\\Bz\\B',word)]\n\n \nprint(match_z(['abc','dez','fgh','ijk']))",
+        "clean_code": "\"\"\"\nimport re\ndef match_z(words):\n    \"\"\"This function matches a word containing 'z', not at the start or end of the word.\"\"\"\n    return [word for word in words if re.search(r'\\Bz\\B',word)]\n\n \nprint(match_z(['abc','dez','fgh','ijk']))"
+    }
+}

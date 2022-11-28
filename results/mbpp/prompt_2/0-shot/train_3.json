@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to reverse words in a given string.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nBreak the problem down into smaller pieces. Sorting the input might help you create an efficient solution, use vectorised operations when possible. Apply recursion where possible.\nAnswer:",
+    "success": 1,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\nimport re\n\n\ndef solve_q1(input_string):\n\n    \"\"\"Returns a string in which words are reversed.\"\"\"\n\n    # Split the input into a list of words.\n    words = re.split('\\s', input_string)\n\n    # Reverse each word in the list using the reverse() method.\n    for i in range(len(words)):\n        words[i] = ''.join(reversed(words[i]))\n\n    # Join all the reversed words together to form a new string with spaces between them.\n    output = ' '.join([str(elem) for elem in words])  # List comprehension to convert ints to strings.\n\n    return output",
+        "clean_code": "\"\"\"\nimport re\n\n\ndef solve_q1(input_string):\n\n    \"\"\"Returns a string in which words are reversed.\"\"\"\n\n    # Split the input into a list of words.\n    words = re.split('\\s', input_string)\n\n    # Reverse each word in the list using the reverse() method.\n    for i in range(len(words)):\n        words[i] = ''.join(reversed(words[i]))\n\n    # Join all the reversed words together to form a new string with spaces between them.\n    output = ' '.join([str(elem) for elem in words])  # List comprehension to convert ints to strings.\n\n    return output"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\nimport numpy as np\n\n\ndef reverse_words(input):\n\n    # split the string into a list of words.\n    input = input.split()\n\n    # reverse the list of words.\n    input = input[::-1]\n\n    # join the list of words back together, separated by spaces.\n    output = ' '.join(input)\n\n    return output",
+        "clean_code": "\"\"\"\nimport numpy as np\n\n\ndef reverse_words(input):\n\n    # split the string into a list of words.\n    input = input.split()\n\n    # reverse the list of words.\n    input = input[::-1]\n\n    # join the list of words back together, separated by spaces.\n    output = ' '.join(input)\n\n    return output"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\nThe following code solves the problem.\n\"\"\"\n#!/usr/bin/env python3\nimport sys\n\n\ndef reverse_words(s):\n    return s[::-1]\n\n\nif __name__ == \"__main__\":  # pragma: no cover\n    if len(sys.argv) == 1:  # pragma: no cover\n        input_string = input(\"Enter your string: \")  # pragma: no cover\n        print(reverse_words(input_string))  # pragma: no cover\n\n    else:  # pragma: no cover\n\n        print(reverse_words(sys.argv[1]))",
+        "clean_code": "The following code solves the problem.\n\"\"\"\n#!/usr/bin/env python3\nimport sys\n\n\ndef reverse_words(s):\n    return s[::-1]\n\n\nif __name__ == \"__main__\":  # pragma: no cover\n    if len(sys.argv) == 1:  # pragma: no cover\n        input_string = input(\"Enter your string: \")  # pragma: no cover\n        print(reverse_words(input_string))  # pragma: no cover\n\n    else:  # pragma: no cover\n\n        print(reverse_words(sys.argv[1]))"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\ndef reverse_words(input):\n    \"\"\"\n    Reverses order or words in string.\n    >>> reverse_words(\"hello world\")\n    'world hello'\n\n    >>> reverse_words(\"this is a string of words\")\n    'words of string a is this'\n\n    >>> reverse_words(\"a b c d e f g h i j k l m n o p q r s t u v w x y z\")\n    'z y x w v u t s r q p o n m l k j i h g f e d c b a'\n\n   \"\"\"\n\n   # TODO: Implement me\n\n   return None",
+        "clean_code": "def reverse_words(input):\n    \"\"\"\n    Reverses order or words in string.\n    >>> reverse_words(\"hello world\")\n    'world hello'\n\n    >>> reverse_words(\"this is a string of words\")\n    'words of string a is this'\n\n    >>> reverse_words(\"a b c d e f g h i j k l m n o p q r s t u v w x y z\")\n    'z y x w v u t s r q p o n m l k j i h g f e d c b a'\n\n   \"\"\"\n\n   # TODO: Implement me\n\n   return None"
+    },
+    "4": {
+        "status": 0,
+        "codex_out": "\ndef reverse(string):\n    string_list = string.split()\n    reverse_list = string_list[::-1]\n    return ' '.join(reverse_list)",
+        "clean_code": "def reverse(string):\n    string_list = string.split()\n    reverse_list = string_list[::-1]\n    return ' '.join(reverse_list)"
+    }
+}

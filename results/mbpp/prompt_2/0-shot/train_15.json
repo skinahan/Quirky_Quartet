@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to perfom the modulo of tuple elements in the given two tuples.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nBreak the problem down into smaller pieces. Sorting the input might help you create an efficient solution, use vectorised operations when possible. Apply recursion where possible.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\ndef modulo_of_tuples(tuple1, tuple2):\n    return tuple([x % y for x, y in zip(tuple1, tuple2)])\n\n\nprint(modulo_of_tuples((10, 20), (3, 5)))",
+        "clean_code": "\"\"\"\n\n\ndef modulo_of_tuples(tuple1, tuple2):\n    return tuple([x % y for x, y in zip(tuple1, tuple2)])\n\n\nprint(modulo_of_tuples((10, 20), (3, 5)))"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\n'''\nimport numpy as np\nfrom functools import reduce\n\n\ndef modulo(t1, t2):\n    return tuple(np.mod(np.array(t1), np.array(t2)))\n\n\ndef modulo_recursive(t1, t2):\n    if len(t1) == 0:  # base case empty tuple\n        return ()  # return empty tuple\n\n    else:  # recursive case non-empty tuple (head and tail)\n\n        head = t1[0] % t2[0]  # head element of result is modulo of first elements of input tuples\n\n        tail = modulo_recursive(t1[1:], t2[1:])  # recursive call on tails of the two tuples to get tail elements of result\n\n        return (head,) + tail  # concatenate head and tail to get the result tuple",
+        "clean_code": "'''\nimport numpy as np\nfrom functools import reduce\n\n\ndef modulo(t1, t2):\n    return tuple(np.mod(np.array(t1), np.array(t2)))\n\n\ndef modulo_recursive(t1, t2):\n    if len(t1) == 0:  # base case empty tuple\n        return ()  # return empty tuple\n\n    else:  # recursive case non-empty tuple (head and tail)\n\n        head = t1[0] % t2[0]  # head element of result is modulo of first elements of input tuples\n\n        tail = modulo_recursive(t1[1:], t2[1:])  # recursive call on tails of the two tuples to get tail elements of result\n\n        return (head,) + tail  # concatenate head and tail to get the result tuple"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n'''\ndef mod_tuple(a,b):\n    return tuple([i%j for i,j in zip(a,b)])",
+        "clean_code": "'''\ndef mod_tuple(a,b):\n    return tuple([i%j for i,j in zip(a,b)])"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\n'''\n\n\ndef modulo_tuple(t1, t2):\n    if len(t1) != len(t2):\n        return None\n\n    return tuple([x % y for x, y in zip(t1, t2)])\n\n\ndef main():\n    print(modulo_tuple((10, 20), (3, 5)))\n\n\nif __name__ == '__main__':\n    main()",
+        "clean_code": "'''\n\n\ndef modulo_tuple(t1, t2):\n    if len(t1) != len(t2):\n        return None\n\n    return tuple([x % y for x, y in zip(t1, t2)])\n\n\ndef main():\n    print(modulo_tuple((10, 20), (3, 5)))\n\n\nif __name__ == '__main__':\n    main()"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\n'''\n\n\ndef modulo(tuple1, tuple2):\n    # Define your function here.\n    return tuple(map(lambda x, y: x % y if y else 0, tuple1, tuple2))",
+        "clean_code": "'''\n\n\ndef modulo(tuple1, tuple2):\n    # Define your function here.\n    return tuple(map(lambda x, y: x % y if y else 0, tuple1, tuple2))"
+    }
+}
