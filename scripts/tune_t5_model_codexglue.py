@@ -85,13 +85,10 @@ def tune_model():
     model.model.save_pretrained(save_directory)
 
 
-
-
-
 def test_model():
     save_file = "./"
-    #model = T5ForConditionalGeneration.from_pretrained(save_file)
-    model = T5ForConditionalGeneration.from_pretrained("Salesforce/codet5-small")
+    model = T5ForConditionalGeneration.from_pretrained(save_file)
+    #model = T5ForConditionalGeneration.from_pretrained("Salesforce/codet5-small")
     tokenizer = RobertaTokenizer.from_pretrained("Salesforce/codet5-small")
     dataset = load_dataset("code_x_glue_ct_code_to_text", "python")
     test_example = dataset['test'][2]
@@ -129,22 +126,24 @@ def test_model():
 
 def evaluation_format():
     answer_file = open("answers.json", "w")
-    pred_file = open("predictions.txt", "w")
+    pred_file = open("predictions.txt", "w", encoding="utf-8")
 
-    with open('t5_out_codex_tuned.csv', 'r', encoding="utf-8") as f_obj:
+    with open('t5_out_codex_untuned.csv', 'r', encoding="utf-8") as f_obj:
         reader_obj = csv.reader(f_obj)
         for row in reader_obj:
-            # Create a dict for the answer
-            answer_obj = {}
-            answer_obj["code"] = row[1]
-            answer_obj["nl"] = row[0]
+            if len(row) > 0:
+                # Create a dict for the answer
+                answer_obj = {}
+                answer_obj["code"] = row[1]
+                answer_obj["nl"] = row[0]
 
-            # Output the json to the answer file
-            json.dump(answer_obj, answer_file)
+                # Output the json to the answer file
+                json.dump(answer_obj, answer_file)
 
-            # Output the prediction to the predictions file
-            pred_no_newlines = row[2].replace("\n", "")
-            pred_file.write(pred_no_newlines + "\n")
+                # Output the prediction to the predictions file
+                pred_no_newlines = row[2].replace("\n", "")
+                pred_file.write(pred_no_newlines + "\n")
+
 
         f_obj.close()
     answer_file.close()
@@ -152,9 +151,7 @@ def evaluation_format():
 
 
 def run():
-    # tune_model()
+    tune_model()
     test_model()
-
-test_model()
-
+    # evaluation_format()
 
