@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a python function to check whether the given number can be represented by sum of two squares or not.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nWhich data structure is being used? Can the task be split into smaller sub-tasks? How many loops are needed to solve the tasks? Solve sub-tasks iteratively to find the answer\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\nNo Data Structure is needed.\nThe task can be split into smaller sub-tasks.\nTwo loops are needed to solve the tasks.\n'''\ndef sum_of_squares(num):\n    '''This function returns True if the given number can be represented by sum of two squares and False otherwise.'''\n\n    for i in range(1, num): # loop to find the first square number less than or equal to num\n\n        for j in range(i, num): # loop to find the second square number less than or equal to num\n\n            if (i*i + j*j) == num: # check whether i^2 + j^2 = given number\n\n                return True # return True if condition is satisfied\n\n    return False # return False if condition is not satisfied",
+        "clean_code": "No Data Structure is needed.\nThe task can be split into smaller sub-tasks.\nTwo loops are needed to solve the tasks.\n'''\ndef sum_of_squares(num):\n    '''This function returns True if the given number can be represented by sum of two squares and False otherwise.'''\n\n    for i in range(1, num): # loop to find the first square number less than or equal to num\n\n        for j in range(i, num): # loop to find the second square number less than or equal to num\n\n            if (i*i + j*j) == num: # check whether i^2 + j^2 = given number\n\n                return True # return True if condition is satisfied\n\n    return False # return False if condition is not satisfied"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\ndef sum_of_two_squares(n):\n    if n < 0:\n        return False\n\n    for i in range(0, int((n / 2) ** 0.5) + 1):\n        for j in range(0, int((n / 2) ** 0.5) + 1):\n            if i * i + j * j == n:\n                return True\n\n    return False\n\n\nprint(\"The number can be represented by sum of two squares :\", sum_of_two_squares(25))",
+        "clean_code": "\"\"\"\ndef sum_of_two_squares(n):\n    if n < 0:\n        return False\n\n    for i in range(0, int((n / 2) ** 0.5) + 1):\n        for j in range(0, int((n / 2) ** 0.5) + 1):\n            if i * i + j * j == n:\n                return True\n\n    return False\n\n\nprint(\"The number can be represented by sum of two squares :\", sum_of_two_squares(25))"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef squaresum(n):\n    for i in range(n):\n        j = n - (i ** 2)\n        if (j ** 0.5) % 1 == 0:\n            return True\n    return False\n\n  #  for i in range(n):\n   #     for j in range(n):\n\n  #          if i**2 + j**2 == n:\n\n   #             return True\n\n    #return False",
+        "clean_code": "\"\"\"\ndef squaresum(n):\n    for i in range(n):\n        j = n - (i ** 2)\n        if (j ** 0.5) % 1 == 0:\n            return True\n    return False\n\n  #  for i in range(n):\n   #     for j in range(n):\n\n  #          if i**2 + j**2 == n:\n\n   #             return True\n\n    #return False"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef check_sum_of_squares(input_number):\n    # Write your code here\n\n    if input_number < 0:\n        return False\n\n    for i in range(0, int(math.sqrt(input_number)) + 1):\n        for j in range (i, int(math.sqrt(input_number)) + 1):\n            if i**2 + j**2 == input_number:\n                return True\n\n    return False",
+        "clean_code": "\"\"\"\ndef check_sum_of_squares(input_number):\n    # Write your code here\n\n    if input_number < 0:\n        return False\n\n    for i in range(0, int(math.sqrt(input_number)) + 1):\n        for j in range (i, int(math.sqrt(input_number)) + 1):\n            if i**2 + j**2 == input_number:\n                return True\n\n    return False"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\ndef is_sum_of_squares(number):\n    \"\"\"\n\n    :param number: int\n    :return: bool\n    \"\"\"\n\n    for i in range(0, number):\n        for j in range(0, number):\n\n            if (i * i + j * j) == number:\n                return True\n\n    return False",
+        "clean_code": "\"\"\"\n\n\ndef is_sum_of_squares(number):\n    \"\"\"\n\n    :param number: int\n    :return: bool\n    \"\"\"\n\n    for i in range(0, number):\n        for j in range(0, number):\n\n            if (i * i + j * j) == number:\n                return True\n\n    return False"
+    }
+}

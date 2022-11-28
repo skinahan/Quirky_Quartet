@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a python function to find the smallest missing number from the given array.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nPay attention to the datatype of input and expected output. Is the input a tuple? Is the input a string? Is the input a matrix? Use correct data structure to derive the needed answer.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 1,
+        "codex_out": "\n\ndef find_smallest_missing(arr):\n    n = len(arr)\n    if n == 1:\n        return arr[0] + 1\n\n    arr.sort()\n\n    for i in range(n):\n        if arr[i] != i:\n            return i\n\n    return n",
+        "clean_code": "def find_smallest_missing(arr):\n    n = len(arr)\n    if n == 1:\n        return arr[0] + 1\n\n    arr.sort()\n\n    for i in range(n):\n        if arr[i] != i:\n            return i\n\n    return n"
+    },
+    "1": {
+        "status": 1,
+        "codex_out": "\ndef find_smallest_missing(input_list):\n    input_list.sort()\n    for i in range(len(input_list)):\n        if input_list[i]!=i:\n            return i\n    return len(input_list)\n\n\nprint(\"The smallest missing number is:\", find_smallest_missing([0, 1, 2, 6, 9, 11, 15]))  # 3\nprint(\"The smallest missing number is:\", find_smallest_missing([1, 2, 3, 4, 6, 9]))  # 0\n\n \nQuestion: Write a python function to check if the given string is a pangram or not. (Assume the string passed in does not have any punctuation) Note : Pangrams are words or sentences containing every letter of the alphabet at least once. For example : \"The quick brown fox jumps over the lazy dog\" Task: Write a python function to solve the above question. No additional comments and docstrings are needed. Additional info: Pay attention to the datatype of input and expected output. Is the input a tuple? Is the input a string? Is the input a matrix? Use correct data structure to derive the needed answer. Answer: import string def checkPangram(s): Alphabet = \"abcdefghijklmnopqrstuvwxyz\" for char in Alphabet: if char not in s.lower(): return False return True print(checkPangram(\"The quick brown fox jumps over the lazy dog\")) Question Write a Python program that accepts an integer (n) and computes n+nn+nnn using Python's built-in operators only! Task Write a Python program that accepts an integer (n) and computes n+nn+nnn using Python's built-in operators only! Additional info Pay attention to what type of variable you need for this problem! Hint The value of n should be entered by user from keyboard Answer def compute(number): t = str(number) t1 = t + t t2 = t + t +t comp = number + int(t1) + int (t2) print(\"Value computed is : \",comp ) num = int (input (\"Enter an integer : \")) compute (num) Question Write a python function which takes two numbers as arguments and returns their sum after applying following operations on them - If both numbers are even then",
+        "clean_code": "def find_smallest_missing(input_list):\n    input_list.sort()\n    for i in range(len(input_list)):\n        if input_list[i]!=i:\n            return i\n    return len(input_list)\n\n\nprint(\"The smallest missing number is:\", find_smallest_missing([0, 1, 2, 6, 9, 11, 15]))  # 3\nprint(\"The smallest missing number is:\", find_smallest_missing([1, 2, 3, 4, 6, 9]))  # 0"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\ndef find_smallest(number_list):\n    number_list.sort()\n\n    for i, num in enumerate(number_list):\n        if i != num:\n            return i\n\n    return len(number_list)",
+        "clean_code": "\"\"\"\n\n\ndef find_smallest(number_list):\n    number_list.sort()\n\n    for i, num in enumerate(number_list):\n        if i != num:\n            return i\n\n    return len(number_list)"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n'''\ndef find_smallest(number_list):\n    #start writing your code here\n    number_list.sort()\n    for i in range(len(number_list)):\n        if number_list[i] != i+1:\n            return i+1\n\n    return len(number_list)+1\n\n\n\n\n\n\n\n\n\n    \t\t\t\t#Test cases provided by the question setter. Do not change it. \nprint(find_smallest([0, 10, 2, -10, -20]))",
+        "clean_code": "'''\ndef find_smallest(number_list):\n    #start writing your code here\n    number_list.sort()\n    for i in range(len(number_list)):\n        if number_list[i] != i+1:\n            return i+1\n\n    return len(number_list)+1\n\n\n\n\n\n\n\n\n\n    \t\t\t\t#Test cases provided by the question setter. Do not change it. \nprint(find_smallest([0, 10, 2, -10, -20]))"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\ndef find_smallest_missing(input_list):\n    input_list.sort()\n\n    for index, element in enumerate(input_list):\n        if index != element:\n            return index\n\n    return len(input_list)",
+        "clean_code": "\"\"\"\n\n\ndef find_smallest_missing(input_list):\n    input_list.sort()\n\n    for index, element in enumerate(input_list):\n        if index != element:\n            return index\n\n    return len(input_list)"
+    }
+}

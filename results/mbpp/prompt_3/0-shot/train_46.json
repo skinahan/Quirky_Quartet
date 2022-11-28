@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to split a string at uppercase letters.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nPay attention to the datatype of input and expected output. Is the input a tuple? Is the input a string? Is the input a matrix? Use correct data structure to derive the needed answer.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n'''\ndef split_uppercase(input_string):\n    return re.findall('[A-Z][^A-Z]*', input_string)",
+        "clean_code": "'''\ndef split_uppercase(input_string):\n    return re.findall('[A-Z][^A-Z]*', input_string)"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n<code>def split_at_uppercase(s):\n    l = []\n    for i in s:\n        if i.isupper():\n            l.append(i)\n        else:\n            l[-1] += i\n\n    return tuple(l)  # or list(l) or whatever you want to return. I chose tuple as it's immutable and safer to use, but it's up to you.\n\n\nprint split_at_uppercase(\"IncorrectInput\")  # ('Incorrect', 'Input')\nprint split_at_uppercase(\"HelloWorld\")  # ('Hello', 'World')\n</code>\n\n",
+        "clean_code": "<code>def split_at_uppercase(s):\n    l = []\n    for i in s:\n        if i.isupper():\n            l.append(i)\n        else:\n            l[-1] += i\n\n    return tuple(l)  # or list(l) or whatever you want to return. I chose tuple as it's immutable and safer to use, but it's up to you.\n\n\nprint split_at_uppercase(\"IncorrectInput\")  # ('Incorrect', 'Input')\nprint split_at_uppercase(\"HelloWorld\")  # ('Hello', 'World')\n</code>"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\ndef split_string(s):\n    return [''.join(y) for y in re.findall('[A-Z][^A-Z]*', s)]\n'''",
+        "clean_code": "def split_string(s):\n    return [''.join(y) for y in re.findall('[A-Z][^A-Z]*', s)]\n'''"
+    },
+    "3": {
+        "status": 1,
+        "codex_out": "\n\ndef split_at_uppercase(s, t):\n    for i in range(len(s)):\n        if s[i].isupper():\n            t.append(s[:i])\n            split_at_uppercase(s[i:], t)\n            break #you need to break here because you only want to append the first occurrence of an uppercase letter\n\n    else: #if there are no uppercase letters in the string, then add the string as is to the list and return it. \n        t.append(s)\n\n    return t \n\n     */",
+        "clean_code": "def split_at_uppercase(s, t):\n    for i in range(len(s)):\n        if s[i].isupper():\n            t.append(s[:i])\n            split_at_uppercase(s[i:], t)\n            break #you need to break here because you only want to append the first occurrence of an uppercase letter\n\n    else: #if there are no uppercase letters in the string, then add the string as is to the list and return it. \n        t.append(s)\n\n    return t"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n'''\n\ndef split_string(s):\n    return [''.join(group) for is_upper, group in itertools.groupby(s, str.isupper) if is_upper]",
+        "clean_code": "'''\n\ndef split_string(s):\n    return [''.join(group) for is_upper, group in itertools.groupby(s, str.isupper) if is_upper]"
+    }
+}

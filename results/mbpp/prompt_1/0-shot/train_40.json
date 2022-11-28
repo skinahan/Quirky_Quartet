@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to find the nth nonagonal number.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nWhich data structure is being used? Can the task be split into smaller sub-tasks? How many loops are needed to solve the tasks? Solve sub-tasks iteratively to find the answer\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n<code>def nonagonal(n):\n    return (3*n**2-3*n+1)/2\n</code>\n\n\nA:\n\nYou can simply use the formula <code>(3 * n**2 - 3 * n + 1) / 2</code>. If you want to solve it iteratively, you can use this code: \n<code>def nonagonal(n):\n\n    sum = 0\n\n    for i in range(1, n + 1):\n\n        sum += i * 3 - 2\n\n    return sum\n</code>\n",
+        "clean_code": "<code>def nonagonal(n):\n    return (3*n**2-3*n+1)/2\n</code>\n\n\nA:\n\nYou can simply use the formula <code>(3 * n**2 - 3 * n + 1) / 2</code>. If you want to solve it iteratively, you can use this code: \n<code>def nonagonal(n):\n\n    sum = 0\n\n    for i in range(1, n + 1):\n\n        sum += i * 3 - 2\n\n    return sum\n</code>"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n<code>def nth_nonagonal(n):\n    return (n * (3 * n - 2)) // 2\n</code>\n",
+        "clean_code": "<code>def nth_nonagonal(n):\n    return (n * (3 * n - 2)) // 2\n</code>"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n<code>def nth_nonagonal(n):\n    return n*(n-1)/2 + 1\n</code>\n",
+        "clean_code": "<code>def nth_nonagonal(n):\n    return n*(n-1)/2 + 1\n</code>"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n<code>def nth_nonagonal(n):\n    return (n * (n - 1) / 2) * (2 * n - 1)\n</code>\n",
+        "clean_code": "<code>def nth_nonagonal(n):\n    return (n * (n - 1) / 2) * (2 * n - 1)\n</code>"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n<code>def nonagonal(n):\n    return n*(3*n-2)\n</code>\n",
+        "clean_code": "<code>def nonagonal(n):\n    return n*(3*n-2)\n</code>"
+    }
+}

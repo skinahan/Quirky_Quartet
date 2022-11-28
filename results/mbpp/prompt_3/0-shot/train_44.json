@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to find the product of it\u2019s kth index in the given tuples.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nPay attention to the datatype of input and expected output. Is the input a tuple? Is the input a string? Is the input a matrix? Use correct data structure to derive the needed answer.\nAnswer:",
+    "success": 1,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\n'''\n\n\ndef product_of_kth_index(tpl, k):\n    return reduce(lambda x, y: x*y, [t[k] for t in tpl])",
+        "clean_code": "'''\n\n\ndef product_of_kth_index(tpl, k):\n    return reduce(lambda x, y: x*y, [t[k] for t in tpl])"
+    },
+    "1": {
+        "status": 0,
+        "codex_out": "\ndef product_tuple(tup,k):\n    prod = 1\n    for i in range(len(tup)):\n        prod*= tup[i][k] \n    return prod\n\n",
+        "clean_code": "def product_tuple(tup,k):\n    prod = 1\n    for i in range(len(tup)):\n        prod*= tup[i][k] \n    return prod"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\n'''\ndef product(tup):\n    s = 1\n    for i in tup:\n        s *= i[1]\n\n    return s",
+        "clean_code": "'''\ndef product(tup):\n    s = 1\n    for i in tup:\n        s *= i[1]\n\n    return s"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\ndef product_of_kth(input_tuple, k):\n  # write your code here\n\"\"\"\n\n\ndef product_of_kth(input_tuple, k):\n\n    return [item[k] for item in input_tuple]\n\n\nif __name__ == \"__main__\":\n    print(product_of_kth(((1, 2), (3, 4)), 1))",
+        "clean_code": "def product_of_kth(input_tuple, k):\n  # write your code here\n\"\"\"\n\n\ndef product_of_kth(input_tuple, k):\n\n    return [item[k] for item in input_tuple]\n\n\nif __name__ == \"__main__\":\n    print(product_of_kth(((1, 2), (3, 4)), 1))"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\ndef find_product(input_tuple, k):\n\n    # Write your code here.\n    return product\n\n\nInput Format: \nThe first line contains the number of test cases T. \nEach test case contains two lines, First line contains a tuple, and second line contains an integer k.  \nOutput Format: \nFor each test case, print the required answer for that particular test case in a new line. \n\n\nConstraints: \n1<=T<=100 1<=k<=len(tuple) 1<=len(tuple) <=10^3 0<=each element in tuple <=10^5\n\n * @author vivedula\n\n */public class TuplesProduct {\n\n\t/**\n\t * @param args\n\t */public static void main(String[] args) {\n\n\t}static void findProduct(int[] arr){int prod = 1;for (int i = 0; i < arr.length; i++){prod = prod * arr[i];}System.out.println(\"the product is \" + prod);}static int convertToInt(String s){int result = 0;for (int i = s.length() - 1; i >= 0; --i){char c = s.charAt(i);result += Math.pow(26, (s.length() - 1 - i)) * (c - 'A' + 1);}return result;}static int sumOfDigitsInNumber(int number){if (number == 0)return number;return ((number % 10) + sumOfDigitsInNumber((number / 10)));}}",
+        "clean_code": "def find_product(input_tuple, k):\n\n    # Write your code here.\n    return product\n\n\nInput Format: \nThe first line contains the number of test cases T. \nEach test case contains two lines, First line contains a tuple, and second line contains an integer k.  \nOutput Format: \nFor each test case, print the required answer for that particular test case in a new line. \n\n\nConstraints: \n1<=T<=100 1<=k<=len(tuple) 1<=len(tuple) <=10^3 0<=each element in tuple <=10^5\n\n * @author vivedula\n\n */public class TuplesProduct {\n\n\t/**\n\t * @param args\n\t */public static void main(String[] args) {\n\n\t}static void findProduct(int[] arr){int prod = 1;for (int i = 0; i < arr.length; i++){prod = prod * arr[i];}System.out.println(\"the product is \" + prod);}static int convertToInt(String s){int result = 0;for (int i = s.length() - 1; i >= 0; --i){char c = s.charAt(i);result += Math.pow(26, (s.length() - 1 - i)) * (c - 'A' + 1);}return result;}static int sumOfDigitsInNumber(int number){if (number == 0)return number;return ((number % 10) + sumOfDigitsInNumber((number / 10)));}}"
+    }
+}

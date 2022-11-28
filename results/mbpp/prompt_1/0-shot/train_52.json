@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to group a sequence of key-value pairs into a dictionary of lists using collections module.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nWhich data structure is being used? Can the task be split into smaller sub-tasks? How many loops are needed to solve the tasks? Solve sub-tasks iteratively to find the answer\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\n'''\nfrom collections import defaultdict\ndef groupby(func, seq): \n    d = defaultdict(list) \n    for i in seq: \n        d[func(i)].append(i) \n\n    return dict(d)",
+        "clean_code": "'''\nfrom collections import defaultdict\ndef groupby(func, seq): \n    d = defaultdict(list) \n    for i in seq: \n        d[func(i)].append(i) \n\n    return dict(d)"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n'''\nfrom collections import defaultdict\n\n\ndef group_by_owners(files):\n    '''Group files by owners.'''\n    result = defaultdict(list)\n    for key, value in files.items():\n        result[value].append(key)\n\n    return dict(result)",
+        "clean_code": "'''\nfrom collections import defaultdict\n\n\ndef group_by_owners(files):\n    '''Group files by owners.'''\n    result = defaultdict(list)\n    for key, value in files.items():\n        result[value].append(key)\n\n    return dict(result)"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\n\nfrom collections import defaultdict\n\n\ndef group_by_owners(files):\n    result = defaultdict(list)\n\n    for key, value in files.items():\n        result[value].append(key)\n\n    return result",
+        "clean_code": "\"\"\"\n\nfrom collections import defaultdict\n\n\ndef group_by_owners(files):\n    result = defaultdict(list)\n\n    for key, value in files.items():\n        result[value].append(key)\n\n    return result"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n<code>from collections import defaultdict\ndef groupby(func, seq):\n    d = defaultdict(list)\n    for i in seq:\n        d[func(i)].append(i)\n    return dict(d)\n\n  print groupby(lambda x: x % 2, [0,1,2,3,4,5])  # {0: [0, 2, 4], 1: [1, 3]}\n  print groupby(lambda x: 'odd' if x % 2 else 'even', [1, 2])  # {'even': [2], 'odd': [1]}\n</code>\n\n",
+        "clean_code": "<code>from collections import defaultdict\ndef groupby(func, seq):\n    d = defaultdict(list)\n    for i in seq:\n        d[func(i)].append(i)\n    return dict(d)\n\n  print groupby(lambda x: x % 2, [0,1,2,3,4,5])  # {0: [0, 2, 4], 1: [1, 3]}\n  print groupby(lambda x: 'odd' if x % 2 else 'even', [1, 2])  # {'even': [2], 'odd': [1]}\n</code>"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n'''\nfrom collections import defaultdict\n\n\ndef group_by_keys(data):\n    result = defaultdict(list)\n\n    for key, value in data:\n        result[key].append(value)\n\n    return result",
+        "clean_code": "'''\nfrom collections import defaultdict\n\n\ndef group_by_keys(data):\n    result = defaultdict(list)\n\n    for key, value in data:\n        result[key].append(value)\n\n    return result"
+    }
+}

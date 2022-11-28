@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to calculate wind chill index.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nWhich data structure is being used? Can the task be split into smaller sub-tasks? How many loops are needed to solve the tasks? Solve sub-tasks iteratively to find the answer\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\nimport math\n\n\ndef wind_chill_index(t, v):\n    w = 35.74 + 0.6215 * t + (0.4275 * t - 35.75) * pow(v, 0.16)\n\n    return round(w, 2)\n\n\nif __name__ == \"__main__\":\n    temp = float(input(\"Enter Temperature: \"))  # in Fahrenheit scale\n\n    velocity = float(input(\"Enter Velocity: \"))  # in miles per hour\n\n    print(\"Wind Chill Index is:\", wind_chill_index(temp, velocity))",
+        "clean_code": "\"\"\"\nimport math\n\n\ndef wind_chill_index(t, v):\n    w = 35.74 + 0.6215 * t + (0.4275 * t - 35.75) * pow(v, 0.16)\n\n    return round(w, 2)\n\n\nif __name__ == \"__main__\":\n    temp = float(input(\"Enter Temperature: \"))  # in Fahrenheit scale\n\n    velocity = float(input(\"Enter Velocity: \"))  # in miles per hour\n\n    print(\"Wind Chill Index is:\", wind_chill_index(temp, velocity))"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n'''\n\ndef wind_chill(t, v):\n    w = 35.74 + (0.6215 * t) + ((0.4275 * t) - 35.75) * (v ** 0.16);\n    return w;",
+        "clean_code": "'''\n\ndef wind_chill(t, v):\n    w = 35.74 + (0.6215 * t) + ((0.4275 * t) - 35.75) * (v ** 0.16);\n    return w;"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\nimport math\ndef wind_chill(temp,velocity):\n    \"\"\"Return wind chill index based on temperature and velocity\"\"\"\n    if temp<=50 and 3<=velocity<=120:\n        return 35.74+0.6215*temp+((0.4275*temp-35.75)*math.pow(velocity,0.16))\n    else: return \"invalid input\"",
+        "clean_code": "\"\"\"\nimport math\ndef wind_chill(temp,velocity):\n    \"\"\"Return wind chill index based on temperature and velocity\"\"\"\n    if temp<=50 and 3<=velocity<=120:\n        return 35.74+0.6215*temp+((0.4275*temp-35.75)*math.pow(velocity,0.16))\n    else: return \"invalid input\""
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\nimport math\n\n\ndef wind_chill(temp, wind):\n    return 13.12 + 0.6215 * temp - 11.37 * (wind ** 0.16) + 0.3965 * temp * (wind ** 0.16)\n\n\nif __name__ == \"__main__\":\n\n    print(\"Wind Chill Index:\", round(wind_chill(float(input()), float(input())), 2))",
+        "clean_code": "\"\"\"\nimport math\n\n\ndef wind_chill(temp, wind):\n    return 13.12 + 0.6215 * temp - 11.37 * (wind ** 0.16) + 0.3965 * temp * (wind ** 0.16)\n\n\nif __name__ == \"__main__\":\n\n    print(\"Wind Chill Index:\", round(wind_chill(float(input()), float(input())), 2))"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\ndef windchill(t, v):\n    \"\"\"\n    Calculate the wind chill index.\n\n    :param t: Temperature in Fahrenheit degrees.\n    :param v: Wind speed in miles per hour.\n\n    :returns: Wind chill index in Fahrenheit degrees.\n\n    >>> windchill(-5, 5)  # doctest: +ELLIPSIS +NORMALIZE_WHITESPACE\n    -9.7...\n    >>> windchill(40, 35)  # doctest: +ELLIPSIS +NORMALIZE_WHITESPACE\n    21.2...\n\n    \"\"\"\n\n    ",
+        "clean_code": "\"\"\"\n\n\ndef windchill(t, v):\n    \"\"\"\n    Calculate the wind chill index.\n\n    :param t: Temperature in Fahrenheit degrees.\n    :param v: Wind speed in miles per hour.\n\n    :returns: Wind chill index in Fahrenheit degrees.\n\n    >>> windchill(-5, 5)  # doctest: +ELLIPSIS +NORMALIZE_WHITESPACE\n    -9.7...\n    >>> windchill(40, 35)  # doctest: +ELLIPSIS +NORMALIZE_WHITESPACE\n    21.2...\n\n    \"\"\""
+    }
+}

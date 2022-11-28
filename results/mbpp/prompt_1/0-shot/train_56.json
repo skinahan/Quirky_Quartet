@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a python function to find the first digit in factorial of a given number.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nWhich data structure is being used? Can the task be split into smaller sub-tasks? How many loops are needed to solve the tasks? Solve sub-tasks iteratively to find the answer\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\ndef find_first_digit_in_factorial(n):\n    factorial = 1\n    for i in range(2, n + 1):\n        factorial *= i\n\n    return int(str(factorial)[0])",
+        "clean_code": "\"\"\"\n\n\ndef find_first_digit_in_factorial(n):\n    factorial = 1\n    for i in range(2, n + 1):\n        factorial *= i\n\n    return int(str(factorial)[0])"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n'''\nimport math\n\n\ndef find_first_digit(number):\n    \"\"\"Finds the first digit in factorial of a given number.\n\n    Args:\n        number (int): Number to be factored.\n\n    Returns:\n        int: First digit of the factorial of number.\n\n    Examples:\n        >>> find_first_digit(5) # 5! = 120, 1 is the first digit.\n        1\n\n        >>> find_first_digit(30) # 30! = 265252859812191058636308480000000, 2 is the first digit. \n        2\n\n    \"\"\"    \t\t    \t  \t\t      \t     \t     \t \t \t  \t  \t    \t      \t  \t \n    if not isinstance(number, int):     # check if input is integer or not. If not, raise TypeError exception and return None object. If so, continue with calculation and return result as integer type object.         try:                                                return int(str(math.factorial(number))[0])     except TypeError as e:         print(\"Input must be an integer.\")         print(\"Exception was raised by function:\\n\\t{}\".format(e))             return None",
+        "clean_code": "'''\nimport math\n\n\ndef find_first_digit(number):\n    \"\"\"Finds the first digit in factorial of a given number.\n\n    Args:\n        number (int): Number to be factored.\n\n    Returns:\n        int: First digit of the factorial of number.\n\n    Examples:\n        >>> find_first_digit(5) # 5! = 120, 1 is the first digit.\n        1\n\n        >>> find_first_digit(30) # 30! = 265252859812191058636308480000000, 2 is the first digit. \n        2\n\n    \"\"\"    \t\t    \t  \t\t      \t     \t     \t \t \t  \t  \t    \t      \t  \t \n    if not isinstance(number, int):     # check if input is integer or not. If not, raise TypeError exception and return None object. If so, continue with calculation and return result as integer type object.         try:                                                return int(str(math.factorial(number))[0])     except TypeError as e:         print(\"Input must be an integer.\")         print(\"Exception was raised by function:\\n\\t{}\".format(e))             return None"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\ndef find_first_digit(n):\n    fact = 1\n    for i in range(1, n + 1):\n        fact *= i\n\n    while True:\n        if fact < 10:\n            return fact\n\n        else:\n            fact //= 10",
+        "clean_code": "\"\"\"\n\n\ndef find_first_digit(n):\n    fact = 1\n    for i in range(1, n + 1):\n        fact *= i\n\n    while True:\n        if fact < 10:\n            return fact\n\n        else:\n            fact //= 10"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n'''\nimport math\ndef firstDigit(n):\n    return int(str(math.factorial(n))[0])",
+        "clean_code": "'''\nimport math\ndef firstDigit(n):\n    return int(str(math.factorial(n))[0])"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n<code>def first_digit(n):\n    # write your code here\n    fact = 1\n\n    for i in range(1, n + 1): \n        fact = fact * i \n\n    while (fact &gt;= 10): \n        fact = fact / 10; \n\n    return int(fact)  \n</code>\n\n\nA:\n\nThe algorithm is not correct. It works for small numbers but fails when n is large. The reason is that you are using floating point numbers which have limited precision. You can use <code>math.factorial</code> to compute the exact result and then get the first digit from it, e.g.:  \n<code>import math     # you need to import math module in order to use math.factorial function    \n\n def first_digit(n):      # no need to check if n is positive because math.factorial will raise an exception for negative values of n  \n\n     f = str(math.factorial(n))       # convert integer result of factorial into string so that we can access individual digits by indexing it as a list     \n\n     return int(f[0])                 # return the first digit of the string as an integer value        \n</code>\n",
+        "clean_code": "<code>def first_digit(n):\n    # write your code here\n    fact = 1\n\n    for i in range(1, n + 1): \n        fact = fact * i \n\n    while (fact &gt;= 10): \n        fact = fact / 10; \n\n    return int(fact)  \n</code>\n\n\nA:\n\nThe algorithm is not correct. It works for small numbers but fails when n is large. The reason is that you are using floating point numbers which have limited precision. You can use <code>math.factorial</code> to compute the exact result and then get the first digit from it, e.g.:  \n<code>import math     # you need to import math module in order to use math.factorial function    \n\n def first_digit(n):      # no need to check if n is positive because math.factorial will raise an exception for negative values of n  \n\n     f = str(math.factorial(n))       # convert integer result of factorial into string so that we can access individual digits by indexing it as a list     \n\n     return int(f[0])                 # return the first digit of the string as an integer value        \n</code>"
+    }
+}

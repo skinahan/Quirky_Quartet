@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a python function to reverse an array upto a given position.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nWhich data structure is being used? Can the task be split into smaller sub-tasks? How many loops are needed to solve the tasks? Solve sub-tasks iteratively to find the answer\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\ndef reverse_array(arr, k):\n    \"\"\"\n\n    :param arr: list with numbers to be reversed.\n    :param k: number of elements to be reversed.\n    :return: list with reversed elements.\n\n    >>> reverse_array([1, 2, 3, 4], 2)\n    [2, 1, 3, 4]\n\n    \"\"\"\n\n    for i in range(k // 2):  # loop through the first half of the array and swap values in place. No extra space required.\n        arr[i], arr[k - i - 1] = arr[k - i - 1], arr[i]  # swap values at position i and position k-i-1 (index starts at 0)\n\n    return arr",
+        "clean_code": "\"\"\"\n\n\ndef reverse_array(arr, k):\n    \"\"\"\n\n    :param arr: list with numbers to be reversed.\n    :param k: number of elements to be reversed.\n    :return: list with reversed elements.\n\n    >>> reverse_array([1, 2, 3, 4], 2)\n    [2, 1, 3, 4]\n\n    \"\"\"\n\n    for i in range(k // 2):  # loop through the first half of the array and swap values in place. No extra space required.\n        arr[i], arr[k - i - 1] = arr[k - i - 1], arr[i]  # swap values at position i and position k-i-1 (index starts at 0)\n\n    return arr"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\n'''\n\n\ndef reverse_array(arr, n):\n    for i in range(n):\n        arr.append(arr[i])\n\n    for i in range(n):\n        arr.pop(0)\n\n    return arr\n\n\ninput_array = [1, 2, 3, 4, 5]\ninput_number = 2\nprint(\"Input: \" + str(input_array) + \" and \" + str(input_number))\nprint(\"Expected output: [3, 4, 5]\")  # [3,4,5] is the expected output. (The first two elements are removed.)",
+        "clean_code": "'''\n\n\ndef reverse_array(arr, n):\n    for i in range(n):\n        arr.append(arr[i])\n\n    for i in range(n):\n        arr.pop(0)\n\n    return arr\n\n\ninput_array = [1, 2, 3, 4, 5]\ninput_number = 2\nprint(\"Input: \" + str(input_array) + \" and \" + str(input_number))\nprint(\"Expected output: [3, 4, 5]\")  # [3,4,5] is the expected output. (The first two elements are removed.)"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\ndef reverse_array(input_list, position):\n    return input_list[:position + 1][::-1] + input_list[position + 1:]\n\n\ndef test_reverse_array():\n    assert reverse_array([1, 2, 3, 4], 0) == [1, 2, 3, 4]\n    assert reverse_array([1, 2, 3, 4], 1) == [2, 1, 3, 4]\n    assert reverse_array([1], 0) == [1]",
+        "clean_code": "\"\"\"\n\n\ndef reverse_array(input_list, position):\n    return input_list[:position + 1][::-1] + input_list[position + 1:]\n\n\ndef test_reverse_array():\n    assert reverse_array([1, 2, 3, 4], 0) == [1, 2, 3, 4]\n    assert reverse_array([1, 2, 3, 4], 1) == [2, 1, 3, 4]\n    assert reverse_array([1], 0) == [1]"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\n'''\ndef reverse_array(array, position):\n    if len(array) > 0 and position < len(array):\n        i = 0\n        while i < position:\n            array[i], array[position] = array[position], array[i]  # swap the values of the two elements in the list. \n            i += 1                                                  # increment i by 1.  Increment position by -1.  \n            position -= 1                                           # stop when i is greater than or equal to postion.  \n\n    return array",
+        "clean_code": "'''\ndef reverse_array(array, position):\n    if len(array) > 0 and position < len(array):\n        i = 0\n        while i < position:\n            array[i], array[position] = array[position], array[i]  # swap the values of the two elements in the list. \n            i += 1                                                  # increment i by 1.  Increment position by -1.  \n            position -= 1                                           # stop when i is greater than or equal to postion.  \n\n    return array"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\nThe function reverses the array upto a given position.\nExample:\narray = [1,2,3,4,5]\nposition = 2\nreversed_array = [2,1,3,4,5]\n\"\"\"\n\n\ndef reverse_array(array: list, position: int) -> list:\n    \"\"\"Reverses the array upto a given position.\"\"\"\n\n    return array[position::-1] + array[position + 1:]\n\n\nif __name__ == \"__main__\":\n\n    assert reverse_array([1], 0) == [1]",
+        "clean_code": "The function reverses the array upto a given position.\nExample:\narray = [1,2,3,4,5]\nposition = 2\nreversed_array = [2,1,3,4,5]\n\"\"\"\n\n\ndef reverse_array(array: list, position: int) -> list:\n    \"\"\"Reverses the array upto a given position.\"\"\"\n\n    return array[position::-1] + array[position + 1:]\n\n\nif __name__ == \"__main__\":\n\n    assert reverse_array([1], 0) == [1]"
+    }
+}

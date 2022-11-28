@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to increment the numeric values in the given strings by k.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nPay attention to the datatype of input and expected output. Is the input a tuple? Is the input a string? Is the input a matrix? Use correct data structure to derive the needed answer.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 1,
+        "codex_out": "\ndef increment_string(strng,k):\n    for i in strng:\n        if i.isdigit():\n            num = int(i) + k\n            strng = strng.replace(i,str(num))\n\n    return strng\n\n \nprint (increment_string('A12b s17G',10))\n\n \nprint (increment_string('ab23c',1))\n\n \nprint (increment_string('abc',2))",
+        "clean_code": "def increment_string(strng,k):\n    for i in strng:\n        if i.isdigit():\n            num = int(i) + k\n            strng = strng.replace(i,str(num))\n\n    return strng\n\n \nprint (increment_string('A12b s17G',10))\n\n \nprint (increment_string('ab23c',1))\n\n \nprint (increment_string('abc',2))"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\n\n\ndef increment_string(input_string, k):\n    \"\"\"\n    This function increments the numeric values in the given strings by k.\n\n    Parameters:\n    input_string (str): A string that contains numbers and letters.\n\n    Returns:\n    str: The incremented string.\n\n    Examples:\n        >>> increment_string('abc123', 1)\n        'abc124'\n\n        >>> increment_string('abc123', -1)\n        'abc122'\n\n        >>> increment_string('abcd1', 1) # no change required as there is no number in the string. So, same output as input is returned. \n        'abcd1'\n\n        >>> increment_string('cde234567890', 3) # all numbers are incremented by 3, i.e., 234567890 => 234567893 \n        'cde234567893'        \n\n        >>> increment_string('cde234567890', -3) # all numbers are decremented by 3, i.e., 234567890 => 234567887 \n        'cde234567887'        \n\n    \"\"\"    \t\t\t\t  \t  \t \t  \t     \t     \t     \t      \t      \t \t ",
+        "clean_code": "\"\"\"\n\n\ndef increment_string(input_string, k):\n    \"\"\"\n    This function increments the numeric values in the given strings by k.\n\n    Parameters:\n    input_string (str): A string that contains numbers and letters.\n\n    Returns:\n    str: The incremented string.\n\n    Examples:\n        >>> increment_string('abc123', 1)\n        'abc124'\n\n        >>> increment_string('abc123', -1)\n        'abc122'\n\n        >>> increment_string('abcd1', 1) # no change required as there is no number in the string. So, same output as input is returned. \n        'abcd1'\n\n        >>> increment_string('cde234567890', 3) # all numbers are incremented by 3, i.e., 234567890 => 234567893 \n        'cde234567893'        \n\n        >>> increment_string('cde234567890', -3) # all numbers are decremented by 3, i.e., 234567890 => 234567887 \n        'cde234567887'        \n\n    \"\"\""
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\ndef increment_string(strng, k):\n    if not strng:\n        return '0'*k\n\n    if strng[-1].isdigit():\n        return increment_string(strng[:-1], k) + str(int(strng[-1]) + k)%10\n\n    else:\n        return strng + '0'*k\n\"\"\"",
+        "clean_code": "def increment_string(strng, k):\n    if not strng:\n        return '0'*k\n\n    if strng[-1].isdigit():\n        return increment_string(strng[:-1], k) + str(int(strng[-1]) + k)%10\n\n    else:\n        return strng + '0'*k\n\"\"\""
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\ndef increment_string(s, k):\n    return s.replace('\\d+', lambda x: str(int(x.group()) + k))\n'''\nimport re\n\n\ndef increment_string(s, k):\n    if not s or not isinstance(s, str):\n        return \"Invalid input\"\n\n    elif not s[-1].isdigit():  # if last character is not a digit (e.g. 'abc')\n        return s + str(k)\n\n    else:  # if last character is a digit (e.g. 'abc123')\n\n        split = re.split('(\\d+)', s)  # split the string into list of strings delimited by digits and non-digits ('abc', '123') -> ['abc', '123']\n\n        # convert number to int and add k to it, then convert back to string and pad with zeros as needed based on length of original number in string\n        split[-1] = str(int(split[-1]) + k).zfill((len(split[-1])))\n\n        return \"\".join(split)",
+        "clean_code": "def increment_string(s, k):\n    return s.replace('\\d+', lambda x: str(int(x.group()) + k))\n'''\nimport re\n\n\ndef increment_string(s, k):\n    if not s or not isinstance(s, str):\n        return \"Invalid input\"\n\n    elif not s[-1].isdigit():  # if last character is not a digit (e.g. 'abc')\n        return s + str(k)\n\n    else:  # if last character is a digit (e.g. 'abc123')\n\n        split = re.split('(\\d+)', s)  # split the string into list of strings delimited by digits and non-digits ('abc', '123') -> ['abc', '123']\n\n        # convert number to int and add k to it, then convert back to string and pad with zeros as needed based on length of original number in string\n        split[-1] = str(int(split[-1]) + k).zfill((len(split[-1])))\n\n        return \"\".join(split)"
+    },
+    "4": {
+        "status": 1,
+        "codex_out": "\ndef increment(s, k):\n    l = []\n    for i in s:\n        if i.isdigit():\n            l.append(i)\n    res = int(''.join(l)) + k\n    return res\n\n",
+        "clean_code": "def increment(s, k):\n    l = []\n    for i in s:\n        if i.isdigit():\n            l.append(i)\n    res = int(''.join(l)) + k\n    return res"
+    }
+}

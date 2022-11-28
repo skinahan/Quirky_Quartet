@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a python function to find the sum of fourth power of first n even natural numbers.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nPay attention to the datatype of input and expected output. Is the input a tuple? Is the input a string? Is the input a matrix? Use correct data structure to derive the needed answer.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n'''\ndef sum_even_fourth(n):\n    return (2*n-1)*(2*n)*(2*n+1)*(2*n+2)//30",
+        "clean_code": "'''\ndef sum_even_fourth(n):\n    return (2*n-1)*(2*n)*(2*n+1)*(2*n+2)//30"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\ndef sum_of_fourth_power_of_even(number):\n    return sum(map(lambda x: x ** 4, range(2, number * 2 + 1, 2)))",
+        "clean_code": "\"\"\"\n\n\ndef sum_of_fourth_power_of_even(number):\n    return sum(map(lambda x: x ** 4, range(2, number * 2 + 1, 2)))"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\n'''\ndef even_power(n):\n    return sum(map(lambda x:x**4,filter(lambda x:x%2==0,range(1,n+1))))",
+        "clean_code": "'''\ndef even_power(n):\n    return sum(map(lambda x:x**4,filter(lambda x:x%2==0,range(1,n+1))))"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\n'''\ndef sum_power_even(n):\n    return sum([i**4 for i in range(1, n*2+1) if i%2==0])\n\n\nprint(sum_power_even(3))",
+        "clean_code": "'''\ndef sum_power_even(n):\n    return sum([i**4 for i in range(1, n*2+1) if i%2==0])\n\n\nprint(sum_power_even(3))"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\ndef fourthPowerSum(n):\n    return sum([i**4 for i in range(2, 2*n+1, 2)])\n\"\"\"\n\n\ndef fourthPowerSum(n):\n    return sum([i**4 for i in range(2, 2*n+1, 2)])",
+        "clean_code": "def fourthPowerSum(n):\n    return sum([i**4 for i in range(2, 2*n+1, 2)])\n\"\"\"\n\n\ndef fourthPowerSum(n):\n    return sum([i**4 for i in range(2, 2*n+1, 2)])"
+    }
+}

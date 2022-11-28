@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to replace whitespaces with an underscore and vice versa in a given string by using regex.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nPay attention to the datatype of input and expected output. Is the input a tuple? Is the input a string? Is the input a matrix? Use correct data structure to derive the needed answer.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\nimport re\n\n\ndef replace(string):\n    return re.sub(r'[_\\s]', lambda x: '_' if x.group() == ' ' else ' ', string)",
+        "clean_code": "\"\"\"\nimport re\n\n\ndef replace(string):\n    return re.sub(r'[_\\s]', lambda x: '_' if x.group() == ' ' else ' ', string)"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n'''\n\ndef replace_whitespace(string):\n    return re.sub('\\s', '_', string)",
+        "clean_code": "'''\n\ndef replace_whitespace(string):\n    return re.sub('\\s', '_', string)"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n<code>def replace_underscore(s):\n    s = s.replace(' ', '_')\n    return s.replace('_', ' ') \n</code>\n",
+        "clean_code": "<code>def replace_underscore(s):\n    s = s.replace(' ', '_')\n    return s.replace('_', ' ') \n</code>"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n<code>import re\n\ndef replace_whitespace(string):\n    string = re.sub(' ', '_', string)\n    return re.sub('_', ' ', string)\n\n\nprint(replace_whitespace(\"Hello World\")) # Hello_World\nprint(replace_whitespace(\"Hello World \")) # Hello World \n</code>\n\n",
+        "clean_code": "<code>import re\n\ndef replace_whitespace(string):\n    string = re.sub(' ', '_', string)\n    return re.sub('_', ' ', string)\n\n\nprint(replace_whitespace(\"Hello World\")) # Hello_World\nprint(replace_whitespace(\"Hello World \")) # Hello World \n</code>"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\nimport re\n\n\ndef replace_whitespaces(s):\n    return re.sub('\\s', '_', s) if '_' not in s else re.sub('_', ' ', s)\n\n\nprint(replace_whitespaces(\"Hello World\"))",
+        "clean_code": "\"\"\"\nimport re\n\n\ndef replace_whitespaces(s):\n    return re.sub('\\s', '_', s) if '_' not in s else re.sub('_', ' ', s)\n\n\nprint(replace_whitespaces(\"Hello World\"))"
+    }
+}

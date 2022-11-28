@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a python function to convert the given string to upper case.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nPay attention to the datatype of input and expected output. Is the input a tuple? Is the input a string? Is the input a matrix? Use correct data structure to derive the needed answer.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\ndef convert_to_upper(string):\n    return string.upper()\n'''\nimport pandas as pd \nimport numpy as np \n\n\n# Q1: Write a python function to convert the given string to upper case. Task: Write a python function to solve the above question. No additional comments and docstrings are needed. Additional info: Pay attention to the datatype of input and expected output. Is the input a tuple? Is the input a string? Is the input a matrix? Use correct data structure to derive the needed answer. Answer: def convert_to_upper(string): return string.upper()\n\n\ndef convert_to_upper(string):\n    return string.upper()\n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n# Q2: Write a python function that takes in two lists and returns True if they have at least one common member (use set). Task: Write a python function to solve this question, no additional documentation is required for this task, but you need to follow PEP 8 style guidelines for writing your code (i.e., 4 spaces between each level of indentation, two blank lines between functions). Additional info: Pay attention to what type of data structure you are dealing with here, how do you find out if two lists share at least one element in common? What is returned when you call set on each list separately? Answer: def check_common(list1, list2): return len(set([x for x in list1 if x in list2])) > 0 # or return not set(list1) & set(list2) == set() # or def check_common(list1, list2): common = [] for i in range(len(list1)): if list1[i] in list2 : common += [list1[i]] return len([x for x in common]) > 0  # or def check_common (lstA, lstB ): \"\"\" Check if two lists have any elements in common \"\"\" result = False # For each element of lstA... for elemA in lstA : # ...check if it's also an element of lstB... if elemA in lstB : result = True break else : continue break else : continue break return result  # or def checkCommonElementsInList (lstA , lstB ) : \"\"\" Check whether two",
+        "clean_code": "def convert_to_upper(string):\n    return string.upper()\n'''\nimport pandas as pd \nimport numpy as np \n\n\n# Q1: Write a python function to convert the given string to upper case. Task: Write a python function to solve the above question. No additional comments and docstrings are needed. Additional info: Pay attention to the datatype of input and expected output. Is the input a tuple? Is the input a string? Is the input a matrix? Use correct data structure to derive the needed answer. Answer: def convert_to_upper(string): return string.upper()\n\n\ndef convert_to_upper(string):\n    return string.upper()\n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n# Q2: Write a python function that takes in two lists and returns True if they have at least one common member (use set). Task: Write a python function to solve this question, no additional documentation is required for this task, but you need to follow PEP 8 style guidelines for writing your code (i.e., 4 spaces between each level of indentation, two blank lines between functions). Additional info: Pay attention to what type of data structure you are dealing with here, how do you find out if two lists share at least one element in common? What is returned when you call set on each list separately? Answer: def check_common(list1, list2): return len(set([x for x in list1 if x in list2])) > 0 # or return not set(list1) & set(list2) == set() # or def check_common(list1, list2): common = [] for i in range(len(list1)): if list1[i] in list2 : common += [list1[i]] return len([x for x in common]) > 0  # or def check_common (lstA, lstB ): \"\"\" Check if two lists have any elements in common \"\"\" result = False # For each element of lstA... for elemA in lstA : # ...check if it's also an element of lstB... if elemA in lstB : result = True break else : continue break else : continue break return result  # or def checkCommonElementsInList (lstA , lstB ) : \"\"\" Check whether two"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\ndef convert_to_upper(strng):\n    return strng.upper()\n\n\nif __name__ == '__main__':\n    print(convert_to_upper('hello'))",
+        "clean_code": "\"\"\"\n\n\ndef convert_to_upper(strng):\n    return strng.upper()\n\n\nif __name__ == '__main__':\n    print(convert_to_upper('hello'))"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\nThe following code does the job:\n<code>def to_uppercase(input_string):\n    return input_string.upper()\n</code>\n",
+        "clean_code": "The following code does the job:\n<code>def to_uppercase(input_string):\n    return input_string.upper()\n</code>"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\nThe input is a string. The output should also be a string.\nExample:\nInput: \"hello world\"\nOutput: \"HELLO WORLD\"\n'''\n\n\ndef convert_to_upper(string):\n\n    return string.upper()",
+        "clean_code": "The input is a string. The output should also be a string.\nExample:\nInput: \"hello world\"\nOutput: \"HELLO WORLD\"\n'''\n\n\ndef convert_to_upper(string):\n\n    return string.upper()"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\n'''\ndef convert_to_upper(str_input):\n    return str_input.upper()",
+        "clean_code": "'''\ndef convert_to_upper(str_input):\n    return str_input.upper()"
+    }
+}

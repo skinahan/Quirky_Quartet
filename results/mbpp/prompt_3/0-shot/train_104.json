@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to sort a list of lists by length and value.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nPay attention to the datatype of input and expected output. Is the input a tuple? Is the input a string? Is the input a matrix? Use correct data structure to derive the needed answer.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n<code>def sort_lists(lst):\n    return sorted(sorted(sub_lst) for sub_lst in lst)\n</code>\n",
+        "clean_code": "<code>def sort_lists(lst):\n    return sorted(sorted(sub_lst) for sub_lst in lst)\n</code>"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n<code>def sort_lists(list_of_lists):\n    return sorted(sorted(list_of_lists), key=len)\n</code>\n",
+        "clean_code": "<code>def sort_lists(list_of_lists):\n    return sorted(sorted(list_of_lists), key=len)\n</code>"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n<code>def sort_lists(x):\n    return sorted(sorted(x, key=len), key=lambda x: [i for i in x if type(i) == int])\n</code>\n",
+        "clean_code": "<code>def sort_lists(x):\n    return sorted(sorted(x, key=len), key=lambda x: [i for i in x if type(i) == int])\n</code>"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef sort_list(list_of_lists):\n    return sorted(sorted(list_of_lists), key=len)",
+        "clean_code": "\"\"\"\ndef sort_list(list_of_lists):\n    return sorted(sorted(list_of_lists), key=len)"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\nThe function should return a list with the following structure:\n<code>def sort_by_length(input):\n    pass # your code goes here\n</code>\nExample:\nInput: <code>[['a','b','c'],['d','e'],['f','g','h'],['d','e'],['i','j','k', 'l'], ['m', 'n']]</code>\nOutput: <code>[['i', 'j', 'k', 'l'] , ['f', 'g', 'h'] , ['d', 'e'] , ['m', 'n'] , ['a', 'b', 'c'] , ['d, e']]</code> \n\n\nA:\n\nYou could use a custom sorting key to sort by length and then by value. For example, using <code>sorted()</code>: \n<blockquote>\n<p><em>\"Return a new list containing all items from the iterable in ascending order.\"</em></p>\n</blockquote>\n\n    def sort_by_length(lists):\n\n        def key(sublist):             # define sorting key as tuple of (len, val) \n\n            return len(sublist), sublist[0]\n\n        return sorted(lists, key=key)   # use this key to sort list of lists\n\n    print(sort_by_length([[\"a\", \"b\", \"c\"], [\"d\", \"e\"], [\"f\", \"g\", \"h\"], [\"d\", \"e\"], [\"i\",\"j\",\"k\",\"l\"],[\"m\",\"n\"]]))\n\n",
+        "clean_code": "The function should return a list with the following structure:\n<code>def sort_by_length(input):\n    pass # your code goes here\n</code>\nExample:\nInput: <code>[['a','b','c'],['d','e'],['f','g','h'],['d','e'],['i','j','k', 'l'], ['m', 'n']]</code>\nOutput: <code>[['i', 'j', 'k', 'l'] , ['f', 'g', 'h'] , ['d', 'e'] , ['m', 'n'] , ['a', 'b', 'c'] , ['d, e']]</code> \n\n\nA:\n\nYou could use a custom sorting key to sort by length and then by value. For example, using <code>sorted()</code>: \n<blockquote>\n<p><em>\"Return a new list containing all items from the iterable in ascending order.\"</em></p>\n</blockquote>\n\n    def sort_by_length(lists):\n\n        def key(sublist):             # define sorting key as tuple of (len, val) \n\n            return len(sublist), sublist[0]\n\n        return sorted(lists, key=key)   # use this key to sort list of lists\n\n    print(sort_by_length([[\"a\", \"b\", \"c\"], [\"d\", \"e\"], [\"f\", \"g\", \"h\"], [\"d\", \"e\"], [\"i\",\"j\",\"k\",\"l\"],[\"m\",\"n\"]]))"
+    }
+}

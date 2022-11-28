@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to find the greatest common divisor (gcd) of two integers by using recursion.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nPay attention to the datatype of input and expected output. Is the input a tuple? Is the input a string? Is the input a matrix? Use correct data structure to derive the needed answer.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 1,
+        "codex_out": "\ndef gcd(a,b):\n    if a == 0:\n        return b\n    if b == 0:\n        return a\n\n    return gcd(b, a % b)\n\n \nprint(gcd(12, 20))\n\n \n# Answer is 4.",
+        "clean_code": "def gcd(a,b):\n    if a == 0:\n        return b\n    if b == 0:\n        return a\n\n    return gcd(b, a % b)\n\n \nprint(gcd(12, 20))\n\n \n# Answer is 4."
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\nThe answer is in the file gcd.py\n\"\"\"\n\n\ndef gcd(a, b):\n    if a == 0:\n        return b\n\n    return gcd(b % a, a)\n\n\nprint(gcd(14, 15))",
+        "clean_code": "The answer is in the file gcd.py\n\"\"\"\n\n\ndef gcd(a, b):\n    if a == 0:\n        return b\n\n    return gcd(b % a, a)\n\n\nprint(gcd(14, 15))"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef gcd(a, b):\n    if b == 0:\n        return a\n    else:\n        return gcd(b, a % b)",
+        "clean_code": "\"\"\"\ndef gcd(a, b):\n    if b == 0:\n        return a\n    else:\n        return gcd(b, a % b)"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n'''\ndef gcd(a,b):\n    if b == 0: return a\n    else: return gcd(b, a%b)",
+        "clean_code": "'''\ndef gcd(a,b):\n    if b == 0: return a\n    else: return gcd(b, a%b)"
+    },
+    "4": {
+        "status": 1,
+        "codex_out": "\n\ndef gcd(a, b):\n\n    if (b == 0): \n        return a \n    return gcd(b, a % b)  \n\n \n*/",
+        "clean_code": "def gcd(a, b):\n\n    if (b == 0): \n        return a \n    return gcd(b, a % b)"
+    }
+}

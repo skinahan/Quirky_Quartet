@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to multiply two lists using map and lambda function.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nWhich data structure is being used? Can the task be split into smaller sub-tasks? How many loops are needed to solve the tasks? Solve sub-tasks iteratively to find the answer\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\nfrom functools import reduce\n\n\ndef multiply_lists(list1, list2):\n    return list(map(lambda x, y: x * y, list1, list2))\n\n\ndef main():\n    print(\"Enter the first list: \")\n    l1 = [int(x) for x in input().split()]\n\n    print(\"Enter the second list: \")\n    l2 = [int(x) for x in input().split()]\n\n    result = multiply_lists(l1, l2)\n\n    print(\"The product of lists is: \" + str([reduce((lambda x, y: x*y), result)]))\n\n    \nif __name__ == '__main__': main()",
+        "clean_code": "\"\"\"\n\n\nfrom functools import reduce\n\n\ndef multiply_lists(list1, list2):\n    return list(map(lambda x, y: x * y, list1, list2))\n\n\ndef main():\n    print(\"Enter the first list: \")\n    l1 = [int(x) for x in input().split()]\n\n    print(\"Enter the second list: \")\n    l2 = [int(x) for x in input().split()]\n\n    result = multiply_lists(l1, l2)\n\n    print(\"The product of lists is: \" + str([reduce((lambda x, y: x*y), result)]))\n\n    \nif __name__ == '__main__': main()"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\n'''\n# python code to multiply two lists using map and lambda function \n  \ndef multiplyList(myList) : \n      \n    # Multiply elements one by one \n    result = 1; \n\n    for x in myList: \n\n        result = result * x  \n\n    return result  \n\n     # Multiply list using map() and lambda \n\n      # Driver code \n\n      list1 = [1, 2, 3]  \n\n      print(multiplyList(list1))",
+        "clean_code": "'''\n# python code to multiply two lists using map and lambda function \n  \ndef multiplyList(myList) : \n      \n    # Multiply elements one by one \n    result = 1; \n\n    for x in myList: \n\n        result = result * x  \n\n    return result  \n\n     # Multiply list using map() and lambda \n\n      # Driver code \n\n      list1 = [1, 2, 3]  \n\n      print(multiplyList(list1))"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef multiply(a, b):\n    return map(lambda x, y: x * y, a, b)\nprint (list(multiply([1, 2], [4, 5])))",
+        "clean_code": "\"\"\"\ndef multiply(a, b):\n    return map(lambda x, y: x * y, a, b)\nprint (list(multiply([1, 2], [4, 5])))"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n<code>l1=[1,2,3] \nl2=[4,5,6] \nprint(list(map(lambda x,y:x*y, l1,l2)))\n</code>\n",
+        "clean_code": "<code>l1=[1,2,3] \nl2=[4,5,6] \nprint(list(map(lambda x,y:x*y, l1,l2)))\n</code>"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\ndef multiply_lists(list1, list2):\n    return list(map(lambda x, y: x * y, list1, list2))\n\n\n\n\n# Task 2: (3 points)\n\"\"\"\nQuestion:  Write a function to sort a given dictionary by its values using map and lambda function.  The keys of the dictionary should be used as the input to the lambda function. Do not use any additional comments and docstrings. \nTask: Write a python function to solve the above question. No additional comments and docstrings are needed.  Additional info: Which data structure is being used? Can the task be split into smaller sub-tasks? How many loops are needed to solve the tasks? Solve sub-tasks iteratively to find the answer \"\"\"\n\n\n\n\n\n\n\n\n\n\n\n\n# Task 3: (4 points)  Question: Write a function that accepts two lists A and B as input arguments and returns a set containing elements that appear in both A and B using map, zip, filter or reduce functions with lambda expressions as arguments if necessary. Do not use any additional comments and docstrings. Task: Write a python function to solve the above question. No additional comments and docstrings are needed. Additional info: Which data structure is being used? Can the task be split into smaller sub-tasks? How many loops are needed to solve the tasks? Solve sub-tasks iteratively to find the answer \"\"\"",
+        "clean_code": "\"\"\"\ndef multiply_lists(list1, list2):\n    return list(map(lambda x, y: x * y, list1, list2))\n\n\n\n\n# Task 2: (3 points)\n\"\"\"\nQuestion:  Write a function to sort a given dictionary by its values using map and lambda function.  The keys of the dictionary should be used as the input to the lambda function. Do not use any additional comments and docstrings. \nTask: Write a python function to solve the above question. No additional comments and docstrings are needed.  Additional info: Which data structure is being used? Can the task be split into smaller sub-tasks? How many loops are needed to solve the tasks? Solve sub-tasks iteratively to find the answer \"\"\"\n\n\n\n\n\n\n\n\n\n\n\n\n# Task 3: (4 points)  Question: Write a function that accepts two lists A and B as input arguments and returns a set containing elements that appear in both A and B using map, zip, filter or reduce functions with lambda expressions as arguments if necessary. Do not use any additional comments and docstrings. Task: Write a python function to solve the above question. No additional comments and docstrings are needed. Additional info: Which data structure is being used? Can the task be split into smaller sub-tasks? How many loops are needed to solve the tasks? Solve sub-tasks iteratively to find the answer \"\"\""
+    }
+}

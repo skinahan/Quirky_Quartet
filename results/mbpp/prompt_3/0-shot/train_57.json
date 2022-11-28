@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to find the item with maximum occurrences in a given list.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nPay attention to the datatype of input and expected output. Is the input a tuple? Is the input a string? Is the input a matrix? Use correct data structure to derive the needed answer.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\n'''\nfrom collections import Counter\ndef max_occur(l):\n    c=Counter(l)   #c is a dictionary with key as element and value as its count in the list\n    m=0  #max count of elements in list l\n    for i in c.values():   #traversing through all the counts of elements in the list and updating m if required. \n        if i>m:m=i         #m stores max count of elements in l at any point.  \n\n    for i,j in c.items():  #traversing through all the items present and their counts in dictionary c (created from input list l)     \t\t\t\t\tand returning them if their count is equal to maximum count m calculated above. \n\n        if j==m:return i",
+        "clean_code": "'''\nfrom collections import Counter\ndef max_occur(l):\n    c=Counter(l)   #c is a dictionary with key as element and value as its count in the list\n    m=0  #max count of elements in list l\n    for i in c.values():   #traversing through all the counts of elements in the list and updating m if required. \n        if i>m:m=i         #m stores max count of elements in l at any point.  \n\n    for i,j in c.items():  #traversing through all the items present and their counts in dictionary c (created from input list l)     \t\t\t\t\tand returning them if their count is equal to maximum count m calculated above. \n\n        if j==m:return i"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\n'''\n\n\ndef maxOccurrences(l):\n    # Write your code here.\n    d = {}\n\n    for i in l:\n        if i not in d:\n            d[i] = 1\n\n        else:\n            d[i] += 1\n\n    return max(d, key=d.get)",
+        "clean_code": "'''\n\n\ndef maxOccurrences(l):\n    # Write your code here.\n    d = {}\n\n    for i in l:\n        if i not in d:\n            d[i] = 1\n\n        else:\n            d[i] += 1\n\n    return max(d, key=d.get)"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\n'''\n\n\ndef maxOccurrences(l):\n    d = {}\n\n    for i in l:\n        if i in d:\n            d[i] += 1\n        else:\n            d[i] = 1\n\n    return max(d, key=d.get)",
+        "clean_code": "'''\n\n\ndef maxOccurrences(l):\n    d = {}\n\n    for i in l:\n        if i in d:\n            d[i] += 1\n        else:\n            d[i] = 1\n\n    return max(d, key=d.get)"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n'''\n\n\ndef max_occurrences(input_list):\n    '''\n    input_list: list of integers.\n\n    returns: integer, maximum occurrences of an integer in the given list.\n    '''\n\n    # Write your code here.\n    counts = {}\n\n    for item in input_list:\n        if item not in counts:\n            counts[item] = 0\n\n        counts[item] += 1\n\n    print(counts)",
+        "clean_code": "'''\n\n\ndef max_occurrences(input_list):\n    '''\n    input_list: list of integers.\n\n    returns: integer, maximum occurrences of an integer in the given list.\n    '''\n\n    # Write your code here.\n    counts = {}\n\n    for item in input_list:\n        if item not in counts:\n            counts[item] = 0\n\n        counts[item] += 1\n\n    print(counts)"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\ndef max_occurrences(lst):\n    \"\"\"Write a function to find the item with maximum occurrences in a given list.\n    You can assume that input list contains only one item with maximum occurrences.\n\n    Args:\n        lst: A list of integers\n\n    Returns:\n        int: The item with maximum occurences in the given list\n\n    Examples:\n        >>> max_occurrences([1, 2, 1, 2, 3])  # returns 1 since it has the most occurrences in the list.\n        >>> max_occurrences([3, 3, 3])  # returns 3 since it has the most occurrences in the list.\n\n    \"\"\"\n\n     return max(set(lst), key=lst.count)",
+        "clean_code": "def max_occurrences(lst):\n    \"\"\"Write a function to find the item with maximum occurrences in a given list.\n    You can assume that input list contains only one item with maximum occurrences.\n\n    Args:\n        lst: A list of integers\n\n    Returns:\n        int: The item with maximum occurences in the given list\n\n    Examples:\n        >>> max_occurrences([1, 2, 1, 2, 3])  # returns 1 since it has the most occurrences in the list.\n        >>> max_occurrences([3, 3, 3])  # returns 3 since it has the most occurrences in the list.\n\n    \"\"\"\n\n     return max(set(lst), key=lst.count)"
+    }
+}
