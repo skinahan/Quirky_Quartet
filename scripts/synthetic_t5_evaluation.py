@@ -21,11 +21,17 @@ from .synthetic_evaluation import *
 def evaluate_t5(model, tokenizer, prompts):
     for prompt in prompts:
         input_ids = tokenizer(prompt, return_tensors='pt').input_ids
+        # print(input_ids)
+        print('input', tokenizer.decode(input_ids[0], skip_special_tokens=False))
+        print('inshape', input_ids.shape)
         try:
-            outputs = model.generate(input_ids)
+            outputs = model.generate(input_ids, max_length=128)
         except AttributeError:
-            outputs = model.model.generate(input_ids)
-        yield tokenizer.decode(outputs[0], skip_special_tokens=True)
+            outputs = model.model.generate(input_ids, max_length=128)
+        decoded = tokenizer.decode(outputs[0], skip_special_tokens=False)
+        print('output', decoded)
+        print('outshape', outputs.shape)
+        yield decoded
 
 def batch_evaluate(prompt_batch, metadata, batch_size, n_samples, model, tokenizer, test_inputs):
     ''' Run T5 in place of Codex '''
@@ -49,11 +55,12 @@ def batch_evaluate(prompt_batch, metadata, batch_size, n_samples, model, tokeniz
 
 def run():
     tokenizer  = RobertaTokenizer.from_pretrained('Salesforce/codet5-small')
-    checkpoint = False
+    checkpoint = True
 
     if checkpoint:
         # checkpoint_path = 'results/csv_data/synthetic/version_0/checkpoints/epoch=15-step=13520.ckpt'
-        checkpoint_path = 'results/csv_data/synthetic_all/version_0/checkpoints/epoch=11-step=46176.ckpt'
+        # checkpoint_path = 'results/csv_data/synthetic_all/version_0/checkpoints/epoch=11-step=46176.ckpt'
+        checkpoint_path = 'results/synthetic_t5/version_4/checkpoints/epoch=1-step=6756.ckpt'
         print(checkpoint_path)
         model = CodeT5.load_from_checkpoint(checkpoint_path)
     else:
