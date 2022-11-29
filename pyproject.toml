@@ -6,7 +6,7 @@ authors = ["LSaldyt <lucassaldyt@gmail.com>"]
 license = "MIT"
 
 [tool.poetry.dependencies]
-python = ">3.10,<3.11"
+python = ">=3.10,<3.11"
 openai = "^0.24.0"
 PyYAML = "^6.0"
 rich = "^12.6.0"
@@ -15,7 +15,11 @@ tqdm = "^4.64.1"
 numpy = "^1.23.4"
 datasets = "^2.6.1"
 transformers = "^4.24.0"
-python-graphs = "^1.2.3"
+seaborn = "^0.12.1"
+pytorch-lightning = "^1.8.3"
+ 
+[tool.poetry.extras]
+broken = ["pygraphviz"]
 
 [tool.poetry.dev-dependencies]
 
