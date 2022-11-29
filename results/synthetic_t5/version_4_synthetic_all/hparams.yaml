@@ -1,0 +1,329 @@
+freeze: false
+lr: 5.0e-05
+num_train_epochs: 4
+test_dataloader: !!python/object:torch.utils.data.dataloader.DataLoader
+  _DataLoader__initialized: true
+  _DataLoader__multiprocessing_context: null
+  _IterableDataset_len_called: null
+  _dataset_kind: 0
+  _iterator: null
+  batch_sampler: !!python/object:torch.utils.data.sampler.BatchSampler
+    batch_size: 2
+    drop_last: false
+    sampler: &id004 !!python/object:torch.utils.data.sampler.SequentialSampler
+      data_source: &id003 !!python/object:datasets.arrow_dataset.Dataset
+        _data: !!python/object:datasets.table.MemoryMappedTable
+          path: /home/lsaldyt/.cache/huggingface/datasets/csv/data-e7d6235d543b9fc1/0.0.0/6b34fb8fcf56f7c8ba51dc895bfa2bfbe43546f190a60fcf74bb5e8afdcc2317/cache-23d1f0220eb308b8.arrow
+          replays:
+          - !!python/tuple
+            - replace_schema_metadata
+            - !!python/tuple
+              - huggingface: '{"info": {"features": {"id": {"dtype": "int64", "_type":
+                  "Value"}, "description": {"dtype": "string", "_type": "Value"},
+                  "code": {"dtype": "string", "_type": "Value"}, "md5": {"dtype":
+                  "string", "_type": "Value"}, "foxdog": {"dtype": "string", "_type":
+                  "Value"}, "hexdigits": {"dtype": "string", "_type": "Value"}, "lorem":
+                  {"dtype": "string", "_type": "Value"}, "punctuation": {"dtype":
+                  "string", "_type": "Value"}, "zebra": {"dtype": "string", "_type":
+                  "Value"}, "input_ids": {"feature": {"dtype": "int32", "_type": "Value"},
+                  "_type": "Sequence"}, "attention_mask": {"feature": {"dtype": "int8",
+                  "_type": "Value"}, "_type": "Sequence"}, "labels": {"feature": {"dtype":
+                  "int64", "_type": "Value"}, "_type": "Sequence"}}}, "fingerprint":
+                  "23d1f0220eb308b8"}'
+            - {}
+        _fingerprint: 17801ffff818b689
+        _format_columns:
+        - input_ids
+        - attention_mask
+        - labels
+        _format_kwargs: {}
+        _format_type: torch
+        _indexes: {}
+        _indices: null
+        _info: !!python/object:datasets.info.DatasetInfo
+          builder_name: csv
+          citation: ''
+          config_name: data
+          dataset_size: 37398248
+          description: ''
+          download_checksums:
+            /home/lsaldyt/Quirky_Quartet/data/synthetic_depth_1.csv:
+              checksum: 7f5f7a6ea651279b9af82fba8d436eff3943a1389a3b180697a48fbb0b591137
+              num_bytes: 9413
+            /home/lsaldyt/Quirky_Quartet/data/synthetic_depth_2.csv:
+              checksum: 0bd674ebf3f59366eda3f172ce574543ded2416a4d8e912de39d23ce2b63e2de
+              num_bytes: 92760
+            /home/lsaldyt/Quirky_Quartet/data/synthetic_depth_3.csv:
+              checksum: 684f8f9214d0994334e8d31678b88334596e6ed38a230b74fd05931eb6fa4e6a
+              num_bytes: 755510
+            /home/lsaldyt/Quirky_Quartet/data/synthetic_depth_4.csv:
+              checksum: 06127f6eac562e16f2b619795820f10b47922150befac2bede128f472b2b9f68
+              num_bytes: 5253804
+            /home/lsaldyt/Quirky_Quartet/data/synthetic_depth_5.csv:
+              checksum: 09df8853b4685abc9b90eb43d1a0bc5ab0a660672fa065f49354943459c7afb2
+              num_bytes: 30977576
+          download_size: 37089063
+          features: !!python/object/apply:datasets.features.features.Features
+          - attention_mask: !!python/object:datasets.features.features.Sequence
+              feature: !!python/object:datasets.features.features.Value
+                dtype: int8
+                id: null
+                pa_type: &id005 !!python/object/apply:pyarrow.lib.type_for_alias
+                - int8
+              id: null
+              length: -1
+            code: !!python/object:datasets.features.features.Value
+              dtype: string
+              id: null
+              pa_type: &id001 !!python/object/apply:pyarrow.lib.type_for_alias
+              - string
+            description: !!python/object:datasets.features.features.Value
+              dtype: string
+              id: null
+              pa_type: *id001
+            foxdog: !!python/object:datasets.features.features.Value
+              dtype: string
+              id: null
+              pa_type: *id001
+            hexdigits: !!python/object:datasets.features.features.Value
+              dtype: string
+              id: null
+              pa_type: *id001
+            id: !!python/object:datasets.features.features.Value
+              dtype: int64
+              id: null
+              pa_type: &id002 !!python/object/apply:pyarrow.lib.type_for_alias
+              - int64
+            input_ids: !!python/object:datasets.features.features.Sequence
+              feature: !!python/object:datasets.features.features.Value
+                dtype: int32
+                id: null
+                pa_type: &id006 !!python/object/apply:pyarrow.lib.type_for_alias
+                - int32
+              id: null
+              length: -1
+            labels: !!python/object:datasets.features.features.Sequence
+              feature: !!python/object:datasets.features.features.Value
+                dtype: int64
+                id: null
+                pa_type: *id002
+              id: null
+              length: -1
+            lorem: !!python/object:datasets.features.features.Value
+              dtype: string
+              id: null
+              pa_type: *id001
+            md5: !!python/object:datasets.features.features.Value
+              dtype: string
+              id: null
+              pa_type: *id001
+            punctuation: !!python/object:datasets.features.features.Value
+              dtype: string
+              id: null
+              pa_type: *id001
+            zebra: !!python/object:datasets.features.features.Value
+              dtype: string
+              id: null
+              pa_type: *id001
+          homepage: ''
+          license: ''
+          post_processed: null
+          post_processing_size: null
+          size_in_bytes: 74487311
+          splits: !!python/object/new:datasets.splits.SplitDict
+            dictitems:
+              train: !!python/object:datasets.splits.SplitInfo
+                dataset_name: csv
+                name: train
+                num_bytes: 37398248
+                num_examples: 38478
+                shard_lengths: null
+            state:
+              dataset_name: csv
+          supervised_keys: null
+          task_templates: null
+          version: !!python/object:datasets.utils.version.Version
+            description: null
+            major: 0
+            minor: 0
+            patch: 0
+            version_str: 0.0.0
+        _output_all_columns: false
+        _split: &id007 !!python/object:datasets.splits.NamedSplit
+          _name: train
+  batch_size: 2
+  collate_fn: &id008 !!python/name:torch.utils.data._utils.collate.default_collate ''
+  dataset: *id003
+  drop_last: false
+  generator: null
+  num_workers: 4
+  persistent_workers: false
+  pin_memory: false
+  pin_memory_device: ''
+  prefetch_factor: 2
+  sampler: *id004
+  timeout: 0
+  worker_init_fn: null
+train_dataloader: !!python/object:torch.utils.data.dataloader.DataLoader
+  _DataLoader__initialized: true
+  _DataLoader__multiprocessing_context: null
+  _IterableDataset_len_called: null
+  _dataset_kind: 0
+  _iterator: null
+  batch_sampler: !!python/object:torch.utils.data.sampler.BatchSampler
+    batch_size: 2
+    drop_last: false
+    sampler: &id010 !!python/object:torch.utils.data.sampler.RandomSampler
+      _num_samples: null
+      data_source: &id009 !!python/object:datasets.arrow_dataset.Dataset
+        _data: !!python/object:datasets.table.MemoryMappedTable
+          path: /home/lsaldyt/.cache/huggingface/datasets/csv/data-e7d6235d543b9fc1/0.0.0/6b34fb8fcf56f7c8ba51dc895bfa2bfbe43546f190a60fcf74bb5e8afdcc2317/cache-253e9d4ed86370f6.arrow
+          replays:
+          - !!python/tuple
+            - replace_schema_metadata
+            - !!python/tuple
+              - huggingface: '{"info": {"features": {"id": {"dtype": "int64", "_type":
+                  "Value"}, "description": {"dtype": "string", "_type": "Value"},
+                  "code": {"dtype": "string", "_type": "Value"}, "md5": {"dtype":
+                  "string", "_type": "Value"}, "foxdog": {"dtype": "string", "_type":
+                  "Value"}, "hexdigits": {"dtype": "string", "_type": "Value"}, "lorem":
+                  {"dtype": "string", "_type": "Value"}, "punctuation": {"dtype":
+                  "string", "_type": "Value"}, "zebra": {"dtype": "string", "_type":
+                  "Value"}, "input_ids": {"feature": {"dtype": "int32", "_type": "Value"},
+                  "_type": "Sequence"}, "attention_mask": {"feature": {"dtype": "int8",
+                  "_type": "Value"}, "_type": "Sequence"}, "labels": {"feature": {"dtype":
+                  "int64", "_type": "Value"}, "_type": "Sequence"}}}, "fingerprint":
+                  "253e9d4ed86370f6"}'
+            - {}
+        _fingerprint: e6e848f6a5ac5852
+        _format_columns:
+        - input_ids
+        - attention_mask
+        - labels
+        _format_kwargs: {}
+        _format_type: torch
+        _indexes: {}
+        _indices: null
+        _info: !!python/object:datasets.info.DatasetInfo
+          builder_name: csv
+          citation: ''
+          config_name: data
+          dataset_size: 37398248
+          description: ''
+          download_checksums:
+            /home/lsaldyt/Quirky_Quartet/data/synthetic_depth_1.csv:
+              checksum: 7f5f7a6ea651279b9af82fba8d436eff3943a1389a3b180697a48fbb0b591137
+              num_bytes: 9413
+            /home/lsaldyt/Quirky_Quartet/data/synthetic_depth_2.csv:
+              checksum: 0bd674ebf3f59366eda3f172ce574543ded2416a4d8e912de39d23ce2b63e2de
+              num_bytes: 92760
+            /home/lsaldyt/Quirky_Quartet/data/synthetic_depth_3.csv:
+              checksum: 684f8f9214d0994334e8d31678b88334596e6ed38a230b74fd05931eb6fa4e6a
+              num_bytes: 755510
+            /home/lsaldyt/Quirky_Quartet/data/synthetic_depth_4.csv:
+              checksum: 06127f6eac562e16f2b619795820f10b47922150befac2bede128f472b2b9f68
+              num_bytes: 5253804
+            /home/lsaldyt/Quirky_Quartet/data/synthetic_depth_5.csv:
+              checksum: 09df8853b4685abc9b90eb43d1a0bc5ab0a660672fa065f49354943459c7afb2
+              num_bytes: 30977576
+          download_size: 37089063
+          features: !!python/object/apply:datasets.features.features.Features
+          - attention_mask: !!python/object:datasets.features.features.Sequence
+              feature: !!python/object:datasets.features.features.Value
+                dtype: int8
+                id: null
+                pa_type: *id005
+              id: null
+              length: -1
+            code: !!python/object:datasets.features.features.Value
+              dtype: string
+              id: null
+              pa_type: *id001
+            description: !!python/object:datasets.features.features.Value
+              dtype: string
+              id: null
+              pa_type: *id001
+            foxdog: !!python/object:datasets.features.features.Value
+              dtype: string
+              id: null
+              pa_type: *id001
+            hexdigits: !!python/object:datasets.features.features.Value
+              dtype: string
+              id: null
+              pa_type: *id001
+            id: !!python/object:datasets.features.features.Value
+              dtype: int64
+              id: null
+              pa_type: *id002
+            input_ids: !!python/object:datasets.features.features.Sequence
+              feature: !!python/object:datasets.features.features.Value
+                dtype: int32
+                id: null
+                pa_type: *id006
+              id: null
+              length: -1
+            labels: !!python/object:datasets.features.features.Sequence
+              feature: !!python/object:datasets.features.features.Value
+                dtype: int64
+                id: null
+                pa_type: *id002
+              id: null
+              length: -1
+            lorem: !!python/object:datasets.features.features.Value
+              dtype: string
+              id: null
+              pa_type: *id001
+            md5: !!python/object:datasets.features.features.Value
+              dtype: string
+              id: null
+              pa_type: *id001
+            punctuation: !!python/object:datasets.features.features.Value
+              dtype: string
+              id: null
+              pa_type: *id001
+            zebra: !!python/object:datasets.features.features.Value
+              dtype: string
+              id: null
+              pa_type: *id001
+          homepage: ''
+          license: ''
+          post_processed: null
+          post_processing_size: null
+          size_in_bytes: 74487311
+          splits: !!python/object/new:datasets.splits.SplitDict
+            dictitems:
+              train: !!python/object:datasets.splits.SplitInfo
+                dataset_name: csv
+                name: train
+                num_bytes: 37398248
+                num_examples: 38478
+                shard_lengths: null
+            state:
+              dataset_name: csv
+          supervised_keys: null
+          task_templates: null
+          version: !!python/object:datasets.utils.version.Version
+            description: null
+            major: 0
+            minor: 0
+            patch: 0
+            version_str: 0.0.0
+        _output_all_columns: false
+        _split: *id007
+      generator: null
+      replacement: false
+  batch_size: 2
+  collate_fn: *id008
+  dataset: *id009
+  drop_last: false
+  generator: null
+  num_workers: 4
+  persistent_workers: false
+  pin_memory: false
+  pin_memory_device: ''
+  prefetch_factor: 2
+  sampler: *id010
+  timeout: 0
+  worker_init_fn: null
+val_dataloader: null
+warmup_steps: 100

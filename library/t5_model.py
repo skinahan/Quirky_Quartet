@@ -19,7 +19,9 @@ class CodeT5(pl.LightningModule):
         self.log('initialized', -1)
 
     def forward(self, input_ids, attention_mask, labels=None):
-        outputs = self.model(input_ids=input_ids, attention_mask=attention_mask, labels=labels)
+        outputs = self.model(input_ids=input_ids, attention_mask=attention_mask, labels=labels, max_length=256)
+        print('intermediate outputs')
+        print(outputs.shape)
         return outputs
 
     def common_step(self, batch, batch_idx):

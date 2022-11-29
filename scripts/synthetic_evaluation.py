@@ -107,8 +107,12 @@ def batch_generator(csvreader, description, total, n_samples, batch_size):
         problem_id, description, code, md5_hash, *labels = row
         problem_id = int(problem_id)
         for prompt_type in ['Default', 'Least-to-Most']:
-            metadata.append([extended] + list(row))
+            metadata.append([prompt_type] + list(row))
             prompt = to_prompt(description, prompt_type=prompt_type)
+            # print(prompt)
+            # print(code)
+            # print(labels)
+            # print(test_cases)
             samples = [prompt] * n_samples
             batch.extend(samples)
             if len(batch) == batch_size:
@@ -130,6 +134,7 @@ def run():
                + list(sorted(filtered_test_cases.keys())))
 
     for depth in range(1, 6):
+        depth = 5
         data_filename = f'data/synthetic_depth_{depth}.csv'
         n_probs = linecount(data_filename)
         with open(data_filename, 'r') as infile:
