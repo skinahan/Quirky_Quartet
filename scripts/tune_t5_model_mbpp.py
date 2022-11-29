@@ -186,8 +186,34 @@ def eval_and_save(tuned=False):
         save_result_file(d, os.path.join(result_dir, "{0}.json".format(idx)), is_json=True, is_pickle=False)
 
 
+def gen_summary(tuned=False):
+    result_dir = "./results/t5/mbpp_t5/eval_out/untuned"
+    if tuned:
+        result_dir = "./results/t5/mbpp_t5/eval_out/tuned"
+    total_files = 0
+    total_success = 0
+    for file in os.listdir(result_dir):
+        if file.endswith('.json'):
+            total_files = total_files + 1
+            f = os.path.join(result_dir, file)
+            if os.path.isfile(f):
+                # load the json file
+                f_obj = open(f)
+                data = json.load(f_obj)
+                f_obj.close()
+                if data["success"] == 1:
+                    total_success = total_success + 1
+    print("Summary statistics:")
+    if total_success > 0:
+        pass_rate = total_success / total_files
+    else:
+        pass_rate = 0.0
+    print(f"Pass Rate: {pass_rate}")
+
+
 def run():
     # tune_model()
     # test_model()
     eval_and_save()
+    # gen_summary(True)
 

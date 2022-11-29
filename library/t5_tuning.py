@@ -17,7 +17,7 @@ from .checkpointer import *
 def process(descriptions, source_code_list, prompt_type='Default'):
     prompts = [to_prompt(description, prompt_type=prompt_type)
                for description in descriptions]
-    return postprocess(source_code_list, prompts)
+    return postprocess(prompts, source_code_list)
 
 
 def postprocess(prompts, source_code_list, tokenizer_model='Salesforce/codet5-base'):
@@ -35,6 +35,7 @@ def postprocess(prompts, source_code_list, tokenizer_model='Salesforce/codet5-ba
     labels_with_ignore_index = []
     for labels_example in labels:
         labels_example = [label if label != 0 else -100 for label in labels_example]
+        labels_example = [label if label is not None else -100 for label in labels_example]
         labels_with_ignore_index.append(labels_example)
 
     model_inputs['labels'] = labels_with_ignore_index
@@ -99,28 +100,32 @@ def tune_model(dataset, preprocess, name='t5_tuning', prefix_dir=''):
         print(f'No test dataloader provided, skipping')
 
 
-def test_model(dataset, name='t5_tuning', prefix_dir=''):
+def test_model(dataset, preprocess, name='t5_tuning', prefix_dir=''):
     save_directory = Path(f'{prefix_dir}{name}/pretrained/')
-    model = T5ForConditionalGeneration.from_pretrained('Salesforce/codet5-base')
-    # model = CodeT5.load_from_checkpoint(f"{save_directory}/epoch=15-step=13520.ckpt")
-    # model.model.save_pretrained(save_directory)
-    # model = T5ForConditionalGeneration.from_pretrained(save_directory)
+    #model = T5ForConditionalGeneration.from_pretrained('Salesforce/codet5-base')
+    dataset = dataset.map(preprocess, batched=True)
+    dataset.set_format(type="torch", columns=['input_ids', 'attention_mask', 'labels'])
+    model = CodeT5.load_from_checkpoint(f"{save_directory}/epoch=15-step=13520.ckpt")
+    model.model.save_pretrained(save_directory)
+    model = T5ForConditionalGeneration.from_pretrained(save_directory)
     tokenizer = RobertaTokenizer.from_pretrained('Salesforce/codet5-base')
     test_set = dataset['test']
     # tokenizer.decode(batch['input_ids'][0])
     # tokenizer.decode([label for label in labels if label != -100])
     headers = ['docstring', 'label', 'output']
-    with open('t5_out_synthetic_untuned.csv', 'a', encoding="utf-8") as f_obj:
+    with open('t5_out_synthetic_tuned.csv', 'a', encoding="utf-8") as f_obj:
         writer_obj = csv.writer(f_obj)
         writer_obj.writerow(headers)
         for val in test_set:
             row_list = []
-            docstring = val['description']
-            label = val['code']
-            input_ids = tokenizer(docstring, return_tensors='pt').input_ids
+            input_ids = val['input_ids'].unsqueeze(dim=1)#tokenizer(docstring, return_tensors='pt').input_ids
+            docstring = tokenizer.decode(val['input_ids'], skip_special_tokens=True)
+            label = tokenizer.decode([label for label in val['labels'] if label != -100], skip_special_tokens=True)
+
             outputs = model.generate(input_ids, max_length=512)
             outputs = [tokenizer.decode(x, skip_special_tokens=True) for x in outputs]
             decoded = ''.join(outputs)
+
             row_list.append(docstring)
             row_list.append(label)
             row_list.append(decoded)

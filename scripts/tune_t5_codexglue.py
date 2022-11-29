@@ -88,7 +88,7 @@ def tune_model():
 def test_model():
     save_file = "./"
     model = T5ForConditionalGeneration.from_pretrained(save_file)
-    #model = T5ForConditionalGeneration.from_pretrained("Salesforce/codet5-small")
+    # model = T5ForConditionalGeneration.from_pretrained("Salesforce/codet5-small")
     tokenizer = RobertaTokenizer.from_pretrained("Salesforce/codet5-small")
     dataset = load_dataset("code_x_glue_ct_code_to_text", "python")
     test_example = dataset['test'][2]
@@ -97,8 +97,8 @@ def test_model():
     input_ids = tokenizer(test_example['docstring'], return_tensors='pt').input_ids
     # generate
     outputs = model.generate(input_ids)
-    #print("Generated code:", tokenizer.decode(outputs[0], skip_special_tokens=False))
-    #print("Ground truth:", test_example['code'])
+    # print("Generated code:", tokenizer.decode(outputs[0], skip_special_tokens=False))
+    # print("Ground truth:", test_example['code'])
     test_set = dataset['test']
 
     generated_outputs = []
@@ -128,7 +128,7 @@ def evaluation_format():
     answer_file = open("answers.json", "w")
     pred_file = open("predictions.txt", "w", encoding="utf-8")
 
-    with open('t5_out_codex_untuned.csv', 'r', encoding="utf-8") as f_obj:
+    with open('t5_out_synthetic_untuned.csv', 'r', encoding="utf-8") as f_obj:
         reader_obj = csv.reader(f_obj)
         for row in reader_obj:
             if len(row) > 0:
@@ -144,14 +144,12 @@ def evaluation_format():
                 pred_no_newlines = row[2].replace("\n", "")
                 pred_file.write(pred_no_newlines + "\n")
 
-
         f_obj.close()
     answer_file.close()
     pred_file.close()
 
 
 def run():
-    tune_model()
-    test_model()
-    # evaluation_format()
-
+    # tune_model()
+    # test_model()
+    evaluation_format()

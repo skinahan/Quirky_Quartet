@@ -16,6 +16,6 @@ def run():
     tune_model(mixed_dataset, partial(process_synthetic, prompt_type=prompt_type),
                name='synthetic_all', prefix_dir='/scratch/lsaldyt/experiments/',
                freeze=True)
-    """
-    test_model(mixed_dataset,
+               """
+    test_model(mixed_dataset, partial(process_synthetic, prompt_type=prompt_type),
                name='t5_tuning', prefix_dir='')
