@@ -68,9 +68,8 @@ def tune_model(dataset, preprocess, name='t5_tuning', prefix_dir='', freeze=True
                           callbacks=[early_stop_callback, lr_monitor],
                           logger=logger,
                           log_every_n_steps=1,
-                          check_test_every_n_epoch=1,
-                          max_epochs=3)
-                          log_every_n_steps=1)
+                          check_val_every_n_epoch=1,
+                          max_epochs=2)
     if use_gpu:
         trainer = Trainer(gpus=1, **trainer_kwargs)
     else:
