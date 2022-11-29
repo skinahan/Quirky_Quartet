@@ -1,0 +1,2 @@
+#!/bin/bash
+interactive -p gpu --gres=gpu:A100:1 -q wildfire -t 15

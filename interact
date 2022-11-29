@@ -1,0 +1,4 @@
+#!/bin/bash
+# interactive -p debug -q wildfire -t 15
+# interactive -p htc -q normal -t 120
+interactive -p fn2 -q normal -t 120
