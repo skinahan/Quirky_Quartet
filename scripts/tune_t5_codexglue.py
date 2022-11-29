@@ -10,5 +10,5 @@ def run():
     print("Code:", example["code"])
     print("Docstring:", example["docstring"])
     tune_model(dataset, process_codexglue, prefix_dir='/scratch/lsaldyt/experiments/',
-               freeze=True)
+               freeze=True, use_gpu=True)
     test_model(dataset, prefix_dir='/scratch/lsaldyt/experiments/')

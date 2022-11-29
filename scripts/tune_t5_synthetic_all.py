@@ -11,6 +11,6 @@ def run():
     mixed_dataset = mixed_dataset['train'].train_test_split(test_size=0.2)
     tune_model(mixed_dataset, partial(process_synthetic, prompt_type=prompt_type),
                name='synthetic_all', prefix_dir='/scratch/lsaldyt/experiments/',
-               freeze=True)
+               freeze=False, use_gpu=True)
     test_model(mixed_dataset,
                name='synthetic_all', prefix_dir='/scratch/lsaldyt/experiments/')

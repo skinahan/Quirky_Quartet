@@ -99,8 +99,14 @@ alias python=python3.10
 export PYTHONPATH=$HOME/python3.10
 alias pip=pip3.10
 ```  
-Then, install this package normally, starting with `pip install poetry`.
+Then, install this package normally, starting with `pip install poetry`.  
 
+To setup Cuda, use `module load cuda/11.6.0`.
+To setup cudnn, it may be necessary to download it from [here](https://developer.nvidia.com/rdp/cudnn-download), `scp` it to agave, untar it, and then link to it:
+``` bash
+export INCLUDEPATH=$INCLUDEPATH:$HOME/cuda/include
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/cuda/lib64
+```
 
 To setup git with tokens on Agave, obtain a token from GitHub, and use:
 ``` bash

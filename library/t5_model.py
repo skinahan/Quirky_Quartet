@@ -10,7 +10,7 @@ class CodeT5(pl.LightningModule):
         super().__init__()
         self.model = T5ForConditionalGeneration.from_pretrained('Salesforce/codet5-small')
         if freeze:
-            for param in model.base_model.parameters():
+            for param in self.model.base_model.parameters():
                 param.requires_grad = False
         self.save_hyperparameters()
         self.training_dataloader = train_dataloader

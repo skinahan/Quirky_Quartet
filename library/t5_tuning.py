@@ -37,22 +37,22 @@ def postprocess(prompts, source_code_list, tokenizer_model='Salesforce/codet5-ba
     model_inputs['labels'] = labels_with_ignore_index
     return model_inputs
 
-def tune_model(dataset, preprocess, name='t5_tuning', prefix_dir=''):
-    dataset = dataset.map(preprocess, batched=True, freeze=True)
+def tune_model(dataset, preprocess, name='t5_tuning', prefix_dir='', freeze=True, use_gpu = True):
+    dataset = dataset.map(preprocess, batched=True)
     dataset.set_format(type="torch", columns=['input_ids', 'attention_mask', 'labels'])
     if 'train' in dataset:
-        train_dataloader = DataLoader(dataset['train'], shuffle=True, batch_size=8,
+        train_dataloader = DataLoader(dataset['train'], shuffle=True, batch_size=2,
                                       num_workers=4)
     else:
-        train_dataloader = DataLoader(dataset, shuffle=True, batch_size=8,
+        train_dataloader = DataLoader(dataset, shuffle=True, batch_size=2,
                                       num_workers=4)
     if 'validation' in dataset:
-        valid_dataloader = DataLoader(dataset['validation'], batch_size=4, num_workers=4)
+        valid_dataloader = DataLoader(dataset['validation'], batch_size=2, num_workers=4)
     else:
         valid_dataloader = None
         print(f'No validation data provided!!')
     if 'test' in dataset:
-        test_dataloader  = DataLoader(dataset['test'], batch_size=4, num_workers=4)
+        test_dataloader  = DataLoader(dataset['test'], batch_size=2, num_workers=4)
     else:
         test_dataloader = None
         print(f'No test data provided!!')
@@ -77,12 +77,11 @@ def tune_model(dataset, preprocess, name='t5_tuning', prefix_dir=''):
                                      ],
                           logger=logger,
                           log_every_n_steps=1)
-    # use_gpu = True
-    use_gpu = False
     if use_gpu:
         trainer = Trainer(gpus=1, **trainer_kwargs)
     else:
         trainer = Trainer(accelerator='cpu', **trainer_kwargs)
+        1/0
     trainer.fit(model)
 
     save_directory = Path(f'{prefix_dir}{name}/pretrained/')
