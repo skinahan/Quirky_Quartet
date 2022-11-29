@@ -2,13 +2,13 @@
 #SBATCH -p gpu
 #SBATCH -q wildfire
 #SBATCH -t 7-00:00:00   # time in d-hh:mm:ss
-#SBATCH -o /scratch/lsaldyt/experiments/tune_t5_synthetic_all/%j.out # file to save job's STDOUT (%j = JobId)
-#SBATCH -e /scratch/lsaldyt/experiments/tune_t5_synthetic_all/%j.err # file to save job's STDERR (%j = JobId)
+#SBATCH -o /scratch/lsaldyt/experiments/tune_t5_synthetic_generalize/%j.out # file to save job's STDOUT (%j = JobId)
+#SBATCH -e /scratch/lsaldyt/experiments/tune_t5_synthetic_generalize/%j.err # file to save job's STDERR (%j = JobId)
 #SBATCH --mail-user=lsaldyt@asu.edu # Mail-to address
 #SBATCH --mail-type=ALL  # Send an e-mail when a job starts, stops, or fails 
 #SBATCH -N 1 
 #SBATCH -c 32
-#SBATCH --job-name=tune_t5_synthetic_all
+#SBATCH --job-name=tune_t5_synthetic_generalize
 
 #SBATCH --gres=gpu:1 # Request 1 GPU
 #SBATCH -C V100
@@ -34,4 +34,4 @@ env
 module list
 nvcc --version
 nvidia-smi
-./run tune_t5_synthetic_all 
+./run tune_t5_synthetic_generalize 

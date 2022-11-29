@@ -37,7 +37,7 @@ def postprocess(prompts, source_code_list, tokenizer_model='Salesforce/codet5-ba
     model_inputs['labels'] = labels_with_ignore_index
     return model_inputs
 
-def tune_model(dataset, preprocess, name='t5_tuning', prefix_dir='', freeze=True, use_gpu = True):
+def tune_model(dataset, preprocess, name='t5_tuning', prefix_dir='', test_dataset=None, freeze=True, use_gpu = True):
     dataset = dataset.map(preprocess, batched=True)
     dataset.set_format(type="torch", columns=['input_ids', 'attention_mask', 'labels'])
     if 'train' in dataset:
@@ -53,13 +53,15 @@ def tune_model(dataset, preprocess, name='t5_tuning', prefix_dir='', freeze=True
         print(f'No validation data provided!!')
     if 'test' in dataset:
         test_dataloader  = DataLoader(dataset['test'], batch_size=2, num_workers=4)
+    elif test_dataset is not None:
+        test_dataloader  = DataLoader(test_dataset, batch_size=2, num_workers=4)
     else:
         test_dataloader = None
         print(f'No test data provided!!')
     batch = next(iter(train_dataloader))
     print(batch.keys())
     model = CodeT5(train_dataloader, valid_dataloader, test_dataloader, freeze=freeze)
-    early_stop_callback = EarlyStopping(monitor='testing_loss', mode='min')
+    early_stop_callback = EarlyStopping(monitor='training_loss', mode='min')
     lr_monitor = LearningRateMonitor(logging_interval='step')
     logger = CSVLogger(f'{prefix_dir}csv_data', name=name, flush_logs_every_n_steps=1)
     print(logger)

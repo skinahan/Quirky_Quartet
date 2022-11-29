@@ -263,7 +263,7 @@ tqdm = ["tqdm"]
 
 [[package]]
 name = "huggingface-hub"
-version = "0.11.0"
+version = "0.11.1"
 description = "Client library to download and publish models, datasets and other repos on the huggingface.co hub"
 category = "main"
 optional = false
@@ -472,11 +472,11 @@ test = ["hypothesis (>=5.5.3)", "pytest (>=6.0)", "pytest-xdist (>=1.31)"]
 
 [[package]]
 name = "pandas-stubs"
-version = "1.5.1.221024"
+version = "1.5.2.221124"
 description = "Type annotations for pandas"
 category = "main"
 optional = false
-python-versions = ">=3.8,<3.11"
+python-versions = ">=3.8,<3.12"
 
 [package.dependencies]
 types-pytz = ">=2022.1.1"
@@ -547,7 +547,7 @@ six = ">=1.5"
 
 [[package]]
 name = "pytorch-lightning"
-version = "1.8.3.post0"
+version = "1.8.3.post1"
 description = "PyTorch Lightning is the lightweight PyTorch wrapper for ML researchers. Scale your models. Write less boilerplate."
 category = "main"
 optional = false
@@ -1235,8 +1235,8 @@ fsspec = [
     {file = "fsspec-2022.11.0.tar.gz", hash = "sha256:259d5fd5c8e756ff2ea72f42e7613c32667dc2049a4ac3d84364a7ca034acb8b"},
 ]
 huggingface-hub = [
-    {file = "huggingface_hub-0.11.0-py3-none-any.whl", hash = "sha256:1f540c6d57cb1684d3578d7bf2d35041a5145b17e8af932505db7f4fbcc7640d"},
-    {file = "huggingface_hub-0.11.0.tar.gz", hash = "sha256:b48860d791502c2b8a0e6c841214df19c67999198a75d1417512b45752508ac6"},
+    {file = "huggingface_hub-0.11.1-py3-none-any.whl", hash = "sha256:11eed7aab4fa4d1fb532f2aea3379ef4998d9f6bc24a330834dfedd3dac7f441"},
+    {file = "huggingface_hub-0.11.1.tar.gz", hash = "sha256:8b9ebf9bbb1782f6f0419ec490973a6487c6c4ed84293a8a325d34c4f898f53f"},
 ]
 idna = [
     {file = "idna-3.4-py3-none-any.whl", hash = "sha256:90b77e79eaa3eba6de819a0c442c0b4ceefc341a7a2ab77d7562bf49f425c5c2"},
@@ -1524,8 +1524,8 @@ pandas = [
     {file = "pandas-1.5.2.tar.gz", hash = "sha256:220b98d15cee0b2cd839a6358bd1f273d0356bf964c1a1aeb32d47db0215488b"},
 ]
 pandas-stubs = [
-    {file = "pandas-stubs-1.5.1.221024.tar.gz", hash = "sha256:a756ea4c7f2f973b9f9dfd64d724ba911e82e8ffa2e0188f56fadfdd9345771a"},
-    {file = "pandas_stubs-1.5.1.221024-py3-none-any.whl", hash = "sha256:363e3833137375aebd6ab272fe89d94e88a443891a48d536c905e16ce2800cf6"},
+    {file = "pandas-stubs-1.5.2.221124.tar.gz", hash = "sha256:d6bab9f373ff3c309bf560065d230a38ce4dcd22368be393fad6eb353d102b7c"},
+    {file = "pandas_stubs-1.5.2.221124-py3-none-any.whl", hash = "sha256:5a2c47a0cf8e12e113d760d5da9c48daa2b977b14a4c368b8bbff27dbfcfd2bb"},
 ]
 pillow = [
     {file = "Pillow-9.3.0-1-cp37-cp37m-win32.whl", hash = "sha256:e6ea6b856a74d560d9326c0f5895ef8050126acfdc7ca08ad703eb0081e82b74"},
@@ -1656,8 +1656,8 @@ python-dateutil = [
     {file = "python_dateutil-2.8.2-py2.py3-none-any.whl", hash = "sha256:961d03dc3453ebbc59dbdea9e4e11c5651520a876d0f4db161e8674aae935da9"},
 ]
 pytorch-lightning = [
-    {file = "pytorch-lightning-1.8.3.post0.tar.gz", hash = "sha256:bf64e70177ba095b4079ce309f7c83a7e1c25e6ec49be3d525c6222052b84dd1"},
-    {file = "pytorch_lightning-1.8.3.post0-py3-none-any.whl", hash = "sha256:32a0753279b322998ad9d4ff57b390f97894b19bbdcb482984b58a11e4d52460"},
+    {file = "pytorch-lightning-1.8.3.post1.tar.gz", hash = "sha256:4a1804d55c3aa675a2dd21ee17282cad0bc703dfeace70e75dc956f1faf31411"},
+    {file = "pytorch_lightning-1.8.3.post1-py3-none-any.whl", hash = "sha256:2b04cdb876f4e8749161510712b22081dab8db3e6548530608680a415844b6e3"},
 ]
 pytz = [
     {file = "pytz-2022.6-py2.py3-none-any.whl", hash = "sha256:222439474e9c98fced559f1709d89e6c9cbf8d79c794ff3eb9f8800064291427"},
