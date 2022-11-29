@@ -102,12 +102,12 @@ def tune_model(dataset, preprocess, name='t5_tuning', prefix_dir=''):
 
 def test_model(dataset, preprocess, name='t5_tuning', prefix_dir=''):
     save_directory = Path(f'{prefix_dir}{name}/pretrained/')
-    #model = T5ForConditionalGeneration.from_pretrained('Salesforce/codet5-base')
+    model = T5ForConditionalGeneration.from_pretrained('Salesforce/codet5-base')
     dataset = dataset.map(preprocess, batched=True)
     dataset.set_format(type="torch", columns=['input_ids', 'attention_mask', 'labels'])
-    model = CodeT5.load_from_checkpoint(f"{save_directory}/epoch=15-step=13520.ckpt")
-    model.model.save_pretrained(save_directory)
-    model = T5ForConditionalGeneration.from_pretrained(save_directory)
+    #model = CodeT5.load_from_checkpoint(f"{save_directory}/epoch=15-step=13520.ckpt")
+    #model.model.save_pretrained(save_directory)
+    #model = T5ForConditionalGeneration.from_pretrained(save_directory)
     tokenizer = RobertaTokenizer.from_pretrained('Salesforce/codet5-base')
     test_set = dataset['test']
     # tokenizer.decode(batch['input_ids'][0])
