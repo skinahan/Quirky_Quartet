@@ -64,18 +64,21 @@ def read_prompt(fname, idx):
         return rows[idx]
 
 
-def run_codex(api_key, des_prompt):
+def run_codex(api_key, des_prompt, batch=False):
     openai.api_key = api_key
     response = openai.Completion.create (engine="code-davinci-002",
                     prompt=des_prompt,
-                    temperature=0.5,
-                    max_tokens=512,
+                    temperature=0.1,
+                    max_tokens=500, # To evenly divide into token rate limit
                     top_p=0.9,
                     frequency_penalty=0.7,
                     presence_penalty=0
                     )
-
-    return response.choices[0].text
+    if batch:
+        return [des_prompt[c.index] + c.text
+                for c in sorted(response.choices, key=lambda c : c.index)]
+    else:
+        return response.choices[0].text
 
 # TODO: Parse the codex output and ensure it contains valid python code.
 # this basic approach does not sanitize the codex output, nor does it ensure that the
