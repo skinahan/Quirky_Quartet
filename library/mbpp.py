@@ -444,6 +444,18 @@ def plot_results():
     ax.set(title='Unparseable Rate for MBPP with no prompting', xlabel='@ K', ylabel='Unparseable Rate')
     plt.show()
 
+    # Unparseable Rate for MBPP in 5-shot setting
+    ids = [str(i) for i in range(4)]
+    dfs = [pd.DataFrame({"Unparseable Rate": res["unparseable_rate"]["no_prompt"]["5"], "K": K})]
+    dfs[-1]["Prompt Id"] = dfs[-1].apply(lambda x: "No Prompt", axis=1)
+    for id in ids:
+        df = pd.DataFrame({"Unparseable Rate": res["unparseable_rate"]["prompt_{0}".format(id)]["5"], "K": K})
+        df["Prompt Id"] = df.apply(lambda x: "Prompt {0}".format(id), axis=1)
+        dfs.append(df)
+    ax = sns.lineplot(data=pd.concat(dfs), x="K", y="Unparseable Rate", hue="Prompt Id")
+    ax.set(title='Unparseable Rate for MBPP in 5-shot setting', xlabel='@ K', ylabel='Unparseable Rate')
+    plt.show()
+
 if __name__ == "__main__":
     api_key = read_config()
     # data = read_mbpp(sanitized=False)
