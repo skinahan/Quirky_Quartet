@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to extract unique values from the given dictionary values.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nWhich data structure is being used? Can the task be split into smaller sub-tasks? How many loops are needed to solve the tasks? Solve sub-tasks iteratively to find the answer\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\n\ndef extract_unique_values(dictionary):\n\n    # Convert dictionary values to a set, then back to a list. Sets are unordered and unique.\n    return list(set(dictionary.values()))\n\nprint(extract_unique_values({'a': 1, 'b': 2, 'c': 3}))",
+        "clean_code": "\"\"\"\n\ndef extract_unique_values(dictionary):\n\n    # Convert dictionary values to a set, then back to a list. Sets are unordered and unique.\n    return list(set(dictionary.values()))\n\nprint(extract_unique_values({'a': 1, 'b': 2, 'c': 3}))"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\ndef extract_unique_values(data):\n    unique_list = [] #create a list to store the unique values in it.\n    for i in data: #for loop to iterate through the given dictionary values. \n        if i not in unique_list: #if condition to check if the value is already present in the list or not. \n            unique_list.append(i) #if it is not present then append it to the list. \n\n    return unique_list #returning the final list of unique values extracted from dictionary values. \n\n\n\n\n#Test Cases:\n\n    \nprint(\"Test1\")   #test case 1, expected output [0,1,2,3]\ndictionary = {1: 0, 2: 1, 3: 2}   #given dictionary with keys and values as integers. \nprint(extract_unique_values(dictionary))\n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n      #test case 2, expected output ['A','B','C']",
+        "clean_code": "\"\"\"\ndef extract_unique_values(data):\n    unique_list = [] #create a list to store the unique values in it.\n    for i in data: #for loop to iterate through the given dictionary values. \n        if i not in unique_list: #if condition to check if the value is already present in the list or not. \n            unique_list.append(i) #if it is not present then append it to the list. \n\n    return unique_list #returning the final list of unique values extracted from dictionary values. \n\n\n\n\n#Test Cases:\n\n    \nprint(\"Test1\")   #test case 1, expected output [0,1,2,3]\ndictionary = {1: 0, 2: 1, 3: 2}   #given dictionary with keys and values as integers. \nprint(extract_unique_values(dictionary))\n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n      #test case 2, expected output ['A','B','C']"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n# def unique_values(d):\n#     l = []\n#     for i in d.values():\n#         if i not in l:\n#             l.append(i)\n#     return (l)\n\n\n\n\n\n\n\n\n\n\n\n    # print (unique_values({'a': 1, 'b': 2, 'c': 3}))",
+        "clean_code": "\"\"\"\n# def unique_values(d):\n#     l = []\n#     for i in d.values():\n#         if i not in l:\n#             l.append(i)\n#     return (l)\n\n\n\n\n\n\n\n\n\n\n\n    # print (unique_values({'a': 1, 'b': 2, 'c': 3}))"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n<code>def unique_values(dict):\n    return list(set(dict.values()))\n</code>\n",
+        "clean_code": "<code>def unique_values(dict):\n    return list(set(dict.values()))\n</code>"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n'''\n\ndef extract_unique(dic):\n    return list(set(dic.values()))\n\n\nprint(extract_unique({1: 1, 2: 2, 3: 3})) # [1, 2, 3]",
+        "clean_code": "'''\n\ndef extract_unique(dic):\n    return list(set(dic.values()))\n\n\nprint(extract_unique({1: 1, 2: 2, 3: 3})) # [1, 2, 3]"
+    }
+}

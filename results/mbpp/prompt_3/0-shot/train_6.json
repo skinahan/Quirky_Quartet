@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to search a literals string in a string and also find the location within the original string where the pattern occurs by using regex.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nPay attention to the datatype of input and expected output. Is the input a tuple? Is the input a string? Is the input a matrix? Use correct data structure to derive the needed answer.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n<code>def search_substring(string, pattern):\n    import re\n    match = re.search(pattern, string)\n    if match:\n        return (match.start(), match.end())\n    else:\n        return None\n\n    # Write your code here!\n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n   # print(search_substring(\"Python is an interpreted, high-level, general-purpose programming language.\", \"general\"))  # Expected output: (56, 63) \n</code>\n",
+        "clean_code": "<code>def search_substring(string, pattern):\n    import re\n    match = re.search(pattern, string)\n    if match:\n        return (match.start(), match.end())\n    else:\n        return None\n\n    # Write your code here!\n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n   # print(search_substring(\"Python is an interpreted, high-level, general-purpose programming language.\", \"general\"))  # Expected output: (56, 63) \n</code>"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\n'''\n\n\ndef find_location(pattern, string):\n    import re\n    return [m.start() for m in re.finditer(pattern, string)]\n\n\nprint(find_location(\"is\", \"This is an example where is the word 'is' repeated?\"))",
+        "clean_code": "'''\n\n\ndef find_location(pattern, string):\n    import re\n    return [m.start() for m in re.finditer(pattern, string)]\n\n\nprint(find_location(\"is\", \"This is an example where is the word 'is' repeated?\"))"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\nimport re\n\n\ndef find_pattern(s, p):\n    \"\"\" Find the location of pattern p in string s.\n\n    Args:\n        s (str): string to search in. E.g., 'abcdefghijklmnop'\n        p (str): pattern to search for. E.g., 'def'\n\n    Returns:\n        tuple: start and end index of first occurrence of pattern in s if found, None otherwise. E.g., (3, 6)\n\n    \"\"\"\n\n    # write your code here and make sure the returned value is as specified above\n\n    # For example: you can use re library to do this task as follows:\n    ",
+        "clean_code": "\"\"\"\nimport re\n\n\ndef find_pattern(s, p):\n    \"\"\" Find the location of pattern p in string s.\n\n    Args:\n        s (str): string to search in. E.g., 'abcdefghijklmnop'\n        p (str): pattern to search for. E.g., 'def'\n\n    Returns:\n        tuple: start and end index of first occurrence of pattern in s if found, None otherwise. E.g., (3, 6)\n\n    \"\"\"\n\n    # write your code here and make sure the returned value is as specified above\n\n    # For example: you can use re library to do this task as follows:"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\ndef find_pattern(input_string, pattern):\n    # Write your code here.\n    pass\n\"\"\"\n\n\ndef find_pattern(input_string, pattern):\n\n    if input_string is None or len(input_string) == 0:\n        return None\n\n    result = []\n\n    for i in range(len(input_string)):\n        if input_string[i] == pattern[0]:\n            result.append(i)\n\n    return result",
+        "clean_code": "def find_pattern(input_string, pattern):\n    # Write your code here.\n    pass\n\"\"\"\n\n\ndef find_pattern(input_string, pattern):\n\n    if input_string is None or len(input_string) == 0:\n        return None\n\n    result = []\n\n    for i in range(len(input_string)):\n        if input_string[i] == pattern[0]:\n            result.append(i)\n\n    return result"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\nimport re\ndef find_pattern(word, pattern):\n    return [m.start() for m in re.finditer(pattern, word)]\n\n\nprint(find_pattern('abracadabra', 'bra'))",
+        "clean_code": "\"\"\"\nimport re\ndef find_pattern(word, pattern):\n    return [m.start() for m in re.finditer(pattern, word)]\n\n\nprint(find_pattern('abracadabra', 'bra'))"
+    }
+}

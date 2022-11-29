@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to move all the numbers in it to the given string.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nPay attention to the datatype of input and expected output. Is the input a tuple? Is the input a string? Is the input a matrix? Use correct data structure to derive the needed answer.\nAnswer:",
+    "success": 1,
+    "0": {
+        "status": 2,
+        "codex_out": "\ndef move_numbers(input):\n    \"\"\"Function to move all numbers in a given string to the end of it\"\"\"\n    output = \"\"\n    nums = \"\"\n<code>for char in input:\n    if char.isdigit():  # check if character is a number or not\n        nums += char  # concatenate the number to nums string variable\n\n    else:  # if character is not a number then concatenate it to output string variable\n        output += char  \n\n   return (output + nums)  # return the final string by appending nums after output.\n\n print(move_numbers(\"abcd12efg34hij5\"))  # abcdefg1234hij5 -&gt; abcdefghij12345 -&gt; abcdefghij12345, because no numbers left to move.\n\n print(move_numbers(\"abcd12efg34hij5klmn67opqrst8uvwxyz9\"))  # abcd12efg34hij5klmn67opqrst8uvwxyz9 -&gt; abcdefghijklnmopqrstuvwxyz123456789 -&gt; abcdefghijklnmopqrstuvwxyz123456789, because no numbers left to move.\n\n print(move_numbers(\"abcd1e2fg3hi4jk5lm6no7p8qrs9t0uvwx1yz2\"))  # abcd1e2fg3hi4jk5lm6no7p8qrs9t0uvwx1yz2 -&gt; bcdefghijklnopqrstuvyxz12233344444555555666666777777788888888999999900000, because no numbers left to move.\n\n print(move_numbers(\"abcde\"))                                #abcde -&gt; bcdea, because no numbers left to move.\n\n print(move_numbers(\"a1b2c3d4e5f6g7h8i9j0k\"))              #a1b2c3d4e5f6g7h8i9j0k -&gt; bcaedfighkj0123",
+        "clean_code": "def move_numbers(input):\n    \"\"\"Function to move all numbers in a given string to the end of it\"\"\"\n    output = \"\"\n    nums = \"\"\n<code>for char in input:\n    if char.isdigit():  # check if character is a number or not\n        nums += char  # concatenate the number to nums string variable\n\n    else:  # if character is not a number then concatenate it to output string variable\n        output += char  \n\n   return (output + nums)  # return the final string by appending nums after output.\n\n print(move_numbers(\"abcd12efg34hij5\"))  # abcdefg1234hij5 -&gt; abcdefghij12345 -&gt; abcdefghij12345, because no numbers left to move.\n\n print(move_numbers(\"abcd12efg34hij5klmn67opqrst8uvwxyz9\"))  # abcd12efg34hij5klmn67opqrst8uvwxyz9 -&gt; abcdefghijklnmopqrstuvwxyz123456789 -&gt; abcdefghijklnmopqrstuvwxyz123456789, because no numbers left to move.\n\n print(move_numbers(\"abcd1e2fg3hi4jk5lm6no7p8qrs9t0uvwx1yz2\"))  # abcd1e2fg3hi4jk5lm6no7p8qrs9t0uvwx1yz2 -&gt; bcdefghijklnopqrstuvyxz12233344444555555666666777777788888888999999900000, because no numbers left to move.\n\n print(move_numbers(\"abcde\"))                                #abcde -&gt; bcdea, because no numbers left to move.\n\n print(move_numbers(\"a1b2c3d4e5f6g7h8i9j0k\"))              #a1b2c3d4e5f6g7h8i9j0k -&gt; bcaedfighkj0123"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef move_number(input_string):\n    return \"\".join([x for x in input_string if x.isnumeric()])",
+        "clean_code": "\"\"\"\ndef move_number(input_string):\n    return \"\".join([x for x in input_string if x.isnumeric()])"
+    },
+    "2": {
+        "status": 0,
+        "codex_out": "\n\ndef move_digits(input_string):\n    string = \"\"\n    number = \"\"\n\n    for i in input_string:\n        if i.isdigit():\n            number += i\n\n        else:\n            string += i\n\n    return string + number\n\n \nprint(move_digits(\"abc123\")) # Output : abc123",
+        "clean_code": "def move_digits(input_string):\n    string = \"\"\n    number = \"\"\n\n    for i in input_string:\n        if i.isdigit():\n            number += i\n\n        else:\n            string += i\n\n    return string + number\n\n \nprint(move_digits(\"abc123\")) # Output : abc123"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\n# def move_numbers(given_string):\n#     # write your code here to return the answer\n#     return answer\n\n\ndef move_numbers(given_string):\n\n    nums = []\n    chars = []\n\n    for i in given_string:\n        if i.isalpha():\n            chars.append(i)\n        else:\n            nums.append(i)\n\n    return ''.join(chars + nums)",
+        "clean_code": "\"\"\"\n# def move_numbers(given_string):\n#     # write your code here to return the answer\n#     return answer\n\n\ndef move_numbers(given_string):\n\n    nums = []\n    chars = []\n\n    for i in given_string:\n        if i.isalpha():\n            chars.append(i)\n        else:\n            nums.append(i)\n\n    return ''.join(chars + nums)"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\nWrite your answer in the following function.\n\"\"\"\ndef move_numbers(data):\n    # Your code goes here.\n    return data",
+        "clean_code": "Write your answer in the following function.\n\"\"\"\ndef move_numbers(data):\n    # Your code goes here.\n    return data"
+    }
+}

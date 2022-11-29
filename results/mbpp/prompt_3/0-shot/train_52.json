@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to group a sequence of key-value pairs into a dictionary of lists using collections module.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nPay attention to the datatype of input and expected output. Is the input a tuple? Is the input a string? Is the input a matrix? Use correct data structure to derive the needed answer.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\n'''\nfrom collections import defaultdict\ndef group_by_owners(files):\n    d = defaultdict(list)\n    for k, v in files.items():\n        d[v].append(k)\n\n    return dict(d)",
+        "clean_code": "'''\nfrom collections import defaultdict\ndef group_by_owners(files):\n    d = defaultdict(list)\n    for k, v in files.items():\n        d[v].append(k)\n\n    return dict(d)"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\nimport collections\ndef group_by_owners(files):\n    d = collections.defaultdict(list)\n    for k,v in files.items():\n        d[v].append(k)\n\n    return dict(d)\n\n    \n\n    \n\n    \nif __name__ == \"__main__\":  # call function here to test it out  # noqa: F821,E999",
+        "clean_code": "\"\"\"\nimport collections\ndef group_by_owners(files):\n    d = collections.defaultdict(list)\n    for k,v in files.items():\n        d[v].append(k)\n\n    return dict(d)\n\n    \n\n    \n\n    \nif __name__ == \"__main__\":  # call function here to test it out  # noqa: F821,E999"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n'''\nimport collections\ndef group_by_owners(files):\n    return collections.defaultdict(list)\n\n\nfiles = {'Input.txt': 'Randy', 'Code.py': 'Stan', 'Output.txt': 'Randy'}\nprint(group_by_owners(files))",
+        "clean_code": "'''\nimport collections\ndef group_by_owners(files):\n    return collections.defaultdict(list)\n\n\nfiles = {'Input.txt': 'Randy', 'Code.py': 'Stan', 'Output.txt': 'Randy'}\nprint(group_by_owners(files))"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\n\nfrom collections import defaultdict\n\n\ndef groupby(func, seq):\n\n    d = defaultdict(list)\n\n    for i in seq:\n        d[func(i)].append(i)\n\n    return dict(d)",
+        "clean_code": "\"\"\"\n\nfrom collections import defaultdict\n\n\ndef groupby(func, seq):\n\n    d = defaultdict(list)\n\n    for i in seq:\n        d[func(i)].append(i)\n\n    return dict(d)"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n'''\nfrom collections import defaultdict\n\n\ndef group_by_owners(files):\n    d = defaultdict(list)\n\n    for key, value in files.items():\n        d[value].append(key)\n\n    return dict(d)",
+        "clean_code": "'''\nfrom collections import defaultdict\n\n\ndef group_by_owners(files):\n    d = defaultdict(list)\n\n    for key, value in files.items():\n        d[value].append(key)\n\n    return dict(d)"
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to find the maximum of nth column from the given tuple list.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nBreak the problem down into smaller pieces. Sorting the input might help you create an efficient solution, use vectorised operations when possible. Apply recursion where possible.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\nfrom typing import List, Tuple\n\n\ndef max_of_nth_column(input_list: List[Tuple], n: int) -> int:\n    \"\"\" !!! This is a solution without recursion !!! \"\"\"\n    # TODO: use recursion to solve this problem!\n\n    # Step 1 - sort the input list by the n-th column of each tuple element. Use vectorised operations!\n\n    # Step 2 - return the last element from the sorted list. Use vectorised operations!\n\n    pass",
+        "clean_code": "\"\"\"\nfrom typing import List, Tuple\n\n\ndef max_of_nth_column(input_list: List[Tuple], n: int) -> int:\n    \"\"\" !!! This is a solution without recursion !!! \"\"\"\n    # TODO: use recursion to solve this problem!\n\n    # Step 1 - sort the input list by the n-th column of each tuple element. Use vectorised operations!\n\n    # Step 2 - return the last element from the sorted list. Use vectorised operations!\n\n    pass"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\nThe function max_column should return the maximum of nth column.\nNote:\nThe input list is sorted in ascending order based on the 1st column. \nIf the nth column is also same, then sort it by 2nd column and so on.\n\n\nExample:\nInput: [('Tom', 19, 80), ('John', 20, 90), ('Jony', 17, 91), ('Jony', 17, 93), ('Json', 21, 85)] \nOutput: [('John', 20, 90), ('Jony', 17, 93), ('Json', 21, 85)]\n'''\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    \n    \n    \n    \n# Write your code here",
+        "clean_code": "The function max_column should return the maximum of nth column.\nNote:\nThe input list is sorted in ascending order based on the 1st column. \nIf the nth column is also same, then sort it by 2nd column and so on.\n\n\nExample:\nInput: [('Tom', 19, 80), ('John', 20, 90), ('Jony', 17, 91), ('Jony', 17, 93), ('Json', 21, 85)] \nOutput: [('John', 20, 90), ('Jony', 17, 93), ('Json', 21, 85)]\n'''\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    \n    \n    \n    \n# Write your code here"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n<code>def func(x,n):\n    return max(x,key=lambda i:i[n])[n]\n</code>\n",
+        "clean_code": "<code>def func(x,n):\n    return max(x,key=lambda i:i[n])[n]\n</code>"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\n'''\n\n\ndef max_column(tup_list, n):\n    return max(tup_list, key=lambda x: x[n - 1])[n - 1]\n\n\nif __name__ == '__main__':\n    tup_list = [(1, 7), (2, 3), (4, 9)]\n    n = 2  # column index to find the maximum value from the list of tuples.\n\n    print(\"The maximum value in column {} is {}.\".format(n, max_column(tup_list, n)))",
+        "clean_code": "'''\n\n\ndef max_column(tup_list, n):\n    return max(tup_list, key=lambda x: x[n - 1])[n - 1]\n\n\nif __name__ == '__main__':\n    tup_list = [(1, 7), (2, 3), (4, 9)]\n    n = 2  # column index to find the maximum value from the list of tuples.\n\n    print(\"The maximum value in column {} is {}.\".format(n, max_column(tup_list, n)))"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n#\n\ndef max_of_nth_column(input,n):\n    return max(input,key=lambda x:x[n])[n]\n\n\n# Question:\nWrite a function to find the maximum of nth column from the given tuple list. Task: Write a python function to solve the above question. No additional comments and docstrings are needed. Additional info: Break the problem down into smaller pieces. Sorting the input might help you create an efficient solution, use vectorised operations when possible. Apply recursion where possible. Answer: # def max_of_nth_column(input, n): return max(input, key=lambda x : x[n])[n]",
+        "clean_code": "#\n\ndef max_of_nth_column(input,n):\n    return max(input,key=lambda x:x[n])[n]\n\n\n# Question:\nWrite a function to find the maximum of nth column from the given tuple list. Task: Write a python function to solve the above question. No additional comments and docstrings are needed. Additional info: Break the problem down into smaller pieces. Sorting the input might help you create an efficient solution, use vectorised operations when possible. Apply recursion where possible. Answer: # def max_of_nth_column(input, n): return max(input, key=lambda x : x[n])[n]"
+    }
+}

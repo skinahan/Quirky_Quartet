@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a python function to shift first element to the end of given list.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nThink along the lines of the variables and data structures that need to be used. Also think about the way to access the elements in the data structures.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n<code>def shift_first_element(sequence):\n    sequence.append(sequence[0])\n    sequence.remove(sequence[0])\n    return sequence\n</code>\n\n\nA:\n\nYou can use a list comprehension:  <code>[x for x in l if x != l[0]] + [l[0]]</code>  This is a bit more efficient than your solution as it doesn't require two traversals of the list, but it's not as readable.   There's also no need to create a new variable here, you can just modify <code>l</code>.   For example:  <code>l = [x for x in l if x != l[0]] + [l[0]]</code>.   I would recommend using your solution though as it is more readable and easier to understand.  If you're concerned about the performance, you should profile your code and optimize accordingly (if necessary).  As always, premature optimization is the root of all evil.   You can read more about this here: https://wiki.python.org/moin/TimeComplexity . Also keep in mind that Python has built-in functions for shifting elements around in lists such as pop and insert (https://docs.python.org/3/tutorial/datastructures.html).  It may be worth looking into those before implementing anything yourself (unless you're doing this for practice or fun).    \n",
+        "clean_code": "<code>def shift_first_element(sequence):\n    sequence.append(sequence[0])\n    sequence.remove(sequence[0])\n    return sequence\n</code>\n\n\nA:\n\nYou can use a list comprehension:  <code>[x for x in l if x != l[0]] + [l[0]]</code>  This is a bit more efficient than your solution as it doesn't require two traversals of the list, but it's not as readable.   There's also no need to create a new variable here, you can just modify <code>l</code>.   For example:  <code>l = [x for x in l if x != l[0]] + [l[0]]</code>.   I would recommend using your solution though as it is more readable and easier to understand.  If you're concerned about the performance, you should profile your code and optimize accordingly (if necessary).  As always, premature optimization is the root of all evil.   You can read more about this here: https://wiki.python.org/moin/TimeComplexity . Also keep in mind that Python has built-in functions for shifting elements around in lists such as pop and insert (https://docs.python.org/3/tutorial/datastructures.html).  It may be worth looking into those before implementing anything yourself (unless you're doing this for practice or fun)."
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\n'''\n\n\ndef shift_end(lst):\n\n    new_list = []\n\n    for i in range(1, len(lst)):\n        new_list.append(lst[i])\n\n    new_list.append(lst[0])\n\n    return new_list",
+        "clean_code": "'''\n\n\ndef shift_end(lst):\n\n    new_list = []\n\n    for i in range(1, len(lst)):\n        new_list.append(lst[i])\n\n    new_list.append(lst[0])\n\n    return new_list"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef shift_first_element(list1):\n    first = list1[0]\n    list1.remove(first)\n    list1.append(first)\n\n\n#Provide different values for the list and test your program.\nshift_first_element([1,2,3,4])",
+        "clean_code": "\"\"\"\ndef shift_first_element(list1):\n    first = list1[0]\n    list1.remove(first)\n    list1.append(first)\n\n\n#Provide different values for the list and test your program.\nshift_first_element([1,2,3,4])"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\ndef shift_first_element(list_data):\n    list_data.append(list_data[0])\n    list_data.remove(list_data[0])\n    return list_data\n\"\"\"",
+        "clean_code": "def shift_first_element(list_data):\n    list_data.append(list_data[0])\n    list_data.remove(list_data[0])\n    return list_data\n\"\"\""
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef shifting_first_element(list1):\n    list1.append(list1[0])\n    del list1[0]\n    return list1\n\n\n\n\n# Write your code here to call the function above and test it.",
+        "clean_code": "\"\"\"\ndef shifting_first_element(list1):\n    list1.append(list1[0])\n    del list1[0]\n    return list1\n\n\n\n\n# Write your code here to call the function above and test it."
+    }
+}

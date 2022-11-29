@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to count occurrence of a character in a string.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nThink along the lines of the variables and data structures that need to be used. Also think about the way to access the elements in the data structures.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\n\ndef countOccurrence(string, char):\n\n    # Define a variable to count the occurrence of the character.\n    # Initialize it with 0.\n    count = 0\n\n    # Iterate over each character of the string.\n    for c in string:\n\n        # Check if the current character is equal to the input character.\n        if (c == char):\n\n            # If yes, increment the counter by 1.\n            count += 1\n\n    return count",
+        "clean_code": "\"\"\"\n\ndef countOccurrence(string, char):\n\n    # Define a variable to count the occurrence of the character.\n    # Initialize it with 0.\n    count = 0\n\n    # Iterate over each character of the string.\n    for c in string:\n\n        # Check if the current character is equal to the input character.\n        if (c == char):\n\n            # If yes, increment the counter by 1.\n            count += 1\n\n    return count"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\n'''\ndef count_occurrence(string, character):\n    count=0\n    for i in string:\n        if (i==character):\n            count+=1\n\n    return count",
+        "clean_code": "'''\ndef count_occurrence(string, character):\n    count=0\n    for i in string:\n        if (i==character):\n            count+=1\n\n    return count"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n'''\ndef count_char(string, char):\n    count = 0\n    for c in string:\n        if c == char:\n            count += 1\n\n    return count",
+        "clean_code": "'''\ndef count_char(string, char):\n    count = 0\n    for c in string:\n        if c == char:\n            count += 1\n\n    return count"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n'''\ndef count_char(string, char):\n  count = 0\n  for c in string:\n    if c == char:\n      count += 1\n  return count",
+        "clean_code": "'''\ndef count_char(string, char):\n  count = 0\n  for c in string:\n    if c == char:\n      count += 1\n  return count"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n<code>def count_occurance(s, c):\n    count = 0\n    for char in s:\n        if char == c:\n            count += 1\n\n    return count\n</code>\n\n",
+        "clean_code": "<code>def count_occurance(s, c):\n    count = 0\n    for char in s:\n        if char == c:\n            count += 1\n\n    return count\n</code>"
+    }
+}

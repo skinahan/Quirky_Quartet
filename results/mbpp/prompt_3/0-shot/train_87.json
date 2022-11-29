@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to get the length of a complex number.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nPay attention to the datatype of input and expected output. Is the input a tuple? Is the input a string? Is the input a matrix? Use correct data structure to derive the needed answer.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\ndef get_length(input):\n    \"\"\"Returns the length of a complex number.\"\"\"\n    length = math.sqrt(input[0]**2 + input[1]**2)\n\n    return length",
+        "clean_code": "\"\"\"\ndef get_length(input):\n    \"\"\"Returns the length of a complex number.\"\"\"\n    length = math.sqrt(input[0]**2 + input[1]**2)\n\n    return length"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\n\n\ndef complex_length(z):\n    \"\"\"Returns the length of a complex number z = a + bj.\"\"\"\n    return (z.real ** 2 + z.imag ** 2) ** 0.5",
+        "clean_code": "\"\"\"\n\n\ndef complex_length(z):\n    \"\"\"Returns the length of a complex number z = a + bj.\"\"\"\n    return (z.real ** 2 + z.imag ** 2) ** 0.5"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\ndef get_length(x):\n    return x[0]**2 + x[1]**2",
+        "clean_code": "\"\"\"\ndef get_length(x):\n    return x[0]**2 + x[1]**2"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\nimport cmath\n\n\ndef get_length(complex_number):\n    \"\"\"Return the length of complex number.\n\n    >>> get_length((3, 4))\n    5.0\n\n    >>> get_length((-1, -1))\n    1.4142135623730951\n\n    >>> get_length((0, 0))\n    0.0\n\n    \"\"\"\n\n    ",
+        "clean_code": "\"\"\"\nimport cmath\n\n\ndef get_length(complex_number):\n    \"\"\"Return the length of complex number.\n\n    >>> get_length((3, 4))\n    5.0\n\n    >>> get_length((-1, -1))\n    1.4142135623730951\n\n    >>> get_length((0, 0))\n    0.0\n\n    \"\"\""
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\n'''\ndef complex_length(z):\n    return (z.real**2 + z.imag**2) ** 0.5",
+        "clean_code": "'''\ndef complex_length(z):\n    return (z.real**2 + z.imag**2) ** 0.5"
+    }
+}

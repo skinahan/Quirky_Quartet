@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to find the cumulative sum of all the values that are present in the given tuple list.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nBreak the problem down into smaller pieces. Sorting the input might help you create an efficient solution, use vectorised operations when possible. Apply recursion where possible.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef cumsum(t):\n    res = []\n    for i in range(len(t)):\n        res.append(sum(t[:i+1]))\n    return tuple(res)",
+        "clean_code": "\"\"\"\ndef cumsum(t):\n    res = []\n    for i in range(len(t)):\n        res.append(sum(t[:i+1]))\n    return tuple(res)"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\ndef cumulative_sum(input_tuple):\n    \"\"\"Cumulative sum of all the values in a given tuple list.\"\"\"\n\n    # Initialise an empty list.\n    cum_sum = []\n\n    # Iterate through the input tuple list.\n    for i in range(len(input_tuple)):\n\n        # Add current value to the previous value and append it to cum_sum.\n        if i == 0:\n            cum_sum.append(input_tuple[i])\n\n        else:\n            cum_sum.append(cum_sum[i-1] + input_tuple[i])\n\n    return tuple(cum_sum)",
+        "clean_code": "\"\"\"\n\n\ndef cumulative_sum(input_tuple):\n    \"\"\"Cumulative sum of all the values in a given tuple list.\"\"\"\n\n    # Initialise an empty list.\n    cum_sum = []\n\n    # Iterate through the input tuple list.\n    for i in range(len(input_tuple)):\n\n        # Add current value to the previous value and append it to cum_sum.\n        if i == 0:\n            cum_sum.append(input_tuple[i])\n\n        else:\n            cum_sum.append(cum_sum[i-1] + input_tuple[i])\n\n    return tuple(cum_sum)"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n'''\nimport numpy as np\ndef cumulative_sum(tup_list):\n    '''Function to find the cumulative sum of all the values that are present in the given tuple list.'''\n\n    # Your code here. Use vectorised operations and recursion when possible.\n\n    return tup_list",
+        "clean_code": "'''\nimport numpy as np\ndef cumulative_sum(tup_list):\n    '''Function to find the cumulative sum of all the values that are present in the given tuple list.'''\n\n    # Your code here. Use vectorised operations and recursion when possible.\n\n    return tup_list"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\ndef cumulative_sum(tup):\n    # write your code here\n    return tup",
+        "clean_code": "\"\"\"\n\n\ndef cumulative_sum(tup):\n    # write your code here\n    return tup"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\ndef cumulative_sum(lst):\n    \"\"\"Function to find the cumulative sum of all the values that are present in the given tuple list.\"\"\"\n\n    result = []\n\n    for i in range(len(lst)):\n        sum_ = 0\n        for j in range(i+1):\n            sum_ += lst[j]\n\n        result.append(sum_)\n\n    return result",
+        "clean_code": "\"\"\"\ndef cumulative_sum(lst):\n    \"\"\"Function to find the cumulative sum of all the values that are present in the given tuple list.\"\"\"\n\n    result = []\n\n    for i in range(len(lst)):\n        sum_ = 0\n        for j in range(i+1):\n            sum_ += lst[j]\n\n        result.append(sum_)\n\n    return result"
+    }
+}

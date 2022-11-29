@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to group the 1st elements on the basis of 2nd elements in the given tuple list.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nBreak the problem down into smaller pieces. Sorting the input might help you create an efficient solution, use vectorised operations when possible. Apply recursion where possible.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\n\n\ndef group_by_0(list_tuple):\n    return {key: [i[0] for i in value] for key, value in itertools.groupby(sorted(list_tuple, key=lambda x:x[1]), lambda x:x[1])}\n\n\n# test case 1\nprint(group_by_0([('A', 1), ('B', 2), ('C', 3), ('D', 2)]))",
+        "clean_code": "\"\"\"\n\n\ndef group_by_0(list_tuple):\n    return {key: [i[0] for i in value] for key, value in itertools.groupby(sorted(list_tuple, key=lambda x:x[1]), lambda x:x[1])}\n\n\n# test case 1\nprint(group_by_0([('A', 1), ('B', 2), ('C', 3), ('D', 2)]))"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n<code>def group_by_first(nums):\n    if not nums:\n        return []\n\n    nums.sort(key=lambda x: x[1])\n\n    result = [[nums[0]]]\n    for i in range(1, len(nums)):\n        if nums[i][1] != nums[i - 1][1]:\n            result.append([])\n\n        result[-1].append(nums[i])\n\n    return result\n</code>\n",
+        "clean_code": "<code>def group_by_first(nums):\n    if not nums:\n        return []\n\n    nums.sort(key=lambda x: x[1])\n\n    result = [[nums[0]]]\n    for i in range(1, len(nums)):\n        if nums[i][1] != nums[i - 1][1]:\n            result.append([])\n\n        result[-1].append(nums[i])\n\n    return result\n</code>"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\nfrom collections import defaultdict\n\n\ndef group_by_second_element(tuple_list):\n    \"\"\"Group the first element of the tuples in tuple list by the second element.\"\"\"\n    # Initialise an empty dictionary for storing the result.\n    result = defaultdict(list)\n\n    # Iterate over each tuple in the given list.\n    for x, y in tuple_list:\n\n        # Add each first element to a list corresponding to its second element.\n        result[y].append(x)\n\n    return dict(result)",
+        "clean_code": "\"\"\"\nfrom collections import defaultdict\n\n\ndef group_by_second_element(tuple_list):\n    \"\"\"Group the first element of the tuples in tuple list by the second element.\"\"\"\n    # Initialise an empty dictionary for storing the result.\n    result = defaultdict(list)\n\n    # Iterate over each tuple in the given list.\n    for x, y in tuple_list:\n\n        # Add each first element to a list corresponding to its second element.\n        result[y].append(x)\n\n    return dict(result)"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n'''\ndef group_by(tup):\n    d = {}\n    for k,v in tup:\n        if v not in d.keys(): #if key is not present add a new key with value as list containing tuple of key and value. \n            d[v] = [(k,v)] # {'a': [('a', 'a')]} \n        else: #if key is present append the tuple to the list. \n            d[v].append((k,v)) #{'a': [('a', 'a'), ('b', 'b'), ('c', 'c')]}\n\n    return sorted(d.items())\n\n  \n\n    \n\n    \n\n    \n#Provide different values for tup and test your program.  Here are some sample test cases:     \ntup=[('A',1),('B',2),('C',3),('A',4),('B',5)]                                                                          #Output : [([('A','1')],1),([('B','2')],2),([('C','3')],3)]   , ([['A','4']],4) , ([['B','5']],5)",
+        "clean_code": "'''\ndef group_by(tup):\n    d = {}\n    for k,v in tup:\n        if v not in d.keys(): #if key is not present add a new key with value as list containing tuple of key and value. \n            d[v] = [(k,v)] # {'a': [('a', 'a')]} \n        else: #if key is present append the tuple to the list. \n            d[v].append((k,v)) #{'a': [('a', 'a'), ('b', 'b'), ('c', 'c')]}\n\n    return sorted(d.items())\n\n  \n\n    \n\n    \n\n    \n#Provide different values for tup and test your program.  Here are some sample test cases:     \ntup=[('A',1),('B',2),('C',3),('A',4),('B',5)]                                                                          #Output : [([('A','1')],1),([('B','2')],2),([('C','3')],3)]   , ([['A','4']],4) , ([['B','5']],5)"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\ndef groupby(func, seq):\n    result = {}\n\n    for element in seq:\n        key = func(element)\n\n        if key in result:\n            result[key].append(element)\n        else:  # first time seeing this key. Create a new list with one element.\n            result[key] = [element]\n\n    return result",
+        "clean_code": "\"\"\"\ndef groupby(func, seq):\n    result = {}\n\n    for element in seq:\n        key = func(element)\n\n        if key in result:\n            result[key].append(element)\n        else:  # first time seeing this key. Create a new list with one element.\n            result[key] = [element]\n\n    return result"
+    }
+}

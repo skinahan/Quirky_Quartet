@@ -10,6 +10,7 @@ plots
 *.csv
 *plots*
 samples.jsonl
+.DS_Store
 logs
 t5_tuning
 t5_synthetic

@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to reverse words in a given string.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nWhich data structure is being used? Can the task be split into smaller sub-tasks? How many loops are needed to solve the tasks? Solve sub-tasks iteratively to find the answer\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\n\n\ndef reverse_words(string):\n    \"\"\"\n    This function takes a string as input, and returns the same string with the words reversed.\n\n    :param string: The input string.\n\n    :return: The same string with words reversed.\n    \"\"\"\n\n    # split the given input into words, and store them in a list of strings.\n    split_string = string.split()\n\n    # create another list that will store the reversed words in order.\n    reverse_list = []\n\n    # iterate through each word in the original list, and append it to the new list after reversing it.\n    ",
+        "clean_code": "\"\"\"\n\n\ndef reverse_words(string):\n    \"\"\"\n    This function takes a string as input, and returns the same string with the words reversed.\n\n    :param string: The input string.\n\n    :return: The same string with words reversed.\n    \"\"\"\n\n    # split the given input into words, and store them in a list of strings.\n    split_string = string.split()\n\n    # create another list that will store the reversed words in order.\n    reverse_list = []\n\n    # iterate through each word in the original list, and append it to the new list after reversing it."
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\n'''\n\n\ndef reverse_words(input_str):\n    word_list = input_str.split()\n    word_list.reverse()\n\n    return \" \".join(word_list)",
+        "clean_code": "'''\n\n\ndef reverse_words(input_str):\n    word_list = input_str.split()\n    word_list.reverse()\n\n    return \" \".join(word_list)"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\ndef reverse_words(input_string):\n    # reverse the entire string first and then reverse each word in the string\n    input_string = input_string[::-1]  # reverses the entire string\n\n    # split the words in a list, then join them back with space as separator\n    return \" \".join(input_string.split()[::-1])\n\n\nif __name__ == \"__main__\":\n    print(\"\\n\")\n\n    # Test 1: normal case - all lower case letters, no punctuation, single space between words. No leading or trailing spaces. Single word in sentence.\n    input_string = \"hello world\"\n\n    expected = \"world hello\"\n\n    actual = reverse_words(input_string)\n\n    print(\"Test 1: normal case - all lower case letters, no punctuation, single space between words. No leading or trailing spaces\")\n\n    print(\"\\tInput: \", input_string)\n\n    print(\"\\tExpected: \", expected)\n\n    print(\"\\tActual: \", actual)\n\n    ",
+        "clean_code": "\"\"\"\n\n\ndef reverse_words(input_string):\n    # reverse the entire string first and then reverse each word in the string\n    input_string = input_string[::-1]  # reverses the entire string\n\n    # split the words in a list, then join them back with space as separator\n    return \" \".join(input_string.split()[::-1])\n\n\nif __name__ == \"__main__\":\n    print(\"\\n\")\n\n    # Test 1: normal case - all lower case letters, no punctuation, single space between words. No leading or trailing spaces. Single word in sentence.\n    input_string = \"hello world\"\n\n    expected = \"world hello\"\n\n    actual = reverse_words(input_string)\n\n    print(\"Test 1: normal case - all lower case letters, no punctuation, single space between words. No leading or trailing spaces\")\n\n    print(\"\\tInput: \", input_string)\n\n    print(\"\\tExpected: \", expected)\n\n    print(\"\\tActual: \", actual)"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\ndef reverse_str(str):\n\n    rev = str.split()\n    rev.reverse()\n\n    return \" \".join(rev)",
+        "clean_code": "\"\"\"\ndef reverse_str(str):\n\n    rev = str.split()\n    rev.reverse()\n\n    return \" \".join(rev)"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\ndef reverse_words(sentence):\n    \"\"\"Reverse words in a given sentence.\n\n    Args:\n        sentence (str): A string containing words separated by space.\n\n    Returns:\n        str: The same words in the same order, but separated with spaces.\n\n    Example:\n        >>> reverse_words('Hello World!') == 'World! Hello'\n        True\n\n    \"\"\"",
+        "clean_code": "\"\"\"\n\n\ndef reverse_words(sentence):\n    \"\"\"Reverse words in a given sentence.\n\n    Args:\n        sentence (str): A string containing words separated by space.\n\n    Returns:\n        str: The same words in the same order, but separated with spaces.\n\n    Example:\n        >>> reverse_words('Hello World!') == 'World! Hello'\n        True\n\n    \"\"\""
+    }
+}

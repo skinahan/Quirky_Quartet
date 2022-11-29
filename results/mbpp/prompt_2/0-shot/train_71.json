@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to find maximum of three numbers.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nBreak the problem down into smaller pieces. Sorting the input might help you create an efficient solution, use vectorised operations when possible. Apply recursion where possible.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\ndef max_of_three(a, b, c):\n    # A function to find the maximum of three numbers and return it.\n\n    if a > b:\n        if a > c:\n            return a\n\n        else:\n            return c\n\n    elif b > c:\n        return b\n\n    else:\n        return c",
+        "clean_code": "\"\"\"\ndef max_of_three(a, b, c):\n    # A function to find the maximum of three numbers and return it.\n\n    if a > b:\n        if a > c:\n            return a\n\n        else:\n            return c\n\n    elif b > c:\n        return b\n\n    else:\n        return c"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef maximum(a, b, c): \n    list = [a, b, c] \n    return max(list) \n\n  \n# Driver program to test above function \na = 10\nb = 14\nc = 12\nprint(maximum(a, b, c))",
+        "clean_code": "\"\"\"\ndef maximum(a, b, c): \n    list = [a, b, c] \n    return max(list) \n\n  \n# Driver program to test above function \na = 10\nb = 14\nc = 12\nprint(maximum(a, b, c))"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\n'''\ndef findMax(a, b, c):\n\n    if a > b and a > c:\n        return a\n\n    elif b > a and b > c:\n        return b\n\n    else:\n        return c",
+        "clean_code": "'''\ndef findMax(a, b, c):\n\n    if a > b and a > c:\n        return a\n\n    elif b > a and b > c:\n        return b\n\n    else:\n        return c"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\n'''\n\n\ndef max_of_two( x, y ):\n    if x > y:\n        return x\n    return y\n\n    \ndef max_of_three( x, y, z ):\n    return max_of_two( x, max_of_two( y, z ) )",
+        "clean_code": "'''\n\n\ndef max_of_two( x, y ):\n    if x > y:\n        return x\n    return y\n\n    \ndef max_of_three( x, y, z ):\n    return max_of_two( x, max_of_two( y, z ) )"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\ndef max_of_two( x, y ):\n    if x > y:\n        return x\n    return y\n\n  # Fill this in.\n\n  # Fill this in.\n\n  # Fill this in.",
+        "clean_code": "\"\"\"\n\ndef max_of_two( x, y ):\n    if x > y:\n        return x\n    return y\n\n  # Fill this in.\n\n  # Fill this in.\n\n  # Fill this in."
+    }
+}

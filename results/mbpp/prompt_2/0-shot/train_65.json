@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to count occurrence of a character in a string.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nBreak the problem down into smaller pieces. Sorting the input might help you create an efficient solution, use vectorised operations when possible. Apply recursion where possible.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\n'''\ndef count_char(text, char):\n    count = 0\n    for c in text:\n        if c == char:\n            count += 1\n\n    return count",
+        "clean_code": "'''\ndef count_char(text, char):\n    count = 0\n    for c in text:\n        if c == char:\n            count += 1\n\n    return count"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\n\n\ndef count_occurrences(text, char):\n    \"\"\"Return the number of occurrences of character in string.\"\"\"\n    return text.count(char)",
+        "clean_code": "\"\"\"\n\n\ndef count_occurrences(text, char):\n    \"\"\"Return the number of occurrences of character in string.\"\"\"\n    return text.count(char)"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n'''\n\ndef count_occurrences(s, ch):\n    counter = 0\n\n    for c in s:\n        if c == ch:\n            counter += 1\n\n    return counter\n\n\nif __name__ == \"__main__\":  # This makes sure the code only runs when this file is called directly from the terminal. If you import this file from another file and run it, it will not run.\n\n    print(count_occurrences(\"abracadabra\", 'a'))",
+        "clean_code": "'''\n\ndef count_occurrences(s, ch):\n    counter = 0\n\n    for c in s:\n        if c == ch:\n            counter += 1\n\n    return counter\n\n\nif __name__ == \"__main__\":  # This makes sure the code only runs when this file is called directly from the terminal. If you import this file from another file and run it, it will not run.\n\n    print(count_occurrences(\"abracadabra\", 'a'))"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\n# Write your code here.\n\n\ndef count_characters(str, char):\n    # TODO: Implement the function here.\n    pass\n\n\nprint(count_characters(\"abracadabra\", \"a\"))",
+        "clean_code": "\"\"\"\n# Write your code here.\n\n\ndef count_characters(str, char):\n    # TODO: Implement the function here.\n    pass\n\n\nprint(count_characters(\"abracadabra\", \"a\"))"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n<code>def count_char(input_string, char):\n    return input_string.count(char)\n</code>\n\n\nA:\n\nYou can use the <code>str.count</code> method to count the number of times a character appears in a string:\n<code>\"abcabc\".count(\"a\") # 2 \n</code>\n",
+        "clean_code": "<code>def count_char(input_string, char):\n    return input_string.count(char)\n</code>\n\n\nA:\n\nYou can use the <code>str.count</code> method to count the number of times a character appears in a string:\n<code>\"abcabc\".count(\"a\") # 2 \n</code>"
+    }
+}

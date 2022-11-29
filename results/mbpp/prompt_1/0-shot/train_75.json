@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to remove everything except alphanumeric characters from the given string by using regex.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nWhich data structure is being used? Can the task be split into smaller sub-tasks? How many loops are needed to solve the tasks? Solve sub-tasks iteratively to find the answer\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n'''\ndef removeNonAlphaNum(inputString):\n    return \"\".join([x for x in inputString if x.isalnum()])\nprint(removeNonAlphaNum(\"A1B2C3D4\"))",
+        "clean_code": "'''\ndef removeNonAlphaNum(inputString):\n    return \"\".join([x for x in inputString if x.isalnum()])\nprint(removeNonAlphaNum(\"A1B2C3D4\"))"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n<code>import re\ndef clean_string(input_string):\n    return re.sub('[^A-Za-z0-9]+', '', input_string)\n</code>\n",
+        "clean_code": "<code>import re\ndef clean_string(input_string):\n    return re.sub('[^A-Za-z0-9]+', '', input_string)\n</code>"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\nimport re\ndef remove_non_alphanumeric(string):\n    \"\"\"This function removes all non-alphanumeric characters from a string and returns the result.\"\"\"\n\n    return re.sub(\"[^0-9a-zA-Z]\", \"\", string)",
+        "clean_code": "\"\"\"\nimport re\ndef remove_non_alphanumeric(string):\n    \"\"\"This function removes all non-alphanumeric characters from a string and returns the result.\"\"\"\n\n    return re.sub(\"[^0-9a-zA-Z]\", \"\", string)"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n'''\nimport re\ndef remove_non_alphanumeric(string):\n    return re.sub(\"[^0-9a-zA-Z]\",\"\", string)",
+        "clean_code": "'''\nimport re\ndef remove_non_alphanumeric(string):\n    return re.sub(\"[^0-9a-zA-Z]\",\"\", string)"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n'''\nimport re\n\n\ndef remove_non_alphanumeric(string):\n    return re.sub('[^A-Za-z0-9]+', '', string)",
+        "clean_code": "'''\nimport re\n\n\ndef remove_non_alphanumeric(string):\n    return re.sub('[^A-Za-z0-9]+', '', string)"
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a python function to find nth bell number.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nThink along the lines of the variables and data structures that need to be used. Also think about the way to access the elements in the data structures.\nAnswer:",
+    "success": 1,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\n'''\nfrom math import factorial as fact\ndef nth_bell(n):\n    bell = [[0 for i in range(n+1)] for j in range(n+1)] \n    bell[0][0] = 1 \n    for i in range(1, n+1): \n        # Explicitly fill for j = 0 \n        bell[i][0] = bell[i-1][i-1]   # explicit formula \n\n        # Fill for remaining values of j \n\n        for j in range(1, i+1):   # implicit formula. Also called recurrence relation.\n\n            bell[i][j] = bell[i-1][j-1] + bell[i][j-1] \n\n    return (bell)",
+        "clean_code": "'''\nfrom math import factorial as fact\ndef nth_bell(n):\n    bell = [[0 for i in range(n+1)] for j in range(n+1)] \n    bell[0][0] = 1 \n    for i in range(1, n+1): \n        # Explicitly fill for j = 0 \n        bell[i][0] = bell[i-1][i-1]   # explicit formula \n\n        # Fill for remaining values of j \n\n        for j in range(1, i+1):   # implicit formula. Also called recurrence relation.\n\n            bell[i][j] = bell[i-1][j-1] + bell[i][j-1] \n\n    return (bell)"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\ndef bell_number(n):\n    if n == 0:\n        return 1\n\n    bell = [[0 for i in range(n + 1)] for j in range(n + 1)]\n    bell[0][0] = 1\n\n    for i in range(1, n + 1):\n\n        # Explicitly fill for j = 0\n        bell[i][0] = bell[i - 1][i - 1]\n\n        # Fill for remaining values of j\n        for j in range(1, i + 1):\n            bell[i][j] = bell[i - 1][j - 1] + \\\n                         bell[i][j - 1]\n\n    return (bell[n][0])",
+        "clean_code": "\"\"\"\ndef bell_number(n):\n    if n == 0:\n        return 1\n\n    bell = [[0 for i in range(n + 1)] for j in range(n + 1)]\n    bell[0][0] = 1\n\n    for i in range(1, n + 1):\n\n        # Explicitly fill for j = 0\n        bell[i][0] = bell[i - 1][i - 1]\n\n        # Fill for remaining values of j\n        for j in range(1, i + 1):\n            bell[i][j] = bell[i - 1][j - 1] + \\\n                         bell[i][j - 1]\n\n    return (bell[n][0])"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef bell(n): \n    # create Bell triangle \n    bell = [[0 for i in range(n + 1)]  \n                for j in range(n + 1)] \n      \n    # Initialize first column of the triangle  \n    bell[0][0] = 1; \n\n    # Calculate values of remaining columns.  \n    for i in range(1, n + 1): \n\n        # Assign 0 to all entries of current column.  \n        bell[i][0] = 0; \n\n        # Calculate values for each entry of current column by adding the previous two entries and taking modulo 1000000007.  \n        for j in range(1, i + 1): \n\n            bell[i][j] = (bell[i - 1][j - 1] + bell[i][j - 1]) % 1000000007; \n\n    return bell[n][0];",
+        "clean_code": "\"\"\"\ndef bell(n): \n    # create Bell triangle \n    bell = [[0 for i in range(n + 1)]  \n                for j in range(n + 1)] \n      \n    # Initialize first column of the triangle  \n    bell[0][0] = 1; \n\n    # Calculate values of remaining columns.  \n    for i in range(1, n + 1): \n\n        # Assign 0 to all entries of current column.  \n        bell[i][0] = 0; \n\n        # Calculate values for each entry of current column by adding the previous two entries and taking modulo 1000000007.  \n        for j in range(1, i + 1): \n\n            bell[i][j] = (bell[i - 1][j - 1] + bell[i][j - 1]) % 1000000007; \n\n    return bell[n][0];"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\n'''\ndef bell_number(n):\n    if n == 0: return 1\n\n    bell = [[0 for i in range(n + 1)] for j in range(n + 1)]\n    bell[0][0] = 1\n\n    for i in range(1, n + 1):\n        bell[i][0] = bell[i - 1][i - 1]\n\n        for j in range(1, i + 1):\n            bell[i][j] = bell[i - 1][j - 1] + bell[i][j - 1]\n\n    return bell[n][0]",
+        "clean_code": "'''\ndef bell_number(n):\n    if n == 0: return 1\n\n    bell = [[0 for i in range(n + 1)] for j in range(n + 1)]\n    bell[0][0] = 1\n\n    for i in range(1, n + 1):\n        bell[i][0] = bell[i - 1][i - 1]\n\n        for j in range(1, i + 1):\n            bell[i][j] = bell[i - 1][j - 1] + bell[i][j - 1]\n\n    return bell[n][0]"
+    },
+    "4": {
+        "status": 0,
+        "codex_out": "\ndef bell(n):\n    bell = [[0 for i in range(n+1)] for j in range(n+1)]\n    bell[0][0] = 1\n    for i in range(1, n+1):\n        # Explicitly fill for j = 0 \n        bell[i][0] = bell[i-1][i-1] \n\n        # Fill for remaining values of j \n        for j in range(1, i+1): \n            bell[i][j] = bell[i-1][j-1] + bell[i][j-1] \n\n    return bell[n][0] \n\n   */",
+        "clean_code": "def bell(n):\n    bell = [[0 for i in range(n+1)] for j in range(n+1)]\n    bell[0][0] = 1\n    for i in range(1, n+1):\n        # Explicitly fill for j = 0 \n        bell[i][0] = bell[i-1][i-1] \n\n        # Fill for remaining values of j \n        for j in range(1, i+1): \n            bell[i][j] = bell[i-1][j-1] + bell[i][j-1] \n\n    return bell[n][0]"
+    }
+}

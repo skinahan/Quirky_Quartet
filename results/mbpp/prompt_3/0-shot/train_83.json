@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a python function to count occurences of a character in a repeated string.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nPay attention to the datatype of input and expected output. Is the input a tuple? Is the input a string? Is the input a matrix? Use correct data structure to derive the needed answer.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef count_occurences(input_tuple):\n    \"\"\"Count occurences of a character in a repeated string.\n\n    Args:\n        input_tuple (tuple): A tuple of the form (string, char) where string is a string and char is a character.\n\n    Returns:\n        int: Number of occurences of the character in the repeated string.\n\n    Examples:\n        >>> count_occurences(('abcd', 'a'))\n        1\n        >>> count_occurences(('aaaa', 'a'))\n        4\n\n    \"\"\"\n\n    # Write your code here!",
+        "clean_code": "\"\"\"\ndef count_occurences(input_tuple):\n    \"\"\"Count occurences of a character in a repeated string.\n\n    Args:\n        input_tuple (tuple): A tuple of the form (string, char) where string is a string and char is a character.\n\n    Returns:\n        int: Number of occurences of the character in the repeated string.\n\n    Examples:\n        >>> count_occurences(('abcd', 'a'))\n        1\n        >>> count_occurences(('aaaa', 'a'))\n        4\n\n    \"\"\"\n\n    # Write your code here!"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef count_char(input_tuple):\n    \"\"\"\n    Function to count the number of times a character is repeated in a string.\n\n    Parameters:\n    input_tuple (tuple): tuple containing the string and character to be counted\n\n    Returns: \n    int: number of times the character is repeated in the string\n\n    \"\"\"\n\n     # unpack tuple into variables for input1, input2 and input3. \n\n     # Check if inputs are strings. If not, return \"Invalid Input\" \n\n     # Check if any of the inputs are empty strings (\"\"). If so, return 0. \n\n     # Check if length of first string is less than or equal to second integer. If not, return 0. \n\n     # Initialize counter variable to 0. Loop through all characters in first string using range(). Increment counter by 1 if character matches third character in tuple.  \n\n     # Return counter value after loop ends.",
+        "clean_code": "\"\"\"\ndef count_char(input_tuple):\n    \"\"\"\n    Function to count the number of times a character is repeated in a string.\n\n    Parameters:\n    input_tuple (tuple): tuple containing the string and character to be counted\n\n    Returns: \n    int: number of times the character is repeated in the string\n\n    \"\"\"\n\n     # unpack tuple into variables for input1, input2 and input3. \n\n     # Check if inputs are strings. If not, return \"Invalid Input\" \n\n     # Check if any of the inputs are empty strings (\"\"). If so, return 0. \n\n     # Check if length of first string is less than or equal to second integer. If not, return 0. \n\n     # Initialize counter variable to 0. Loop through all characters in first string using range(). Increment counter by 1 if character matches third character in tuple.  \n\n     # Return counter value after loop ends."
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\ndef count_characters(input_tuple):\n    \"\"\"Function to count the number of times a character is repeated in the given string.\n\n    Args:\n        input_tuple (tuple): A tuple containing string and character to be counted.\n\n    Returns:\n        int: Number of times the character is repeated in the given string.\n\n    \"\"\"\n    \n\n    char = input_tuple[1] # get the second element which is a character from input tuple. \n    str = input_tuple[0] # get the first element which is a string from input tuple. \n\n     # add your code here, you can use built-in functions len() and split(). \n\n     # return number of occurences of 'char' in 'str'. \n\n     return 0",
+        "clean_code": "\"\"\"\ndef count_characters(input_tuple):\n    \"\"\"Function to count the number of times a character is repeated in the given string.\n\n    Args:\n        input_tuple (tuple): A tuple containing string and character to be counted.\n\n    Returns:\n        int: Number of times the character is repeated in the given string.\n\n    \"\"\"\n    \n\n    char = input_tuple[1] # get the second element which is a character from input tuple. \n    str = input_tuple[0] # get the first element which is a string from input tuple. \n\n     # add your code here, you can use built-in functions len() and split(). \n\n     # return number of occurences of 'char' in 'str'. \n\n     return 0"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n<code>def count(strng, ch):\n    return strng.count(ch)\n</code>\n",
+        "clean_code": "<code>def count(strng, ch):\n    return strng.count(ch)\n</code>"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\ndef count_char(string, char):\n    return string.count(char)",
+        "clean_code": "\"\"\"\ndef count_char(string, char):\n    return string.count(char)"
+    }
+}

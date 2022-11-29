@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a python function to find the minimum sum of absolute differences of two arrays.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nPay attention to the datatype of input and expected output. Is the input a tuple? Is the input a string? Is the input a matrix? Use correct data structure to derive the needed answer.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\nFor the given two arrays, find the minimum sum of absolute differences of all pairs.\nSum of all differences is a single number.\nAn absolute difference is a difference between two numbers, which is always positive.\nA pair is an unordered combination of two numbers from different arrays.\nFor example: if we have two arrays [1, 2] and [3, 4] then there are four pairs: (1, 3), (1, 4), (2, 3) and (2, 4). \nThe absolute differences for these pairs are 2, 3, 1 and 1 respectively. The sum of these values is 7. This number is the maximum possible sum for this pair of arrays. \nNow let\u2019s consider another pair ([1], [2]). There are only two possible pairs in this case: (1, 2) and (2 , 1). The corresponding absolute differences are 1 and 1 respectively. So the minimum possible sum in this case equals to 2. As you can see it\u2019s less than 7 which we got before for the previous pair ([1 , 2], [3 , 4]).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n*/",
+        "clean_code": "For the given two arrays, find the minimum sum of absolute differences of all pairs.\nSum of all differences is a single number.\nAn absolute difference is a difference between two numbers, which is always positive.\nA pair is an unordered combination of two numbers from different arrays.\nFor example: if we have two arrays [1, 2] and [3, 4] then there are four pairs: (1, 3), (1, 4), (2, 3) and (2, 4). \nThe absolute differences for these pairs are 2, 3, 1 and 1 respectively. The sum of these values is 7. This number is the maximum possible sum for this pair of arrays. \nNow let\u2019s consider another pair ([1], [2]). There are only two possible pairs in this case: (1, 2) and (2 , 1). The corresponding absolute differences are 1 and 1 respectively. So the minimum possible sum in this case equals to 2. As you can see it\u2019s less than 7 which we got before for the previous pair ([1 , 2], [3 , 4]).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n*/"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef min_sum_diff(array1, array2):\n    if len(array1) != len(array2):\n        return None\n\n    array1.sort()\n    array2.sort()\n\n    sum = 0\n    for i in range(len(array1)):\n        sum += abs(array1[i] - array2[i])\n\n    return sum",
+        "clean_code": "\"\"\"\ndef min_sum_diff(array1, array2):\n    if len(array1) != len(array2):\n        return None\n\n    array1.sort()\n    array2.sort()\n\n    sum = 0\n    for i in range(len(array1)):\n        sum += abs(array1[i] - array2[i])\n\n    return sum"
+    },
+    "2": {
+        "status": 1,
+        "codex_out": "\ndef min_sum_absolute_differences(array1, array2):\n    return min(abs(x - y) for x in array1 for y in array2)\n",
+        "clean_code": "def min_sum_absolute_differences(array1, array2):\n    return min(abs(x - y) for x in array1 for y in array2)"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\ndef min_sum(a,b):\n    a.sort()\n    b.sort()\n\n    return sum([abs(x-y) for x,y in zip(a,b)])",
+        "clean_code": "\"\"\"\ndef min_sum(a,b):\n    a.sort()\n    b.sort()\n\n    return sum([abs(x-y) for x,y in zip(a,b)])"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\n'''\n\n\ndef min_sum_abs(input1, input2):\n    return min([abs(i - j) for i in input1 for j in input2])\n\n\ndef main():\n    print(\"Input #1: {0}, Input #2: {1}\".format((3, 4), (5, 6)))\n    print(\"Expected Output: 1\")\n\n    print(\"\\nOutput from your code:\", end=\" \")\n    print(min_sum_abs((3, 4), (5, 6)))\n\n    assert min_sum_abs((3, 4), (5, 6)) == 1  # Test case 1 (Normal)\n\n    assert min_sum_abs((10, 20), (30, 40)) == 20  # Test case 2 (Normal)\n\n    assert min_sum_abs((10.0, 20.0), (-30.0, 40.0)) == 10.0  # Test case 3 (Normal)\n\n    assert min_sum_abs([-10], [-20]) == 10  # Test case 4 (Edge)\n\n    assert min_sum_abs([-10], [20]) == 30  # Test case 5 (Edge)\n\n    assert min_sum",
+        "clean_code": "'''\n\n\ndef min_sum_abs(input1, input2):\n    return min([abs(i - j) for i in input1 for j in input2])\n\n\ndef main():\n    print(\"Input #1: {0}, Input #2: {1}\".format((3, 4), (5, 6)))\n    print(\"Expected Output: 1\")\n\n    print(\"\\nOutput from your code:\", end=\" \")\n    print(min_sum_abs((3, 4), (5, 6)))\n\n    assert min_sum_abs((3, 4), (5, 6)) == 1  # Test case 1 (Normal)\n\n    assert min_sum_abs((10, 20), (30, 40)) == 20  # Test case 2 (Normal)\n\n    assert min_sum_abs((10.0, 20.0), (-30.0, 40.0)) == 10.0  # Test case 3 (Normal)\n\n    assert min_sum_abs([-10], [-20]) == 10  # Test case 4 (Edge)\n\n    assert min_sum_abs([-10], [20]) == 30  # Test case 5 (Edge)\n\n    assert min_sum"
+    }
+}

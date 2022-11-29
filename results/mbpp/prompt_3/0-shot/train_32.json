@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a python function to find the sum of xor of all pairs of numbers in the given array.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nPay attention to the datatype of input and expected output. Is the input a tuple? Is the input a string? Is the input a matrix? Use correct data structure to derive the needed answer.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\ndef sum_of_xor(input):\n    result = 0\n    for i in range(len(input)):\n        for j in range(i+1, len(input)):\n            result += input[i] ^ input[j]\n\n    return result\n\n\nprint (sum_of_xor([1, 2, 3]))",
+        "clean_code": "\"\"\"\ndef sum_of_xor(input):\n    result = 0\n    for i in range(len(input)):\n        for j in range(i+1, len(input)):\n            result += input[i] ^ input[j]\n\n    return result\n\n\nprint (sum_of_xor([1, 2, 3]))"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\ndef sum_xor(num_list):\n    \"\"\"Return the sum of xor of all pairs of numbers in num_list.\"\"\"\n    result = 0\n\n    for i in range(len(num_list)):  # Iterate over num_list.\n        for j in range(i+1, len(num_list)):  # Iterate over rest elements.\n            result += (num_list[i] ^ num_list[j])  # Add xor to result.\n\n    return result",
+        "clean_code": "\"\"\"\n\n\ndef sum_xor(num_list):\n    \"\"\"Return the sum of xor of all pairs of numbers in num_list.\"\"\"\n    result = 0\n\n    for i in range(len(num_list)):  # Iterate over num_list.\n        for j in range(i+1, len(num_list)):  # Iterate over rest elements.\n            result += (num_list[i] ^ num_list[j])  # Add xor to result.\n\n    return result"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\n\ndef sum_of_xor(l):\n    \"\"\"Returns the sum of xor of all pairs of numbers in the given array.\n\n    Args:\n        l (list): List of integers.\n\n    Returns:\n        int: Sum of xor of all pairs in the list.\n\n    Examples:\n        >>> sum_of_xor([1, 2, 3, 4]) # 1 ^ 2 + 1 ^ 3 + 1 ^ 4 + 2 ^ 3 + 2 ^ 4 + 3 ^ 4 = 8 + 7 + 5 = 20 \n        20\n\n        >>> sum_of_xor([1, 1, 1]) # 1 ^ 1 + 1 ^ 1 = 0 \n        0\n\n    \"\"\"    \n    \n\n    \t#returns the sum of xor for all pairs in a list",
+        "clean_code": "\"\"\"\n\ndef sum_of_xor(l):\n    \"\"\"Returns the sum of xor of all pairs of numbers in the given array.\n\n    Args:\n        l (list): List of integers.\n\n    Returns:\n        int: Sum of xor of all pairs in the list.\n\n    Examples:\n        >>> sum_of_xor([1, 2, 3, 4]) # 1 ^ 2 + 1 ^ 3 + 1 ^ 4 + 2 ^ 3 + 2 ^ 4 + 3 ^ 4 = 8 + 7 + 5 = 20 \n        20\n\n        >>> sum_of_xor([1, 1, 1]) # 1 ^ 1 + 1 ^ 1 = 0 \n        0\n\n    \"\"\"    \n    \n\n    \t#returns the sum of xor for all pairs in a list"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef find_xor(numbers):\n    \"\"\"Find the sum of xor of all pairs of numbers in the given array.\n\n    Args:\n        numbers (list): a list of integers\n\n    Returns:\n        int: sum of xor of all pairs\n\n    Examples:\n        >>> find_xor([1, 2, 3])\n        4\n\n        >>> find_xor([1, 2])\n        3\n\n        >>> find_xor([1, 1, 1])\n        0\n\n    \"\"\"",
+        "clean_code": "\"\"\"\ndef find_xor(numbers):\n    \"\"\"Find the sum of xor of all pairs of numbers in the given array.\n\n    Args:\n        numbers (list): a list of integers\n\n    Returns:\n        int: sum of xor of all pairs\n\n    Examples:\n        >>> find_xor([1, 2, 3])\n        4\n\n        >>> find_xor([1, 2])\n        3\n\n        >>> find_xor([1, 1, 1])\n        0\n\n    \"\"\""
+    },
+    "4": {
+        "status": 1,
+        "codex_out": "\n\ndef xor_pairs(input_list):\n    result=0\n    for i in range(len(input_list)):\n        for j in range(i+1,len(input_list)):\n            result+=input_list[i]^input_list[j]\n\n    return result\n\n\nprint(\"Sum of XOR values of all pairs:\",xor_pairs([1,2,3]))",
+        "clean_code": "def xor_pairs(input_list):\n    result=0\n    for i in range(len(input_list)):\n        for j in range(i+1,len(input_list)):\n            result+=input_list[i]^input_list[j]\n\n    return result\n\n\nprint(\"Sum of XOR values of all pairs:\",xor_pairs([1,2,3]))"
+    }
+}

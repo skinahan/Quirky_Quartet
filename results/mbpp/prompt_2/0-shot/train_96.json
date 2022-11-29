@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to find number of even elements in the given list using lambda function.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nBreak the problem down into smaller pieces. Sorting the input might help you create an efficient solution, use vectorised operations when possible. Apply recursion where possible.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\ndef even_elements(l):\n    return len(list(filter(lambda x: (x % 2 == 0), l)))",
+        "clean_code": "\"\"\"\n\n\ndef even_elements(l):\n    return len(list(filter(lambda x: (x % 2 == 0), l)))"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\n'''\n#solution.py\ndef even_count(input_list):\n\n    return len(list(filter(lambda x: x%2 == 0, input_list)))",
+        "clean_code": "'''\n#solution.py\ndef even_count(input_list):\n\n    return len(list(filter(lambda x: x%2 == 0, input_list)))"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\n'''\n\n\ndef even_elements(lst):\n    return len(list(filter(lambda x: x % 2 == 0, lst)))\n\n\nif __name__ == \"__main__\":\n    assert even_elements([1, 2, 3]) == 1, \"Wrong answer\"",
+        "clean_code": "'''\n\n\ndef even_elements(lst):\n    return len(list(filter(lambda x: x % 2 == 0, lst)))\n\n\nif __name__ == \"__main__\":\n    assert even_elements([1, 2, 3]) == 1, \"Wrong answer\""
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\ndef get_even_list(l):\n    return list(filter(lambda x: x % 2 == 0, l))",
+        "clean_code": "\"\"\"\n\n\ndef get_even_list(l):\n    return list(filter(lambda x: x % 2 == 0, l))"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\n'''\ndef even_elements(lst): \n    return len(list(filter(lambda x: x%2 == 0, lst)))",
+        "clean_code": "'''\ndef even_elements(lst): \n    return len(list(filter(lambda x: x%2 == 0, lst)))"
+    }
+}

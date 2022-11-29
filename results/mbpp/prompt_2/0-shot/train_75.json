@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to remove everything except alphanumeric characters from the given string by using regex.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nBreak the problem down into smaller pieces. Sorting the input might help you create an efficient solution, use vectorised operations when possible. Apply recursion where possible.\nAnswer:",
+    "success": 1,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef remove_non_alphanumeric(string):\n    return re.sub('[^A-Za-z0-9]+', '', string)",
+        "clean_code": "\"\"\"\ndef remove_non_alphanumeric(string):\n    return re.sub('[^A-Za-z0-9]+', '', string)"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\n'''\n\n\ndef remove_non_alphanumeric(text):\n    import re\n    return re.sub('[^0-9a-zA-Z]+', '', text)",
+        "clean_code": "'''\n\n\ndef remove_non_alphanumeric(text):\n    import re\n    return re.sub('[^0-9a-zA-Z]+', '', text)"
+    },
+    "2": {
+        "status": 0,
+        "codex_out": "\n\ndef remove_non_alphanumeric(input):\n    return \"\".join(re.findall(\"[a-zA-Z0-9]+\", input))\n\n",
+        "clean_code": "def remove_non_alphanumeric(input):\n    return \"\".join(re.findall(\"[a-zA-Z0-9]+\", input))"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\ndef clean_text(text):\n    return \"\".join([i for i in text if i.isalnum()])\n\n\ndef main():\n    print(clean_text(\"Hello World! 1234567\"))\n\n\nif __name__ == \"__main__\":\n    main()",
+        "clean_code": "\"\"\"\n\n\ndef clean_text(text):\n    return \"\".join([i for i in text if i.isalnum()])\n\n\ndef main():\n    print(clean_text(\"Hello World! 1234567\"))\n\n\nif __name__ == \"__main__\":\n    main()"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\n'''\n\n\n# start writing your code here\ndef remove_non_alphanumeric(input_string):\n    '''Remove everything except alphanumeric characters from the given string'''\n\n    # write your code here. Use the appropriate string functions and regular expressions.\n\n    return input_string  # replace this line with your code",
+        "clean_code": "'''\n\n\n# start writing your code here\ndef remove_non_alphanumeric(input_string):\n    '''Remove everything except alphanumeric characters from the given string'''\n\n    # write your code here. Use the appropriate string functions and regular expressions.\n\n    return input_string  # replace this line with your code"
+    }
+}

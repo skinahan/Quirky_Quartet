@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a python function to count occurences of a character in a repeated string.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nWhich data structure is being used? Can the task be split into smaller sub-tasks? How many loops are needed to solve the tasks? Solve sub-tasks iteratively to find the answer\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n<code>def count_occurences(string, char):\n    count = 0\n    for c in string:\n        if c == char:\n            count += 1\n    return count\n\n\nprint(count_occurences('Hello world', 'o'))  # 2\n</code>\n\n",
+        "clean_code": "<code>def count_occurences(string, char):\n    count = 0\n    for c in string:\n        if c == char:\n            count += 1\n    return count\n\n\nprint(count_occurences('Hello world', 'o'))  # 2\n</code>"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\nI have used dictionary to count the occurence of character. I have split the task into smaller sub-tasks and used loop to solve the tasks.\n'''\ndef count_char(string):\n    ''' This is a function to count occurrence of a character in a repeated string '''\n    result = {} # initialize result dictionary \n\n    for char in string: # iterate through each character in string \n        if char not in result: # check if character is already present in result dictionary, if not then add it with value 1 \n            result[char] = 1 \n\n        else: # increment the value by 1 for every occurence of character  \n            result[char] += 1  \n\n    return str(result) # return final output as string format \n\n    \nif __name__ == \"__main__\":  \n\n    input_string = input(\"Enter your string : \") # take user input from command line \n\n    print(count_char(input_string))",
+        "clean_code": "I have used dictionary to count the occurence of character. I have split the task into smaller sub-tasks and used loop to solve the tasks.\n'''\ndef count_char(string):\n    ''' This is a function to count occurrence of a character in a repeated string '''\n    result = {} # initialize result dictionary \n\n    for char in string: # iterate through each character in string \n        if char not in result: # check if character is already present in result dictionary, if not then add it with value 1 \n            result[char] = 1 \n\n        else: # increment the value by 1 for every occurence of character  \n            result[char] += 1  \n\n    return str(result) # return final output as string format \n\n    \nif __name__ == \"__main__\":  \n\n    input_string = input(\"Enter your string : \") # take user input from command line \n\n    print(count_char(input_string))"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n<code>def count_characters(string, char):\n    count = 0\n    for c in string:\n        if c == char:\n            count += 1\n\n    return count\n</code>\n\n",
+        "clean_code": "<code>def count_characters(string, char):\n    count = 0\n    for c in string:\n        if c == char:\n            count += 1\n\n    return count\n</code>"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n<code>def count_occurences(string, char):\n    count = 0\n    for c in string:\n        if c == char:\n            count += 1\n    return count\n\n\nprint(count_occurences('abcabcabc', 'a'))  # 3\nprint(count_occurences('aaabbbccc', 'a'))  # 3\nprint(count_occurences('', 'a'))  # 0\n</code>\n\n",
+        "clean_code": "<code>def count_occurences(string, char):\n    count = 0\n    for c in string:\n        if c == char:\n            count += 1\n    return count\n\n\nprint(count_occurences('abcabcabc', 'a'))  # 3\nprint(count_occurences('aaabbbccc', 'a'))  # 3\nprint(count_occurences('', 'a'))  # 0\n</code>"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n<code>def count_occurences(string, char):\n    counts = 0\n    for c in string:\n        if c == char:\n            counts += 1\n\n    return counts \n</code>\n",
+        "clean_code": "<code>def count_occurences(string, char):\n    counts = 0\n    for c in string:\n        if c == char:\n            counts += 1\n\n    return counts \n</code>"
+    }
+}

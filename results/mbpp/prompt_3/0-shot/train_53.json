@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to find the perimeter of a rectangle.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nPay attention to the datatype of input and expected output. Is the input a tuple? Is the input a string? Is the input a matrix? Use correct data structure to derive the needed answer.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\nThe function should return a number, the perimeter of the rectangle.\n'''\n\n\ndef rectangle_perimeter(length, width):\n    return 2 * (length + width)\n\n\nif __name__ == '__main__':\n    print(rectangle_perimeter(2, 3))",
+        "clean_code": "The function should return a number, the perimeter of the rectangle.\n'''\n\n\ndef rectangle_perimeter(length, width):\n    return 2 * (length + width)\n\n\nif __name__ == '__main__':\n    print(rectangle_perimeter(2, 3))"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\n'''\n\n\ndef find_perimeter(height, width):\n    return 2*(height+width)",
+        "clean_code": "'''\n\n\ndef find_perimeter(height, width):\n    return 2*(height+width)"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\ndef perimeter(length, breadth):\n    return 2*(length+breadth)\n\n\n'''",
+        "clean_code": "def perimeter(length, breadth):\n    return 2*(length+breadth)\n\n\n'''"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\ndef rectangle_perimeter(length, width):\n    return 2*(length+width)",
+        "clean_code": "\"\"\"\ndef rectangle_perimeter(length, width):\n    return 2*(length+width)"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef perimeter(length, breadth):\n    return 2*(length + breadth)",
+        "clean_code": "\"\"\"\ndef perimeter(length, breadth):\n    return 2*(length + breadth)"
+    }
+}

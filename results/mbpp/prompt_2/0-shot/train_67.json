@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a python function to replace multiple occurence of character by single.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nBreak the problem down into smaller pieces. Sorting the input might help you create an efficient solution, use vectorised operations when possible. Apply recursion where possible.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\ndef replace_multiple_occurrences(string):\n    return string.replace('*', '#').replace('#', '')",
+        "clean_code": "\"\"\"\ndef replace_multiple_occurrences(string):\n    return string.replace('*', '#').replace('#', '')"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\ndef replace_char(x):\n    s = list(x)\n    t = []\n\n    for i in range(len(s)):\n\n        if s[i] == ' ': continue\n\n        if i == 0: t.append(s[i])\n\n        elif s[i] != t[-1]: t.append(s[i])\n\n    return ''.join(t)",
+        "clean_code": "\"\"\"\ndef replace_char(x):\n    s = list(x)\n    t = []\n\n    for i in range(len(s)):\n\n        if s[i] == ' ': continue\n\n        if i == 0: t.append(s[i])\n\n        elif s[i] != t[-1]: t.append(s[i])\n\n    return ''.join(t)"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\n'''\ndef replace_multiple_occurence(string):\n    string = ''.join(ch for ch, _ in itertools.groupby(string))  # itertools.groupby('AAABBBCCD') --> A 3 B 3 C 2 D 1\n    return string\n\n\nif __name__ == '__main__':\n\n    print(\"Enter the string:\")\n    string = input()\n\n    print(\"The new string is:\", replace_multiple_occurence(string))",
+        "clean_code": "'''\ndef replace_multiple_occurence(string):\n    string = ''.join(ch for ch, _ in itertools.groupby(string))  # itertools.groupby('AAABBBCCD') --> A 3 B 3 C 2 D 1\n    return string\n\n\nif __name__ == '__main__':\n\n    print(\"Enter the string:\")\n    string = input()\n\n    print(\"The new string is:\", replace_multiple_occurence(string))"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\n'''\n\n\ndef replace(text, char):\n\n    if len(text) == 0:\n        return text\n\n    if text[0] == char:\n        return replace(text[1:], char)\n\n    else:\n        return text[0] + replace(text[1:], char)\n\n\nprint(replace(\"aaabcc\", \"a\"))",
+        "clean_code": "'''\n\n\ndef replace(text, char):\n\n    if len(text) == 0:\n        return text\n\n    if text[0] == char:\n        return replace(text[1:], char)\n\n    else:\n        return text[0] + replace(text[1:], char)\n\n\nprint(replace(\"aaabcc\", \"a\"))"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\ndef replaceMultiple(mainString, toBeReplaces, newString):\n    # Iterate over the strings to be replaced\n    for elem in toBeReplaces :\n        # Check if string is in the main string\n        if elem in mainString :\n            # Replace the string\n            mainString = mainString.replace(elem, newString)\n\n    return  mainString\n\n  print replaceMultiple('This is a great day', ['is', 'great'], 'was')",
+        "clean_code": "def replaceMultiple(mainString, toBeReplaces, newString):\n    # Iterate over the strings to be replaced\n    for elem in toBeReplaces :\n        # Check if string is in the main string\n        if elem in mainString :\n            # Replace the string\n            mainString = mainString.replace(elem, newString)\n\n    return  mainString\n\n  print replaceMultiple('This is a great day', ['is', 'great'], 'was')"
+    }
+}

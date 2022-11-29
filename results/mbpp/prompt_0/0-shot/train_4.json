@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to check if the given integer is a prime number.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nThink along the lines of the variables and data structures that need to be used. Also think about the way to access the elements in the data structures.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\ndef check_prime(number):\n    if number > 1:  \n       for i in range(2,number):  \n           if (number % i) == 0:  \n               return False  # prime numbers are greater than 1 \n\n       else:  \n           return True  # prime numbers are greater than 1 \n\n    else:  \n        return False",
+        "clean_code": "\"\"\"\ndef check_prime(number):\n    if number > 1:  \n       for i in range(2,number):  \n           if (number % i) == 0:  \n               return False  # prime numbers are greater than 1 \n\n       else:  \n           return True  # prime numbers are greater than 1 \n\n    else:  \n        return False"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\n'''\n\n\ndef isPrime(num):\n    if num > 1:\n\n        for i in range(2, num):\n            if (num % i) == 0:\n                return False\n\n                break\n\n        else:\n            return True\n\n    else:\n        return False",
+        "clean_code": "'''\n\n\ndef isPrime(num):\n    if num > 1:\n\n        for i in range(2, num):\n            if (num % i) == 0:\n                return False\n\n                break\n\n        else:\n            return True\n\n    else:\n        return False"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef isprime(n):\n    if n == 1: return False\n    for i in range(2, n):\n        if n % i == 0: return False\n    return True",
+        "clean_code": "\"\"\"\ndef isprime(n):\n    if n == 1: return False\n    for i in range(2, n):\n        if n % i == 0: return False\n    return True"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\n'''\n\n\ndef is_prime(x):\n    if x > 1:\n        for i in range(2, x):\n            if (x % i) == 0:  # checking whether the number is divisible by any number other than 1 and itself. If yes, then it is not a prime number.\n                return False  # Returning false if the condition satisfies.\n\n        else:  # If none of the above conditions satisfies, then it is a prime number. So returning true.\n\n            return True\n\n    else:  # If the input value is less than or equal to 1, then it cannot be a prime number. So returning false for those cases too.\n\n        return False",
+        "clean_code": "'''\n\n\ndef is_prime(x):\n    if x > 1:\n        for i in range(2, x):\n            if (x % i) == 0:  # checking whether the number is divisible by any number other than 1 and itself. If yes, then it is not a prime number.\n                return False  # Returning false if the condition satisfies.\n\n        else:  # If none of the above conditions satisfies, then it is a prime number. So returning true.\n\n            return True\n\n    else:  # If the input value is less than or equal to 1, then it cannot be a prime number. So returning false for those cases too.\n\n        return False"
+    },
+    "4": {
+        "status": 1,
+        "codex_out": "\ndef is_prime(num):\n    if num == 1:\n        return False\n    for i in range(2,num):\n        if num % i == 0:\n            return False\n    return True\n\n",
+        "clean_code": "def is_prime(num):\n    if num == 1:\n        return False\n    for i in range(2,num):\n        if num % i == 0:\n            return False\n    return True"
+    }
+}

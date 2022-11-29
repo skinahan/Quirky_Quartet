@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a python function to convert the given string to upper case.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nBreak the problem down into smaller pieces. Sorting the input might help you create an efficient solution, use vectorised operations when possible. Apply recursion where possible.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\n'''\ndef convert(string): \n    return string.upper() \n      \n# Driver code \nprint(convert('geeksforgeeks'))",
+        "clean_code": "'''\ndef convert(string): \n    return string.upper() \n      \n# Driver code \nprint(convert('geeksforgeeks'))"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n'''\ndef convert_upper(string):\n    # Write your code here!\n    return string.upper()\n\n\n'''\nQuestion:\nWrite a python function to convert the given string to lower case. Task: Write a python function to solve the above question. No additional comments and docstrings are needed. Additional info: Break the problem down into smaller pieces. Sorting the input might help you create an efficient solution, use vectorised operations when possible. Apply recursion where possible. Answer: \n'''\n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    # Write your code here!",
+        "clean_code": "'''\ndef convert_upper(string):\n    # Write your code here!\n    return string.upper()\n\n\n'''\nQuestion:\nWrite a python function to convert the given string to lower case. Task: Write a python function to solve the above question. No additional comments and docstrings are needed. Additional info: Break the problem down into smaller pieces. Sorting the input might help you create an efficient solution, use vectorised operations when possible. Apply recursion where possible. Answer: \n'''\n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    \n\n    # Write your code here!"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n'''\ndef convert_to_uppercase(string):\n    '''\n    function to convert the given string to uppercase.\n\n    Parameters:\n    string : str, required.\n\n    Returns:\n    upper_string : str, required.\n\n    Example:\n    >>>convert_to_uppercase('hello')  # 'HELLO'\n     'HELLO' \n\n     >>>convert_to_uppercase('world')  # 'WORLD' \n\n     'WORLD'  \n\n     >>>convert_to_uppercase('Good Morning!')  # 'GOOD MORNING!'  \n\n     'GOOD MORNING!'  \n\n      >>>convert_to_uppercase('how are you?')  # HOW ARE YOU?  \n\n      HOW ARE YOU?  \n      \n      >>>convert_to_.upper() is a built in function in python. It converts all the lowercase characters in a string to uppercase characters and returns it.'''",
+        "clean_code": "'''\ndef convert_to_uppercase(string):\n    '''\n    function to convert the given string to uppercase.\n\n    Parameters:\n    string : str, required.\n\n    Returns:\n    upper_string : str, required.\n\n    Example:\n    >>>convert_to_uppercase('hello')  # 'HELLO'\n     'HELLO' \n\n     >>>convert_to_uppercase('world')  # 'WORLD' \n\n     'WORLD'  \n\n     >>>convert_to_uppercase('Good Morning!')  # 'GOOD MORNING!'  \n\n     'GOOD MORNING!'  \n\n      >>>convert_to_uppercase('how are you?')  # HOW ARE YOU?  \n\n      HOW ARE YOU?  \n      \n      >>>convert_to_.upper() is a built in function in python. It converts all the lowercase characters in a string to uppercase characters and returns it.'''"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\nimport re\ndef to_uppercase(str1):\n    return str1.upper()",
+        "clean_code": "\"\"\"\nimport re\ndef to_uppercase(str1):\n    return str1.upper()"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\ndef upper_case(string):\n    return string.upper()",
+        "clean_code": "\"\"\"\ndef upper_case(string):\n    return string.upper()"
+    }
+}

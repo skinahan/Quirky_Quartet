@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a python function to interchange first and last elements in a given list.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nWhich data structure is being used? Can the task be split into smaller sub-tasks? How many loops are needed to solve the tasks? Solve sub-tasks iteratively to find the answer\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n'''\ndef swap_first_last(x):\n    return x[-1:] + x[1:-1] + x[:1]\nprint(swap_first_last([1,2,3,4,5]))",
+        "clean_code": "'''\ndef swap_first_last(x):\n    return x[-1:] + x[1:-1] + x[:1]\nprint(swap_first_last([1,2,3,4,5]))"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\ndef interchange_first_last(given_list):\n    first = given_list[0]\n    last = given_list[-1]\n\n    given_list[0] = last\n    given_list[-1] = first\n\n    return given_list",
+        "clean_code": "\"\"\"\ndef interchange_first_last(given_list):\n    first = given_list[0]\n    last = given_list[-1]\n\n    given_list[0] = last\n    given_list[-1] = first\n\n    return given_list"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\ndef swap_first_last(list1):\n    list1[0], list1[-1] = list1[-1], list1[0]\n\n    return list1\n\n\nif __name__ == '__main__':\n    print(\"\\nEnter the elements of a List: \")\n    inp = input().split()\n\n    print(\"\\nInput List :\", inp)\n\n    res = swap_first_last(inp)\n\n    print(\"\\nOutput List: \", res)",
+        "clean_code": "\"\"\"\ndef swap_first_last(list1):\n    list1[0], list1[-1] = list1[-1], list1[0]\n\n    return list1\n\n\nif __name__ == '__main__':\n    print(\"\\nEnter the elements of a List: \")\n    inp = input().split()\n\n    print(\"\\nInput List :\", inp)\n\n    res = swap_first_last(inp)\n\n    print(\"\\nOutput List: \", res)"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\n'''\ndef interchange_first_last(list):\n    l=len(list)\n    list[0],list[l-1]=list[l-1],list[0]\n    print(list)",
+        "clean_code": "'''\ndef interchange_first_last(list):\n    l=len(list)\n    list[0],list[l-1]=list[l-1],list[0]\n    print(list)"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n'''\n\n\ndef swap_first_last(n):\n    if len(n) > 1:\n        n[0], n[-1] = n[-1], n[0]\n\n    return n\n\n\nprint(swap_first_last([4, 5, 8, 10, 11]))",
+        "clean_code": "'''\n\n\ndef swap_first_last(n):\n    if len(n) > 1:\n        n[0], n[-1] = n[-1], n[0]\n\n    return n\n\n\nprint(swap_first_last([4, 5, 8, 10, 11]))"
+    }
+}

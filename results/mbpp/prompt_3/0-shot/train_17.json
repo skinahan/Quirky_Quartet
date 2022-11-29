@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to divide two lists using map and lambda function.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nPay attention to the datatype of input and expected output. Is the input a tuple? Is the input a string? Is the input a matrix? Use correct data structure to derive the needed answer.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef divide(nums):\n    return map(lambda x: x[0]/x[1], nums)\n\n\nif __name__ == '__main__':\n    print(divide([(10, 2), (2, 3), (3, 4)]))",
+        "clean_code": "\"\"\"\ndef divide(nums):\n    return map(lambda x: x[0]/x[1], nums)\n\n\nif __name__ == '__main__':\n    print(divide([(10, 2), (2, 3), (3, 4)]))"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef divide_lists(list1, list2):\n    return list(map(lambda x, y: x / y, list1, list2))\n\n\nif __name__ == '__main__':\n    print(divide_lists([1, 2, 3], [4, 5, 6]))",
+        "clean_code": "\"\"\"\ndef divide_lists(list1, list2):\n    return list(map(lambda x, y: x / y, list1, list2))\n\n\nif __name__ == '__main__':\n    print(divide_lists([1, 2, 3], [4, 5, 6]))"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\nSample Input:\n[1,2,3],[4,5,6]\nSample Output:\n[0.25,0.4,0.5]\n'''\n\n\ndef divide(a): return list(map(lambda x: x[0] / x[1], a))\n\n\na = [(1, 4), (2, 5), (3, 6)]\nprint(divide(a))",
+        "clean_code": "Sample Input:\n[1,2,3],[4,5,6]\nSample Output:\n[0.25,0.4,0.5]\n'''\n\n\ndef divide(a): return list(map(lambda x: x[0] / x[1], a))\n\n\na = [(1, 4), (2, 5), (3, 6)]\nprint(divide(a))"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\nHere is a sample code.\n<code>def divide_two_lists(list1, list2):\n    return map(lambda x,y : x/y, list1, list2)\n</code>\n\n\nA:\n\nThis is the simplest solution: \n<code>def divide_two_lists(list1, list2): \n\n    if len(list1) != len(list2): \n\n        raise ValueError(\"Length of lists not equal.\")\n\n    return [x/y for x, y in zip(list1, list2)]   # using a list comprehension instead of map. \n</code>\n",
+        "clean_code": "Here is a sample code.\n<code>def divide_two_lists(list1, list2):\n    return map(lambda x,y : x/y, list1, list2)\n</code>\n\n\nA:\n\nThis is the simplest solution: \n<code>def divide_two_lists(list1, list2): \n\n    if len(list1) != len(list2): \n\n        raise ValueError(\"Length of lists not equal.\")\n\n    return [x/y for x, y in zip(list1, list2)]   # using a list comprehension instead of map. \n</code>"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef divide_list(list1, list2):\n    \"\"\"\n    This function divides each element of list1 by the corresponding element of list2.\n\n    :param list1: A list of numbers.\n    :param list2: A second list of numbers with the same length as `list1`.\n\n    :returns: A new list of numbers where each element is the result of dividing `list1` by `list2`.\n\n    >>> divide_list([1, 2, 3], [4, 5, 6])\n    [0.25, 0.4, 0.5]\n\n    >>> divide_list([-3], [-6])\n    [0.5]\n\n    >>> divide_list([10], [2])\n    [5]\n\n ",
+        "clean_code": "\"\"\"\ndef divide_list(list1, list2):\n    \"\"\"\n    This function divides each element of list1 by the corresponding element of list2.\n\n    :param list1: A list of numbers.\n    :param list2: A second list of numbers with the same length as `list1`.\n\n    :returns: A new list of numbers where each element is the result of dividing `list1` by `list2`.\n\n    >>> divide_list([1, 2, 3], [4, 5, 6])\n    [0.25, 0.4, 0.5]\n\n    >>> divide_list([-3], [-6])\n    [0.5]\n\n    >>> divide_list([10], [2])\n    [5]"
+    }
+}

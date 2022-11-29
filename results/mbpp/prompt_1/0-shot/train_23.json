@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a python function to convert the given string to upper case.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nWhich data structure is being used? Can the task be split into smaller sub-tasks? How many loops are needed to solve the tasks? Solve sub-tasks iteratively to find the answer\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n    def to_upper(string):\n        string = string.upper()\n        return string\n'''\n\n\ndef to_upper(string):\n    string = string.upper()\n    return string\n\n\nprint(to_upper(\"hello\"))",
+        "clean_code": "def to_upper(string):\n        string = string.upper()\n        return string\n'''\n\n\ndef to_upper(string):\n    string = string.upper()\n    return string\n\n\nprint(to_upper(\"hello\"))"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\n'''\ndef convert_to_upper(string):\n    '''\n    Function to convert the given string to upper case.\n\n    Parameters:\n        string (str) : The string which is to be converted to upper case.\n\n    Returns:\n        str : The converted string in upper case.\n\n    '''\n\n    return string.upper()",
+        "clean_code": "'''\ndef convert_to_upper(string):\n    '''\n    Function to convert the given string to upper case.\n\n    Parameters:\n        string (str) : The string which is to be converted to upper case.\n\n    Returns:\n        str : The converted string in upper case.\n\n    '''\n\n    return string.upper()"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\ndef upper_case(str_in):\n    return str_in.upper()",
+        "clean_code": "\"\"\"\n\n\ndef upper_case(str_in):\n    return str_in.upper()"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef convert_to_upper(string):\n    return string.upper()\n\n\nif __name__ == \"__main__\":\n\n    assert convert_to_upper(\"Hello World\") == \"HELLO WORLD\"",
+        "clean_code": "\"\"\"\ndef convert_to_upper(string):\n    return string.upper()\n\n\nif __name__ == \"__main__\":\n\n    assert convert_to_upper(\"Hello World\") == \"HELLO WORLD\""
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\ndef convert_to_upper(string):\n    return string.upper()\n\n\nprint(convert_to_upper(\"I am good\"))",
+        "clean_code": "\"\"\"\n\n\ndef convert_to_upper(string):\n    return string.upper()\n\n\nprint(convert_to_upper(\"I am good\"))"
+    }
+}

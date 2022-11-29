@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to find number of even elements in the given list using lambda function.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nWhich data structure is being used? Can the task be split into smaller sub-tasks? How many loops are needed to solve the tasks? Solve sub-tasks iteratively to find the answer\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\n'''\n\n\ndef count_even(lst):\n    return len(list(filter(lambda x: x % 2 == 0, lst)))\n\n\nif __name__ == '__main__':\n    lst = [1, 2, 3, 4]\n    print(\"Number of even numbers in the list is: \", count_even(lst))",
+        "clean_code": "'''\n\n\ndef count_even(lst):\n    return len(list(filter(lambda x: x % 2 == 0, lst)))\n\n\nif __name__ == '__main__':\n    lst = [1, 2, 3, 4]\n    print(\"Number of even numbers in the list is: \", count_even(lst))"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\ndef num_of_even(l):\n    return len(list(filter(lambda x: x%2 == 0, l)))",
+        "clean_code": "\"\"\"\ndef num_of_even(l):\n    return len(list(filter(lambda x: x%2 == 0, l)))"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\n\n\ndef even_elements(list):\n    even = lambda x: x % 2 == 0\n    return len(list(filter(even, list)))\n\n\nprint(\"Number of even elements in the list : \", even_elements([1, 2, 3, 4, 5]))",
+        "clean_code": "\"\"\"\n\n\ndef even_elements(list):\n    even = lambda x: x % 2 == 0\n    return len(list(filter(even, list)))\n\n\nprint(\"Number of even elements in the list : \", even_elements([1, 2, 3, 4, 5]))"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef even_elements(lst):\n    return list(filter(lambda x: x%2==0, lst))",
+        "clean_code": "\"\"\"\ndef even_elements(lst):\n    return list(filter(lambda x: x%2==0, lst))"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\ndef even_count(list):\n    even_count = 0\n    for i in list:\n        if i % 2 == 0:\n            even_count += 1\n\n    return even_count\n\n\nprint(even_count([1, 2, 3, 4, 5]))",
+        "clean_code": "\"\"\"\n\n\ndef even_count(list):\n    even_count = 0\n    for i in list:\n        if i % 2 == 0:\n            even_count += 1\n\n    return even_count\n\n\nprint(even_count([1, 2, 3, 4, 5]))"
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to find the greatest common divisor (gcd) of two integers by using recursion.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nThink along the lines of the variables and data structures that need to be used. Also think about the way to access the elements in the data structures.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\ndef gcd(a,b):\n    if a==0:\n        return b\n    elif b==0:\n        return a\n    else:\n        return gcd(b,a%b)\n\n \n'''\n\n \n\n \n\n \n\n \n\n \n\n \n\n \n\n \n\n \n\n   # Write your code here",
+        "clean_code": "def gcd(a,b):\n    if a==0:\n        return b\n    elif b==0:\n        return a\n    else:\n        return gcd(b,a%b)\n\n \n'''\n\n \n\n \n\n \n\n \n\n \n\n \n\n \n\n \n\n \n\n   # Write your code here"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\n\ndef gcd(a,b):\n    if b == 0:  #base case \n        return a \n    else: #recursive case \n        return gcd(b, a % b)",
+        "clean_code": "\"\"\"\n\ndef gcd(a,b):\n    if b == 0:  #base case \n        return a \n    else: #recursive case \n        return gcd(b, a % b)"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\n'''\n#Write your code here\ndef gcd(a,b):\n    if b==0: \n        return a \n    else: \n        return gcd(b,a%b)",
+        "clean_code": "'''\n#Write your code here\ndef gcd(a,b):\n    if b==0: \n        return a \n    else: \n        return gcd(b,a%b)"
+    },
+    "3": {
+        "status": 1,
+        "codex_out": "\ndef gcd(a,b):\n    if b == 0:\n        return a\n    else:\n        return gcd(b, a%b)\n\n \nQuestion:\nWrite a function to find the greatest common divisor (gcd) of two integers by using recursion.\nTask:  Write a python function to solve the above question. No additional comments and docstrings are needed.  Additional info:   Think along the lines of the variables and data structures that need to be used. Also think about the way to access the elements in the data structures.",
+        "clean_code": "def gcd(a,b):\n    if b == 0:\n        return a\n    else:\n        return gcd(b, a%b)"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef gcd(a, b):\n    if b == 0:\n        return a\n    else:\n        return gcd(b, a%b)",
+        "clean_code": "\"\"\"\ndef gcd(a, b):\n    if b == 0:\n        return a\n    else:\n        return gcd(b, a%b)"
+    }
+}

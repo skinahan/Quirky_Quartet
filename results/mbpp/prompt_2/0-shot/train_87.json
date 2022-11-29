@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to get the length of a complex number.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nBreak the problem down into smaller pieces. Sorting the input might help you create an efficient solution, use vectorised operations when possible. Apply recursion where possible.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n'''\ndef get_length(complex_number):\n    return np.linalg.norm(complex_number)",
+        "clean_code": "'''\ndef get_length(complex_number):\n    return np.linalg.norm(complex_number)"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\ndef get_length(z):\n    real,imag=z.real,z.imag\n    return math.sqrt(real**2+imag**2)\nprint(get_length(complex(-3,-4)))\n'''",
+        "clean_code": "def get_length(z):\n    real,imag=z.real,z.imag\n    return math.sqrt(real**2+imag**2)\nprint(get_length(complex(-3,-4)))\n'''"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\n'''\ndef complex_length(a):\n    \"\"\"Takes a complex number, returns its length.\n\n    >>> complex_length(0+0j)\n    0.0\n\n    >>> complex_length(1+1j)\n    1.4142135623730951\n\n    >>> complex_length(-1-1j)\n    1.4142135623730951\n\n    \"\"\"\n     # YOUR CODE HERE",
+        "clean_code": "'''\ndef complex_length(a):\n    \"\"\"Takes a complex number, returns its length.\n\n    >>> complex_length(0+0j)\n    0.0\n\n    >>> complex_length(1+1j)\n    1.4142135623730951\n\n    >>> complex_length(-1-1j)\n    1.4142135623730951\n\n    \"\"\"\n     # YOUR CODE HERE"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\ndef complex_length(x):\n    return np.sqrt(np.sum(np.square(x)))\n\n\n# Question 4: \n\"\"\" \nQuestion:\nWrite a function to calculate the mean of an array of numbers, ignoring all values that are NaN or Infinity. \nTask: \nWrite a python function to solve the above question. No additional comments and docstrings are needed. \n\n     Additional info: Break the problem down into smaller pieces. Sorting the input might help you create an efficient solution, use vectorised operations when possible. Apply recursion where possible.\"\"\"\n\n     \n\n     \n\n     \n\n     # Question 5: \"Question: Write a function that takes in two numbers and returns their product using recursion without using *. Task: Write a python function to solve the above question.\"",
+        "clean_code": "\"\"\"\ndef complex_length(x):\n    return np.sqrt(np.sum(np.square(x)))\n\n\n# Question 4: \n\"\"\" \nQuestion:\nWrite a function to calculate the mean of an array of numbers, ignoring all values that are NaN or Infinity. \nTask: \nWrite a python function to solve the above question. No additional comments and docstrings are needed. \n\n     Additional info: Break the problem down into smaller pieces. Sorting the input might help you create an efficient solution, use vectorised operations when possible. Apply recursion where possible.\"\"\"\n\n     \n\n     \n\n     \n\n     # Question 5: \"Question: Write a function that takes in two numbers and returns their product using recursion without using *. Task: Write a python function to solve the above question.\""
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\ndef len_complex(a, b):\n    return (a ** 2 + b ** 2) ** 0.5\n\n\nprint(len_complex(3, 4))",
+        "clean_code": "\"\"\"\n\n\ndef len_complex(a, b):\n    return (a ** 2 + b ** 2) ** 0.5\n\n\nprint(len_complex(3, 4))"
+    }
+}

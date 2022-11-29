@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to find the median of two sorted arrays of same size.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nBreak the problem down into smaller pieces. Sorting the input might help you create an efficient solution, use vectorised operations when possible. Apply recursion where possible.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\n'''\nimport numpy as np\ndef find_median(arr1, arr2):\n\n    # your code goes here\n    arr1=np.sort(arr1)\n    arr2=np.sort(arr2)\n\n    if len(arr1)==len(arr2):\n\n        median=(len(arr1)-1)/2+0.5\n\n        return (arr1[int(median)]+arr2[int(median)])/2.0",
+        "clean_code": "'''\nimport numpy as np\ndef find_median(arr1, arr2):\n\n    # your code goes here\n    arr1=np.sort(arr1)\n    arr2=np.sort(arr2)\n\n    if len(arr1)==len(arr2):\n\n        median=(len(arr1)-1)/2+0.5\n\n        return (arr1[int(median)]+arr2[int(median)])/2.0"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n'''\ndef median(arr1, arr2):\n    # your code goes here\n    array = arr1 + arr2\n    array.sort()\n    length = len(array)\n\n    if length % 2 == 0:\n        return (array[length//2 - 1] + array[length//2]) / 2\n\n    return array[length//2]",
+        "clean_code": "'''\ndef median(arr1, arr2):\n    # your code goes here\n    array = arr1 + arr2\n    array.sort()\n    length = len(array)\n\n    if length % 2 == 0:\n        return (array[length//2 - 1] + array[length//2]) / 2\n\n    return array[length//2]"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\nimport numpy as np\n\n\ndef find_median(arr1, arr2):\n    \"\"\"Function to find median of two sorted arrays.\n\n    Parameters:\n    arg1 (list): First sorted array.\n    arg2 (list): Second sorted array.\n\n    Returns:\n    float: Median of the two arrays.\n\n    \"\"\"\n\n    if len(arr1) == 2 and len(arr2) == 2:  # Base case for recursion when length is 2 for both arrays.\n\n        return (max(arr1[0], arr2[0]) + min(arr1[1], arr2[1])) / 2  # Return median when length is 2 for both arrays.\n\n    m = len(arr1) // 2  # Find middle index of 1st array. Divide by int to avoid float indexing in python 3+.\n\n    n = len(arr2) // 2  # Find middle index of 2nd array. Divide by int to avoid float indexing in python 3+.\n\n    ",
+        "clean_code": "\"\"\"\nimport numpy as np\n\n\ndef find_median(arr1, arr2):\n    \"\"\"Function to find median of two sorted arrays.\n\n    Parameters:\n    arg1 (list): First sorted array.\n    arg2 (list): Second sorted array.\n\n    Returns:\n    float: Median of the two arrays.\n\n    \"\"\"\n\n    if len(arr1) == 2 and len(arr2) == 2:  # Base case for recursion when length is 2 for both arrays.\n\n        return (max(arr1[0], arr2[0]) + min(arr1[1], arr2[1])) / 2  # Return median when length is 2 for both arrays.\n\n    m = len(arr1) // 2  # Find middle index of 1st array. Divide by int to avoid float indexing in python 3+.\n\n    n = len(arr2) // 2  # Find middle index of 2nd array. Divide by int to avoid float indexing in python 3+."
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\n'''\nimport numpy as np\ndef median_of_sorted(arr1, arr2):\n    \"\"\"Find the median of two sorted arrays of same size.\n\n    Example:\n        >>> arr1 = [1,3,5]\n        >>> arr2 = [2,4,6]\n\n        >>> median_of_sorted(arr1, arr2)\n        3.5\n\n    \"\"\"\n\n    # your code here",
+        "clean_code": "'''\nimport numpy as np\ndef median_of_sorted(arr1, arr2):\n    \"\"\"Find the median of two sorted arrays of same size.\n\n    Example:\n        >>> arr1 = [1,3,5]\n        >>> arr2 = [2,4,6]\n\n        >>> median_of_sorted(arr1, arr2)\n        3.5\n\n    \"\"\"\n\n    # your code here"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\ndef median(a, b):\n    \"\"\"Find the median of two sorted arrays of same size.\n\n    Args:\n        a (list): The first sorted array.\n        b (list): The second sorted array.\n\n    Returns:\n        float: The median of the two arrays.\n\n    Example:\n        >>> median([1, 3, 5], [2, 4, 6])\n        3.5\n\n    \"\"\"\n     # TODO 1: Implement this function! It should return a float value that is the median of the input list values.  Use recursion where possible to solve this problem!  Hint: Sorting might help!  Also try not to use any built-in functions like sum() or sort().  You can use len(), range(), and/or enumerate() if you wish to do so.   See how concise you can make your code while still being efficient and readable!",
+        "clean_code": "\"\"\"\n\n\ndef median(a, b):\n    \"\"\"Find the median of two sorted arrays of same size.\n\n    Args:\n        a (list): The first sorted array.\n        b (list): The second sorted array.\n\n    Returns:\n        float: The median of the two arrays.\n\n    Example:\n        >>> median([1, 3, 5], [2, 4, 6])\n        3.5\n\n    \"\"\"\n     # TODO 1: Implement this function! It should return a float value that is the median of the input list values.  Use recursion where possible to solve this problem!  Hint: Sorting might help!  Also try not to use any built-in functions like sum() or sort().  You can use len(), range(), and/or enumerate() if you wish to do so.   See how concise you can make your code while still being efficient and readable!"
+    }
+}

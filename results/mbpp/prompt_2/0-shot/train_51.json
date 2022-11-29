@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to flatten the given tuple matrix into the tuple list with each tuple representing each column.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nBreak the problem down into smaller pieces. Sorting the input might help you create an efficient solution, use vectorised operations when possible. Apply recursion where possible.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\ndef flatten_tuple_matrix(matrix):\n\n    # Code here\n    return []",
+        "clean_code": "\"\"\"\n\n\ndef flatten_tuple_matrix(matrix):\n\n    # Code here\n    return []"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\nimport numpy as np\n\n\ndef flatten_tuple(input_tuple):\n\n    # checking for valid input type, if not raise TypeError exception\n    if not isinstance(input_tuple, tuple):\n        raise TypeError(\"Input must be a tuple\")\n\n    # converting the input to numpy array and transposing it to get columns in rows\n    matrix = np.array(input_tuple)\n    transposed = matrix.T.tolist()\n\n    return transposed",
+        "clean_code": "\"\"\"\nimport numpy as np\n\n\ndef flatten_tuple(input_tuple):\n\n    # checking for valid input type, if not raise TypeError exception\n    if not isinstance(input_tuple, tuple):\n        raise TypeError(\"Input must be a tuple\")\n\n    # converting the input to numpy array and transposing it to get columns in rows\n    matrix = np.array(input_tuple)\n    transposed = matrix.T.tolist()\n\n    return transposed"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n<code>def flatten(tup):\n    return [x for y in tup for x in y]\n</code>\n",
+        "clean_code": "<code>def flatten(tup):\n    return [x for y in tup for x in y]\n</code>"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\ndef flatten_tuple_matrix(tup):\n\n    # tup = tuple(tup)\n\n    if len(tup) == 0:\n        return []\n\n    elif len(tup[0]) == 1:\n        return [x[0] for x in tup]\n\n    else:\n        return [x[0] for x in tup] + flatten_tuple_matrix([x[1:] for x in tup])",
+        "clean_code": "\"\"\"\ndef flatten_tuple_matrix(tup):\n\n    # tup = tuple(tup)\n\n    if len(tup) == 0:\n        return []\n\n    elif len(tup[0]) == 1:\n        return [x[0] for x in tup]\n\n    else:\n        return [x[0] for x in tup] + flatten_tuple_matrix([x[1:] for x in tup])"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n<code>def flatten(matrix):\n    return tuple(map(list, zip(*matrix)))\n</code>\n",
+        "clean_code": "<code>def flatten(matrix):\n    return tuple(map(list, zip(*matrix)))\n</code>"
+    }
+}

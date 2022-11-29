@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a python function to interchange first and last elements in a given list.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nBreak the problem down into smaller pieces. Sorting the input might help you create an efficient solution, use vectorised operations when possible. Apply recursion where possible.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\ndef interchangelist(input_list):\n    \"\"\"This function takes a list as input and returns a list with first and last elements exchanged.\"\"\"\n    # if input_list is empty, we return an empty list.\n    if not input_list:  # check if the input_list is empty. If it is, we return an empty list. \n        return []\n\n    # if the length of the input_list is 1 then we just return the same list back. \n    elif len(input_list) == 1:   # check if the length of the input_list is one. If it is, we just return the same list back. \n\n        return [input_list[0]]\n\n    else:   # in all other cases, we exchange first and last elements of a given list using slicing method in python.\n\n        return [input_lis",
+        "clean_code": "\"\"\"\ndef interchangelist(input_list):\n    \"\"\"This function takes a list as input and returns a list with first and last elements exchanged.\"\"\"\n    # if input_list is empty, we return an empty list.\n    if not input_list:  # check if the input_list is empty. If it is, we return an empty list. \n        return []\n\n    # if the length of the input_list is 1 then we just return the same list back. \n    elif len(input_list) == 1:   # check if the length of the input_list is one. If it is, we just return the same list back. \n\n        return [input_list[0]]\n\n    else:   # in all other cases, we exchange first and last elements of a given list using slicing method in python.\n\n        return [input_lis"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\n'''\n\n\ndef interchange(lst):\n    '''\n    input: list lst of length > 1\n    output: list with first and last element swapped. \n    '''\n\n    if len(lst) == 0:  # base case for recursion, return empty list when there are no elements in the list. \n        return []\n\n    else:              # if there are more than one element in the list, swap the first and last elements using slicing.  \n\n        lst[0], lst[-1] = lst[-1], lst[0]   # swap first and last element using tuple unpacking. \n\n        return [lst[0]] + interchange(lst[1:-1]) + [lst[-1]]",
+        "clean_code": "'''\n\n\ndef interchange(lst):\n    '''\n    input: list lst of length > 1\n    output: list with first and last element swapped. \n    '''\n\n    if len(lst) == 0:  # base case for recursion, return empty list when there are no elements in the list. \n        return []\n\n    else:              # if there are more than one element in the list, swap the first and last elements using slicing.  \n\n        lst[0], lst[-1] = lst[-1], lst[0]   # swap first and last element using tuple unpacking. \n\n        return [lst[0]] + interchange(lst[1:-1]) + [lst[-1]]"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\ndef swap_list(input_list):\n    \"\"\"\n    function to swap first and last elements in a list\n\n    \"\"\"\n    input_list[0], input_list[-1] = input_list[-1], input_list[0]\n\n    return input_list",
+        "clean_code": "\"\"\"\ndef swap_list(input_list):\n    \"\"\"\n    function to swap first and last elements in a list\n\n    \"\"\"\n    input_list[0], input_list[-1] = input_list[-1], input_list[0]\n\n    return input_list"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\n\n\ndef swap(a):\n    return a[-1:] + a[1:-1] + a[:1]\n\n\ninp = input(\"Enter the list: \").split()\nprint(\"New List: \", swap(inp))",
+        "clean_code": "\"\"\"\n\n\ndef swap(a):\n    return a[-1:] + a[1:-1] + a[:1]\n\n\ninp = input(\"Enter the list: \").split()\nprint(\"New List: \", swap(inp))"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\ndef interchange(list1):\n    list1[0], list1[-1] = list1[-1], list1[0]\n    return list1\n\n\nprint(interchange([10, 20, 30]))",
+        "clean_code": "\"\"\"\n\n\ndef interchange(list1):\n    list1[0], list1[-1] = list1[-1], list1[0]\n    return list1\n\n\nprint(interchange([10, 20, 30]))"
+    }
+}

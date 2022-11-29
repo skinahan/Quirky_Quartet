@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to find the maximum of nth column from the given tuple list.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nThink along the lines of the variables and data structures that need to be used. Also think about the way to access the elements in the data structures.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n'''\ndef find_max(tuple_list, n):\n    max = tuple_list[0][n - 1]\n    for i in range(1, len(tuple_list)):\n        if max < tuple_list[i][n - 1]:\n            max = tuple_list[i][n - 1]\n\n    return max\n\n\n# Test case: (1, 2, 3), (4, 5, 6), (7, 8, 9) and n = 2. Expected output: 8.",
+        "clean_code": "'''\ndef find_max(tuple_list, n):\n    max = tuple_list[0][n - 1]\n    for i in range(1, len(tuple_list)):\n        if max < tuple_list[i][n - 1]:\n            max = tuple_list[i][n - 1]\n\n    return max\n\n\n# Test case: (1, 2, 3), (4, 5, 6), (7, 8, 9) and n = 2. Expected output: 8."
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\ndef max_column(tuple_list, n):\n    # Write your code here\n    return None\nExample:\nInput: [(1,2,3),(4,5,6),(7,8,9)], 2  (Tuple list and column number)\nOutput: 8 (Maximum of second column)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSolution:  \"\"\"",
+        "clean_code": "def max_column(tuple_list, n):\n    # Write your code here\n    return None\nExample:\nInput: [(1,2,3),(4,5,6),(7,8,9)], 2  (Tuple list and column number)\nOutput: 8 (Maximum of second column)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSolution:  \"\"\""
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n'''\ndef max_of_nth_col(tuple_list, n):\n    return max(tuple[n] for tuple in tuple_list)\n    #max function is used to find the maximum value in the list.\n\n\n#test cases:\nprint(\"Pass\" if (max_of_nth_col([(2, 3), (6, 7), (3, 34), (24, 64)], 1) == 64) else \"Fail\")",
+        "clean_code": "'''\ndef max_of_nth_col(tuple_list, n):\n    return max(tuple[n] for tuple in tuple_list)\n    #max function is used to find the maximum value in the list.\n\n\n#test cases:\nprint(\"Pass\" if (max_of_nth_col([(2, 3), (6, 7), (3, 34), (24, 64)], 1) == 64) else \"Fail\")"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\ndef max_of_nth_column(tuple_list, n):\n    \"\"\"\n    Returns the maximum of nth column from the given tuple list.\n\n    Parameters:\n    tuple_list (list): A list of tuples. Each tuple contains an integer and a string.\n\n    Returns:\n    int: Maximum value of nth column in the given list.\n\n    \"\"\"\n\n    # Extracting only the nth column from the list of tuples and storing it in a new list\n    # Using List comprehension to generate a new list containing only required elements from the original tuple list. \n    \n    ",
+        "clean_code": "\"\"\"\ndef max_of_nth_column(tuple_list, n):\n    \"\"\"\n    Returns the maximum of nth column from the given tuple list.\n\n    Parameters:\n    tuple_list (list): A list of tuples. Each tuple contains an integer and a string.\n\n    Returns:\n    int: Maximum value of nth column in the given list.\n\n    \"\"\"\n\n    # Extracting only the nth column from the list of tuples and storing it in a new list\n    # Using List comprehension to generate a new list containing only required elements from the original tuple list."
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n\ndef find_max(tuple_list, n):\n    max = -10000000000\n    for i in tuple_list:\n        if i[n] > max:\n            max = i[n]\n\n    return max\n\n \n'''",
+        "clean_code": "def find_max(tuple_list, n):\n    max = -10000000000\n    for i in tuple_list:\n        if i[n] > max:\n            max = i[n]\n\n    return max\n\n \n'''"
+    }
+}

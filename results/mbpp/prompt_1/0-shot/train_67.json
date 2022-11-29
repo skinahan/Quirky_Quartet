@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a python function to replace multiple occurence of character by single.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nWhich data structure is being used? Can the task be split into smaller sub-tasks? How many loops are needed to solve the tasks? Solve sub-tasks iteratively to find the answer\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\ndef replace_multiple(string, char):\n    return string.replace(char, '')\n\n\nif __name__ == '__main__':\n    print(replace_multiple('hello', 'l'))",
+        "clean_code": "\"\"\"\n\n\ndef replace_multiple(string, char):\n    return string.replace(char, '')\n\n\nif __name__ == '__main__':\n    print(replace_multiple('hello', 'l'))"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\ndef replace_multiple(char, word):\n    new_word = []\n    for letter in word:\n        if letter == char:\n            if len(new_word) > 0 and new_word[-1] != char:  # checks if last element in the list is not equal to char. If it's not equal then add the element to the list. So it will check if there are multiple occurence of character by single.\n                new_word.append(letter)  # appends the elements to a list called new_word. This will be our final answer when we join all the elements together at the end of this function.\n\n        else:  # if letter is not equal to char then add it directly to the list without any checking because there are no multiple occurence of character by single in that case.\n\n            new_word.append(letter)\n\n    return ''.join(new_word)  # joins all the elements in a string and returns that string as an answer for this function",
+        "clean_code": "\"\"\"\n\n\ndef replace_multiple(char, word):\n    new_word = []\n    for letter in word:\n        if letter == char:\n            if len(new_word) > 0 and new_word[-1] != char:  # checks if last element in the list is not equal to char. If it's not equal then add the element to the list. So it will check if there are multiple occurence of character by single.\n                new_word.append(letter)  # appends the elements to a list called new_word. This will be our final answer when we join all the elements together at the end of this function.\n\n        else:  # if letter is not equal to char then add it directly to the list without any checking because there are no multiple occurence of character by single in that case.\n\n            new_word.append(letter)\n\n    return ''.join(new_word)  # joins all the elements in a string and returns that string as an answer for this function"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\n\n\"\"\"\n\n\ndef replace_multiple(string, char):\n    new_str = \"\"\n\n    for ch in string:\n        if ch == char:\n            new_str += ch\n\n    return new_str\n\n\nif __name__ == \"__main__\":\n\n    string = input(\"Enter the string : \")\n\n    char = input(\"Enter the character to be replaced : \")\n\n    print(replace_multiple(string, char))",
+        "clean_code": "\"\"\"\n\n\ndef replace_multiple(string, char):\n    new_str = \"\"\n\n    for ch in string:\n        if ch == char:\n            new_str += ch\n\n    return new_str\n\n\nif __name__ == \"__main__\":\n\n    string = input(\"Enter the string : \")\n\n    char = input(\"Enter the character to be replaced : \")\n\n    print(replace_multiple(string, char))"
+    },
+    "3": {
+        "status": 2,
+        "codex_out": "\n\"\"\"\n\n\ndef remove_duplicates(str1):\n    str2 = \"\"\n    for x in str1:\n        if x not in str2:\n            str2 += x\n\n    return str2\n\n\nprint(remove_duplicates(\"mississippi\"))",
+        "clean_code": "\"\"\"\n\n\ndef remove_duplicates(str1):\n    str2 = \"\"\n    for x in str1:\n        if x not in str2:\n            str2 += x\n\n    return str2\n\n\nprint(remove_duplicates(\"mississippi\"))"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\n'''\ndef replaceChar(string):\n    new_str = \"\"\n\n    for i in range(0, len(string)):\n        if string[i] != string[i - 1]:\n            new_str += string[i]\n\n    return new_str\n\n\nstring = input(\"Enter a string: \")\nprint(\"String after removing the consecutive characters is: \", replaceChar(string))",
+        "clean_code": "'''\ndef replaceChar(string):\n    new_str = \"\"\n\n    for i in range(0, len(string)):\n        if string[i] != string[i - 1]:\n            new_str += string[i]\n\n    return new_str\n\n\nstring = input(\"Enter a string: \")\nprint(\"String after removing the consecutive characters is: \", replaceChar(string))"
+    }
+}

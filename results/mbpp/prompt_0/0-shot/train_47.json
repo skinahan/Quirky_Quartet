@@ -1,0 +1,29 @@
+{
+    "query": "Question:\nWrite a function to exchange the position of every n-th value with (n+1)th value and (n+1)th value with n-th value in a given list.\nTask:\nWrite a python function to solve the above question. No additional comments and docstrings are needed.\nAdditional info:\nThink along the lines of the variables and data structures that need to be used. Also think about the way to access the elements in the data structures.\nAnswer:",
+    "success": 0,
+    "0": {
+        "status": 2,
+        "codex_out": "\n\n'''\ndef exchange(lst,n):\n    for i in range(0,len(lst),n+1):\n        try:\n            lst[i],lst[i+1]=lst[i+1],lst[i]\n        except IndexError:\n            pass\n\n    return lst",
+        "clean_code": "'''\ndef exchange(lst,n):\n    for i in range(0,len(lst),n+1):\n        try:\n            lst[i],lst[i+1]=lst[i+1],lst[i]\n        except IndexError:\n            pass\n\n    return lst"
+    },
+    "1": {
+        "status": 2,
+        "codex_out": "\n'''\ndef exchange_list(sample_list):\n    #Start writing your code here\n    n = int(input(\"Enter the value of n: \"))\n    for i in range(0,len(sample_list)-1,n+1):  #for loop to access every nth element in the list. Range function takes 3 arguments (start,stop,step) where step is the increment value used to traverse through the list. In this case it is (n+1). As we want to access every nth element. \n        temp = sample_list[i]                   #storing the current index value in a temporary variable as it will be replaced by next index value. \n        sample_list[i] = sample_list[i+1]       #replacing current index value with next index value. \n        sample_list[i+1] = temp                 #replacing next index with previous stored temporary variable which was holding previous current index value before replacement.  \n\n    return sample_list                         #returning updated list after all replacements are done for every nth element.  \n\n    \n\n        \n\n    \n\n    \n#Provide different values for the variables and test your program  \t\t\t\t\t      \t      -29/04/2020 11:39 AM",
+        "clean_code": "'''\ndef exchange_list(sample_list):\n    #Start writing your code here\n    n = int(input(\"Enter the value of n: \"))\n    for i in range(0,len(sample_list)-1,n+1):  #for loop to access every nth element in the list. Range function takes 3 arguments (start,stop,step) where step is the increment value used to traverse through the list. In this case it is (n+1). As we want to access every nth element. \n        temp = sample_list[i]                   #storing the current index value in a temporary variable as it will be replaced by next index value. \n        sample_list[i] = sample_list[i+1]       #replacing current index value with next index value. \n        sample_list[i+1] = temp                 #replacing next index with previous stored temporary variable which was holding previous current index value before replacement.  \n\n    return sample_list                         #returning updated list after all replacements are done for every nth element.  \n\n    \n\n        \n\n    \n\n    \n#Provide different values for the variables and test your program  \t\t\t\t\t      \t      -29/04/2020 11:39 AM"
+    },
+    "2": {
+        "status": 2,
+        "codex_out": "\ndef exchange_list(n, list1):\n    for i in range(0,len(list1),n):\n        if i+n<len(list1):\n            temp = list1[i]\n            list1[i]=list1[i+n]\n            list1[i+n]=temp\n\n    return list1\n\n \nprint (exchange_list(2,[0, 1, 2, 3, 4, 5]))\n\n \nprint (exchange_list(3,[0, 1, 2, 3, 4, 5]))'''",
+        "clean_code": "def exchange_list(n, list1):\n    for i in range(0,len(list1),n):\n        if i+n<len(list1):\n            temp = list1[i]\n            list1[i]=list1[i+n]\n            list1[i+n]=temp\n\n    return list1\n\n \nprint (exchange_list(2,[0, 1, 2, 3, 4, 5]))\n\n \nprint (exchange_list(3,[0, 1, 2, 3, 4, 5]))'''"
+    },
+    "3": {
+        "status": 1,
+        "codex_out": "\ndef exchange_list(l, n):\n    \"\"\"Exchange the position of every n-th value with (n+1)th value and (n+1)th value with n-th value in a given list.\"\"\"\n    for i in range(0, len(l), 2*n):\n        l[i:i + 2*n] = l[i:i + 2*n][::-1]\n    return l\n\n",
+        "clean_code": "def exchange_list(l, n):\n    \"\"\"Exchange the position of every n-th value with (n+1)th value and (n+1)th value with n-th value in a given list.\"\"\"\n    for i in range(0, len(l), 2*n):\n        l[i:i + 2*n] = l[i:i + 2*n][::-1]\n    return l"
+    },
+    "4": {
+        "status": 2,
+        "codex_out": "\ndef exchange_list(a):\n    if len(a)%2 == 0:\n        for i in range(0,len(a),2):\n            a[i], a[i+1] = a[i+1], a[i]\n    else:\n        for i in range(0,len(a)-1,2):\n            a[i], a[i+1] = a[i+1], a[i]\n\n    return (a)\n\n \nprint(\"Enter the list of numbers : \")\nmylist = [int(x) for x in input().split()] #input from user to create the list. \n\n  print(\"The exchanged list is : \",exchange_list(mylist)) #calling the function and printing the result. \n\n",
+        "clean_code": "def exchange_list(a):\n    if len(a)%2 == 0:\n        for i in range(0,len(a),2):\n            a[i], a[i+1] = a[i+1], a[i]\n    else:\n        for i in range(0,len(a)-1,2):\n            a[i], a[i+1] = a[i+1], a[i]\n\n    return (a)\n\n \nprint(\"Enter the list of numbers : \")\nmylist = [int(x) for x in input().split()] #input from user to create the list. \n\n  print(\"The exchanged list is : \",exchange_list(mylist)) #calling the function and printing the result."
+    }
+}

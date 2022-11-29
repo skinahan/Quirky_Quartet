@@ -248,7 +248,10 @@ def eval_codex_out(codex_out, tests, verbose=0):
             print(code)
         return 2, code
     root = ast.parse(code)
-    fns, args = parse_function_defn(root)
+    try:
+        fns, args = parse_function_defn(root)
+    except Exception:
+        return 3, code
     success = False
     # Generate tests for each function name
     for i in range(len(fns)):
@@ -358,7 +361,7 @@ def complete_eval_setup(data, split, batch, result_dir, api_key, task="", nshot=
             data_id = offset + batch * batch_size + i * mini_batch_size + idx
             print("Saving {0}".format(data_id))
             save_result_file(d, "{0}/{1}_{2}.json".format(result_dir, split, data_id), is_json=True, is_pickle=False)
-        time.sleep(60)
+        time.sleep(69)
 
 def save_result_file(obj, fname, is_json=True, is_pickle=False):
     if is_json:
@@ -377,7 +380,7 @@ def load_result_file(fname, is_json=True, is_pickle=False):
             return pickle.load(fp)
 
 def eval_results(dir, nshot=0, k=1):
-    res_dir = "{0}/no_prompt/{1}-shot/".format(dir, nshot)
+    res_dir = "{0}/{1}-shot/".format(dir, nshot)
     fs = ["{0}/{1}".format(res_dir, f) for f in os.listdir(res_dir) if os.path.isfile("{0}/{1}".format(res_dir, f))]
     results = []
     for f in fs:
@@ -391,9 +394,10 @@ def eval_results(dir, nshot=0, k=1):
         print("Results for pass@{0}".format(kk))
         vals, counts = np.unique(np.min(results[:,:kk], axis=1), return_counts=True)
         print("Success = {0} | Failure = {1} | Unparseable = {2}".format(counts[0], counts[1], counts[2]))
-        print("Total unparseable = {0}".format(np.sum(results[:,:kk] == 2)))
+        print("Total unparseable = {0}".format(np.sum(results[:,:kk] >= 2)))
+        print("Total function not defined cases (counted in total unparseable) = {0}".format(np.sum(results[:,:kk] == 3)))
         print("Pass rate @ {0} = {1:.3f}".format(kk, 100*counts[0]/results.shape[0]))
-        print("Unparseable rate @ {0} = {1:.3f}".format(kk, 100*np.sum(results[:,:kk] == 2)/(results.shape[0]*kk)))
+        print("Unparseable rate @ {0} = {1:.3f}".format(kk, 100*np.sum(results[:,:kk] >= 2)/(results.shape[0]*kk)))
     res_at_pass_k(kk=1)
     res_at_pass_k(kk=2)
     res_at_pass_k(kk=5)
@@ -423,4 +427,4 @@ if __name__ == "__main__":
 
     complete_eval_setup(data, "train", 0, result_dir, api_key, task=final_task, nshot=5, k=5, verbose=0)
 
-    # eval_results("results/mbpp/", nshot=10, k=5)
+    # eval_results(result_dir, nshot=5, k=5)
