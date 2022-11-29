@@ -6,6 +6,7 @@ from datasets import Dataset
 from .tune_t5_synthetic_generalize import *
 
 def run():
+    print('CUDA', torch.cuda.is_available())
     prompt_type = 'Least-to-Most'
     mixed_dataset = make_dataset(min_depth=1, max_depth=5)
     mixed_dataset = mixed_dataset['train'].train_test_split(test_size=0.2)

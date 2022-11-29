@@ -37,8 +37,8 @@ def postprocess(prompts, source_code_list, tokenizer_model='Salesforce/codet5-ba
     model_inputs['labels'] = labels_with_ignore_index
     return model_inputs
 
-def tune_model(dataset, preprocess, name='t5_tuning', prefix_dir=''):
-    dataset = dataset.map(preprocess, batched=True, freeze=True)
+def tune_model(dataset, preprocess, name='t5_tuning', prefix_dir='', freeze=True):
+    dataset = dataset.map(preprocess, batched=True)
     dataset.set_format(type="torch", columns=['input_ids', 'attention_mask', 'labels'])
     if 'train' in dataset:
         train_dataloader = DataLoader(dataset['train'], shuffle=True, batch_size=8,
@@ -59,24 +59,17 @@ def tune_model(dataset, preprocess, name='t5_tuning', prefix_dir=''):
     batch = next(iter(train_dataloader))
     print(batch.keys())
     model = CodeT5(train_dataloader, valid_dataloader, test_dataloader, freeze=freeze)
-    early_stop_callback = EarlyStopping(
-        monitor='validation_loss',
-        patience=3,
-        strict=False,
-        verbose=False,
-        mode='min'
-    )
+    early_stop_callback = EarlyStopping(monitor='testing_loss', mode='min')
     lr_monitor = LearningRateMonitor(logging_interval='step')
     logger = CSVLogger(f'{prefix_dir}csv_data', name=name, flush_logs_every_n_steps=1)
     print(logger)
 
     trainer_kwargs = dict(default_root_dir=f'{name}_checkpoints',
-                          callbacks=[early_stop_callback, lr_monitor,
-                                     # Nice, but uses too much disk space :(
-                                     # CheckpointEveryNSteps(save_step_frequency=1)
-                                     ],
+                          callbacks=[early_stop_callback, lr_monitor],
                           logger=logger,
-                          log_every_n_steps=1)
+                          log_every_n_steps=1,
+                          check_test_every_n_epoch=1,
+                          max_epochs=3)
     # use_gpu = True
     use_gpu = False
     if use_gpu:

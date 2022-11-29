@@ -13,3 +13,5 @@ samples.jsonl
 logs
 t5_tuning
 t5_synthetic
+*.ckpt
+*.pt
