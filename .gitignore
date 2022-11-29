@@ -7,7 +7,7 @@ custom_mongo.sh
 geckodriver.log
 openai_credentials.yaml
 plots
-*.csv
+# *.csv
 *plots*
 samples.jsonl
 logs
