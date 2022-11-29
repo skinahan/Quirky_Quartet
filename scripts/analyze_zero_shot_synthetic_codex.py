@@ -5,7 +5,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 def save(path, show=True):
-    plt.savefig(path, bbox_inches='tight')
+    plt.savefig(path, dpi=300, bbox_inches='tight')
     plt.tight_layout()
     plt.subplots_adjust(top=0.85)
     plt.show()
