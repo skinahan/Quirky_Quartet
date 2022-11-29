@@ -40,12 +40,14 @@ def run():
     sns.set_color_codes('pastel')
     errors = composite[composite['behavior'] != 'Success']
     x = 'depth'; y = 'behavior'
-    ax = (errors
-     .groupby(x)[y]
-     .value_counts()
-     .rename('count')
-     .reset_index()
-     .pipe((sns.catplot, 'data'), x=x, y='count', hue=y, kind='bar')
-     )
-    ax.set(title='Error Analysis By Program Depth', xlabel='Depth', ylabel='Count', xticklabels=depths[1:])
+
+    fig, axes = plt.subplots(1, 2)
+    fig.suptitle('Error Analysis by Program Depth')
+    for ax in axes:
+        (errors.groupby(x)[y]
+         .value_counts()
+         .rename('count')
+         .reset_index()
+         .pipe((sns.barplot, 'data'), ax=ax, x=x, y='count', hue=y))
+        ax.set(xlabel='Depth', ylabel='Count', xticklabels=depths[1:])
     save('plots/synthetic_error_analysis.png', show=True)

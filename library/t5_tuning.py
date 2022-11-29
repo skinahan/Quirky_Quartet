@@ -19,7 +19,7 @@ def process(descriptions, source_code_list, prompt_type='Default'):
 
 def postprocess(prompts, source_code_list, tokenizer_model='Salesforce/codet5-base'):
     max_input_length = 256
-    max_target_length = 128
+    max_target_length = 256
     tokenizer = RobertaTokenizer.from_pretrained(tokenizer_model)
 
     model_inputs = tokenizer(prompts, max_length=max_input_length, padding="max_length", truncation=True)
