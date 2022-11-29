@@ -4,18 +4,21 @@ from datasets import load_dataset
 from pytorch_lightning import Trainer
 from pytorch_lightning.callbacks import EarlyStopping, LearningRateMonitor
 from pytorch_lightning.loggers import CSVLogger
+import csv
 
 from transformers import T5ForConditionalGeneration, AdamW, get_linear_schedule_with_warmup
 from pathlib import Path
 
 from .t5_model import CodeT5
-from .prompts  import to_prompt
+from .prompts import to_prompt
 from .checkpointer import *
+
 
 def process(descriptions, source_code_list, prompt_type='Default'):
     prompts = [to_prompt(description, prompt_type=prompt_type)
                for description in descriptions]
     return postprocess(source_code_list, prompts)
+
 
 def postprocess(prompts, source_code_list, tokenizer_model='Salesforce/codet5-base'):
     max_input_length = 256
@@ -37,6 +40,7 @@ def postprocess(prompts, source_code_list, tokenizer_model='Salesforce/codet5-ba
     model_inputs['labels'] = labels_with_ignore_index
     return model_inputs
 
+
 def tune_model(dataset, preprocess, name='t5_tuning', prefix_dir=''):
     dataset = dataset.map(preprocess, batched=True, freeze=True)
     dataset.set_format(type="torch", columns=['input_ids', 'attention_mask', 'labels'])
@@ -52,7 +56,7 @@ def tune_model(dataset, preprocess, name='t5_tuning', prefix_dir=''):
         valid_dataloader = None
         print(f'No validation data provided!!')
     if 'test' in dataset:
-        test_dataloader  = DataLoader(dataset['test'], batch_size=4, num_workers=4)
+        test_dataloader = DataLoader(dataset['test'], batch_size=4, num_workers=4)
     else:
         test_dataloader = None
         print(f'No test data provided!!')
@@ -94,16 +98,31 @@ def tune_model(dataset, preprocess, name='t5_tuning', prefix_dir=''):
     else:
         print(f'No test dataloader provided, skipping')
 
+
 def test_model(dataset, name='t5_tuning', prefix_dir=''):
     save_directory = Path(f'{prefix_dir}{name}/pretrained/')
-    model = T5ForConditionalGeneration.from_pretrained(save_directory)
+    model = T5ForConditionalGeneration.from_pretrained('Salesforce/codet5-base')
+    # model = CodeT5.load_from_checkpoint(f"{save_directory}/epoch=15-step=13520.ckpt")
+    # model.model.save_pretrained(save_directory)
+    # model = T5ForConditionalGeneration.from_pretrained(save_directory)
     tokenizer = RobertaTokenizer.from_pretrained('Salesforce/codet5-base')
+    test_set = dataset['test']
     # tokenizer.decode(batch['input_ids'][0])
     # tokenizer.decode([label for label in labels if label != -100])
-    test_example = dataset['test'][2]
-    # prepare for the model
-    input_ids = tokenizer(test_example['docstring'], return_tensors='pt').input_ids
-    # generate
-    outputs = model.generate(input_ids)
-    print("Generated code:", tokenizer.decode(outputs[0], skip_special_tokens=True))
-    print("Ground truth:", test_example['code'])
+    headers = ['docstring', 'label', 'output']
+    with open('t5_out_synthetic_untuned.csv', 'a', encoding="utf-8") as f_obj:
+        writer_obj = csv.writer(f_obj)
+        writer_obj.writerow(headers)
+        for val in test_set:
+            row_list = []
+            docstring = val['description']
+            label = val['code']
+            input_ids = tokenizer(docstring, return_tensors='pt').input_ids
+            outputs = model.generate(input_ids, max_length=512)
+            outputs = [tokenizer.decode(x, skip_special_tokens=True) for x in outputs]
+            decoded = ''.join(outputs)
+            row_list.append(docstring)
+            row_list.append(label)
+            row_list.append(decoded)
+            writer_obj.writerow(row_list)
+        f_obj.close()
