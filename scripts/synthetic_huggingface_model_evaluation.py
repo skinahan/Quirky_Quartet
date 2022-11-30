@@ -10,6 +10,7 @@ import signal
 import pytorch_lightning as pl
 
 from transformers import RobertaTokenizer, T5ForConditionalGeneration
+from transformers import AutoTokenizer, AutoModelForCausalLM
 
 from library.openai_synthetic_dataset import test_cases
 from library.prompts import to_prompt
@@ -18,7 +19,7 @@ from library.t5_model import CodeT5
 
 from .synthetic_evaluation import *
 
-def evaluate_t5(model, tokenizer, prompts):
+def evaluate_huggingface_model(model, tokenizer, prompts):
     for prompt in prompts:
         input_ids = tokenizer(prompt, return_tensors='pt').input_ids
         # print(input_ids)
@@ -34,9 +35,8 @@ def evaluate_t5(model, tokenizer, prompts):
         yield decoded
 
 def batch_evaluate(prompt_batch, metadata, batch_size, n_samples, model, tokenizer, test_inputs):
-    ''' Run T5 in place of Codex '''
     result = list(evaluate_t5(model, tokenizer, prompt_batch))
-    print('T5 Evaluation result')
+    print('Evaluation result')
     for code in result:
         print('(start t5 code output)')
         print(code)
@@ -54,18 +54,22 @@ def batch_evaluate(prompt_batch, metadata, batch_size, n_samples, model, tokeniz
 
 
 def run():
-    tokenizer  = RobertaTokenizer.from_pretrained('Salesforce/codet5-small')
-    checkpoint = True
+    # tokenizer  = RobertaTokenizer.from_pretrained('Salesforce/codet5-small')
+    # checkpoint = True
 
-    if checkpoint:
-        # checkpoint_path = 'results/csv_data/synthetic/version_0/checkpoints/epoch=15-step=13520.ckpt'
-        # checkpoint_path = 'results/csv_data/synthetic_all/version_0/checkpoints/epoch=11-step=46176.ckpt'
-        checkpoint_path = 'results/synthetic_t5/version_4/checkpoints/epoch=1-step=6756.ckpt'
-        print(checkpoint_path)
-        model = CodeT5.load_from_checkpoint(checkpoint_path)
-    else:
-        print('pretrained')
-        model = T5ForConditionalGeneration.from_pretrained('Salesforce/codet5-small')
+    # if checkpoint:
+    #     # checkpoint_path = 'results/csv_data/synthetic/version_0/checkpoints/epoch=15-step=13520.ckpt'
+    #     # checkpoint_path = 'results/csv_data/synthetic_all/version_0/checkpoints/epoch=11-step=46176.ckpt'
+    #     checkpoint_path = 'results/synthetic_t5/version_4/checkpoints/epoch=1-step=6756.ckpt'
+    #     print(checkpoint_path)
+    #     model = CodeT5.load_from_checkpoint(checkpoint_path)
+    # else:
+    #     print('pretrained')
+    #     model = T5ForConditionalGeneration.from_pretrained('Salesforce/codet5-small')
+    tokenizer = AutoTokenizer.from_pretrained("Salesforce/codegen-16B-mono")
+    model     = AutoModelForCausalLM.from_pretrained('Salesforce/codegen-16B-mono')
+
+    print(tokenizer)
     print(model)
 
     n_samples  = 1  # Since the problem is already very slow
