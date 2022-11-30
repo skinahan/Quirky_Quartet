@@ -23,23 +23,26 @@ def time_limit(seconds: float):
     finally:
         signal.setitimer(signal.ITIMER_REAL, 0)
 
-def parse_output(output):
+def parse_output(output, stop_at_indent_end=False, first_function=False):
     ''' Parse Codex output:
         The first line will be a docstring prompt, then the next line will start
         with a def statement. All lines afterwards should be indented until the
         function ends, and output after this is ignored. '''
     kept = ''
-    indented = False
-    for i, line in enumerate(output.splitlines()):
-        # print(f'{i:3}: {line}')
-        if line.startswith('    '):
-            indented = True
-            kept += line + '\n'
-        else:
-            if indented:
-                break # Stop saving input
-            else:
+    if stop_at_indent_end:
+        indented = False
+        for i, line in enumerate(output.splitlines()):
+            # print(f'{i:3}: {line}')
+            if line.startswith('    '):
+                indented = True
                 kept += line + '\n'
+            else:
+                if indented:
+                    break # Stop saving input
+                else:
+                    kept += line + '\n'
+    else:
+        kept = output
     print('(Parsed code):')
     for line in kept.splitlines():
         print(f'    {line}')
@@ -49,7 +52,9 @@ def parse_output(output):
     for element in node.body:
         if isinstance(element, ast.FunctionDef):
             func_name = element.name
-            break
+            if first_function:
+                break
+            # Otherwise uses the last defined function allowing better composition
     else:
         raise SyntaxError(f'No function definition found!')
     obj = compile(node, filename='<ast>', mode='exec')

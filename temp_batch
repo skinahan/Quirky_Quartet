@@ -1,17 +1,17 @@
 #!/bin/bash
-#SBATCH -p gpu
-#SBATCH -q wildfire
-#SBATCH -t 7-00:00:00   # time in d-hh:mm:ss
-#SBATCH -o /scratch/lsaldyt/experiments/tune_t5_synthetic_generalize/%j.out # file to save job's STDOUT (%j = JobId)
-#SBATCH -e /scratch/lsaldyt/experiments/tune_t5_synthetic_generalize/%j.err # file to save job's STDERR (%j = JobId)
+#SBATCH -p htcgpu
+#SBATCH -q normal
+#SBATCH -t 0-04:00:00   # time in d-hh:mm:ss
+#SBATCH -o /scratch/lsaldyt/experiments/synthetic_huggingface_model_evaluation/%j.out # file to save job's STDOUT (%j = JobId)
+#SBATCH -e /scratch/lsaldyt/experiments/synthetic_huggingface_model_evaluation/%j.err # file to save job's STDERR (%j = JobId)
 #SBATCH --mail-user=lsaldyt@asu.edu # Mail-to address
 #SBATCH --mail-type=ALL  # Send an e-mail when a job starts, stops, or fails 
 #SBATCH -N 1 
-#SBATCH -c 32
-#SBATCH --job-name=tune_t5_synthetic_generalize
+#SBATCH -c 56
+#SBATCH --job-name=synthetic_huggingface_model_evaluation
 
 #SBATCH --gres=gpu:1 # Request 1 GPU
-#SBATCH -C V100
+#SBATCH -C A100
 # Cuda library and includes handled naturally:
 
 module load cuda/11.6.0
@@ -34,4 +34,4 @@ env
 module list
 nvcc --version
 nvidia-smi
-./run tune_t5_synthetic_generalize 
+./run synthetic_huggingface_model_evaluation 

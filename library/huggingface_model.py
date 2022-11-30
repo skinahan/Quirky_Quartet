@@ -4,24 +4,24 @@ import pytorch_lightning as pl
 # Contents adapted from:
 # https://colab.research.google.com/github/NielsRogge/Transformers-Tutorials/blob/master/T5/Fine_tune_CodeT5_for_generating_docstrings_from_Ruby_code.ipynb
 
-class CodeT5(pl.LightningModule):
-    def __init__(self, train_dataloader, val_dataloader=None, test_dataloader=None, lr=5e-5, num_train_epochs=4,
+class HuggingfaceModel(pl.LightningModule):
+    def __init__(self, model, train_dataloader, val_dataloader=None, test_dataloader=None, lr=5e-5, num_train_epochs=4,
                  warmup_steps=100, freeze=True):
         super().__init__()
-        self.model = T5ForConditionalGeneration.from_pretrained('Salesforce/codet5-small')
+        self.model = model
         if freeze:
             for param in self.model.base_model.parameters():
                 param.requires_grad = False
-        self.save_hyperparameters()
+        self.save_hyperparameters(ignore='model')
         self.training_dataloader = train_dataloader
         self.valid_dataloader = val_dataloader
         self.testing_dataloader = test_dataloader
         self.log('initialized', -1)
 
     def forward(self, input_ids, attention_mask, labels=None):
-        outputs = self.model(input_ids=input_ids, attention_mask=attention_mask, labels=labels, max_length=256)
-        print('intermediate outputs')
-        print(outputs.shape)
+        outputs = self.model(input_ids=input_ids, attention_mask=attention_mask, labels=labels)
+        # print('intermediate outputs')
+        # print(outputs.shape)
         return outputs
 
     def common_step(self, batch, batch_idx):

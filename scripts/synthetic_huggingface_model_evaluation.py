@@ -15,7 +15,7 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 from library.openai_synthetic_dataset import test_cases
 from library.prompts import to_prompt
 from library.api_wrapper import *
-from library.t5_model import CodeT5
+from library.huggingface_model import HuggingfaceModel
 
 from .synthetic_evaluation import *
 
@@ -35,7 +35,7 @@ def evaluate_huggingface_model(model, tokenizer, prompts):
         yield decoded
 
 def batch_evaluate(prompt_batch, metadata, batch_size, n_samples, model, tokenizer, test_inputs):
-    result = list(evaluate_t5(model, tokenizer, prompt_batch))
+    result = list(evaluate_huggingface_model(model, tokenizer, prompt_batch))
     print('Evaluation result')
     for code in result:
         print('(start t5 code output)')
@@ -62,7 +62,7 @@ def run():
     #     # checkpoint_path = 'results/csv_data/synthetic_all/version_0/checkpoints/epoch=11-step=46176.ckpt'
     #     checkpoint_path = 'results/synthetic_t5/version_4/checkpoints/epoch=1-step=6756.ckpt'
     #     print(checkpoint_path)
-    #     model = CodeT5.load_from_checkpoint(checkpoint_path)
+    #     model = HuggingFacemodel.load_from_checkpoint(checkpoint_path)
     # else:
     #     print('pretrained')
     #     model = T5ForConditionalGeneration.from_pretrained('Salesforce/codet5-small')
@@ -78,13 +78,14 @@ def run():
     filtered_test_cases = copy(test_cases)
     # filtered_test_cases.pop('whitespace') # Seems to be unfairly evaluated
     test_inputs = [v for k, v in sorted(filtered_test_cases.items(), key=lambda t:t[0])]
-    api_key = read_config()
+    # api_key = read_config()
 
     headers = (['id', 'description', 'md5', 'extended', 'sample',
                 'behavior', 'accuracy']
                + list(sorted(filtered_test_cases.keys())))
 
-    for depth in range(1, 6):
+    # for depth in range(1, 6):
+    for depth in range(4, 6):
         print(depth)
         data_filename = f'data/synthetic_depth_{depth}.csv'
         n_probs = linecount(data_filename)
