@@ -7,6 +7,9 @@ import os, re, ast, time, json, pickle
 import numpy as np
 import pandas as pd
 from datasets import load_dataset, Dataset
+import matplotlib.pyplot as plt
+import seaborn as sns
+sns.set_style('whitegrid')
 
 def read_mbpp(sanitized=False):
     """
@@ -403,9 +406,59 @@ def eval_results(dir, nshot=0, k=1):
     res_at_pass_k(kk=5)
     return fs, results
 
+def plot_results():
+    result_dir = "results/mbpp/"
+    with open("{0}/results.json".format(result_dir), "r") as f:
+        res = json.load(f)
+    K = ["1", "2", "5"]
+
+    # Pass Rate for MBPP with no prompting
+    dfs = []
+    for k, v in res["pass_rate"]["no_prompt"].items():
+        df = pd.DataFrame({"Pass Rate": v, "K": K})
+        df["Setting"] = df.apply(lambda x: "{0}-shot".format(k), axis=1)
+        dfs.append(df)
+    ax = sns.lineplot(data=pd.concat(dfs), x="K", y="Pass Rate", hue="Setting")
+    ax.set(title='Pass Rate for MBPP with no prompting', xlabel='@ K', ylabel='Pass Rate')
+    plt.show()
+
+    # Pass Rate for MBPP in 5-shot setting
+    ids = [str(i) for i in range(4)]
+    dfs = [pd.DataFrame({"Pass Rate": res["pass_rate"]["no_prompt"]["5"], "K": K})]
+    dfs[-1]["Prompt Id"] = dfs[-1].apply(lambda x: "No Prompt", axis=1)
+    for id in ids:
+        df = pd.DataFrame({"Pass Rate": res["pass_rate"]["prompt_{0}".format(id)]["5"], "K": K})
+        df["Prompt Id"] = df.apply(lambda x: "Prompt {0}".format(id), axis=1)
+        dfs.append(df)
+    ax = sns.lineplot(data=pd.concat(dfs), x="K", y="Pass Rate", hue="Prompt Id")
+    ax.set(title='Pass Rate for MBPP in 5-shot setting', xlabel='@ K', ylabel='Pass Rate')
+    plt.show()
+
+    # Unparseable Rate for MBPP with no prompting
+    dfs = []
+    for k, v in res["unparseable_rate"]["no_prompt"].items():
+        df = pd.DataFrame({"Unparseable Rate": v, "K": K})
+        df["Setting"] = df.apply(lambda x: "{0}-shot".format(k), axis=1)
+        dfs.append(df)
+    ax = sns.lineplot(data=pd.concat(dfs), x="K", y="Unparseable Rate", hue="Setting")
+    ax.set(title='Unparseable Rate for MBPP with no prompting', xlabel='@ K', ylabel='Unparseable Rate')
+    plt.show()
+
+    # Unparseable Rate for MBPP in 5-shot setting
+    ids = [str(i) for i in range(4)]
+    dfs = [pd.DataFrame({"Unparseable Rate": res["unparseable_rate"]["no_prompt"]["5"], "K": K})]
+    dfs[-1]["Prompt Id"] = dfs[-1].apply(lambda x: "No Prompt", axis=1)
+    for id in ids:
+        df = pd.DataFrame({"Unparseable Rate": res["unparseable_rate"]["prompt_{0}".format(id)]["5"], "K": K})
+        df["Prompt Id"] = df.apply(lambda x: "Prompt {0}".format(id), axis=1)
+        dfs.append(df)
+    ax = sns.lineplot(data=pd.concat(dfs), x="K", y="Unparseable Rate", hue="Prompt Id")
+    ax.set(title='Unparseable Rate for MBPP in 5-shot setting', xlabel='@ K', ylabel='Unparseable Rate')
+    plt.show()
+
 if __name__ == "__main__":
     api_key = read_config()
-    data = read_mbpp(sanitized=False)
+    # data = read_mbpp(sanitized=False)
     # mbpp_play_demo("train", 0)
 
     task = "Write a python function to solve the above question. No additional comments and docstrings are needed."
@@ -425,6 +478,8 @@ if __name__ == "__main__":
     # results, status = batch_eval_0shot(data, "train", api_key, task, max_n=10, k=5, verbose=0)
     # results, status = batch_eval_fewshot(data["train"], data["prompt"], api_key, task, nshot=10, max_n=10, k=5, verbose=0)
 
-    complete_eval_setup(data, "train", 0, result_dir, api_key, task=final_task, nshot=5, k=5, verbose=0)
+    # complete_eval_setup(data, "train", 0, result_dir, api_key, task=final_task, nshot=5, k=5, verbose=0)
 
     # eval_results(result_dir, nshot=5, k=5)
+
+    plot_results()
